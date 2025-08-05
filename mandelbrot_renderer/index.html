@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Fractal Playground</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+        <style>
+            html, body{
+                padding: 25px;
+                background-color: #353535}
+
+            #main-canvas{
+                display: block;
+                width: 800px;
+                height: 600px;
+                /*
+                 * WebGL trick: pick an offensive canvas background color
+                 * to make it obvious when WebGL isn't drawing to the
+                 * whole canvas, or there's unexpected transparency.
+                 */
+                /* background-color: #da6052; */
+            }
+            #julia-canvas{
+                display: block;
+                width: 400px;
+                height: 300px;
+            }
+
+            /* CSS to make a nice little error box output for debugging (nice) if you can't use devtools, e.g. mobile) */
+            #error-box {
+                color: #fd8080;
+                font-weight: 500;
+                font-size: 18pt;
+                border: 1px solid white;
+                padding: 25px;
+                margin-top: 20px;
+            }
+
+            .error-box-title {
+                color: #eee;
+            }
+
+            .container {
+                display: flex;
+                gap: 40px;
+                justify-content: flex-start;
+            }
+            .rectangle {
+
+                border: 1px solid black;
+                outline: 4px solid lightgray;
+            }
+            .controls-main {
+                background-color: #cef
+
+            }
+            .controls-div {
+                border: 1px solid black;
+                padding: 5px;
+            }
+
+            .right-container {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                height: 100%;
+            }
+
+            .split {
+                display: flex;
+                justify-content: space-between;
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <div class="container d-inline-flex">
+            <div class="rectangle">
+                <canvas id="main-canvas"></canvas>
+            </div>
+            <div class="right-container">
+                <div class="rectangle controls-main">
+                    <div class="controls-div">
+                        <span> Max iterations:</span>
+                        <input type="range" min="1" max="1500" value="150" id="iters-slider">
+                        <input type="number" min="1" max="1500" value="150" id="iters-input">
+                    </div>
+                    <div class="controls-div split">
+                        <div>
+                            <strong>Details at:</strong>
+                            <span id="details-source">center</span>
+                            <br>
+                            <span>&nbsp;Re (X): </span>
+                            <span id="x-pos-text">123412341</span>
+                            <br>
+                            <span>&nbsp;Im (Y): </span>
+                            <span id="y-pos-text">123412341</span>
+                            <br>
+                            <span>&nbsp;Iteration count: </span>
+                            <span id="iter-count-text">250</span>
+                            <br>
+                            <span>&nbsp;Zoom: </span>
+                            <span id="zoom-text">180500</span>
+                        </div>
+                        <div>
+                            <strong>Julia set</strong>
+
+                            <p>Max iterations: <span id="iters-value-julia">50</span></p>
+
+                            <input type="range" min="1" max="150" value="50" id="iters-slider-julia">
+
+                        </div>
+                    </div>
+                </div>
+
+                <br>
+                <div class="rectangle">
+                    <canvas id="julia-canvas"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <!--
+            Doing a little error output in the HTML during development
+        -->
+        <div id="error-box">
+            <span class="error-box-title">Error messages, if any, go in here.</span>
+        </div>
+
+        <script src="main.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    </body>
+</html>
