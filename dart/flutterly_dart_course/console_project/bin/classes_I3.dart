@@ -29,7 +29,7 @@ class A {
 
   static int g = 6;
   static late int h;
-  static late int i = 8;
+  static late int i = 8; // lazy initialization, in this case pointless
   static late final int j;
 
   static const int k = 10;
@@ -46,18 +46,20 @@ void main(List<String> args) {
   print('alfa.c --> ${alfa.c}');
   alfa.d = 3; // otherwise d is late and not assigned a value -> Unhandled exception
   print('alfa.d --> ${alfa.d}');
-  alfa.e = 6; // same, but can only be set once, as it is final
+  alfa.e = 4; // same, but can only be set once, as it is final
   // alfa.e = 7; //! unhandled exception
   print('alfa.e --> ${alfa.e}');
   // alfa.f = 10; //! compile error, final and already assigned
   print('alfa.f --> ${alfa.f}');
 
   print('A.g --> ${A.g}');
+
+  A.h = 7;
   print('A.h --> ${A.h}');
   print('A.i --> ${A.i}');
+
+  A.j = 9;
   print('A.j --> ${A.j}');
   print('A.k --> ${A.k}');
 
-
-  print('test');
 }
