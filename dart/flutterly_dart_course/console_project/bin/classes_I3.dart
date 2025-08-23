@@ -15,6 +15,8 @@
 //! Any non-final fields & late final fields will have a default setter method
 // normal final fields cannot be set outside the class, can only be set via constructors
 
+//! 95% of time only standard final fields are used inside a class
+
 class A {
   int? _private; // private field
 
