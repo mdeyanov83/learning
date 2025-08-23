@@ -40,8 +40,6 @@ class A {
     f = f;
   }
 
-
-
   int? _private; // private field
 
   int? a;
@@ -69,17 +67,12 @@ void main(List<String> args) {
 
   var alfa = A(1, 2, 3, 4, 5, 6, 7);
 
-  // Rule 1 - accessing vie the dot . operator (the default getter function)
   print('alfa._private --> ${alfa._private}');
   print('alfa.a --> ${alfa.a}');
   print('alfa.b --> ${alfa.b}');
   print('alfa.c --> ${alfa.c}');
-  alfa.d = 3; // otherwise d is late and not assigned a value -> Unhandled exception
   print('alfa.d --> ${alfa.d}');
-  alfa.e = 4; // same, but can only be set once, as it is final
-  // alfa.e = 7; //! unhandled exception
   print('alfa.e --> ${alfa.e}');
-  // alfa.f = 10; //! compile error, final and already assigned
   print('alfa.f --> ${alfa.f}');
 
   print('A.g --> ${A.g}');
