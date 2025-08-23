@@ -1,0 +1,3 @@
+name: 'dart_package'
+environment:
+  sdk: '>=2.19.4 <3.0.0'
