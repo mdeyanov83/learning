@@ -67,6 +67,9 @@ void main(List<String> args) {
 
   var alfa = A(1, 2, 3, 4, 5, 6, 7);
 
+  alfa.d = 12;
+  alfa.e = 13;
+
   // print('alfa._private --> ${alfa._private}');
   // print('alfa.a --> ${alfa.a}');
   // print('alfa.b --> ${alfa.b}');
