@@ -2,11 +2,14 @@
 // Methods -> are functions defined inside a class
 
 //! Constructors
+//! Instantiate a class object with fields values as arguments, instead of manually assigning each field value
+// Constructor purpose is so that the fields inside a class can be rapidly initialized in a more organized fashion
+
 // The method that is called when a class is instantiated into an object
 // every class comes with a default constructor - a function with no name, no body and the same name as the class
 // The constructor doesn't need a function body it can exist in just a header form (although may have one if necessary)
 // Do not have a return type
-// Their purpose is so that the fields inside a class can be rapidly initialized in a more organized fashion
+
 
 // When instantiating a class object, the fields inside are first assigned the values provided upon declaration,
 // THEN the constructor is called
