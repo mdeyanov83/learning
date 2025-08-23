@@ -1,4 +1,4 @@
-//! Instance Variables and Methods
+//! Classes - Instance Variables and Methods
 // Instance variables <-> also referred as Fields
 // recommended to explicitly specify the types of fields inside of class
 
