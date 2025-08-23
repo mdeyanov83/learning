@@ -67,23 +67,23 @@ void main(List<String> args) {
 
   var alfa = A(1, 2, 3, 4, 5, 6, 7);
 
-  print('alfa._private --> ${alfa._private}');
-  print('alfa.a --> ${alfa.a}');
-  print('alfa.b --> ${alfa.b}');
-  print('alfa.c --> ${alfa.c}');
-  print('alfa.d --> ${alfa.d}');
-  print('alfa.e --> ${alfa.e}');
-  print('alfa.f --> ${alfa.f}');
+  // print('alfa._private --> ${alfa._private}');
+  // print('alfa.a --> ${alfa.a}');
+  // print('alfa.b --> ${alfa.b}');
+  // print('alfa.c --> ${alfa.c}');
+  // print('alfa.d --> ${alfa.d}');
+  // print('alfa.e --> ${alfa.e}');
+  // print('alfa.f --> ${alfa.f}');
 
-  print('A.g --> ${A.g}');
+  // print('A.g --> ${A.g}');
 
-  A.h = 7;
-  print('A.h --> ${A.h}');
-  print('A.i --> ${A.i}');
+  // A.h = 7;
+  // print('A.h --> ${A.h}');
+  // print('A.i --> ${A.i}');
 
-  A.j = 9;
-  print('A.j --> ${A.j}');
-  print('A.k --> ${A.k}');
+  // A.j = 9;
+  // print('A.j --> ${A.j}');
+  // print('A.k --> ${A.k}');
 
   print(alfa);
 
