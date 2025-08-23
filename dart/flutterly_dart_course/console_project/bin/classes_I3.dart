@@ -1,7 +1,6 @@
 //! Instance Variables and Methods
 // Instance variables <-> also referred as Fields
 // recommended to explicitly specify the types of fields inside of class
-a
 
 //! How to access and initialize the class fields without a constructor method
 //! Rule #1
@@ -59,4 +58,6 @@ void main(List<String> args) {
   print('A.j --> ${A.j}');
   print('A.k --> ${A.k}');
 
+
+  print('test');
 }
