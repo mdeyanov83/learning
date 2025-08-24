@@ -1,6 +1,8 @@
 //! Classes
 
 //! Static Methods
+//* Similar to static fields, static methods exist without needing to instantiate any object from that class
+//* As a result - static methods can interact with static fields inside a class
 
 
 
@@ -11,6 +13,14 @@ class Point {
     required this.x,
     required this.y,
   });
+
+  //! Static methods
+  static distanceBetween(Point p1, Point p2) {
+    var dx = p1.x - p2.x;
+    var dy = p1.y - p2.y;
+    return sqrt(pow(dx, 2) + pow(dy, 2));
+  }
+
 
   //* Operators - examples with shorthand arrow => syntax
   Point operator +(Point p) => Point(x: x + p.x, y: y + p.y);
