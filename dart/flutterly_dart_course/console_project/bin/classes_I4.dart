@@ -44,7 +44,7 @@ class A {
   int? _private; // private field
   int? a;
   int b = 1;
-  final int c = 2;
+  final int c = 2; // final must be unassigned in declaration
   late int d;
   late final int e;
   late final int f = 5;
