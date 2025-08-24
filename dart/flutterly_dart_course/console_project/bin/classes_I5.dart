@@ -11,8 +11,6 @@
 //! Redirecting Constructors
 // A redirecting constructor is a constructor that calls another constructor of the same class
 
-
-
 class A {
   A({
     required this.x,
