@@ -1,7 +1,7 @@
 //! Classes
 
 //! Setters // Timestamp 4:58:00
-// example, setting 
+// example, setting
 
 class Car {
   late int age;
@@ -15,5 +15,4 @@ void main() {
 
   // car.age;
   print('car.age --> ${car.age}');
-
 }
