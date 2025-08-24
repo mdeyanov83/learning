@@ -20,6 +20,8 @@
 
 //! Getters and Setters
 //* Whenever you access a field from a class, you are accessing a getter function
+//* Cannot have the same name as the property (field) it returns
+//* Usually int get x => _x;
 //? See below examples in blue
 //* Every class has implicit getters
 
@@ -59,10 +61,13 @@ class Point {
 
   //? Implicit getters
   final int x;
-  int get x => x;
-  
+  // int get xValue => x;
+
   final int y;
-  //? int get y => y
+  // int get yValue => y;
+
+  int get sum => x + y;
+  int get diff => x - y;
 
   static const Point origin = Point(x: 0, y: 0);
 
