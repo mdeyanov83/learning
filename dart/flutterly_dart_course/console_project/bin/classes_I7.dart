@@ -15,11 +15,25 @@
 //* Caching / memoization
 //* Abstract classes or interfaces (return concrete implementations)
 
+
 class Point {
   const Point({
     required this.x,
     required this.y,
   });
+
+  // Example - factory constructor generating a random point having positive or negative coordinates
+  // depending on a bool parameter
+  Point.random({required bool isPositive}) {
+    int minNegativeValue = -99;
+    int maxNegativeValue = -1;
+    int minPositiveValue = 0;
+    int maxPositiveValue = 99;
+
+    int randomValue = minNegativeValue +
+        Random().nextInt()
+  }
+
 
   final int x;
   final int y;
