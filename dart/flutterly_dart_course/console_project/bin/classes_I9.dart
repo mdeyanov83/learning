@@ -20,6 +20,7 @@
 
 //! Getters and Setters
 //* Whenever you access a field from a class, you are accessing a getter function
+//? See below examples in blue
 
 
 import 'dart:math';
@@ -56,7 +57,10 @@ class Point {
   }
 
   final int x;
+  //? Setter
+  int get x => x;
   final int y;
+  //? int get y => y;
   static const Point origin = Point(x: 0, y: 0);
 
   @override
