@@ -25,25 +25,26 @@
 
 
 class A {
-  A(
-    // parameter list
-    int p,
-    int x,
-    int b,
-    int c,
-    int d,
-    int e,
-    int f,
-  ) : this.c = c  // initializer list. Every field can be initialized here
-  {
-    // constructor body
-    _private = p;
-    a = x; // no this.a needed, because there is no ambiguity between a and x
-    this.b = b;
-    this.d = d;
-    this.e = e;
-    this.f = f;
-  }
+  //
+  // A(
+  //   // parameter list
+  //   int p,
+  //   int x,
+  //   int b,
+  //   int c,
+  //   int d,
+  //   int e,
+  //   int f,
+  // ) : this.c = c  // initializer list - every field can be initialized here
+  // {
+  //   // constructor body
+  //   _private = p;
+  //   a = x; // no this.a needed, because there is no ambiguity between a and x
+  //   this.b = b;
+  //   this.d = d;
+  //   this.e = e;
+  //   this.f = f;
+  // }
 
   int? _private;
   int? a;
@@ -67,10 +68,10 @@ class A {
 
 void main(List<String> args) {
 
-  var alfa = A(1, 2, 3, 4, 5, 6, 7);
-
   // alfa.d = 12;
   // alfa.e = 13;
+
+  var alfa = A(1, 2, 3, 4, 5, 6, 7);
 
   print(alfa);
 
