@@ -74,11 +74,18 @@ void main() {
 
   ConstantClass c1 = ConstantClass();
   ConstantClass c2 = ConstantClass();
+  // identical(c1, c2);
+  print('identical(c1, c2) --> ${identical(c1, c2)}'); // false
 
-  identical
+  //* we always need to use const in order to reference the same const object in memory
+  // This is why singleton is better in this use case
+  ConstantClass c3 = const ConstantClass();
+  ConstantClass c4 = const ConstantClass();
+  // identical(c3, c4);
+  print('identical(c3, c4) --> ${identical(c3, c4)}'); // true
 
   var s1 = Singleton();
   var s2 = Singleton();
-  identical(c1, c2);
+  // identical(c1, c2);
   print('identcal(s1, s2) --> ${identical(s1, s2)}'); // true
 }
