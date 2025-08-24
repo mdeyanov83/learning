@@ -3,9 +3,8 @@
 //! Instance Methods
 //* They are normal functions serving specific purposes in a class
 
-
-
-
+//! Operators
+//* Instance methods with special names
 
 import 'dart:math';
 
@@ -15,6 +14,10 @@ class Point {
     required this.y,
   });
 
+  //* Operator
+  Point Operator + (Point p) => Point(x: x + p.x)
+
+  //* Instance Method
   num distanceTo(Point p) {
     var dx = x - p.x;
     var dy = y - p.y;
