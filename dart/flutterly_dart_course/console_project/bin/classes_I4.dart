@@ -26,7 +26,7 @@
 
 
 class A {
-  //* Constructor example 1
+  //! Constructor example 1
   //* Initializing in the constructor body, which is generally not recommended
   //* Unassign the normal final variables, since we are not initializing them at declaration
   //* c field - standard non-nullable, non-late, final field, must be assigned before the constructor's body -> initializer list
@@ -50,9 +50,10 @@ class A {
   //   this.f = f;
   // }
 
-  //* Constructor example 2
+  //! Constructor example 2
   //* initialize all fields in the initializer list
-  //* remove the constructor's body (used for additional logic or setting other fields, besides the already initialized)
+  //* remove the constructor's body (used for additional logic or setting other fields,
+    //* besides ones in the parameter list, but when they require validation or additional logic)
   // A(
   //   int p,
   //   int x,
@@ -69,10 +70,27 @@ class A {
   //     this.e = e,
   //     this.f = f;
 
-  //* Constructor example 3
+  //! Constructor example 3
   //* Syntactic sugar regarding the fields you need to set inside the constructor of a class
   //* Enumerate all the fields we want to initialize inside the parameters body
+  //* note that we can also initialize other fields inside the initializer list based on our parameter list
+  //* we can also do that in the constructor body if we require any additional logic
   A(
+    this._private,
+    this.a,
+    this.b,
+    this.c,
+    // this.d,
+    this.e,
+    this.f,
+  ) : d = b // d is initialized with the value of b from the parameter list
+  {
+    d = b; // we can also do it in the constructor body
+  }
+
+  //! Constructor example 4
+  //* Switching the parameter list to named parameters using { } block
+  A({
     this._private,
     this.a,
     this.b,
@@ -80,7 +98,7 @@ class A {
     this.d,
     this.e,
     this.f,
-  );
+  });
 
   int? _private;
   int? a;
@@ -108,7 +126,8 @@ void main(List<String> args) {
   // alfa.d = 12;
   // alfa.e = 13;
 
-  var alfa = A(1, 2, 3, 4, 5, 6, 7);
+  // var alfa = A(1, 2, 3, 4, 5, 6, 7); // Constructor example 1 and 2
+  var alfa = A(1, 2, 3, 4, 5, 6); // Example 3 and 4
 
   print(alfa);
 
