@@ -24,21 +24,21 @@ class A {
 
   A(
     int p,  // parameters
-    int a,
+    this.a,
     int b,
     int c,
     int d,
     int e,
     int f,
-  ) :
+  )
   {
     _private = p;
-    a = a;
-    b = b;
-    c = c;
-    d = d;
-    e = e;
-    f = f;
+    this.a = a;
+    this.b = b;
+    this.c = c;
+    this.d = d;
+    this.e = e;
+    this.f = f;
   }
 
   int? _private; // private field
