@@ -17,8 +17,6 @@
 //* Caching / memoization
 //* Abstract classes or interfaces (return concrete implementations)
 
-
-
 import 'dart:math';
 
 class Point {
@@ -43,7 +41,6 @@ class Point {
       : Point(x: randomNegativeValue, y: randomNegativeValue);
   }
 
-
   final int x;
   final int y;
   static const Point origin = Point(x: 0, y: 0);
@@ -53,6 +50,9 @@ class Point {
 }
 
 void main() {
+  var positivePoint = Point.random(isPositive: true);
+  var negativePoint = Point.random(isPositive: false);
 
-
+  print(positivePoint);
+  print(negativePoint);
 }
