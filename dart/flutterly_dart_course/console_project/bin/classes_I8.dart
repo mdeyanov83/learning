@@ -15,13 +15,14 @@
 import 'dart:math';
 
 class Singleton {
-
   Singleton._privateConstructor(); // private constructor
-
   static final _instance = Singleton._privateConstructor(); // private constructor creates our private instance
-
   factory Singleton() => _instance;
+}
 
+// Example of a constant class and why using Singleton is not the same
+class ConstantClass {
+  const ConstantClass();
 }
 
 class Point {
@@ -71,7 +72,13 @@ void main() {
   // print('randomPositive --> $positivePoint');
   // print('randomNegative --> $negativePoint');
 
+  ConstantClass c1 = ConstantClass();
+  ConstantClass c2 = ConstantClass();
+
+  identical
+
   var s1 = Singleton();
   var s2 = Singleton();
+  identical(c1, c2);
   print('identcal(s1, s2) --> ${identical(s1, s2)}'); // true
 }
