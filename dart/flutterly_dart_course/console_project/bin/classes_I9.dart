@@ -74,6 +74,10 @@ void main() {
   // p1 - p2;
   print('p1 - p2 --> ${p1 - p2}');
 
-  r
+  var rP1 = Point.random(isPositive: true);
+  var rP2 = Point.random(isPositive: true);
+  print(rP1);
+  print(rP2);
+  print('rP1 + rP2 --> ${rP1 + rP2}');
 
 }
