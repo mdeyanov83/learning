@@ -100,7 +100,4 @@ void main() {
   print('p1.sum --> ${p1.sum}');
   // p1.diff;
   print('p1.diff --> ${p1.diff}');
-  
-
-
 }
