@@ -10,7 +10,6 @@
 // The constructor doesn't need a function body it can exist in just a header form (although may have one if necessary)
 // Do not have a return type
 
-
 // When instantiating a class object, the fields inside are first assigned the values provided upon declaration,
 // THEN the constructor is called
 
@@ -23,7 +22,6 @@
 // this. is a keyword used to access fields inside a class and used
 // when there is ambiguity between parameter and field names
 // final variables, must be unassigned in declaration, since we initialize them in the constructor
-
 
 class A {
   //! Constructor example 1
@@ -125,7 +123,6 @@ class A {
     'A(_private: $_private, a: $a, b: $b, c:, $c, d: $d, e: $e, f: $f)';
 }
 
-
 void main(List<String> args) {
 
   // alfa.d = 12;
@@ -133,8 +130,17 @@ void main(List<String> args) {
 
   // var alfa = A(1, 2, 3, 4, 5, 6, 7); // Constructor example 1 and 2
   // var alfa = A(1, 2, 3, 4, 5, 6); // Example 3
-  var alfa = A(1, a: 2, b: 3, c: 4, d: 5, e: 6, f: 7); // Example 4
-  print(alfa);
 
+  var alfa = A(
+    1,
+    a: 2,
+    b: 3,
+    c: 4,
+    d: 5,
+    e: 6,
+    f: 7,
+  ); // Example 4
+
+  print(alfa);
 }
 
