@@ -52,6 +52,7 @@ class A {
   late final int e;
   late final int f;
 
+
   static int g = 6;
   static late int h;
   static late int i = 8; // lazy initialization, in this case pointless
