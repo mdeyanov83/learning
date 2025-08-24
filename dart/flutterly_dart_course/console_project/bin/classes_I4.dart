@@ -17,23 +17,21 @@
 // static variables cannot be set inside of a constructor, as they exist in the class itself, without an object instance
 
 
-
-
+ // 4:38:45 - start of constructor function parameters explanation
+//! Constructor syntax
 class A {
-
-  // 4:38:45 - start of constructor function parameters explanation
-
   // A(); //! constructor in just a header form, no body
 
   A(
-    int p,
+    int p,  // parameters
     int a,
     int b,
     int c,
     int d,
     int e,
     int f,
-  ) {
+  ) : 
+  {
     _private = p;
     a = a;
     b = b;
