@@ -14,8 +14,9 @@ class Point {
     required this.y,
   });
 
-  //* Operator
-  Point Operator + (Point p) => Point(x: x + p.x)
+  //* Operators
+  Point operator + (Point p) => Point(x: x + p.x, y: y + p.y);
+  Point operator - (Point p) => Point(x: x - p.x, y: y - p.y);
 
   //* Instance Method
   num distanceTo(Point p) {
