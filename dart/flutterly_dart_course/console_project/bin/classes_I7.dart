@@ -48,7 +48,10 @@ class Point {
     return origin;
   }
 
-  // Example - 
+  // Example - factory constructor, returning another factory constructor
+  factory Point.secondExplanatio() {
+    return Point.random(isPositive: true);
+  }
 
   final int x;
   final int y;
