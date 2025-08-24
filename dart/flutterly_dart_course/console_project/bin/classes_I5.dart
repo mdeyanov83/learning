@@ -30,8 +30,10 @@ class A {
       y = json['y']!;
 
   //! Redirecting constructors
-  // constructors, where one of the parameters is 0 by default, and only the other one is provided
-  //* they call the 
+  //* constructors, where one of the parameters is 0 by default, and only the other one is provided
+  //* CANNOT have a constructor body and can only redirect to 1 of the class' constructors
+  //* redirect via use of ': this(parameters)' -> redirects to the default constructor
+  //* or by using ': this.constructorName(parameters)' -> redirects to a named constructor
   A.zeroX({required int y}) : this(x: 0, y: y);
   A.zeroY({required int x}) : this(x: x, y: 0);
 
@@ -53,5 +55,10 @@ void main(List<String> args) {
 
   var alfaFromJson = A.fromJson(json: {'x' : 5, 'y' : 10});
   print(alfaFromJson);
+
+  var alfaZeroX = A.zeroY(x: 30);
+  var alfaZeroY = A.zeroX(y: 40);
+  print(alfaZeroX);
+  print(alfaZeroY);
 }
 
