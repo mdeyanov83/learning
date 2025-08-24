@@ -53,21 +53,34 @@ class A {
   //* Constructor example 2
   //* initialize all fields in the initializer list
   //* remove the constructor's body (used for additional logic or setting other fields, besides the already initialized)
+  // A(
+  //   int p,
+  //   int x,
+  //   int b,
+  //   int c,
+  //   int d,
+  //   int e,
+  //   int f,
+  // ) : _private = p,
+  //     a = x,
+  //     this.b = b,
+  //     this.c = c,
+  //     this.d = d,
+  //     this.e = e,
+  //     this.f = f;
+
+  //* Constructor example 3
+  //* Syntactic sugar regarding the fields you need to set inside the constructor of a class
+  //* Enumerate all the fields we want to initialize inside the parameters body
   A(
-    int p,
-    int x,
-    int b,
-    int c,
-    int d,
-    int e,
-    int f,
-  ) : _private = p,
-      a = x,
-      this.b = b,
-      this.c = c,
-      this.d = d,
-      this.e = e,
-      this.f = f;
+    this._private,
+    this.a,
+    this.b,
+    this.c,
+    this.d,
+    this.e,
+    this.f,
+  );
 
   int? _private;
   int? a;
