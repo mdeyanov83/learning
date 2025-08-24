@@ -29,7 +29,9 @@ class A {
     : x = json['x']!,
       y = json['y']!;
 
-  //*
+  //! Redirecting constructors
+  // constructors, where one of the parameters is 0 by default, and only the other one is provided
+  //* they call the 
   A.zeroX({required int y}) : this(x: 0, y: y);
   A.zeroY({required int x}) : this(x: x, y: 0);
 
