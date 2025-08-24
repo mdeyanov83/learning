@@ -7,7 +7,8 @@
 //* Can return new or existing instances.
 //* Can return instance of a subclass.
 //* Can perform custom logic before returning an object
-//! Don NOT have access to this. keyword
+//! Don NOT have access to 'this.' keyword, therefore cannot initialize fields
+//* explicitly return something
 
 //! Use cases:
 //* Singletons
