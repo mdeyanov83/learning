@@ -30,7 +30,7 @@ class Point {
 void main() {
 
   var p1 = const Point(x: 1, y: 1);
-  var p2 = const Point(x: 1, y: 1);
+  const p2 = Point(x: 1, y: 1);
   // identical(p1, p2);
   print('identical(p1, p2) --> ${identical(p1, p2)}'); // now they are identical
 
