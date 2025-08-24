@@ -7,6 +7,7 @@
 //* Can return new or existing instances.
 //* Can return instance of a subclass.
 //* Can perform custom logic before returning an object
+//! Don NOT have access to this. keyword
 
 //! Use cases:
 //* Singletons
