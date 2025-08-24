@@ -7,8 +7,8 @@
 // keyword extends = means inherits
 
 //! Inheritance - implies sharing of behavior from a class to another one
-//* if one class extends another, all fields/methods from the second will be available in the first
-
+//* if one class extends another, all fields/methods from the second(base) will be available in the first
+// that includes the constructor of the base class
 
 class Animal {
   final String name;
