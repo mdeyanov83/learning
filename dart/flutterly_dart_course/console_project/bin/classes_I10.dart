@@ -1,13 +1,12 @@
 //! Classes
 
 //! Setters // Timestamp 4:58:00
-
+// example, setting 
 
 class Car {
   late int age;
-  set manufacturedYear(int Value) => age = 2025 - value;
+  set manufacturedYear(int value) => age = 2025 - value; // current year 2025
 }
-
 
 void main() {
 
