@@ -8,6 +8,11 @@
 //* Named constructors are called as a class method.
 // Often named constructors are used when trying to parse JSON data into one of your classes
 
+//! Redirecting Constructors
+// A redirecting constructor is a constructor that calls another constructor of the same class
+
+
+
 class A {
   A({
     required this.x,
@@ -23,6 +28,8 @@ class A {
   A.fromJson({required Map<String, int> json})
     : x = json['x']!,
       y = json['y']!;
+
+  //* 
 
   final int x;
   final int y;
