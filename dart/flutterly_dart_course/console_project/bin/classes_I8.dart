@@ -1,25 +1,24 @@
 //! Classes
-// So far all out constructors return an instance of their class
 
-//! Factory Constructors // 4:52:00 timestamp
-//* defined with the keyword 'factory'
-// factory ClassName.constructorName()
-// the factory keyword, relaxes the constructor rules and give access to the return statement
-// however, removes the access to the this. keyword, so we cannot initialize fields inside it
+//! Singleton Pattern // timestamp 4:54:00
+//* Singleton pattern of a class - a class designed to have ONLY one instance throughout the entire program
+// Instead of creating multiple objects, every time you ask for the class, you get the same instance.
 
-//* Don’t have an initializer list.
-//* Can return new or existing instances.
-//* Can return instance of a subclass.
-//* Can perform custom logic before returning an object
-//! Don NOT have access to 'this.' keyword, therefore cannot initialize fields
-//* explicitly return something - the current class or an extended of the current class
+//* Create a class
+//* The default constructor must be a 'factory' one
+//* We need to return the ONLY ONE, UNIQUE instance that can exist
+  // must be a _private final and static field - since it will be only assigned once
+//* 
 
-//! Use cases:
-//* Singletons
-//* Caching / memoization
-//* Abstract classes or interfaces (return concrete implementations)
+
 
 import 'dart:math';
+
+class Singleton {
+  static final _instance = Singleton()
+  factory Singleton() => _instnace;
+
+}
 
 class Point {
   const Point({
