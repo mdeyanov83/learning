@@ -37,7 +37,7 @@ class A {
   ) : this.c = c  // initializer list. Every field can be initialized here
   {
     _private = p;
-    a = x;
+    a = x; // no this.a needed, because there is no ambiguity between a and x
     this.b = b;
     this.d = d;
     this.e = e;
