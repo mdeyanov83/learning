@@ -4,6 +4,8 @@
 //! Factory Constructors // 5:52:00 timestamp
 //* defined with the keyword 'factory'
 // factory ClassName.constructorName()
+// the factory keyword, relaxes the constructor rules and give access to the return statement
+// however, removes the access to the this. keyword, so we cannot initialize fields inside it
 
 //* Don’t have an initializer list.
 //* Can return new or existing instances.
