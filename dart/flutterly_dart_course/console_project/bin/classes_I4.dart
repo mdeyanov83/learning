@@ -20,12 +20,16 @@
 
 //! Constructor syntax
 
-// this. is a keyword used to access fields inside a class
+// this. is a keyword used to access fields inside a class and used
+// when there is ambiguity between parameter and field names
 // final variables, must be unassigned in declaration, since we initialize them in the constructor
 
 
 class A {
   //* Constructor example 1
+  //* Unassign the normal final variables, since we are not initializing them at declaration
+  //* Initializing in the constructor body, which is generally not recommended
+  //* c field - standard non-nullable, non-late, final field, must be assigned before the constructor's body -> initializer list
   // A(
   //   // parameter list
   //   int p,
@@ -47,6 +51,8 @@ class A {
   // }
 
   //* Constructor example 2
+  //* initialize all fields in the initializer list
+  //* remove the constructor's body (used for additional logic or setting other fields, besides the already initialized)
   A(
     int p,
     int x,
@@ -55,15 +61,13 @@ class A {
     int d,
     int e,
     int f,
-  ) : this.c = c
-  {
-    _private = p;
-    a = x;
-    this.b = b;
-    this.d = d;
-    this.e = e;
-    this.f = f;
-  }
+  ) : _private = p,
+      a = x,
+      this.b = b,
+      this.c = c,
+      this.d = d,
+      this.e = e,
+      this.f = f;
 
   int? _private;
   int? a;
@@ -79,7 +83,8 @@ class A {
   static late final int j;
   static const int k = 10;
 
-  @override // override the default print(classInstance) method - toString, for easier fields output
+  //* override the default print(classInstance) method - toString, for easier fields output
+  @override
   String toString() =>
     'A(_private: $_private, a: $a, b: $b, c:, $c, d: $d, e: $e, f: $f)';
 }
