@@ -25,7 +25,7 @@
 
 
 class A {
-  //
+  //* Constructor example 1
   // A(
   //   // parameter list
   //   int p,
@@ -45,6 +45,25 @@ class A {
   //   this.e = e;
   //   this.f = f;
   // }
+
+  //* Constructor example 2
+  A(
+    int p,
+    int x,
+    int b,
+    int c,
+    int d,
+    int e,
+    int f,
+  ) : this.c = c
+  {
+    _private = p;
+    a = x;
+    this.b = b;
+    this.d = d;
+    this.e = e;
+    this.f = f;
+  }
 
   int? _private;
   int? a;
