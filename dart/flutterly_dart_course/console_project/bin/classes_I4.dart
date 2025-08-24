@@ -30,7 +30,7 @@ class A {
     int d,
     int e,
     int f,
-  ) : 
+  ) :
   {
     _private = p;
     a = a;
@@ -42,12 +42,9 @@ class A {
   }
 
   int? _private; // private field
-
   int? a;
   int b = 1;
-
   final int c = 2;
-
   late int d;
   late final int e;
   late final int f = 5;
@@ -56,7 +53,6 @@ class A {
   static late int h;
   static late int i = 8; // lazy initialization, in this case pointless
   static late final int j;
-
   static const int k = 10;
 
   @override // override the default print(classInstance) method - toString, for easier fields output
