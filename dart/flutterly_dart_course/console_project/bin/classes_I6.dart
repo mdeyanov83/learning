@@ -29,10 +29,31 @@ class Point {
 
 void main() {
 
+  // Either the variable or the constructor must be const, in order to create a constant object
   var p1 = const Point(x: 1, y: 1);
   const p2 = Point(x: 1, y: 1);
   // identical(p1, p2);
   print('identical(p1, p2) --> ${identical(p1, p2)}'); // now they are identical
+
+
+  //* all 3 below examples create constant objects
+  var listOfPoints = [
+    const Point(x: 1, y: 1),
+    const Point(x: 2, y: 2),
+  ];
+
+  var listOfPoints1 = const[
+    Point(x: 1, y: 1),
+    Point(x: 2, y: 2),
+  ];
+
+  const listOfPoints2 = [
+    Point(x: 1, y: 1),
+    Point(x: 2, y: 2),
+  ];
+
+  print(identical(listOfPoints, listOfPoints1));
+  print(identical(listOfPoints1, listOfPoints2));
 
 
 }
