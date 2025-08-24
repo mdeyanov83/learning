@@ -27,8 +27,8 @@
 
 class A {
   //* Constructor example 1
-  //* Unassign the normal final variables, since we are not initializing them at declaration
   //* Initializing in the constructor body, which is generally not recommended
+  //* Unassign the normal final variables, since we are not initializing them at declaration
   //* c field - standard non-nullable, non-late, final field, must be assigned before the constructor's body -> initializer list
   // A(
   //   // parameter list
