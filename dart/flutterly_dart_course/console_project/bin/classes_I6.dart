@@ -9,7 +9,6 @@
 //* Const constructors only work with final fields
 // we try to work with as many final fields as possible
 
-
 class Point {
   const Point({
     required this.x,
@@ -35,13 +34,12 @@ void main() {
   // identical(p1, p2);
   print('identical(p1, p2) --> ${identical(p1, p2)}'); // now they are identical
 
-
-  //* all 3 below examples create constant objects
   var listOfPoints = [
     const Point(x: 1, y: 1),
     const Point(x: 2, y: 2),
   ];
 
+  //* the 2 below objects are the same
   var listOfPoints1 = const[
     Point(x: 1, y: 1),
     Point(x: 2, y: 2),
@@ -52,9 +50,6 @@ void main() {
     Point(x: 2, y: 2),
   ];
 
-  print(identical(listOfPoints, listOfPoints1));
-  print(identical(listOfPoints1, listOfPoints2));
-
-
+  print(identical(listOfPoints, listOfPoints1)); // false
+  print(identical(listOfPoints1, listOfPoints2)); // true
 }
-
