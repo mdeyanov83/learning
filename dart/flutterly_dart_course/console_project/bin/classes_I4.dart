@@ -36,6 +36,7 @@ class A {
     int f,
   ) : this.c = c  // initializer list. Every field can be initialized here
   {
+    // constructor body
     _private = p;
     a = x; // no this.a needed, because there is no ambiguity between a and x
     this.b = b;
@@ -51,7 +52,6 @@ class A {
   late int d;
   late final int e;
   late final int f;
-
 
   static int g = 6;
   static late int h;
