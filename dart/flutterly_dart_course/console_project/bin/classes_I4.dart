@@ -96,8 +96,7 @@ class A {
   //* before the named parameter { } block, as positional parameters
 
   A(
-    this._private,
-    {
+    this._private,{
     this.a,
     required this.b,
     required this.c,
@@ -133,8 +132,8 @@ void main(List<String> args) {
   // alfa.e = 13;
 
   // var alfa = A(1, 2, 3, 4, 5, 6, 7); // Constructor example 1 and 2
-  var alfa = A(1, 2, 3, 4, 5, 6); // Example 3 and 4
-
+  // var alfa = A(1, 2, 3, 4, 5, 6); // Example 3
+  var alfa = A(1, a: 2, b: 3, c: 4, d: 5, e: 6, f: 7); // Example 4
   print(alfa);
 
 }
