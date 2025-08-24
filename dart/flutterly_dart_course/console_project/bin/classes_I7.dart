@@ -3,7 +3,15 @@
 //! Factory Constructors // 5:52:00 timestamp
 // So far all out constructors return an instance of their class
 
-//* Factory constructors
+//* Don’t have an initializer list.
+//* Can return new or existing instances.
+//* Can return instance of a subclass.
+//* Can perform custom logic before returning an object
+
+//! Use cases:
+//* Singletons
+//* Caching / memoization
+//* Abstract classes or interfaces (return concrete implementations)
 
 class Point {
   const Point({
