@@ -24,7 +24,7 @@ class A {
 
   A(
     int p,  // parameters
-    this.a,
+    int x,
     int b,
     int c,
     int d,
@@ -33,7 +33,7 @@ class A {
   )
   {
     _private = p;
-    this.a = a;
+    a = x;
     this.b = b;
     this.c = c;
     this.d = d;
