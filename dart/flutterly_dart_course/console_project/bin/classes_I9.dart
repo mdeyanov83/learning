@@ -7,7 +7,7 @@
 //* Operators (like +, -, ==, [], >, etc.) are basically instance methods with special names
 //* You can override them in the class to define a custom behavior when used with this class instance objects
 //* This is called: operator overloading
-//! You can only overload existing operators — you can’t invent new symbols.
+//* You can only overload existing operators — you can’t invent new symbols.
 
 //* Syntax:
 // class ClassName {
@@ -17,6 +17,9 @@
 // }
 //* operator is the keyword.
 // *<symbol> is the operator you’re overloading (+, -, [], etc.).
+
+//! Getters and Setters
+//* Whenever you access a field from a class, you are accessing a getter function
 
 
 import 'dart:math';
