@@ -93,11 +93,11 @@ class A {
   A({
     this._private,
     this.a,
-    this.b,
-    this.c,
-    this.d,
-    this.e,
-    this.f,
+    required this.b,
+    required this.c,
+    required this.d,
+    required this.e,
+    required this.f,
   });
 
   int? _private;
