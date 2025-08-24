@@ -5,9 +5,13 @@
 // If we create multiple points with the same coordinates, we dont want to have multiple objects representing
 // them in memory. We want only 1 object for efficiency
 
+//* We mark the constructor as const, then call it with const ConstructorName()
+//* Const constructors only work with final fields
+// we try to work with as many final fields as possible
+
 
 class Point {
-  Point({
+  const Point({
     required this.x,
     required this.y,
   });
@@ -21,10 +25,10 @@ class Point {
 
 void main() {
 
-  var p1 = Point(x: 1, y: 1);
-  var p2 = Point(x: 1, y: 1);
+  var p1 = const Point(x: 1, y: 1);
+  var p2 = const Point(x: 1, y: 1);
   // identical(p1, p2);
-  print('identical(p1, p2) --> ${identical(p1, p2)}');
+  print('identical(p1, p2) --> ${identical(p1, p2)}'); // now they are identical
 
 
 }
