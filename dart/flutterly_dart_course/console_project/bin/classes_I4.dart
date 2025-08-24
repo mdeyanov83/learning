@@ -19,6 +19,10 @@
 
  // 4:38:45 - start of constructor function parameters explanation
 //! Constructor syntax
+// this. is a keyword used to access fields inside a class
+// final variables, must be unassigned in declaration, since we initialize them in the constructor
+
+
 class A {
   // A(); //! constructor in just a header form, no body
 
@@ -30,24 +34,23 @@ class A {
     int d,
     int e,
     int f,
-  )
+  ) : this.c = c  // initializer list
   {
     _private = p;
     a = x;
     this.b = b;
-    this.c = c;
     this.d = d;
     this.e = e;
     this.f = f;
   }
 
-  int? _private; // private field
+  int? _private;
   int? a;
   int b = 1;
-  final int c = 2; // final must be unassigned in declaration
+  final int c; // non nullable, non late final fields, must be assigned before the constructor's body
   late int d;
   late final int e;
-  late final int f = 5;
+  late final int f;
 
   static int g = 6;
   static late int h;
@@ -64,26 +67,8 @@ void main(List<String> args) {
 
   var alfa = A(1, 2, 3, 4, 5, 6, 7);
 
-  alfa.d = 12;
-  alfa.e = 13;
-
-  // print('alfa._private --> ${alfa._private}');
-  // print('alfa.a --> ${alfa.a}');
-  // print('alfa.b --> ${alfa.b}');
-  // print('alfa.c --> ${alfa.c}');
-  // print('alfa.d --> ${alfa.d}');
-  // print('alfa.e --> ${alfa.e}');
-  // print('alfa.f --> ${alfa.f}');
-
-  // print('A.g --> ${A.g}');
-
-  // A.h = 7;
-  // print('A.h --> ${A.h}');
-  // print('A.i --> ${A.i}');
-
-  // A.j = 9;
-  // print('A.j --> ${A.j}');
-  // print('A.k --> ${A.k}');
+  // alfa.d = 12;
+  // alfa.e = 13;
 
   print(alfa);
 
