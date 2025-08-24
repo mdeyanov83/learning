@@ -18,6 +18,8 @@ class A {
     : x = 0,
       y = 0;
 
+  //* note that exceptions if x or y are missing from the json must be taken into account
+  //* for the purpose of the tutorial bang operator ! is used for null assertion
   A.fromJson({required Map<String, int> json})
     : x = json['x']!,
       y = json['y']!;
