@@ -7,16 +7,20 @@
 //* Create a class
 //* The default constructor must be a 'factory' one
 //* We need to return the ONLY ONE, UNIQUE instance that can exist
-  // must be a _private final and static field - since it will be only assigned once
-//* 
+  // must be a _private, final, static field - since it will be only assigned once
+//* the private _instance will be created via a private constructor
 
 
 
 import 'dart:math';
 
 class Singleton {
-  static final _instance = Singleton()
-  factory Singleton() => _instnace;
+
+  Singleton._privateConstructor(); // private constructor
+
+  static final _instance = Singleton._privateConstructor(); // private constructor creates our private instance
+
+  factory Singleton() => _instance;
 
 }
 
@@ -61,9 +65,13 @@ class Point {
 }
 
 void main() {
-  var positivePoint = Point.random(isPositive: true);
-  var negativePoint = Point.random(isPositive: false);
+  // var positivePoint = Point.random(isPositive: true);
+  // var negativePoint = Point.random(isPositive: false);
 
-  print('randomPositive --> $positivePoint');
-  print('randomNegative --> $negativePoint');
+  // print('randomPositive --> $positivePoint');
+  // print('randomNegative --> $negativePoint');
+
+  var s1 = Singleton();
+  var s2 = Singleton();
+  print('identcal(s1, s2) --> ${identical(s1, s2)}'); // true
 }
