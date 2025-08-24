@@ -30,8 +30,9 @@ class Point {
     int minPositiveValue = 0;
     int maxPositiveValue = 99;
 
-    int randomValue = minNegativeValue +
+    int randomNegativeValue = minNegativeValue +
         Random().nextInt(maxNegativeValue - minNegativeValue);
+    int random
   }
 
 
