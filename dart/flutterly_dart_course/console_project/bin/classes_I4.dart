@@ -37,7 +37,7 @@ class A {
   //   int f,
   // ) : this.c = c  // initializer list - every field can be initialized here
   // {
-  //   // constructor body
+  //   // constructor body - usually used for additional logic
   //   _private = p;
   //   a = x; // no this.a needed, because there is no ambiguity between a and x
   //   this.b = b;
