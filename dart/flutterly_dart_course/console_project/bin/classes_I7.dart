@@ -1,7 +1,9 @@
 //! Classes
+// So far all out constructors return an instance of their class
 
 //! Factory Constructors // 5:52:00 timestamp
-// So far all out constructors return an instance of their class
+//* defined with the keyword 'factory'
+// factory ClassName.constructorName()
 
 //* Don’t have an initializer list.
 //* Can return new or existing instances.
@@ -16,6 +18,9 @@
 //* Abstract classes or interfaces (return concrete implementations)
 
 
+
+import 'dart:math';
+
 class Point {
   const Point({
     required this.x,
@@ -24,18 +29,16 @@ class Point {
 
   // Example - factory constructor generating a random point having positive or negative coordinates
   // depending on a bool parameter
-  Point.random({required bool isPositive}) {
+  factory Point.random({required bool isPositive}) {
     int minNegativeValue = -99;
     int maxNegativeValue = -1;
     int minPositiveValue = 0;
     int maxPositiveValue = 99;
 
-    int randomNegativeValue = minNegativeValue +
-        Random().nextInt(maxNegativeValue - minNegativeValue);
-    int randomPositiveValue = minPositiveValue +
-        Random().nextInt(maxPositiveValue - minPositiveValue);
+    int randomNegativeValue = minNegativeValue + Random().nextInt(maxNegativeValue - minNegativeValue);
+    int randomPositiveValue = minPositiveValue + Random().nextInt(maxPositiveValue - minPositiveValue);
 
-    isPositive
+    return isPositive
       ? Point(x: randomPositiveValue, y: randomPositiveValue)
       : Point(x: randomNegativeValue, y: randomNegativeValue);
   }
