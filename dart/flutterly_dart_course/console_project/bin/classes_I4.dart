@@ -45,6 +45,7 @@ class A {
     final int abc = e;
   }
 
+  int? abc;
   int? _private;
   int? a;
   int b = 1;
@@ -59,7 +60,7 @@ class A {
   static late final int j;
   static const int k = 10;
 
-  
+  String disp() => 'abc: $abc';
 
   @override // override the default print(classInstance) method - toString, for easier fields output
   String toString() =>
@@ -74,6 +75,6 @@ void main(List<String> args) {
   // alfa.e = 13;
 
   print(alfa);
-  print(alfa.abc)
+  print(alfa.disp());
 
 }
