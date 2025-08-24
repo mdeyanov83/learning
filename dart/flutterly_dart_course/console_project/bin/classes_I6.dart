@@ -19,6 +19,10 @@ class Point {
   final int x;
   final int y;
 
+  //* For our coordinate system we can define an origin point.
+  // In order to be constant it must be static
+  static const Point origin = Point(x: 0, y: 0);
+
   @override
   String toString() => 'A(x: $x, y: $y)';
 }
