@@ -19,6 +19,11 @@
 
  // 4:38:45 - start of constructor function parameters explanation
 //! Constructor syntax
+// Class MyClass {
+  MyClass( <parameter list> ) : 
+
+
+}
 // this. is a keyword used to access fields inside a class
 // final variables, must be unassigned in declaration, since we initialize them in the constructor
 
