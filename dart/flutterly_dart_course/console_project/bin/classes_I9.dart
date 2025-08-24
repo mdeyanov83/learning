@@ -21,6 +21,7 @@
 //! Getters and Setters
 //* Whenever you access a field from a class, you are accessing a getter function
 //? See below examples in blue
+//* Every class has implicit getters
 
 
 import 'dart:math';
@@ -56,11 +57,13 @@ class Point {
       : Point(x: randomNegativeValue, y: randomNegativeValue);
   }
 
+  //? Implicit getters
   final int x;
-  //? Setter
   int get x => x;
+  
   final int y;
-  //? int get y => y;
+  //? int get y => y
+
   static const Point origin = Point(x: 0, y: 0);
 
   @override
