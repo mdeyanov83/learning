@@ -43,6 +43,11 @@ class Point {
       : Point(x: randomNegativeValue, y: randomNegativeValue);
   }
 
+  // Example - returning an 
+  factory Point.explanation() {
+    return origin;
+  }
+
   final int x;
   final int y;
   static const Point origin = Point(x: 0, y: 0);
