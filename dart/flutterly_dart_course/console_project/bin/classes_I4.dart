@@ -23,7 +23,7 @@
 // final variables, must be unassigned in declaration, since we initialize them in the constructor
 
 
-class A {
+// class A {
   // A(); //! constructor in just a header form, no body
 
   // A(
@@ -44,7 +44,7 @@ class A {
   //   this.f = f;
   // }
 
-class A() {
+class A {
   int? _private;
   int? a;
   int b = 1;
