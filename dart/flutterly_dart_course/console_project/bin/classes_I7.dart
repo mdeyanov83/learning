@@ -4,8 +4,6 @@
 // So far all out constructors return an instance of their class
 
 
-
-
 class Point {
   const Point({
     required this.x,
