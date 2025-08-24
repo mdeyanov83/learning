@@ -29,7 +29,10 @@ class A {
     : x = json['x']!,
       y = json['y']!;
 
-  //* 
+  //*
+  A.zeroX({required int y}) : this(x: 0, y: y);
+  A.zeroY({required int x}) : this(x: x, y: 0);
+
 
   final int x;
   final int y;
