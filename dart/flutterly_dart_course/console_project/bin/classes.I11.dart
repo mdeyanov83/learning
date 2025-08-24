@@ -3,6 +3,7 @@
 //! Static Methods
 //* Similar to static fields, static methods exist without needing to instantiate any object from that class
 //* As a result - static methods can interact with static fields inside a class
+//* they DO NOT have access to this. keyword
 
 
 
@@ -88,4 +89,8 @@ void main() {
   print('p1.sum --> ${p1.sum}');
   // p1.diff;
   print('p1.diff --> ${p1.diff}');
+
+  //static method example
+  // Point.distanceBetween(p1, p2);
+  print('Point.distanceBetween(p1, p2) --> ${Point.distanceBetween(p1, p2)}');
 }
