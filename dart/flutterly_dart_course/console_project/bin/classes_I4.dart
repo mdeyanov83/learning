@@ -75,23 +75,29 @@ class A {
   //* Enumerate all the fields we want to initialize inside the parameters body
   //* note that we can also initialize other fields inside the initializer list based on our parameter list
   //* we can also do that in the constructor body if we require any additional logic
-  A(
-    this._private,
-    this.a,
-    this.b,
-    this.c,
-    // this.d,
-    this.e,
-    this.f,
-  ) : d = b // d is initialized with the value of b from the parameter list
-  {
-    d = b; // we can also do it in the constructor body
-  }
+  // A(
+  //   this._private,
+  //   this.a,
+  //   this.b,
+  //   this.c,
+  //   // this.d,
+  //   this.e,
+  //   this.f,
+  // ) : d = b // d is initialized with the value of b from the parameter list
+  // {
+  //   d = b; // we can also do it in the constructor body
+  // }
 
   //! Constructor example 4
   //* Switching the parameter list to named parameters using { } block
-  A({
+  //* since all named parameters are optional by default, so final and non-nullable parameters must
+  //* be prefixed by 'required' or must be provided a default value '= 5'
+  //* _private fields - cannot be named, therefore must be listed
+  //* before the named parameter { } block, as positional parameters
+
+  A(
     this._private,
+    {
     this.a,
     required this.b,
     required this.c,

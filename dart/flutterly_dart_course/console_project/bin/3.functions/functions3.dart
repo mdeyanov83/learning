@@ -27,6 +27,7 @@ void optionalPositional([int a = 5, int? b]) => print('$a $b');
 
 //! Required Named parameters
 //! Named indicated by { parameters }
+//* all named parameters are optional by default
 //! required in front of type if required
 void requiredNamed({required int a, required int b}) => print('$a $b');
 
