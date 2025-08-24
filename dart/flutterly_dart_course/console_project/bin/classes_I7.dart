@@ -1,7 +1,8 @@
 //! Classes
 
-//! Factory Constructors
+//! Factory Constructors // 5:52:00 timestamp
 // So far all out constructors return an instance of their class
+
 
 
 
