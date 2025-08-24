@@ -43,10 +43,12 @@ class Point {
       : Point(x: randomNegativeValue, y: randomNegativeValue);
   }
 
-  // Example - returning an 
+  // Example - factory constructor returning an existing instance
   factory Point.explanation() {
     return origin;
   }
+
+  // Example - 
 
   final int x;
   final int y;
