@@ -59,13 +59,14 @@ class Point {
       : Point(x: randomNegativeValue, y: randomNegativeValue);
   }
 
-  //? Implicit getters
+  //? Implicit getters (invisible)
   final int x;
-  // int get xValue => x;
+  // int get x => x;
 
   final int y;
-  // int get yValue => y;
+  // int get y => y;
 
+  //? additional getters
   int get sum => x + y;
   int get diff => x - y;
 
@@ -94,5 +95,12 @@ void main() {
   print(rP1);
   print(rP2);
   print('rP1 + rP2 --> ${rP1 + rP2}');
+
+  // p1.sum;
+  print('p1.sum --> ${p1.sum}');
+  // p1.diff;
+  print('p1.diff --> ${p1.diff}');
+  
+
 
 }
