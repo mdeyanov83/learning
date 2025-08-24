@@ -4,7 +4,20 @@
 //* They are normal functions serving specific purposes in a class
 
 //! Operators
-//* Instance methods with special names
+//* Operators (like +, -, ==, [], >, etc.) are basically instance methods with special names
+//* You can override them in the class to define a custom behavior when used with this class instance objects
+//* This is called: operator overloading
+//! You can only overload existing operators — you can’t invent new symbols.
+
+//* Syntax:
+// class ClassName {
+//   ReturnType operator <symbol>(ParameterType other) {
+//     // custom logic
+//   }
+// }
+//* operator is the keyword.
+// *<symbol> is the operator you’re overloading (+, -, [], etc.).
+
 
 import 'dart:math';
 
@@ -14,9 +27,9 @@ class Point {
     required this.y,
   });
 
-  //* Operators
-  Point operator + (Point p) => Point(x: x + p.x, y: y + p.y);
-  Point operator - (Point p) => Point(x: x - p.x, y: y - p.y);
+  //* Operators - examples with shorthand arrow => syntax
+  Point operator +(Point p) => Point(x: x + p.x, y: y + p.y);
+  Point operator -(Point p) => Point(x: x - p.x, y: y - p.y);
 
   //* Instance Method
   num distanceTo(Point p) {
