@@ -25,10 +25,9 @@
 
 
 class A {
-
-
   A(
-    int p,  // parameters
+    // parameter list
+    int p,
     int x,
     int b,
     int c,
@@ -63,6 +62,7 @@ class A {
   String toString() =>
     'A(_private: $_private, a: $a, b: $b, c:, $c, d: $d, e: $e, f: $f)';
 }
+
 
 void main(List<String> args) {
 
