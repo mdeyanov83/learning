@@ -9,6 +9,11 @@
 //! Inheritance - implies sharing of behavior from a class to another one
 //* if one class extends another, all fields/methods from the second(base) will be available in the first
 // that includes the constructor of the base class
+//* class Bird extends Animal{}
+//* Animal → the base class (also called superclass or parent class)
+//* Bird → the derived class (also called subclass or child class)
+
+// currently at 5:03:00
 
 class Animal {
   final String name;
@@ -19,7 +24,7 @@ class Animal {
 }
 
 class Bird extends Animal {
-
+  Bird(String name) : super(name: name);
 
 }
 
