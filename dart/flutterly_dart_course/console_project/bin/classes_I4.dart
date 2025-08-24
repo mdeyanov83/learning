@@ -23,28 +23,27 @@
 // final variables, must be unassigned in declaration, since we initialize them in the constructor
 
 
-// class A {
+class A {
   // A(); //! constructor in just a header form, no body
 
-  // A(
-  //   int p,  // parameters
-  //   int x,
-  //   int b,
-  //   int c,
-  //   int d,
-  //   int e,
-  //   int f,
-  // ) : this.c = c  // initializer list. Every field can be initialized here
-  // {
-  //   _private = p;
-  //   a = x;
-  //   this.b = b;
-  //   this.d = d;
-  //   this.e = e;
-  //   this.f = f;
-  // }
+  A(
+    int p,  // parameters
+    int x,
+    int b,
+    int c,
+    int d,
+    int e,
+    int f,
+  ) : this.c = c  // initializer list. Every field can be initialized here
+  {
+    _private = p;
+    a = x;
+    this.b = b;
+    this.d = d;
+    this.e = e;
+    this.f = f;
+  }
 
-class A {
   int? _private;
   int? a;
   int b = 1;
