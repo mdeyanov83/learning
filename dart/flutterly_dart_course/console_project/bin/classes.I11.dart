@@ -1,29 +1,10 @@
 //! Classes
 
-//! Singleton Pattern // timestamp 4:54:00
-//* Singleton pattern of a class - a class designed to have ONLY one instance throughout the entire program
-// Instead of creating multiple objects, every time you ask for the class, you get the same instance.
-
-//* Create a class
-//* The default constructor must be a 'factory' one
-//* We need to return the ONLY ONE, UNIQUE instance that can exist
-  // must be a _private, final, static field - since it will be only assigned once
-//* the private _instance will be created via a private constructor
+//! Static Methods
 
 
 
 import 'dart:math';
-
-class Singleton {
-  Singleton._privateConstructor(); // private constructor
-  static final _instance = Singleton._privateConstructor(); // private constructor creates our private instance
-  factory Singleton() => _instance;
-}
-
-// Example of a constant class and why using Singleton is not the same
-class ConstantClass {
-  const ConstantClass();
-}
 
 class Point {
   const Point({
@@ -31,8 +12,17 @@ class Point {
     required this.y,
   });
 
-  // Example - factory constructor generating a random point having positive or negative coordinates
-  // depending on a bool parameter
+  //* Operators - examples with shorthand arrow => syntax
+  Point operator +(Point p) => Point(x: x + p.x, y: y + p.y);
+  Point operator -(Point p) => Point(x: x - p.x, y: y - p.y);
+
+  //* Instance Method
+  num distanceTo(Point p) {
+    var dx = x - p.x;
+    var dy = y - p.y;
+    return sqrt(pow(dx, 2) + pow(dy, 2));
+  }
+
   factory Point.random({required bool isPositive}) {
     int minNegativeValue = -99;
     int maxNegativeValue = -1;
@@ -47,18 +37,17 @@ class Point {
       : Point(x: randomNegativeValue, y: randomNegativeValue);
   }
 
-  // Example - factory constructor returning an existing instance
-  factory Point.explanation() {
-    return origin;
-  }
-
-  // Example - factory constructor, returning another factory constructor
-  // Using shorthand arrow syntax
-  factory Point.secondExplanation() => Point.random(isPositive: true);
-
-
+  //? Implicit getters (invisible)
   final int x;
+  // int get x => x;
+
   final int y;
+  // int get y => y;
+
+  //? additional getters
+  int get sum => x + y;
+  int get diff => x - y;
+
   static const Point origin = Point(x: 0, y: 0);
 
   @override
@@ -66,27 +55,27 @@ class Point {
 }
 
 void main() {
-  // var positivePoint = Point.random(isPositive: true);
-  // var negativePoint = Point.random(isPositive: false);
 
-  // print('randomPositive --> $positivePoint');
-  // print('randomNegative --> $negativePoint');
+  var p1 = Point(x: 0, y: 0);
+  var p2 = Point(x: 1, y: 1);
 
+  // p1.distanceTo(p2);
+  print('p1.distanceTo(p2) --> ${p1.distanceTo(p2)}');
 
-  ConstantClass c1 = ConstantClass();
-  ConstantClass c2 = ConstantClass();
-  // identical(c1, c2);
-  print('identical(c1, c2) --> ${identical(c1, c2)}'); // false
+  // p1 + p2;
+  print('p1 + p2 --> ${p1 + p2}');
 
-  //* unless we use const it will not create 2 identical objects in memory
-  // This is why singleton is better in this use case
-  ConstantClass c3 = const ConstantClass();
-  ConstantClass c4 = const ConstantClass();
-  // identical(c3, c4);
-  print('identical(c3, c4) --> ${identical(c3, c4)}'); // true
+  // p1 - p2;
+  print('p1 - p2 --> ${p1 - p2}');
 
-  var s1 = Singleton();
-  var s2 = Singleton();
-  // identical(c1, c2);
-  print('identcal(s1, s2) --> ${identical(s1, s2)}'); // true
+  var rP1 = Point.random(isPositive: true);
+  var rP2 = Point.random(isPositive: true);
+  print(rP1);
+  print(rP2);
+  print('rP1 + rP2 --> ${rP1 + rP2}');
+
+  // p1.sum;
+  print('p1.sum --> ${p1.sum}');
+  // p1.diff;
+  print('p1.diff --> ${p1.diff}');
 }
