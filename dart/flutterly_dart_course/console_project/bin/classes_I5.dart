@@ -31,7 +31,6 @@ class A {
   String toString() => 'A(x: $x, y: $y)';
 }
 
-
 void main(List<String> args) {
 
   var alfa = A(x: 1, y: 2);
@@ -42,6 +41,5 @@ void main(List<String> args) {
 
   var alfaFromJson = A.fromJson(json: {'x' : 5, 'y' : 10});
   print(alfaFromJson);
-
 }
 
