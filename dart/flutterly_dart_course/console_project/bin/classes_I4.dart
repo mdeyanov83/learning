@@ -21,15 +21,22 @@
 //! Constructor syntax
 // Class MyClass {
   // class instance and static fields list
-  int? _private;
-  final int a;
+  // int? _private;
+  // final int a;
+  // int b;
+  // static int c;
 
-  static 
   // Constructor
-  MyClass( <parameter list> ) :
+  // MyClass(
+    // parameter list
+    //
+    //
+    //
+    // ) :
 
 
-}
+// }
+
 // this. is a keyword used to access fields inside a class
 // final variables, must be unassigned in declaration, since we initialize them in the constructor
 
@@ -82,5 +89,43 @@ void main(List<String> args) {
   // alfa.e = 13;
 
   print(alfa);
+
+}
+
+
+
+class MyClass {
+  int? _private;
+  int? a;
+  int b = 1;
+  final int c; // non nullable, non late final fields, must be assigned before the constructor's body
+  late int d;
+  late final int e;
+  late final int f;
+
+  static int g = 6;
+  static late int h;
+  static late int i = 8; // lazy initialization, in this case pointless
+  static late final int j;
+  static const int k = 10;
+  MyClass(
+    int p,  // parameters
+    int x,
+    int b,
+    int c,
+    int d,
+    int e,
+    int f,
+  ) : this.c = c  // initializer list. Every field can be initialized here
+  {
+    _private = p;
+    a = x;
+    this.b = b;
+    this.d = d;
+    this.e = e;
+    this.f = f;
+  }
+
+
 
 }
