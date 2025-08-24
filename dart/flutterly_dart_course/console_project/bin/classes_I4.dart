@@ -34,7 +34,7 @@ class A {
     int d,
     int e,
     int f,
-  ) : this.c = c  // initializer list
+  ) : this.c = c  // initializer list. Every field can be initialized here
   {
     _private = p;
     a = x;
@@ -42,6 +42,7 @@ class A {
     this.d = d;
     this.e = e;
     this.f = f;
+    final int abc = e;
   }
 
   int? _private;
@@ -58,6 +59,8 @@ class A {
   static late final int j;
   static const int k = 10;
 
+  
+
   @override // override the default print(classInstance) method - toString, for easier fields output
   String toString() =>
     'A(_private: $_private, a: $a, b: $b, c:, $c, d: $d, e: $e, f: $f)';
@@ -71,5 +74,6 @@ void main(List<String> args) {
   // alfa.e = 13;
 
   print(alfa);
+  print(alfa.abc)
 
 }
