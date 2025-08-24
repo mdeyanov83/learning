@@ -20,7 +20,9 @@
  // 4:38:45 - start of constructor function parameters explanation
 //! Constructor syntax
 // Class MyClass {
-  MyClass( <parameter list> ) : 
+  // <class instance and static fields list>
+  // Constructor
+  MyClass( <parameter list> ) :
 
 
 }
