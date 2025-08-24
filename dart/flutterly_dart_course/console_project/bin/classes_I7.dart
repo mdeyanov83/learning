@@ -55,6 +55,6 @@ void main() {
   var positivePoint = Point.random(isPositive: true);
   var negativePoint = Point.random(isPositive: false);
 
-  print(positivePoint);
-  print(negativePoint);
+  print('randomPositive --> $positivePoint');
+  print('randomNegative --> $negativePoint');
 }
