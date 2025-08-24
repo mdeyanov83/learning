@@ -12,7 +12,7 @@
 //* Can return instance of a subclass.
 //* Can perform custom logic before returning an object
 //! Don NOT have access to 'this.' keyword, therefore cannot initialize fields
-//* explicitly return something
+//* explicitly return something - the current class or an extended of the current class
 
 //! Use cases:
 //* Singletons
@@ -49,9 +49,9 @@ class Point {
   }
 
   // Example - factory constructor, returning another factory constructor
-  factory Point.secondExplanatio() {
-    return Point.random(isPositive: true);
-  }
+  // Using shorthand arrow syntax
+  factory Point.secondExplanation() => Point.random(isPositive: true);
+
 
   final int x;
   final int y;
