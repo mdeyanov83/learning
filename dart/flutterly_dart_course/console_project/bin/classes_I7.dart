@@ -3,6 +3,7 @@
 //! Factory Constructors // 5:52:00 timestamp
 // So far all out constructors return an instance of their class
 
+//* Factory constructors
 
 class Point {
   const Point({
