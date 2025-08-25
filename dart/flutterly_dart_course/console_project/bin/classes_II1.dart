@@ -37,8 +37,8 @@ class Bird extends Animal {
 }
 
 class Duck extends Bird {
+  Duck(String name) : super(name);
 
-  
 }
 
 
