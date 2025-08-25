@@ -24,8 +24,11 @@
 //* A class can EXTEND one class and IMPLEMENT one or more other
 
 
+//* Abstract class exmample
 abstract class UserRepositoryInterface {
   late final List<int> usersList;
+
+  //* Abstract methods - just declaration, no method body
   void create();
   List<int> read();
   void update();
