@@ -7,8 +7,9 @@
 
 
 abstract class UserRepositoryInterface {
+  late final List<int> usersList;
   void create();
-  void read();
+  List<int> read();
   void update();
   void delete();
 }
