@@ -50,6 +50,8 @@ class UserRepository implements UserRepositoryInterface {
   void delete() => print('Deleted');
 }
 
+
+
 // class Animal {
 //   final String name;
 //   Animal({required this.name});
@@ -81,6 +83,25 @@ class UserRepository implements UserRepositoryInterface {
 //   void swim() {}
 // }
 
+
+class A {
+  void methodA(){}
+}
+
+class B {
+  void methodB(){}
+}
+
+class C {
+  void methodC(){}
+}
+
+class D implements A, B, C {
+  @override
+
+
+
+}
 
 void main(List<String> args) {
   UserRepository userRepository = UserRepository();
