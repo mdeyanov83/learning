@@ -6,8 +6,10 @@
 
 //* Dart nas no 'interface' keyword (no explicit interfaces)
 //* Every class defines an interface automatically
-//* An interface is implemented via the 'implements' keyword, instead of extends
-//*
+//! Use 'implements' to make a class promise to fulfill another class’s contract.
+//* Use 'extends' to inherit both contract and implementation.
+//* Use abstract class' when you want to define only the contract (and force subclasses to implement).
+//* Can implement multiple interfaces (classes, both abstract or not)
 
 
 abstract class UserRepositoryInterface {
