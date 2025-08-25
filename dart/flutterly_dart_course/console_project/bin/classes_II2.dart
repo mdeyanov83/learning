@@ -11,6 +11,7 @@
 //* Use abstract class' when you want to define only the contract (and force subclasses to implement).
 //* Can implement multiple interfaces (classes, both abstract or not)
 
+//! abstract class - used to declare an interface. - contains just
 
 abstract class UserRepositoryInterface {
   late final List<int> usersList;
