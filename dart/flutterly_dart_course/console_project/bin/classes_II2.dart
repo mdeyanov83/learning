@@ -2,7 +2,7 @@
 
 //! ABSTRACTION - Abstract classes, Abstract methods, Interfaces
 //* An interface is a class that contains a list of fields and methods headers
-//! abstract class - used to simply to declare an interface. - contains just
+//! abstract class - used simply to declare an interface - contains just abstract methods
 
 //* Dart nas no 'interface' keyword (no explicit interfaces)
 //* Every class defines an interface automatically
@@ -11,7 +11,7 @@
 //* Use abstract class' when you want to define only the contract (and force subclasses to implement).
 //* Can implement multiple interfaces (classes, both abstract or not)
 
-//! abstract class - used to declare an interface. - contains just
+
 
 abstract class UserRepositoryInterface {
   late final List<int> usersList;
