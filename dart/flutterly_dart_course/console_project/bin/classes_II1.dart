@@ -15,7 +15,7 @@
 
 //! The subclass constructor must call a superclass constructor (either explicitly or implicitly).
 //! The call to super(...) happens before the body of the subclass constructor.
-//* super keyword -
+//* super keyword - access the method from the superclass
 
 
 
@@ -32,7 +32,7 @@ class Animal {
 }
 
 class Bird extends Animal {
-  Bird(String name) : super(name: name); //* denotes the superclass Animal constructor
+  Bird(String name) : super(name: name); //* denotes the superclass default Animal constructor
   // Bird.fromJson(String name) : super.fromJson(); //* we can call named superclass constructors too
 }
 
