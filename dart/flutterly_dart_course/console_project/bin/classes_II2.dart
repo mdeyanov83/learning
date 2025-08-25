@@ -23,6 +23,9 @@
 //* If a class implements multiple interfaces, it must override and implement every method from every interface
 //* A class can EXTEND one class and IMPLEMENT one or more other
 
+//! A non-abstract class can contain an abstract method, using 'external' keyword
+//* It must be then implemented into the derived class
+
 
 //* Abstract class exmample
 abstract class UserRepositoryInterface {
@@ -58,17 +61,26 @@ class UserRepository implements UserRepositoryInterface {
 
 
 
-// class Animal {
-//   final String name;
-//   Animal({required this.name});
+class Animal {
+  final String name;
+  Animal({required this.name});
 
-//   void whatAmI() => print('I\'m an animal');
-//   void chase(Animal a) {}
-// }
+  void whatAmI() => print('I\'m an animal');
+  void chase(Animal a) {}
 
-// class Mouse extends Animal {
-//   Mouse (): super(name: 'Jerry');
-// }
+  //* Abstract method example
+  external void doSomething();
+}
+
+class Mouse extends Animal {
+  Mouse (): super(name: 'Jerry');
+
+  //* Implement the abstract method from the superclass
+  @override
+  void doSomething() {
+    super.doSomething();
+  }
+}
 
 // class Cat extends Animal {
 //   Cat() : super(name: 'Tom');
