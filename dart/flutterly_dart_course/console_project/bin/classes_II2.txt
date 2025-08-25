@@ -1,0 +1,8 @@
+Abstraction Checklist
+
+* Abstract classes, Abstract methods, Interfaces
+* Abstraction concept is achieved by using the 'implements' keyword
+* Class A implements B{} - B is an INTERFACE that needs to be implemented in A
+* In Dart, every class is an IMPLICIT INTERFACE, but every abstract class is an EXPLICIT INTERFACE
+* When implementing an interface, you have to override every field and method from inside the interface
+* You can extend only one class, but can IMPLEMENT one or more interfaces
