@@ -18,7 +18,7 @@
   // implements - forces behavior of interfaces to the derived class, can implement MORE THAN ONE class
 
 //! A class that implements an interface (another class, abstract or not),
-//! MUST IMPLEMENT EVERY FIELD AND METHOD inside the interface
+//! MUST IMPLEMENT EVERY FIELD AND METHOD inside the interface using the @override keyword
 
 
 abstract class UserRepositoryInterface {
