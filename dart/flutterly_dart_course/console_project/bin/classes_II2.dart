@@ -15,8 +15,31 @@ abstract class UserRepositoryInterface {
 }
 
 class UserRepository implements UserRepositoryInterface {
+  @override
+  List<int> usersList;
 
-  
+  @override
+  void create() {
+    // TODO: implement create
+  }
+
+  @override
+  void delete() {
+    // TODO: implement delete
+  }
+
+  @override
+  List<int> read() {
+    // TODO: implement read
+    throw UnimplementedError();
+  }
+
+  @override
+  void update() {
+    // TODO: implement update
+  }
+
+
 }
 
 
