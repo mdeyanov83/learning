@@ -37,7 +37,7 @@ class Bird extends Animal {
 }
 
 class Duck extends Bird {
-  Duck(String name) : super(name); // we only call super(name) because Bird constructor does not take named parameters
+  Duck(String name) : super(name); //* we only call super(name) because Bird constructor does not take named parameters
 
 }
 
@@ -45,5 +45,8 @@ class Duck extends Bird {
 void main(List<String> args) {
   Duck duck = Duck('Munchkin');
 
-  print('duck.name --> ${duck.name}');
+  print('duck.name --> ${duck.name}'); //* duck can access the .name field all the way from the Animal class
+
+  duck.whatAmI();
+
 }
