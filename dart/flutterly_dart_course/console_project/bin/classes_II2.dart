@@ -14,6 +14,10 @@ abstract class UserRepositoryInterface {
   void delete();
 }
 
+class UserRepository implements UserRepositoryInterface {
+
+  
+}
 
 
 class Animal {
