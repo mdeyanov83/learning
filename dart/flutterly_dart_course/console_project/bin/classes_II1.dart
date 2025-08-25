@@ -14,8 +14,9 @@
 //* Bird → the derived class (also called subclass or child class)
 
 //! The subclass constructor must call a superclass constructor (either explicitly or implicitly).
+//! it is called by calling ': super(...)' in the subclass initializer list
 //! The call to super(...) happens before the body of the subclass constructor.
-//* super keyword - access the method from the superclass
+//* super keyword - access the constructor methods from the superclass
 
 
 
