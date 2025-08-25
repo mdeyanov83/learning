@@ -6,6 +6,7 @@
 // Every class ClassName extends Object {}, without implicitly defining it
 // keyword extends = means inherits
 //* a class can ONLY extend a SINGLE class!!!
+// Class Hierarchy - class Bird extends Animal, Animal extends Object, therefore Bird extends Object too
 
 //! Inheritance - implies sharing of behavior from a class to another one
 //* if one class extends another, all fields/methods from the second(base) will be available in the first
@@ -25,7 +26,7 @@
 //! and override it to perform specific behavior
 
 
-// currently at 5:03:00
+// currently at 5:07:00
 
 class Animal {
   final String name;
@@ -37,6 +38,7 @@ class Animal {
   void whatAmI() => print('I\'m an animal');
 }
 
+//* class hierarchy - Bird extends Animal, Animal extends Object
 class Bird extends Animal {
   Bird(String name) : super(name: name); //* denotes the superclass default Animal constructor
   // Bird.fromJson(String name) : super.fromJson(); //* we can call named superclass constructors too
