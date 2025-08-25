@@ -20,6 +20,8 @@
 //! A class that implements an interface (another class, abstract or not),
 //! MUST IMPLEMENT EVERY FIELD AND METHOD inside the interface using the @override keyword
 
+//* If a class implements multiple interfaces, it must override and implement every method from every interface
+
 
 abstract class UserRepositoryInterface {
   late final List<int> usersList;
@@ -98,6 +100,13 @@ class C {
 
 class D implements A, B, C {
   @override
+  void methodA() {}
+
+  @override
+  void methodB() {}
+
+  @override
+  void methodC() {} 
 
 
 
