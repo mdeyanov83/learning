@@ -7,7 +7,7 @@
 
 //! Default methods from an extended class can be overridden
 // @override
-// super.methodName() - the super keyword, calls the base class method (from with our class is extended)
+// super.methodName() - the super keyword, calls the base class method (from which our class is extended)
 // if we want to use the default implementation in our own override method
 
 
