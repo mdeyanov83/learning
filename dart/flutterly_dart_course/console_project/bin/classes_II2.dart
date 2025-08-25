@@ -18,11 +18,15 @@ class UserRepository implements UserRepositoryInterface {
   @override
   late final List<int> usersList;
 
-  @override
-  void create() => usersList = read();
+  UserRepository() {
+    usersList = read();
+  }
 
   @override
-  void delete() => 
+  void create() => print('Created');
+
+  @override
+  void delete() => print('')
 
   @override
   List<int> read() {
