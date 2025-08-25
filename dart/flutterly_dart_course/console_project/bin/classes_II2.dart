@@ -16,6 +16,9 @@
   // extends - shares behavior of base to the derived class
   // implements - forces behavior of interfaces to the derived class
 
+//! A class that implements an interface (another class, abstract or not),
+//! MUST IMPLEMENT EVERY FIELD AND METHOD inside the interface
+
 
 abstract class UserRepositoryInterface {
   late final List<int> usersList;
