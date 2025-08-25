@@ -7,7 +7,7 @@
 //* Abstract classes cannot be instantiated
 
 //* Dart nas no 'interface' keyword (no explicit interfaces)
-//* Every class defines an interface automatically
+//* Every class defines an interface implicitly (automatically)
 //! Use 'implements' to make a class promise to fulfill another class’ contract.
 //* Use 'extends' to inherit both contract and implementation.
 //* Use abstract class' when you want to define only the contract (and force subclasses to implement).
@@ -98,6 +98,7 @@ class C {
   void methodC(){}
 }
 
+//* Example - implement non-abstract classes
 class D implements A, B, C {
   @override
   void methodA() {}
@@ -106,7 +107,7 @@ class D implements A, B, C {
   void methodB() {}
 
   @override
-  void methodC() {} 
+  void methodC() {}
 
 
 
