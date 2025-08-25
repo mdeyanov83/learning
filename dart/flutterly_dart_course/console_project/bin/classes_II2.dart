@@ -3,14 +3,15 @@
 //! ABSTRACTION - Abstract classes, Abstract methods, Interfaces
 //* An interface is a class that contains a list of fields and methods headers
 //! abstract class - used simply to declare an interface - contains just abstract methods
+//* A contract of all the methods and fields that must be implemented in the derived class
+//* Abstract classes cannot be instantiated
 
 //* Dart nas no 'interface' keyword (no explicit interfaces)
 //* Every class defines an interface automatically
-//! Use 'implements' to make a class promise to fulfill another class’s contract.
+//! Use 'implements' to make a class promise to fulfill another class’ contract.
 //* Use 'extends' to inherit both contract and implementation.
 //* Use abstract class' when you want to define only the contract (and force subclasses to implement).
 //* Can implement multiple interfaces (classes, both abstract or not)
-
 
 //* extends vs implements keywords:
   // extends - shares behavior of base to the derived class
