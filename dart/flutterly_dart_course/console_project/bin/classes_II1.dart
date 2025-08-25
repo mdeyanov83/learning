@@ -25,6 +25,11 @@
 //! Polymorphism - concept of taking a method with the same name from inside the base class
 //! and override it to perform specific behavior
 
+//! covariant - keyword
+//* Normally, when overriding a method, you cannot narrow parameter types, Dart requires the parameter
+//* types to stay compatible with the base class.
+//* covariant - lets you explicitly override a parameter with a subtype
+df
 
 // currently at 5:07:00
 
@@ -36,6 +41,19 @@ class Animal {
   // Animal.fromJson() : name = 'Jerry';
 
   void whatAmI() => print('I\'m an animal');
+  void chase(Animal a) {}
+}
+
+class Mouse extends Animal {
+  Mouse (): super(name: 'Jerry');
+}
+
+//* Example: covariant override
+class Cat extends Animal {
+  Cat() : super(name: 'Tom');
+  @override // override the Animal.chase method to take in a Mouse, instead of Animal
+  // void chase(Mouse m) {} // Error, due to requirement for parameters to stay compatible with e base type
+  void chase(covariant Mouse m) {} // with 'covariant' this rule is relaxed, and we can explicitly override the parameter type
 }
 
 //* class hierarchy - Bird extends Animal, Animal extends Object

@@ -16,7 +16,7 @@ class Point {
   });
 
   //! Static methods
-  static distanceBetween(Point p1, Point p2) {
+  static num distanceBetween(Point p1, Point p2) {
     var dx = p1.x - p2.x;
     var dy = p1.y - p2.y;
     return sqrt(pow(dx, 2) + pow(dy, 2));
