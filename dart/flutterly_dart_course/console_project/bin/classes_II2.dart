@@ -14,8 +14,8 @@
 //* Can implement multiple interfaces (classes, both abstract or not)
 
 //* extends vs implements keywords:
-  // extends - shares behavior of base to the derived class
-  // implements - forces behavior of interfaces to the derived class
+  // extends - shares behavior of base to the derived class, can extend ONLY ONE class
+  // implements - forces behavior of interfaces to the derived class, can implement MORE THAN ONE class
 
 //! A class that implements an interface (another class, abstract or not),
 //! MUST IMPLEMENT EVERY FIELD AND METHOD inside the interface
