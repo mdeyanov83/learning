@@ -30,8 +30,6 @@
 //* types to stay compatible with the base class.
 //* covariant - lets you explicitly override a parameter with a subtype
 
-// currently at 5:07:00
-
 class Animal {
   final String name;
   // Constructor

@@ -1,3 +1,5 @@
+INHERITANCE CHECKLIST
+
 INHERITANCE concept is achieved by using the EXTENDS keyword
 
 class Duck extends Bird{} - Duck (derived, subclass), Bird (base, superclass)
@@ -11,6 +13,6 @@ The SUPERCLASS can be accessed by using the SUPER keyword
 All Dart Classes EXTEND ONLY ONE CLASS (Object Class by default)
 
 The concept of POLYMORPHISM can be achieved in two ways:
-    @overriding methods, @overloading methods (optional parameters)
+    @overriding methods or overloading methods with [optional parameters]
 
 You can TIGHTEN a type by using the COVARIANT keyword
