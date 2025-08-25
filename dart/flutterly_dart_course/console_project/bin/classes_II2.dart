@@ -1,14 +1,13 @@
 //! Classes 2
 
-//! ABSTRACTION
-//* Abstract classes, Abstract methods, Interfaces
+//! ABSTRACTION - Abstract classes, Abstract methods, Interfaces
 
 //* An interface is a class that contains a list of fields and methods headers
 
-//* Dart does not have explicit interfaces (nor interface keyrword)
-//* Instead - every class automatically defines an interface
+//* Dart nas no 'interface' keyword (no explicit interfaces)
+//* Every class defines an interface automatically
 //* An interface is implemented via the 'implements' keyword, instead of extends
-//* 
+//*
 
 
 abstract class UserRepositoryInterface {
