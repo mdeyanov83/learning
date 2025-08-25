@@ -16,17 +16,13 @@ abstract class UserRepositoryInterface {
 
 class UserRepository implements UserRepositoryInterface {
   @override
-  List<int> usersList;
+  late final List<int> usersList;
 
   @override
-  void create() {
-    // TODO: implement create
-  }
+  void create() => usersList = read();
 
   @override
-  void delete() {
-    // TODO: implement delete
-  }
+  void delete() => 
 
   @override
   List<int> read() {
