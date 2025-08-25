@@ -13,7 +13,9 @@
 //* Animal → the base class (also called superclass or parent class)
 //* Bird → the derived class (also called subclass or child class)
 
-
+//! The subclass constructor must call a superclass constructor (either explicitly or implicitly).
+//! The call to super(...) happens before the body of the subclass constructor.
+//* super keyword - 
 
 
 
