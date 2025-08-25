@@ -18,9 +18,10 @@
   // implements - forces behavior of interfaces to the derived class, can implement MORE THAN ONE class
 
 //! A class that implements an interface (another class, abstract or not),
-//! MUST IMPLEMENT EVERY FIELD AND METHOD inside the interface using the @override keyword
+//! MUST IMPLEMENT EVERY FIELD AND METHOD (public ones) inside the interface using the @override keyword
 
 //* If a class implements multiple interfaces, it must override and implement every method from every interface
+//* A class can EXTEND one class and IMPLEMENT one or more other
 
 
 abstract class UserRepositoryInterface {
