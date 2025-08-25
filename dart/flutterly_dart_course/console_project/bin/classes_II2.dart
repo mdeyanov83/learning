@@ -12,6 +12,10 @@
 //* Can implement multiple interfaces (classes, both abstract or not)
 
 
+//* extends vs implements keywords:
+  // extends - shares behavior of base to the derived class
+  // implements - forces behavior of interfaces to the derived class
+
 
 abstract class UserRepositoryInterface {
   late final List<int> usersList;
