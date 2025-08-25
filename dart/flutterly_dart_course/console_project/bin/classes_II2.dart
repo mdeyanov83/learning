@@ -26,55 +26,51 @@ class UserRepository implements UserRepositoryInterface {
   void create() => print('Created');
 
   @override
-  void delete() => print('')
+  void update() => print('Updated');
 
   @override
-  List<int> read() {
-    // TODO: implement read
-    throw UnimplementedError();
-  }
+  List<int> read() => [1, 2, 3, 4, 5];
 
   @override
-  void update() {
-    // TODO: implement update
-  }
-
-
+  void delete() => print('Deleted');
 }
 
+// class Animal {
+//   final String name;
+//   Animal({required this.name});
 
-class Animal {
-  final String name;
-  Animal({required this.name});
+//   void whatAmI() => print('I\'m an animal');
+//   void chase(Animal a) {}
+// }
 
-  void whatAmI() => print('I\'m an animal');
-  void chase(Animal a) {}
-}
+// class Mouse extends Animal {
+//   Mouse (): super(name: 'Jerry');
+// }
 
-class Mouse extends Animal {
-  Mouse (): super(name: 'Jerry');
-}
+// class Cat extends Animal {
+//   Cat() : super(name: 'Tom');
+//   @override
+//   void chase(covariant Mouse m) {}
+// }
 
-class Cat extends Animal {
-  Cat() : super(name: 'Tom');
-  @override
-  void chase(covariant Mouse m) {}
-}
+// class Bird extends Animal {
+//   Bird(String name) : super(name: name);
+// }
 
-class Bird extends Animal {
-  Bird(String name) : super(name: name);
-}
+// class Duck extends Bird {
+//   Duck(String name) : super(name);
 
-class Duck extends Bird {
-  Duck(String name) : super(name);
+//   @override
+//   void whatAmI() => print('I\'m a duck!');
 
-  @override
-  void whatAmI() => print('I\'m a duck!');
-
-  void swim() {}
-}
+//   void swim() {}
+// }
 
 
 void main(List<String> args) {
-
+  UserRepository userRepository = UserRepository();
+  userRepository.create();
+  userRepository.read();
+  userRepository.update();
+  userRepository.delete();
 }
