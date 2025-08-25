@@ -5,6 +5,7 @@
 //* Every class you create will inherit, by default from the topmost class, the OBJECT class
 // Every class ClassName extends Object {}, without implicitly defining it
 // keyword extends = means inherits
+//* a class can ONLY extend a SINGLE class!!!
 
 //! Inheritance - implies sharing of behavior from a class to another one
 //* if one class extends another, all fields/methods from the second(base) will be available in the first
@@ -13,13 +14,15 @@
 //* Animal → the base class (also called superclass or parent class)
 //* Bird → the derived class (also called subclass or child class)
 
+//! super(...) keyword
 //! The subclass constructor must call a superclass constructor (either explicitly or implicitly).
 //! it is called by calling ': super(...)' in the subclass initializer list
 //! The call to super(...) happens before the body of the subclass constructor.
-//* super keyword - access the constructor methods from the superclass
+//* super keyword - can also access the superclass methods or properties (useful when overriding)
 
 
-
+//! Polymorphism - concept of taking a method with the same name from inside the base class
+//! and override it to perform specific behavior
 
 
 // currently at 5:03:00
@@ -42,6 +45,10 @@ class Bird extends Animal {
 class Duck extends Bird {
   Duck(String name) : super(name); //* we only call super(name) because Bird constructor does not take named parameters
 
+  @override
+  void whatAmI() => print('I\'m a duck!'); //* polymorphism
+
+  void swim() {}
 }
 
 
@@ -50,6 +57,6 @@ void main(List<String> args) {
 
   print('duck.name --> ${duck.name}'); //* duck can access the .name field all the way from the Animal class
 
-  duck.whatAmI();
+  duck.whatAmI(); // 'I'm a duck!' - overridden from the superclass
 
 }
