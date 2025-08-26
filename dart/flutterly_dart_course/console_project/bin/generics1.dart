@@ -29,7 +29,7 @@ class Tuple {
   final int? _c;
 
   // basic constructor
-  Tuple(this._a, this._b, this._c);
+  const Tuple(this._a, this._b, this._c);
   // named constructor
   Tuple.fromList(List<int> list) :
     _a = list.asMap().containsKey(0) ? list[0] : null,
@@ -37,14 +37,14 @@ class Tuple {
     _c = list.asMap().containsKey(2) ? list[2] : null;
 
   // getters for first, second and third element
-  int get first => _a;
-  int get second => _b;
-  int get third => _c;
+  int? get first => _a;
+  int? get second => _b;
+  int? get third => _c;
 
 
 }
 
 void main(List<String> args) {
-  Tuple tuple = Tuple(1, 2, 3);
+  Tuple tuple = const Tuple(1, 2, 3);
 
 }
