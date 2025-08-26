@@ -23,9 +23,11 @@ class A extends Base with M1, M2 {}
 In the following example musician.perform(); will call the Guitarist method
 Performer is mixed in with Drummer, Guitarist
 Performer -> Performer + Drummer -> Performer + Drummer + Guitarist -> Musician
+
+* If we do not extend another class, by default we extend Object
+Class Musician with Drummer, Guitarist {}
+Object -> Object + Drummer -> Object + Drummer + Guitarist - Musician
 */
-
-
 
 class Performer {
   void perform() => print('Performs!');
