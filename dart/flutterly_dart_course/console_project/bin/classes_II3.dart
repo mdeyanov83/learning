@@ -7,10 +7,13 @@
 //* A mixin is a way to share methods and properties between classes without using traditional inheritance.
 //* A class with no constructor
 
+
 //! Creating mixins
 //* 1. class with no constructor
 //* 2. abstract class
 //* 3. declaring with 'mixin' keyword
+
+//! Using mixin - 'with' keyword (Note: mixins CAN be 'implement'ed, like an abstract class, reusing their API contract)
 
 
 
