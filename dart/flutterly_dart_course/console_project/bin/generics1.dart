@@ -8,10 +8,14 @@
 ? collections
 * abstract class List<E>    - <E> = elements
 * abstract class Set<E>     - <E> = elements
-* abstract class HashSet<E> - <E> = elements
+* abstract class HashSet<E> - <E> = elements (part of the dart:collection library)
 ? maps
-* abstract class Map<K, V> - <K, V> = keys and values
+* abstract class Map<K, V>  - <K, V> = keys and values
 
+* static List<T> castFrom<S, T>(List<S> source) - <T> = type, <S> = source
+* List<R> cast<R>();        - <R> = return
+Sometimes, single letters may not be clear enough for readability, therefore you can use any name you want
+* abstract class Bloc<Event, State>
 
 
 
