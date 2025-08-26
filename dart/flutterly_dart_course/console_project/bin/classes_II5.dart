@@ -18,6 +18,7 @@ class Performer {
 mixin Guitarist on Performer {
   void playGuitar() => print('Playing the guitar');
   void test() => perform();
+  void testSuper() => super.perform(); //* calls the superclass perform method ae. from Performer
 }
 
 mixin Drummer {
@@ -31,5 +32,6 @@ class Musician extends Performer with Drummer, Guitarist{} //* Works fine
 void main() {
   Musician musician = Musician();
 
-  musician.test(); // Calls the Drums method
+  musician.test(); // Calls the Drums method according to hierarchy (right to left)
+  musician.testSuper(); // Calls the superclass method - from Performer
 }
