@@ -22,32 +22,61 @@ Sometimes, single letters may not be clear enough for readability, therefore you
 
 */
 
-// class for 3 element tuple
-class Tuple {
-  // make parameters private
-  final int? _a;
-  final int? _b;
-  final int? _c;
+// class for tuple of 3 elements of type int
+// class Tuple {
+//   // make parameters private
+//   final int? _a;
+//   final int? _b;
+//   final int? _c;
 
-  // basic constructor
+//   // basic constructor
+//   const Tuple(this._a, this._b, this._c);
+//   // named constructor, private fields assigned in the initializer list
+//   Tuple.fromList(List<int> list) :
+//     // checking if an index of a list exists (can be simplified by checking list.length)
+//     _a = list.asMap().containsKey(0) ? list[0] : null,
+//     _b = list.asMap().containsKey(1) ? list[1] : null,
+//     _c = list.asMap().containsKey(2) ? list[2] : null;
+
+//   // + and - operators, should be called only on 100% populated with int values (no null values)
+//   Tuple operator +(Tuple t) => Tuple(_a! + t._a!, _b! + t._b!, _c! + t._c!);
+//   Tuple operator -(Tuple t) => Tuple(_a! - t._a!, _b! - t._b!, _c! - t._c!);
+
+//   // getters for first, second and third element
+//   int? get first => _a;
+//   int? get second => _b;
+//   int? get third => _c;
+
+//   // override toString method for printing
+//   @override toString() => 'Tuple(first: $first, second: $second, third: $third)';
+// }
+
+// class for tuple using generics
+class Tuple<E> {
+  // replace int? with generic type E?
+  final E? _a;
+  final E? _b;
+  final E? _c;
+
+  // replace int? with generic type E?
+  E? get first => _a;
+  E? get second => _b;
+  E? get third => _c;
+
   const Tuple(this._a, this._b, this._c);
-  // named constructor, private fields assigned in the initializer list
-  Tuple.fromList(List<int> list) :
-    // checking if an index of a list exists (can be simplified by checking list.length)
+  Tuple.fromList(List<E> list) :
     _a = list.asMap().containsKey(0) ? list[0] : null,
     _b = list.asMap().containsKey(1) ? list[1] : null,
     _c = list.asMap().containsKey(2) ? list[2] : null;
 
-  // + and - operators, should be called only on 100% populated with int values (no null values)
-  Tuple operator +(Tuple t) => Tuple(_a! + t._a!, _b! + t._b!, _c! + t._c!);
-  Tuple operator -(Tuple t) => Tuple(_a! - t._a!, _b! - t._b!, _c! - t._c!);
+  // We want the + and - operators to work only for 2 tuples containing num types,
+  // since only they can be added or subtracted
+  //1. we declare that we return Tuple<num>
+  //2. tuples sent to the operator as a parameter must also be Tuple<num>
+  
+  Tuple<num> operator +(Tuple<num> t) => Tuple(_a! + t._a!, _b! + t._b!, _c! + t._c!);
+  Tuple<num> operator -(Tuple<num> t) => Tuple(_a! - t._a!, _b! - t._b!, _c! - t._c!);
 
-  // getters for first, second and third element
-  int? get first => _a;
-  int? get second => _b;
-  int? get third => _c;
-
-  // override toString method for printing
   @override toString() => 'Tuple(first: $first, second: $second, third: $third)';
 }
 
@@ -56,6 +85,8 @@ void main(List<String> args) {
   Tuple tuple2 = Tuple.fromList([4, 5, 6]);
   Tuple tuple3 = Tuple.fromList([7]);
   Tuple tuple4 = tuple1 + tuple2;
+
+  // Tuple stringTuple = Tuple('a', 'b', 'c'); // Error at the moment
 
   print('tuple1 --> $tuple1');
   print('tuple2 --> $tuple2');
