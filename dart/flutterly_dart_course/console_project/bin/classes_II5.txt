@@ -1,0 +1,7 @@
+Mixins Checklist
+
+* Mixins are used to share behavior between one or more classes
+* In Dart, you can extend one single class, implement or mixin one or more classes
+* The order in which you write the mixins after the 'with' keyword matters (last one wins)
+* A mixin cannot be instantiated, it cannot have a constructor
+* A mixin that mixes in with other class can use its methods and can even override some of them

@@ -2,11 +2,6 @@
 ! Classes
 ! Mixins (continued 2) - specify which classes can a mixin be mixed with
 ! 'on' keyword
-
-
-
-
-
 */
 
 
@@ -18,7 +13,6 @@ class Performer {
 mixin Guitarist on Performer {
   void playGuitar() => print('Playing the guitar');
   void test() => perform();
-  void testSuper() => super.perform(); //* calls the superclass perform method ae. from Performer
 }
 
 mixin Drummer {
@@ -33,5 +27,4 @@ void main() {
   Musician musician = Musician();
 
   musician.test(); // Calls the Drums method according to hierarchy (right to left)
-  musician.testSuper(); // Calls the superclass method - from Performer
 }
