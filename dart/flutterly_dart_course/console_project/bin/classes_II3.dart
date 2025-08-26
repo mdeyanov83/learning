@@ -13,19 +13,31 @@
 //* 2. abstract class
 //* 3. declaring with 'mixin' keyword
 
-//! Using mixin - 'with' keyword (Note: mixins CAN be 'implement'ed, like an abstract class, reusing their API contract)
+//! Using mixin - 'with' keyword
+//Note: mixins CAN be 'implement'ed, like an abstract class, reusing their API contract
+//Note: mixins CAN NOT be 'extend'ed!
 
+//* Class with no constructor
+// class A {
+//   void method(){}
+// }
 
-class A {
-  void method(){}
-}
+//* Abstract class
+// abstract class A {
+//   void method();
+// }
 
-abstract class B {
-  void method();
-}
-
+//* Mixin, can contain both abstract and simple methods at the same time
 mixin A {
-  void method();
+  void method1();
+  void method2(){}
+  void method3(){}
+}
+
+//* Using mixin A, note that abstract method1 must be implemented, since there is no implementation in the mixin
+class B with A{
+  @override
+  void method1(){}
 }
 
 void main(List<String> args) {
