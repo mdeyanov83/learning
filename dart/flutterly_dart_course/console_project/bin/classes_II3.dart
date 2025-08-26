@@ -9,13 +9,11 @@
 
 
 //! Creating mixins
-//* 1. class with no constructor
+//* 1. class with no constructor (functions CAN NOT be abstract, so must have a function body)
 //* 2. abstract class
 //* 3. declaring with 'mixin' keyword
 
 //! Using mixin - 'with' keyword (Note: mixins CAN be 'implement'ed, like an abstract class, reusing their API contract)
-
-
 
 
 class A {
@@ -23,6 +21,10 @@ class A {
 }
 
 abstract class B {
+  void method();
+}
+
+mixin A {
   void method();
 }
 
