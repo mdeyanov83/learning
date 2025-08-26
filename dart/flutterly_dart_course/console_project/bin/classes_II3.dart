@@ -12,6 +12,7 @@
 //* 1. class with no constructor (functions CAN NOT be abstract, so must have a function body)
 //* 2. abstract class
 //* 3. declaring with 'mixin' keyword
+//TODO 4. declaring with 'mixin class' - hybrid - see chat gpt
 
 //! Using mixin - 'with' keyword
 //Note: mixins CAN be 'implement'ed, like an abstract class, reusing their API contract
