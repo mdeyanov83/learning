@@ -22,9 +22,29 @@ Sometimes, single letters may not be clear enough for readability, therefore you
 
 */
 
+class Tuple {
+  // make parameters private
+  final int _a;
+  final int _b;
+  final int _c;
 
- List<int> list = [1, 2, 3];
+  // basic constructor
+  Tuple(this._a, this._b, this._c);
+  // named constructor
+  Tuple.fromList(List<int> list) :
+    _a = list.asMap().containsKey(0) ? list[0] : null,
+    _b = list.asMap().containsKey(1) ? list[1] : null,
+    _c = list.asMap().containsKey(2) ? list[2] : null;
+
+  // getters for first, second and third element
+  int get first => _a;
+  int get second => _b;
+  int get third => _c;
+
+
+}
 
 void main(List<String> args) {
+  Tuple tuple = Tuple(1, 2, 3);
 
 }
