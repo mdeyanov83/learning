@@ -3,6 +3,11 @@
 ! Extension Methods - timestamp 5:28:35
 * Extension methods - a way to add functionality to existing libraries and classes
 * You can create extension methods on any class
+
+! You can extend:
+* Dart’s built-in classes (String, int, List, etc.)
+* Your own classes
+* Even classes from external packages
 */
 
 // class IntegerExtension extends int{ //! Error - int class cannot be extended
