@@ -17,7 +17,7 @@ class Performer {
 //* Guitarist can be only mixed in with Performer
 mixin Guitarist on Performer {
   void playGuitar() => print('Playing the guitar');
-  void test() => playGuitar();
+  void test() => perform();
 }
 
 mixin Drummer {
@@ -30,7 +30,6 @@ class Musician extends Performer with Drummer, Guitarist{} //* Works fine
 
 void main() {
   Musician musician = Musician();
-  musician.playGuitar();
-  musician.playDrums();
-  musician.test(); // Calls the Guitarist method
+
+  musician.test(); // Calls the Drums method
 }
