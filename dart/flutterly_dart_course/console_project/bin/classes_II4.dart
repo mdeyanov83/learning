@@ -22,5 +22,8 @@ class Musician extends Performer with Drummer, Guitarist{}
 
 
 void main() {
-
+  Musician musician = Musician();
+  musician.playGuitar();
+  musician.playDrums();
+  musician.perform();
 }
