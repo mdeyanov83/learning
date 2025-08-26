@@ -30,7 +30,7 @@ class Tuple {
 
   // basic constructor
   const Tuple(this._a, this._b, this._c);
-  // named constructor
+  // named constructor, private fields assigned in the initializer list
   Tuple.fromList(List<int> list) :
     _a = list.asMap().containsKey(0) ? list[0] : null,
     _b = list.asMap().containsKey(1) ? list[1] : null,
