@@ -5,3 +5,6 @@ Mixins Checklist
 * The order in which you write the mixins after the 'with' keyword matters (last one wins)
 * A mixin cannot be instantiated, it cannot have a constructor
 * A mixin that mixes in with other class can use its methods and can even override some of them
+
+extends (inheritance) vs implements (abstraction) vs with (mixins)
+
