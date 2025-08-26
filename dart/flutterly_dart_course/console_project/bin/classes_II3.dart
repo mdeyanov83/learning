@@ -6,3 +6,23 @@
 //! Mixins
 //* A mixin is a way to share methods and properties between classes without using traditional inheritance.
 //* A class with no constructor
+
+//! Creating mixins
+//* 1. class with no constructor
+//* 2. abstract class
+//* 3. declaring with 'mixin' keyword
+
+
+
+
+class A {
+  void method(){}
+}
+
+abstract class B {
+  void method();
+}
+
+void main(List<String> args) {
+
+}
