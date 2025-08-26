@@ -32,6 +32,7 @@ class Tuple {
   const Tuple(this._a, this._b, this._c);
   // named constructor, private fields assigned in the initializer list
   Tuple.fromList(List<int> list) :
+    // checking if an index of a list exists
     _a = list.asMap().containsKey(0) ? list[0] : null,
     _b = list.asMap().containsKey(1) ? list[1] : null,
     _c = list.asMap().containsKey(2) ? list[2] : null;
