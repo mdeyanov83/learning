@@ -24,9 +24,9 @@ Sometimes, single letters may not be clear enough for readability, therefore you
 
 class Tuple {
   // make parameters private
-  final int _a;
-  final int _b;
-  final int _c;
+  final int? _a;
+  final int? _b;
+  final int? _c;
 
   // basic constructor
   Tuple(this._a, this._b, this._c);
