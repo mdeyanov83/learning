@@ -22,7 +22,7 @@ class A extends Base with M1, M2 {}
 
 In the following example musician.perform(); will call the Guitarist method
 Performer is mixed in with Drummer, Guitarist
-
+Performer -> Performer + Drummer -> Performer + Drummer + Guitarist -> Musician
 */
 
 
@@ -47,5 +47,5 @@ void main() {
   Musician musician = Musician();
   musician.playGuitar();
   musician.playDrums();
-  musician.perform();
+  musician.perform(); // Calls the Guitarist method
 }
