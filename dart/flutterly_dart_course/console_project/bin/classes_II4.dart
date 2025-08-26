@@ -1,6 +1,8 @@
 //! Classes 2
 
 //! Mixins (continued) // timestamp 5:20:00
+//* How class hierarchy work?
+//* Mixins are applied left -> right. Rightmost mixin wins if there are conflicting methods
 
 
 class Performer {

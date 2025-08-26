@@ -12,11 +12,15 @@
 //* 1. class with no constructor (functions CAN NOT be abstract, so must have a function body)
 //* 2. abstract class
 //* 3. declaring with 'mixin' keyword
-//TODO 4. declaring with 'mixin class' - hybrid - see chat gpt
+//! 4. declaring with 'mixin class' - hybrid - Dart 3.0
+  //* Can be used as a mixin and a normal class
+  //* Can be extended (extend) or mixed in (with)
+  //* Can be instantiated (unless made abstract)
 
 //! Using mixin - 'with' keyword
 //Note: mixins CAN be 'implement'ed, like an abstract class, reusing their API contract
 //Note: mixins CAN NOT be 'extend'ed!
+
 
 //* Class with no constructor
 // class A {
