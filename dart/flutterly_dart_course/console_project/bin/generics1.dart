@@ -22,6 +22,7 @@ Sometimes, single letters may not be clear enough for readability, therefore you
 
 */
 
+// class for 3 element tuple
 class Tuple {
   // make parameters private
   final int? _a;
@@ -37,15 +38,27 @@ class Tuple {
     _b = list.asMap().containsKey(1) ? list[1] : null,
     _c = list.asMap().containsKey(2) ? list[2] : null;
 
+  // + and - operators, should be called only on 100% populated with int values (no null values)
+  Tuple operator +(Tuple t) => Tuple(_a! + t._a!, _b! + t._b!, _c! + t._c!);
+  Tuple operator -(Tuple t) => Tuple(_a! - t._a!, _b! - t._b!, _c! - t._c!);
+
   // getters for first, second and third element
   int? get first => _a;
   int? get second => _b;
   int? get third => _c;
 
-
+  // override toString method for printing
+  @override toString() => 'Tuple(first: $first, second: $second, third: $third)';
 }
 
 void main(List<String> args) {
-  Tuple tuple = const Tuple(1, 2, 3);
+  Tuple tuple1 = const Tuple(1, 2, 3);
+  Tuple tuple2 = Tuple.fromList([4, 5, 6]);
+  Tuple tuple3 = Tuple.fromList([7]);
+  Tuple tuple4 = tuple1 + tuple2;
 
+  print('tuple1 --> $tuple1');
+  print('tuple2 --> $tuple3');
+  print('tuple3 --> $tuple3');
+  print('tuple4 --> $tuple4');
 }
