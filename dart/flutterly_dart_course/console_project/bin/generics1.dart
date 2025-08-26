@@ -58,7 +58,7 @@ void main(List<String> args) {
   Tuple tuple4 = tuple1 + tuple2;
 
   print('tuple1 --> $tuple1');
-  print('tuple2 --> $tuple3');
+  print('tuple2 --> $tuple2');
   print('tuple3 --> $tuple3');
   print('tuple4 --> $tuple4');
 }
