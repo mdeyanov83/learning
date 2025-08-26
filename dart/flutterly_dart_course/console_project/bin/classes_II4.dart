@@ -21,7 +21,7 @@ class A extends Base with M1, M2 {}
 * M2 -> M1 -> Base -> Object
 
 In the following example musician.perform(); will call the Guitarist method
-
+Performer is mixed in with Drummer, Guitarist
 
 */
 
