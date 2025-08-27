@@ -12,7 +12,6 @@ class A {
 
 }
 
-
 void randomFunc() {
 
   var a = A();
@@ -20,6 +19,4 @@ void randomFunc() {
   //* note that all private fields and methods can be accessed inside the same library
   a._privateField;
   a._privateMethod();
-
-
 }
