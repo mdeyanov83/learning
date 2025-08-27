@@ -30,7 +30,9 @@ When implementing multiple files into the same library
 - the only directive at the top must be "part of 'main_library.dart'" on the additional files
 - any imports must be done in the primary library file, but they will be available in all the files
 - all files from the library can access all _private and public fields and methods from the entire library
--! 
+- ! if you want to access something from inside one of the extension files, the entire library must be imported
+
+
 
 ? Can one library contain multiple libraries?
 
