@@ -73,8 +73,17 @@ class Tuple<E> {
   // since only they can be added or subtracted
   //1. we declare that we return Tuple<num>
   //2. tuples sent to the operator as a parameter must also be Tuple<num>
+  //3. we implement logic to check if the object we call the operator on is also of type Tuple<num>
 
-  Tuple<num> operator +(Tuple<num> t) => Tuple(_a! + t._a!, _b! + t._b!, _c! + t._c!);
+  Tuple<num> operator +(Tuple<num> t) {
+
+    if (this is Tuple<num>) {
+
+      return Tuple(_a! + t._a!, _b! + t._b!, _c! + t._c!);
+    }
+  }
+
+
   Tuple<num> operator -(Tuple<num> t) => Tuple(_a! - t._a!, _b! - t._b!, _c! - t._c!);
 
   @override toString() => 'Tuple(first: $first, second: $second, third: $third)';
