@@ -18,4 +18,7 @@ void anotherFunction() {
   // _privateTopLevel;
   // _privateTopLevelFunction();
 
+  //* math accessible here, but imported in the primary file
+  var s = math.sin(90);
+
 }

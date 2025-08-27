@@ -1,6 +1,9 @@
 library first_library; // library names are not necessary
 
+import 'dart:math' as math;
+
 part 'first_library_extension_1.dart';
+part 'first_library_extension_2.dart';
 
 
 const int _privateTopLevel = 15;
