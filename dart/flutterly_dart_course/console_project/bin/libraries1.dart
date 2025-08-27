@@ -27,8 +27,9 @@ void main(List<String> args) {
   var a = A();
 
   //! Private fields and methods cannot be accessed from outside of the imported library
-  a._privateField;
-  a._privateMethod();
+  // a._privateField;
+  // a._privateMethod();
+
 
 }
 
