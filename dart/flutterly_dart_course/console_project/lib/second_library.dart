@@ -12,6 +12,12 @@ void anotherFunction() {
   // a._privateField;
   // a._privateMethod();
 
+  //* top level variables and methods can be shared within libraries
+  publicTopLevel;
   publicTopLevelFunction();
+
+  //! top level private are not
+  // _privateTopLevel;
+  // _privateTopLevelFunction();
 
 }
