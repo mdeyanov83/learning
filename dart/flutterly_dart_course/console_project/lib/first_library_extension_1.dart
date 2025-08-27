@@ -1,7 +1,3 @@
-// library second_library; // not necessary
-
-// import 'package:console_project/first_library.dart';
-
 part of 'first_library.dart';
 
 void anotherFunction() {

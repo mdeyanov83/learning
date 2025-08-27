@@ -21,9 +21,9 @@
 * Yes - a library can be formed by one or more files.
 * In case - multiple files - then each file is no longer a separate library, but rather represent the same library
 ! main library - use 'part' directive
-part 'library_name.dart'
+part 'first_library_extension_1.dart'
 ! second library - use 'part of' directive
-part of 'main_library_name.dart'
+part of 'first_library.dart'
 * second becomes part of the main
 
 
