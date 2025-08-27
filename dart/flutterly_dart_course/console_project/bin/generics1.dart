@@ -73,7 +73,7 @@ class Tuple<E> {
   // since only they can be added or subtracted
   //1. we declare that we return Tuple<num>
   //2. tuples sent to the operator as a parameter must also be Tuple<num>
-  
+
   Tuple<num> operator +(Tuple<num> t) => Tuple(_a! + t._a!, _b! + t._b!, _c! + t._c!);
   Tuple<num> operator -(Tuple<num> t) => Tuple(_a! - t._a!, _b! - t._b!, _c! - t._c!);
 
@@ -81,15 +81,20 @@ class Tuple<E> {
 }
 
 void main(List<String> args) {
-  Tuple tuple1 = const Tuple(1, 2, 3);
-  Tuple tuple2 = Tuple.fromList([4, 5, 6]);
-  Tuple tuple3 = Tuple.fromList([7]);
-  Tuple tuple4 = tuple1 + tuple2;
+  // Examples for first implementation of Tuple (for ints only)
+  // Tuple tuple1 = const Tuple(1, 2, 3);
+  // Tuple tuple2 = Tuple.fromList([4, 5, 6]);
+  // Tuple tuple3 = Tuple.fromList([7]);
+  // Tuple tuple4 = tuple1 + tuple2;
+  // print('tuple1 --> $tuple1');
+  // print('tuple2 --> $tuple2');
+  // print('tuple3 --> $tuple3');
+  // print('tuple4 --> $tuple4');
 
-  // Tuple stringTuple = Tuple('a', 'b', 'c'); // Error at the moment
+  const t1 = Tuple(1, 2, 3);
+  const t2 = Tuple(4, 5, 6);
+  t1 + t2; // So f
 
-  print('tuple1 --> $tuple1');
-  print('tuple2 --> $tuple2');
-  print('tuple3 --> $tuple3');
-  print('tuple4 --> $tuple4');
+
+
 }
