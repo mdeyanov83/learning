@@ -1,5 +1,10 @@
 library first_library; // library names are not necessary
 
+const int _privateTopLevel = 15;
+const int publicTopLevel = 12;
+
+void _privateTopLevelFunction() {}
+void publicTopLevelFunction() {}
 
 class A {
   final int _privateField = 5;
@@ -7,9 +12,6 @@ class A {
 
   final int publicField = 10;
   void publicMethod() {}
-
-
-
 }
 
 void randomFunc() {

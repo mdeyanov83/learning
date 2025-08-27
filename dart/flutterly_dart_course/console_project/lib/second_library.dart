@@ -1,9 +1,17 @@
 // library second_library; // not necessary
 
-import 'package:dart_libraries/first_library.dart';
+import 'package:console_project/first_library.dart';
 
 void anotherFunction() {
   var a = A();
 
+  a.publicField;
+  a.publicMethod();
+
+  //! not accessible
+  // a._privateField;
+  // a._privateMethod();
+
+  publicTopLevelFunction();
 
 }
