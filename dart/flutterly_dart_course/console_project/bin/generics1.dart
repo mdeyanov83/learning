@@ -7,6 +7,8 @@
 * Type safety: Errors are caught at compile-time instead of runtime
 * Code reusability: Write one class or function for multiple data types
 * Cleaner code: No need for casting everywhere
+* Can be constrained with 'extends' keyword
+* dart:collection and async APIs rely heavily on generics
 
 ? 2. How can we use them to enhance the quality of our code?
 
