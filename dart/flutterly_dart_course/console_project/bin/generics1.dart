@@ -77,15 +77,22 @@ class Tuple<E> {
 
   Tuple<num> operator +(Tuple<num> t) {
 
-    if (this is Tuple<num>) { // check if the object calling the operator (this) is Tuple<num>
-      final thisAsTupleNum = this as Tuple<num>; // type cast 'this' as Tuple<num>, because 
+    if (this is Tuple<num>) { // check if the object calling the operator (this) is Tuple<num> (note: this is a run-time check, not compile-time)
+      final thisAsTupleNum = this as Tuple<num>; // type cast 'this' as Tuple<num>, because at compile-time 'this' is still a generic type Tuple<T>
       return Tuple(thisAsTupleNum._a! + t._a!, thisAsTupleNum._b! + t._b!, thisAsTupleNum._c! + t._c!);
     }
     return const Tuple(0, 0, 0); // or we can throw an exception
   }
 
 
-  Tuple<num> operator -(Tuple<num> t) => Tuple(_a! - t._a!, _b! - t._b!, _c! - t._c!);
+  Tuple<num> operator -(Tuple<num> t) {
+
+    if (this is Tuple<num>) {
+      final thisAsTupleNum = this as Tuple<num>;
+      return Tuple(thisAsTupleNum._a! - t._a!, thisAsTupleNum._b! - t._b!, thisAsTupleNum._c! - t._c!);
+    }
+    return const Tuple(0, 0, 0); // or we can throw an exception
+  }
 
   @override toString() => 'Tuple(first: $first, second: $second, third: $third)';
 }
@@ -103,8 +110,20 @@ void main(List<String> args) {
 
   const t1 = Tuple(1, 2, 3);
   const t2 = Tuple(4, 5, 6);
-  t1 + t2; // So f
+  final tSum = t1 + t2;
+  final tDif = t1 - t2;
+  print(tSum);
+  print(tDif);
 
+  const t3 = Tuple('a', 'b', 'c');
+  const t4 = Tuple(Object(), Object(), Object());
+  print(t3);
+  print(t4);
+
+  const t5 = Tuple(1.5, 'a', Object());
+  print(t5);
+  final t6 = Tuple.fromList([1.5, 'Hello', 12]);
+  print(t6);
 
 
 }
