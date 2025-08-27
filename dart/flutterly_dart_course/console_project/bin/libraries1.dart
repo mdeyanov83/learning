@@ -7,5 +7,11 @@
 
 * How private fields work in conjunction with libraries
 
+* Every .dart file is a library
+* Every library that should be available to other dart projects must be placed in the lib/ folder
+
+
+
+
 
 */
