@@ -20,6 +20,7 @@
 ? Can one library be formed out of more than one file?
 * Yes - a library can be formed by one or more files.
 * In case - multiple files - then each file is no longer a separate library, but rather represent the same library
+! part 'library_name.dart'
 
 
 ? Can one library contain multiple libraries?

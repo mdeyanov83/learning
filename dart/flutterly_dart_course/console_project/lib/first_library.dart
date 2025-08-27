@@ -1,5 +1,8 @@
 library first_library; // library names are not necessary
 
+part 'second_library.dart';
+
+
 const int _privateTopLevel = 15;
 const int publicTopLevel = 12;
 
