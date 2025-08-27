@@ -5,18 +5,16 @@
 */
 
 
-//! In oder for the method to work with other types than int (String for ex.) we need
-//! to either create another method accepting String
+//! With standard methods you need to create a separate method for each input type
 class Utils{
   static int? getItemInt(List<int> list, int index) =>
     list.asMap().containsKey(index) ? list[index] : null;
 
-
   static String? getItemString(List<String> list, int index) =>
     list.asMap().containsKey(index) ? list[index] : null;
-
-
 }
+
+
 //! or make a generic method
 // class Utils<T>
 //   static T? getItem<T>(List<T> list, int index) =>
