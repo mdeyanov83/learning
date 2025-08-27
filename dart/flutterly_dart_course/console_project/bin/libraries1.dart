@@ -7,11 +7,27 @@
 
 * How private fields work in conjunction with libraries
 
-* Every .dart file is a library
-* Every library that should be available to other dart projects must be placed in the lib/ folder
+* Every .dart file is a library by default, even if not declared
+* Libraries containing the implementations from inside a package must be in the lib/ folder
+* Only libs from inside the lib/ folder can be accessed from an outside package
 
-
-
-
+! Private fields - are library private fields, not class private fields
+* Private fields and methods can be only access from within the library itself.
+* Once it is imported into another package - they cannot be accessed
 
 */
+
+// Importing own package by using the package: directive
+// first_library.dart is located inside the lib/ folder
+import 'package:console_project/first_library.dart';
+
+void main(List<String> args) {
+  var a = A();
+
+  //! Private fields and methods cannot be accessed from outside of the imported library
+  a._privateField;
+  a._privateMethod();
+
+}
+
+
