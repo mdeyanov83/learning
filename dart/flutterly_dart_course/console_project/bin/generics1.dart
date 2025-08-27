@@ -17,7 +17,8 @@
 Sometimes, single letters may not be clear enough for readability, therefore you can use any name you want
 * abstract class Bloc<Event, State>
 
-
+! We can limit the generic type, for ex. <E> to only accept certain types instead of everything
+* <E extends num, String> - during declaration. This way it wil
 
 
 
@@ -54,7 +55,7 @@ Sometimes, single letters may not be clear enough for readability, therefore you
 // }
 
 // class for tuple using generics
-class Tuple<E> {
+class Tuple<E extends num, String> {
   // replace int? with generic type E?
   final E? _a;
   final E? _b;
