@@ -18,11 +18,7 @@ Sometimes, single letters may not be clear enough for readability, therefore you
 * abstract class Bloc<Event, State>
 
 ! We can limit the generic type, for ex. <E> to only accept certain types instead of everything
-* <E extends num, String> - during declaration. This way it wil
-
-
-
-
+* <E extends num> - during declaration. I will only accept num and its subtypes - int, double
 */
 
 // class for tuple of 3 elements of type int
@@ -55,7 +51,7 @@ Sometimes, single letters may not be clear enough for readability, therefore you
 // }
 
 // class for tuple using generics
-class Tuple<E extends num, String> {
+class Tuple<E> {
   // replace int? with generic type E?
   final E? _a;
   final E? _b;
