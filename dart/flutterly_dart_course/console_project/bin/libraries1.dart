@@ -20,7 +20,11 @@
 ? Can one library be formed out of more than one file?
 * Yes - a library can be formed by one or more files.
 * In case - multiple files - then each file is no longer a separate library, but rather represent the same library
-! part 'library_name.dart'
+! main library - use 'part' directive
+part 'library_name.dart'
+! second library - use 'part of' directive
+part of 'main_library_name.dart'
+* second becomes part of the main
 
 
 ? Can one library contain multiple libraries?
