@@ -17,8 +17,7 @@
 
 ! Every feature/special functionality -> should be placed into a separate library
 
-? Can one library be formed out of more than one file?
-* Yes - a library can be formed by one or more files.
+? Can one library be formed out of more than one file? YES!
 * In case - multiple files - then each file is no longer a separate library, but rather represent the same library
 ! main library - use 'part' directive
 part 'first_library_extension_1.dart'
@@ -32,7 +31,8 @@ When implementing multiple files into the same library
 - all files from the library can access all _private and public fields and methods from the entire library
 - ! if you want to access something from inside one of the extension files, the entire library must be imported
 
-? Can one library contain multiple libraries?
+? Can one library contain multiple libraries? YES! - timestamp 6:11:40
+
 
 
 
