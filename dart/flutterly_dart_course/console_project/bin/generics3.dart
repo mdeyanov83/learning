@@ -18,10 +18,11 @@ class Stack<T> {
   T get peak => _stack.last;
   int get length => _stack.length;
 
-  // getter
-  bool canPop => _stack.isNotEmpty;
+  // getter - better implementation, as it looks like a property when called stack.canPop
+  bool get canPop => _stack.isNotEmpty;
+
   // method to check if we can pop an element or not
-  bool canPop() => _stack.isNotEmpty;
+  // bool canPop() => _stack.isNotEmpty;
 
   // pop method
   T pop() {
