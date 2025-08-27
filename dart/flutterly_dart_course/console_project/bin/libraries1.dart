@@ -17,6 +17,15 @@
 
 ! Every feature/special functionality -> should be placed into a separate library
 
+? Can one library be formed out of more than one file?
+* Yes - a library can be formed by one or more files.
+* In case - multiple files - then each file is no longer a separate library, but rather represent the same library
+
+
+? Can one library contain multiple libraries?
+
+
+
 */
 
 // Importing own package by using the package: directive
