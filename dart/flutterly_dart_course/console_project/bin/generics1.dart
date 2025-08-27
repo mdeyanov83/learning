@@ -78,7 +78,6 @@ class Tuple<E> {
   Tuple<num> operator +(Tuple<num> t) {
 
     if (this is Tuple<num>) {
-
       return Tuple(_a! + t._a!, _b! + t._b!, _c! + t._c!);
     }
   }
