@@ -77,9 +77,11 @@ class Tuple<E> {
 
   Tuple<num> operator +(Tuple<num> t) {
 
-    if (this is Tuple<num>) {
-      return Tuple(_a! + t._a!, _b! + t._b!, _c! + t._c!);
+    if (this is Tuple<num>) { // check if the object calling the operator (this) is Tuple<num>
+      final thisAsTupleNum = this as Tuple<num>; // type cast 
+      return Tuple(thisAsTupleNum._a! + t._a!, thisAsTupleNum._b! + t._b!, thisAsTupleNum._c! + t._c!);
     }
+    return const Tuple(0, 0, 0); // or we can throw an exception
   }
 
 
