@@ -15,7 +15,7 @@ class Utils<T>{
   //   list.asMap().containsKey(index) ? list[index] : null;
 
   //! or make a generic method
-  static T? getItem(List<int> list, int index) =>
+  static T ? getItem(List<T> list, int index) =>
     list.asMap().containsKey(index) ? list[index] : null;
 
 }
