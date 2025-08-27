@@ -12,8 +12,10 @@
 * Only libs from inside the lib/ folder can be accessed from an outside package
 
 ! Private fields - are library private fields, not class private fields
-* Private fields and methods can be only access from within the library itself.
+* Private fields and methods can be only access from within the entire library itself.
 * Once it is imported into another package - they cannot be accessed
+
+! Every feature/special functionality -> should be placed into a separate library
 
 */
 
