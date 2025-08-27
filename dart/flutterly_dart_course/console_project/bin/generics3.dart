@@ -3,12 +3,7 @@
 
 ! Data Structures - Stack implementation
 Stack is a LIFO data structure - Last In - First Out
-
-
 */
-
-
-
 
 class Stack<T> {
   // _stack - private
@@ -34,8 +29,6 @@ class Stack<T> {
   // push method
   void push(T value) => _stack.add(value);
 }
-
-
 
 void main(List<String> args) {
 
