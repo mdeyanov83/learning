@@ -1,6 +1,30 @@
 /*
 ! Libraries & Private fields - timestamp 5:57:00
 
+! OVERVIEW
+* Library - 1 Dart file (or a set of files grouped with 'part' and 'part of') --> basic unit of code organization
+! Libraries should be named using snake_case: first_library_name.dart
+* Package - A collection of libraries + configuration (pubspec.yaml) --> unit of distribution (shared via pub.dev  or locally)
+* Package entry point - the file serving as an entry point for importing the whole package with all its libraries
+  - package_name/lib/package_name.dart
+  - It should use export ... syntax to export all subsequent libraries inside the package
+* Import syntax:
+  - Local library: import 'math_utils.dart';
+  - External package: import 'package:http/http.dart';
+    "package:..." - means 'look inside the lib/ folder of this package'
+* Importing a local package - must first declare it as a dependency in the current project pubspec.yaml file
+  dependencies:
+    package_name:
+      path: ../package_name
+        or
+      git: ... (for Git)
+* Project - a package itself
+* Library organization:
+  - Exports (multiple independent libraries)
+  - Parts (one library split across files)
+  - src/ convention for internal code, only to be imported by local libraries
+! END OVERVIEW
+
 ? What these libraries are?
 ? How they really work?
 ? Where they actually live?
@@ -79,25 +103,6 @@ import 'package:dart_libraries/top_library/library1.dart'; - imports only librar
     However in this case each file is still a library by itself
 * You should never reach in and out of the lib/ folder by using relative paths, always use the 'package:' directive
 
-!!!!!!!! Other explanation
-* Library - 1 Dart file (or a set of files grouped with 'part' and 'part of') --> basic unit of code organization
-! Libraries should be named using snake_case: first_library_name.dart
-* Package - A collection of libraries + configuration (pubspec.yaml) --> unit of distribution (shared via pub.dev  or locally)
-* Import syntax:
-  - Local library: import 'math_utils.dart';
-  - External package: import 'package:http/http.dart';
-    "package:..." - means 'look inside the lib/ folder of this package'
-* Importing a local package - must first declare it as a dependency in the current project pubspec.yaml file
-  dependencies:
-    package_name:
-      path: ../package_name
-        or
-      git: ... (for Git)
-* Project - a package itself
-* Library organization:
-  - Exports (multiple independent libraries)
-  - Parts (one library split across files)
-  - src/ convention for internal code, only to be imported by local libraries
 */
 
 
