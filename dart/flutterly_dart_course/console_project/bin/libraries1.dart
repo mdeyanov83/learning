@@ -59,6 +59,9 @@ import 'package:dart_libraries/top_library/library1.dart'; - imports only librar
 When working on your main project code (bin/ folder) or test (test/ folder) always import libraries using
 import 'package:... ' directive.
 Never use relative paths ../ or ../../ to navigate outside of bin or test folders
+Always use package: to access something inside the lib folder
+
+
 * Rule #2 -
 
 */
