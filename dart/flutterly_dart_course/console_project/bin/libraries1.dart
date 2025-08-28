@@ -85,6 +85,7 @@ import 'package:dart_libraries/top_library/library1.dart'; - imports only librar
 * Import syntax:
   - Local library: import 'math_utils.dart';
   - External package: import 'package:http/http.dart';
+    "package:..." - means 'look inside the lib/ folder of this package'
 * Project - a package itself
 * Library organization:
   - Exports (multiple independent libraries)
