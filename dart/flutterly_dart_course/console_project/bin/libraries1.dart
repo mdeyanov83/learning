@@ -56,6 +56,7 @@ import 'package:dart_libraries/top_library/library1.dart'; - imports only librar
 
 ! General rules
 * Rule #1 - Declare all your libraries containing feature implementations inside the lib folder
+* Rule #2 - 
 
 */
 
