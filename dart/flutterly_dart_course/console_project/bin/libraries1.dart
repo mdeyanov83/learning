@@ -56,7 +56,10 @@ import 'package:dart_libraries/top_library/library1.dart'; - imports only librar
 
 ! General rules
 * Rule #1 - Declare all your libraries containing feature implementations inside the lib folder
-* Rule #2 - 
+When working on your main project code (bin/ folder) or test (test/ folder) always import libraries using
+import 'package:... ' directive.
+Never use relative paths ../ or ../../ to navigate outside of bin or test folders
+* Rule #2 -
 
 */
 
