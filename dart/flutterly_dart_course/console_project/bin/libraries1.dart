@@ -50,9 +50,12 @@ import 'package:dart_libraries/top_library/library1.dart'; - imports only librar
 
 ! Implementation libraries that we want to remain private (internal only to our package)?
 * must be placed in the src/ folder
-* they should be imported and used only by the package itself, not by other packages
+* they should be imported and used only by the package itself, not by other outside packages
 * this rule is convention, not enforced!
+* The fields inside the src/ folder are not part of the public API if the library is published
 
+! General rules
+* Rule #1 - Declare all your libraries containing feature implementations inside the lib folder
 
 */
 
