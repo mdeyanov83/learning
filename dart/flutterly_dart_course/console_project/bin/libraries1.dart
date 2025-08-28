@@ -55,7 +55,7 @@ import 'package:dart_libraries/top_library/library1.dart'; - imports only librar
 * The fields inside the src/ folder are not part of the public API if the library is published
 
 ! General rules
-* Rule #1 - Declare all your libraries containing feature implementations inside the lib folder
+* Rule #1 - Declare all your libraries containing feature implementations inside the lib/ folder
 - When working on your main project code (bin/ folder) or test (test/ folder) always import libraries using
   import 'package:... ' directive.
   Never use relative paths ../ or ../../ to navigate outside of bin or test folders
@@ -69,6 +69,16 @@ import 'package:dart_libraries/top_library/library1.dart'; - imports only librar
 - Never use relative paths to navigate outside or inside of lib/ folder
   ../lib/   ../../
 - Relative paths between libraries WITHIN the lib/ folder are permitted, just make sure you stay in the lib folder
+
+! Recap
+* Libraries containing specific implementations from your package should be placed in the lib/ folder
+* A .dart file always represents a library unless:
+  a) You want to have your library split into multiple files ('part' & 'part of' approach)
+  b) You want to have multiple libraries inside a bigger library ('export' approach)
+    However in this case each file is still a library by itself
+* You should never reach in and out of the lib/ folder by using relative paths, always use the 'package:' directive
+
+
 */
 
 
