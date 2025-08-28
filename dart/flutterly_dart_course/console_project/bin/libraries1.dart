@@ -8,6 +8,7 @@
 * How private fields work in conjunction with libraries
 
 * Every .dart file is a library by default, even if not declared
+* A package is a collection of libraries + configuration (pubslec.yaml)
 * Libraries containing the implementations from inside a package must be in the lib/ folder
 * Only libs from inside the lib/ folder can be accessed from an outside package
 
@@ -77,6 +78,14 @@ import 'package:dart_libraries/top_library/library1.dart'; - imports only librar
   b) You want to have multiple libraries inside a bigger library ('export' approach)
     However in this case each file is still a library by itself
 * You should never reach in and out of the lib/ folder by using relative paths, always use the 'package:' directive
+
+!!!!!!!! Other explanation
+* Library - 1 Dart file (or a set of files grouped with 'part' and 'part of') --> basic unit of code organization
+* Package - A collection of libraries + configuration (pubspec.yaml) --> unit of distribution (shared via pub.dev  or locally)
+* Import syntax:
+  - Local library: import 'math_utils.dart';
+  - External package: import 'package:http/http.dart';
+* Project - a package itself
 
 
 */
