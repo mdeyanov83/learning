@@ -81,7 +81,7 @@ import 'package:dart_libraries/top_library/library1.dart'; - imports only librar
 
 !!!!!!!! Other explanation
 * Library - 1 Dart file (or a set of files grouped with 'part' and 'part of') --> basic unit of code organization
-! Libraries should be named using 
+! Libraries should be named using snake_case: first_library_name.dart
 * Package - A collection of libraries + configuration (pubspec.yaml) --> unit of distribution (shared via pub.dev  or locally)
 * Import syntax:
   - Local library: import 'math_utils.dart';
@@ -98,12 +98,10 @@ import 'package:dart_libraries/top_library/library1.dart'; - imports only librar
   - Exports (multiple independent libraries)
   - Parts (one library split across files)
   - src/ convention for internal code, only to be imported by local libraries
-
 */
 
 
-
-// Importing own package by using the package: directive
+// Importing local external package by using the package: directive
 // first_library.dart is located inside the lib/ folder
 import 'package:dart_libraries/first_library.dart';
 import 'package:dart_libraries/top_library/top_library.dart';
