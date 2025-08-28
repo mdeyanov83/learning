@@ -40,7 +40,7 @@ When implementing multiple files into the same library
 
 // Importing own package by using the package: directive
 // first_library.dart is located inside the lib/ folder
-import 'package:console_project/first_library.dart';
+import 'package:dart_libraries/first_library.dart';
 
 void main(List<String> args) {
   var a = A();

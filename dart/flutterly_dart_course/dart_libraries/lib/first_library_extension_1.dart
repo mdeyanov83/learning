@@ -1,4 +1,4 @@
-part of 'first_library.dart';
+part of 'first_library.dart'; // relative path
 
 void anotherFunction() {
   var a = A();
