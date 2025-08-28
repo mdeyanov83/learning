@@ -46,7 +46,13 @@ top_library - use export 'library1.dart' - then it will export it along with its
 import 'package:dart_libraries/top_library/top_library.dart';  - imports the entire library, including exported ones in it
 import 'package:dart_libraries/top_library/library1.dart'; - imports only library1.dart
 
-? Both approached - part/part of and export can be combined together to structure as we want
+? Both approaches - part/part of and export can be combined together for full control of how to structure our libraries
+
+! Implementation libraries that we want to remain private (internal only to our package)?
+* must be placed in the src/ folder
+* they should be imported and used only by the package itself, not by other packages
+* this rule is convention, not enforced!
+
 
 */
 
