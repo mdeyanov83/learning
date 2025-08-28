@@ -32,7 +32,13 @@ When implementing multiple files into the same library
 - ! if you want to access something from inside one of the extension files, the entire library must be imported
 
 ? Can one library contain multiple libraries? YES! - timestamp 6:11:40
+* lib/top_library folder
+- top_library.dart
+- library1.dart
+- library2.dart
+- library3.dart
 
+* Each file is a standalone library by itself
 
 
 
