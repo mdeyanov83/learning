@@ -60,11 +60,15 @@ import 'package:dart_libraries/top_library/library1.dart'; - imports only librar
   import 'package:... ' directive.
   Never use relative paths ../ or ../../ to navigate outside of bin or test folders
   Always use package: to access something inside the lib folder
-- When working on libraries inside the lib/ folder, only import libraries from another package using package: di
+- When working on libraries inside the lib/ folder
+  only import libraries from another package using package: directive
+  Never import anything else from outside the lib/folder, since it will not be accessible when the current package
+  gets imported somewhere else
 
-
-* Rule #2 -
-
+* Rule #2 - Never reach in or out the lib folder by using relative imports, when you need to use the "package" directive
+- Never use relative paths to navigate outside or inside of lib/ folder
+  ../lib/   ../../
+- Relative paths between libraries WITHIN the lib/ folder are permitted, just make sure you stay in the lib folder
 */
 
 
