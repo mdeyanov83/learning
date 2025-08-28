@@ -86,6 +86,10 @@ import 'package:dart_libraries/top_library/library1.dart'; - imports only librar
   - Local library: import 'math_utils.dart';
   - External package: import 'package:http/http.dart';
     "package:..." - means 'look inside the lib/ folder of this package'
+* Importing a local package - must first declare it as a dependency in the current project pubspec.yaml file
+  dependencies:
+    dart_libraries:
+      path: ../dart_libraries
 * Project - a package itself
 * Library organization:
   - Exports (multiple independent libraries)
