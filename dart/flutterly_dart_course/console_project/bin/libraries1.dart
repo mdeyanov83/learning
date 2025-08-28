@@ -32,7 +32,9 @@ When implementing multiple files into the same library
 - ! if you want to access something from inside one of the extension files, the entire library must be imported
 
 ? Can one library contain multiple libraries? YES! - timestamp 6:11:40
-* lib/top_library folder
+! package name (project name): dart_libraries
+* must be included in dependencies in the current project pubspec.yaml file-*
+- folder: lib/top_library
 - top_library.dart
 - library1.dart
 - library2.dart
@@ -40,13 +42,17 @@ When implementing multiple files into the same library
 
 * Each file is a standalone library by itself
 top_library - use export 'library1.dart' - then it will export it along with itself
-
+* Then to import:
+import 'package:dart_libraries/top_library/top_library.dart';  - imports the entire library, including exported ones in it
+import 'package:dart_libraries/top_library/library1.dart'; - imports only library1.dart
 
 */
 
 // Importing own package by using the package: directive
 // first_library.dart is located inside the lib/ folder
 import 'package:dart_libraries/first_library.dart';
+import 'package:dart_libraries/top_library/top_library.dart';
+import 'package:dart_libraries/top_library/library1.dart';
 
 void main(List<String> args) {
   var a = A();
