@@ -46,7 +46,11 @@ top_library - use export 'library1.dart' - then it will export it along with its
 import 'package:dart_libraries/top_library/top_library.dart';  - imports the entire library, including exported ones in it
 import 'package:dart_libraries/top_library/library1.dart'; - imports only library1.dart
 
+? Both approached - part/part of and export can be combined together to structure as we want
+
 */
+
+
 
 // Importing own package by using the package: directive
 // first_library.dart is located inside the lib/ folder
