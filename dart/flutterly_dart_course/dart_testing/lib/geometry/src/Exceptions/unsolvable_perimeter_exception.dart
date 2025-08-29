@@ -1,1 +1,1 @@
-class UnsolvablePerimeterException with Exception {}
+class UnsolvablePerimeterException implements Exception {}

@@ -1,1 +1,1 @@
-class InvalidTriangleException with Exception {}
+class InvalidTriangleException implements Exception {}
