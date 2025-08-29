@@ -1,5 +1,6 @@
 /*
 ! Libraries & Private fields - timestamp 5:57:00
+! package: dart_libraries
 
 ! OVERVIEW
 * Library - 1 Dart file (or a set of files grouped with 'part' and 'part of') --> basic unit of code organization
