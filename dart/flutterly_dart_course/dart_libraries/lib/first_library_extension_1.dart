@@ -20,5 +20,5 @@ void anotherFunction() {
 
   //* math accessible here, but imported in the primary file
   var s = math.sin(90);
-
+  s;
 }

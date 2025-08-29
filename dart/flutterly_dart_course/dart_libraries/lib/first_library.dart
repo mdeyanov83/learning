@@ -1,4 +1,4 @@
-library first_library; // library names are not necessary
+// library first_library; // library names are not necessary
 
 import 'dart:math' as math;
 
@@ -27,4 +27,6 @@ void randomFunc() {
   //* note that all private fields and methods can be accessed inside the same library
   a._privateField;
   a._privateMethod();
+  _privateTopLevelFunction();
+  _privateTopLevel;
 }
