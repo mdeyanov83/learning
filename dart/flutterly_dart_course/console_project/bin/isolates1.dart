@@ -70,7 +70,9 @@ TODO
     1. The event loop first drains the microtask queue (runs all pending microtasks)
     2. Only when the microtask queue is empty does it take the next
       event from the event queue
-    
+
+  * Microtasks exist to let async code run in deterministic order before processing I/O.
+
 
 
 
