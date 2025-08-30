@@ -8,6 +8,7 @@
 06:59:00 - (20.3) Isolate Groups
 07:00:41 - (20.4) Microtask queue
 
+* Isolate - the component in which the Dart code runs
 
 
 
