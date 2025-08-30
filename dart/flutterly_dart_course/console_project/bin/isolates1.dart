@@ -2,6 +2,7 @@
 ! Introduction to Synchronous and Asynchronous workflow
 
 ! Isolates
+ *
 
 
 
