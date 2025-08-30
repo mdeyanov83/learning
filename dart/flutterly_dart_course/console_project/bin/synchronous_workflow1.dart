@@ -38,15 +38,33 @@ asynchronous | Future<T> |  STREAM<T>   |
 */
 
 void main(List<String> args) {
+  // final a = showNormal(10);
+  // print(a);
 
-
+  final a = showGenerator(10);
+  print(a);
 }
 
+// generate synchronously a single value
+int sum(int a, int b) => a + b;
 
-int sum(int a, int b) => a + b; // generate synchronously a single value
-
-Iterable<int> show(int n) sync* { // Synchronously generates a collection, when needed
-  for (var i = 0; i <= n; i++) {
-    yield 1;
+// Normal function generating a list
+List<int> showNormal(int n) {
+  print('Normal started');
+  final list = <int>[];
+  for (var i = 1; i <= n; i++) {
+    print('i -> $i');
+    list.add(i);
   }
+  print('Normal ended');
+  return list;
+}
+
+// Synchronous generator function generating a collection
+Iterable<int> showGenerator(int n) sync* {
+  print('Generator started');
+  for (var i = 1; i <= n; i++) {
+    yield i;
+  }
+  print('Generator ended');
 }
