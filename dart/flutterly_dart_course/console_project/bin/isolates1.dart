@@ -9,6 +9,11 @@
 07:00:41 - (20.4) Microtask queue
 
 * Isolate - the component in which the Dart code runs
+- Isolated memory spaces: Each isolate has its own memory heap
+- No shared memory: Isolates, cannot directly access each other's memory
+- Message passing: Communication happens through message passing
+- No race condition: Since there's no shared state, you avoid typical threading issues
+
 
 
 
