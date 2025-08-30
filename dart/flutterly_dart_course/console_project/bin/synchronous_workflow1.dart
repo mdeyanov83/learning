@@ -24,13 +24,11 @@
   - Items are stored at a specific index (so does not need to have an iterator, since all values
     have their own index and can be accessed directly)
 
------------- |  1 value  | 0 or more values
+`            |  1 value  |   multiple   |
 ------------------------------------------
-synchronous  |     T     |   ITERABLE<T> |
+synchronous  |     T     |  ITERABLE<T> |
 ------------------------------------------
-asynchronous | Future<T> |   STREAM<T>   |
-
-
+asynchronous | Future<T> |  STREAM<T>   |
 
 
 
@@ -38,4 +36,8 @@ asynchronous | Future<T> |   STREAM<T>   |
 
 void main(List<String> args) {
 
+
 }
+
+
+int sum(int a, int b) => a + b; // generate synchronously a single value
