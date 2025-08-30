@@ -11,7 +11,7 @@
 * Isolate - Independent unit of execution in Dart
 - Isolated memory spaces: Each isolate has its own memory heap
 - No shared memory: Isolates, cannot directly access each other's memory
-- Each isolate 
+- Its own event loop and event queue
 - Message passing: Communication happens through message passing
 - No race condition: Since there's no shared state, you avoid typical threading issues
 
