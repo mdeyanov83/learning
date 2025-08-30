@@ -17,7 +17,8 @@
   - It doesn't need to have a specified length
   - Accessing an element will regenerate all elements until the desired one is found
   - Looping through an iterable, you cannot use an ordinary "for" statement
-  
+  - use "for in" or .forEach
+
 ? List - non lazy type of iterable --> constructed as soon as it's called
   - Has a defined size
   - Items are stored at a specific index (so does not need to have an iterator, since all values
