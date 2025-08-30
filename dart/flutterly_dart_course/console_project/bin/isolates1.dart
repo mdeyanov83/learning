@@ -14,7 +14,7 @@
   - Its own event loop and event queue
   - Message passing: Communication happens through message passing
   - No race condition: Since there's no shared state, you avoid typical threading issues
-
+  - Single thread: Each isolate runs on a single thread
 
 * Main isolate - the main() function
 
