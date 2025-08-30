@@ -17,10 +17,6 @@ Test types
     > the app itself
     > the test app that will put the app through its paces.
 
-
-
-
-current timestamp - 6:32:00
 */
 
 void main(List<String> args) {
