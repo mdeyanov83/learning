@@ -31,6 +31,8 @@ synchronous  |     T     |  ITERABLE<T> |
 ------------------------------------------
 asynchronous | Future<T> |  STREAM<T>   |
 
+! Creating Iterables
+  * Mark with the 'sync*' keyword between the function parameter list () and function body {}
 
 
 */
@@ -45,11 +47,6 @@ int sum(int a, int b) => a + b; // generate synchronously a single value
 
 Iterable<int> show(int n) sync* { // Synchronously generates a collection, when needed
   for (var i = 0; i <= n; i++) {
-
-
-
-
+    yield 1;
   }
-
-
 }
