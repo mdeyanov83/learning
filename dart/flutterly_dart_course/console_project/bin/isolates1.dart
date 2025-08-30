@@ -61,7 +61,7 @@ Running multiple isolates at the same time on different CPU cores(threads)
     to execute them in parallel
   - Communication between isolates is done with message passing (SendPort / ReceivePort)
 
-! Event Groups
+! Isolate Groups
 TODO - new in later versions of Dart (after the tutorial)
 
 ! Microtasks
