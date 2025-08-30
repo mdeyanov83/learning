@@ -15,6 +15,16 @@
 
 */
 
+import 'dart:math';
 void main(List<String> args) {
+
+  print('#1 - sqrt(4) -> ${sqrt(4)}');
+  print('#2 - multiply(51, 10) => ${15 * 10}');
+  print('#3 - sum(20, 5) -> ${20 + 5}');
+  Future.delayed(const Duration(seconds: 5),
+    () => print('#4 - multiply(4, 3) -> ${4 * 3}')); // Future.delayed
+
+  print('#5 - difference (20, 5) -> ${20 - 5}');
+
 
 }
