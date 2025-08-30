@@ -66,7 +66,11 @@ TODO
   - Each isolate has 2 queues:
     1. Microtask queue -> High Priority
     2. Event Queue -> Lower Priority (handles I/O events, timers, messages);
-  - Execution order
+  - Execution order:
+    1. The event loop first drains the microtask queue (runs all pending microtasks)
+    2. Only when the microtask queue is empty does it take the next
+      event from the event queue
+    
 
 
 
