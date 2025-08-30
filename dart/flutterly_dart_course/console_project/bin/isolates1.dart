@@ -25,6 +25,7 @@
   4. Ports - used for inter-isolate communication:
     - ReceivePort -> listens for messages
     - SendPort -> sends messages to another isolate
+  5. Event handler - The function (code) tied to an event, which actually runs
 
 ! Event Queue - each isolate has its own event queue
   * Events are:
@@ -48,7 +49,7 @@ Running multiple isolates at the same time on different CPU cores(threads)
   - If you spin up multiple isolates, Dart can use multiple cores(threads)
     to execute them in parallel
   - Communication between isolates is done with message passing (SendPort / ReceivePort)
-  
+
 
 
 
