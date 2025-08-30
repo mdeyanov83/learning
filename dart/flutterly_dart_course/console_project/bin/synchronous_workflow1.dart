@@ -43,12 +43,12 @@ void main(List<String> args) {
 
 int sum(int a, int b) => a + b; // generate synchronously a single value
 
-Iterable<int> show(int n) {
+Iterable<int> show(int n) sync* { // Synchronously generates a collection, when needed
   for (var i = 0; i <= n; i++) {
 
 
 
-    
+
   }
 
 
