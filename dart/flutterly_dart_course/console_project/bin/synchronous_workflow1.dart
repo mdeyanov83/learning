@@ -7,6 +7,11 @@
 
 * Synchronous operation - a task that needs to be completed before moving on to the next one
 
+             |  1 value  | 0 or more values
+------------------------------------------
+synchronous  |     T     |   ITERABLE<T> |
+------------------------------------------
+asynchronous | Future<T> |   STREAM<T>   |
 
 
 
