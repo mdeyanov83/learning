@@ -11,7 +11,17 @@
 
 * Iterable - an abstract collection of values
   - Lazily constructed - it will generate its items only when an element is accessed
-  - Traversed with the help of an iterator(curr, nextItem())
+  - Traversed with the help of an iterator(curr, nextItem()) -
+  The iterator is a helper containing the current element and a function that will let it advance
+  to the next element
+  - It doesn't need to have a specified length
+  - Accessing an element will regenerate all elements until the desired one is found
+  - Looping through an iterable, you cannot use an ordinary "for" statement
+  
+? List - non lazy type of iterable --> constructed as soon as it's called
+  - Has a defined size
+  - Items are stored at a specific index (so does not need to have an iterator, since all values
+    have their own index and can be accessed directly)
 
 ------------ |  1 value  | 0 or more values
 ------------------------------------------
