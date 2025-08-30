@@ -54,7 +54,9 @@ Running multiple isolates at the same time on different CPU cores(threads)
 TODO
 
 ! Microtask Queue
- 
+* Microtask - a small, high-priority async task that Dart schedules to run
+  
+
 
 
 
