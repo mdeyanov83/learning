@@ -41,7 +41,14 @@
   2. If microtasks are empty, pick from the event queue
   3. Repeat forever
 
-! Parallelism 
+! Parallelism
+Running multiple isolates at the same time on different CPU cores(threads)
+  - Dart is single-threaded per isolate, so within 1 isolate, there is no
+    parallel execution - only concurrency (tasks are interleaved using the event loop)
+  - If you spin up multiple isolates, Dart can use multiple cores(threads)
+    to execute them in parallel
+  - Communication between isolates is done with message passing (SendPort / ReceivePort)
+  
 
 
 
