@@ -18,6 +18,16 @@
 
 * Main isolate - the main() function
 
+! Isolate structure - each isolate contains:
+1. Heap (memory space) - its own objects and variables
+2. Event loop - processes events/tasks one at a time
+3. Event queue - holds events/messages waiting to be executed
+4. Ports - used for inter-isolate communication:
+  - ReceivePort -> listens for messages
+  - SendPort -> sends messages to another isolate
+
+! Event 
+
 
 
 
