@@ -9,11 +9,11 @@
 07:00:41 - (20.4) Microtask queue
 
 * Isolate - Independent unit of execution in Dart
-- Isolated memory spaces: Each isolate has its own memory heap
-- No shared memory: Isolates, cannot directly access each other's memory
-- Its own event loop and event queue
-- Message passing: Communication happens through message passing
-- No race condition: Since there's no shared state, you avoid typical threading issues
+  - Isolated memory spaces: Each isolate has its own memory heap
+  - No shared memory: Isolates, cannot directly access each other's memory
+  - Its own event loop and event queue
+  - Message passing: Communication happens through message passing
+  - No race condition: Since there's no shared state, you avoid typical threading issues
 
 
 * Main isolate - the main() function
@@ -26,7 +26,10 @@
   - ReceivePort -> listens for messages
   - SendPort -> sends messages to another isolate
 
-! Event 
+! Event Queue - each isolate has its own event queue
+* Events are:
+  - Messages from other isolates
+  - I/O events (e.g., )
 
 
 
