@@ -14,6 +14,8 @@
 - Message passing: Communication happens through message passing
 - No race condition: Since there's no shared state, you avoid typical threading issues
 
+* Main isolate - the main() function
+
 
 
 
