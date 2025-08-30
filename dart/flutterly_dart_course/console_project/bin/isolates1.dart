@@ -1,6 +1,20 @@
 /*
 ! Introduction to Synchronous and Asynchronous workflow
 
+  * Synchronous Workflow
+    - Runs line by line, top to bottom
+    - Each statement blocks the next until it completes
+    - No event loops or microtask queues are involved
+  * Asynchronous Workflow
+    - Uses the event loop, microtask queue, and event queue
+    - Tasks are scheduled to run later, without blocking the main execution
+    - Async tasks include:
+      1. Microtasks: scheduleMicrotask, Future.then, async/await continuations
+      2. Events: Future(() {}), timers, I/O completion, isolate messages
+  * Workflow
+    1. Run all synchronous code first
+    2. Drain microtask queue (high priority async tasks)
+    3. Process event queue (lower priority async tasks)
 
 
 ! Isolates
