@@ -10,6 +10,7 @@
   When we want the result to consist of 0 or multiple values --> return an Iterable collection of values
 
 * Iterable - an abstract collection of values
+  - Iterable class - Iterable<type>
   - Lazily constructed - it will generate its items only when an element is accessed
   - Traversed with the help of an iterator(curr, nextItem()) -
   The iterator is a helper containing the current element and a function that will let it advance
@@ -41,3 +42,14 @@ void main(List<String> args) {
 
 
 int sum(int a, int b) => a + b; // generate synchronously a single value
+
+Iterable<int> show(int n) {
+  for (var i = 0; i <= n; i++) {
+
+
+
+    
+  }
+
+
+}
