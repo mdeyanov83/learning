@@ -19,17 +19,28 @@
 * Main isolate - the main() function
 
 ! Isolate structure - each isolate contains:
-1. Heap (memory space) - its own objects and variables
-2. Event loop - processes events/tasks one at a time
-3. Event queue - holds events/messages waiting to be executed
-4. Ports - used for inter-isolate communication:
-  - ReceivePort -> listens for messages
-  - SendPort -> sends messages to another isolate
+  1. Heap (memory space) - its own objects and variables
+  2. Event loop - processes events/tasks one at a time
+  3. Event queue - holds events/messages waiting to be executed
+  4. Ports - used for inter-isolate communication:
+    - ReceivePort -> listens for messages
+    - SendPort -> sends messages to another isolate
 
 ! Event Queue - each isolate has its own event queue
-* Events are:
-  - Messages from other isolates
-  - I/O events (e.g., )
+  * Events are:
+    - Messages from other isolates
+    - I/O events (e.g., file read, HTTP request completion)
+    - Microtasks (higher priority tasks like Future.then() callbacks)
+  * Types of queues inside an isolate:
+    1. Microtask Queue -> higher priority, runs first
+    2. Event Queue -> runs after all microtasks are drained
+
+! Event Loop
+  The event loop is the scheduler inside each isolate that decides what to run next
+  1. Pick a task from the microtask queue (if available)
+  2. If microtasks are empty, pick from the event queue
+  3. Repeat forever
+
 
 
 
