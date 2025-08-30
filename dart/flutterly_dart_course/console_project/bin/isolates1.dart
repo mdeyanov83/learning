@@ -53,9 +53,20 @@ Running multiple isolates at the same time on different CPU cores(threads)
 ! Event Groups
 TODO
 
+! Microtasks
+  * Microtask - a small, high-priority async task that Dart schedules
+    to run before the next event from the event queue.
+  * Microtasks are designed for things that must run as soon as possible,
+    without waiting for I/O or timers
+  * Created by:
+    - scheduleMicrotask(() {...});
+    - Future.then(...) and async/await internally also use microtasks
+
 ! Microtask Queue
-* Microtask - a small, high-priority async task that Dart schedules to run
-  
+  - Each isolate has 2 queues:
+    1. Microtask queue -> High Priority
+    2. Event Queue -> Lower Priority (handles I/O events, timers, messages);
+  - Execution order
 
 
 
