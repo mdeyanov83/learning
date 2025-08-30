@@ -41,6 +41,8 @@
   2. If microtasks are empty, pick from the event queue
   3. Repeat forever
 
+! Parallelism 
+
 
 
 
