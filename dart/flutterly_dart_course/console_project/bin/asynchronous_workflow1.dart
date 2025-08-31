@@ -45,9 +45,8 @@ void main(List<String> args) {
   Future.delayed(const Duration(seconds: 1), () => 3).then(print);
   Future.delayed(const Duration(seconds: 1), () => Future(() => 4)).then(print);
 
-  //
   Future.value(5).then(print); // Microtask Queue
-  Future.value(Future(() => 6)).then(print);
+  Future.value(Future(() => 6)).then(print); // == Future(() => 6); Event Queue
 
   Future.sync(() => 7).then(print); // Microtask Queue
   Future.sync(() => Future(() => 8)).then(print);
