@@ -38,12 +38,14 @@ import 'dart:async';
 void main(List<String> args) {
   print('Start'); // Synchronous code, executes immediately
 
+  // Events, set on the Event Queue inside the isolate
   Future(() => 1).then(print); // Default Future constructor
   Future(() => Future(() => 2)).then(print);
 
   Future.delayed(const Duration(seconds: 1), () => 3).then(print);
   Future.delayed(const Duration(seconds: 1), () => Future(() => 4)).then(print);
 
+  // 
   Future.value(5).then(print);
   Future.value(Future(() => 6)).then(print);
 
