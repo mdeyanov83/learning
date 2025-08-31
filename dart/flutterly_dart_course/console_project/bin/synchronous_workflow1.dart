@@ -35,7 +35,7 @@ asynchronous | Future<T> |  STREAM<T>   |
   * Mark with the 'sync*' keyword between the function parameter list () and function body {}
 
 *1. Iterables are lazy-loaded - the generator function runs only when an element inside the iterable is accessed
-*2. Iterables generate only the right number of elements needed.
+*2. Iterables generate only the right number of elements needed, they don't continue past the value we are looking for.
 
 
 */
