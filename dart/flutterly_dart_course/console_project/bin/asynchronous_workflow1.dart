@@ -16,8 +16,8 @@ Stream<T> - emit multiple values Asynchronously, while other tasks are executed 
 * States:
   - Unprocessed - not yet processed by the event loop
   - Uncompleted (pending)- processed but not yet finished. No value or error yet
-  - Completed with value of the expected type - The async operation succeeded, a result is available
-  - Completed with error - 
+  - Completed with value of the expected type - async operation succeeded, a result is available
+  - Completed with error - async operation failed, an error/exception is available
 
 
 
