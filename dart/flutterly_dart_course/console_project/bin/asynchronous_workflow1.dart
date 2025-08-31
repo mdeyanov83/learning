@@ -3,7 +3,11 @@
 ? What is an Asynchronous operation - A task that that needs to be solved
 ? But doesn't need to wait before proceeding to the next one
 
-
+`            |  1 value  |   multiple   |
+------------------------------------------
+synchronous  |     T     |  ITERABLE<T> |
+------------------------------------------
+asynchronous | Future<T> |  STREAM<T>   |
 
 
 
