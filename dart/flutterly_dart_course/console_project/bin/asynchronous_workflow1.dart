@@ -14,10 +14,10 @@ Stream<T> - emit multiple values Asynchronously, while other tasks are executed 
 ! FUTURES
 (Single async result)
 * States:
-  - Unprocessed
-  - Uncompleted - processed by the event loop, but not yet completed
-  - Completed with an answer of the expected type
-  - Completed with an Error
+  - Unprocessed - not yet processed by the event loop
+  - Uncompleted (pending)- processed but not yet finished. No value or error yet
+  - Completed with value of the expected type - The async operation succeeded, a result is available
+  - Completed with error - 
 
 
 
