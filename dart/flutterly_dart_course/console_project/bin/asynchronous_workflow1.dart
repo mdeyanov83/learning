@@ -38,7 +38,7 @@ import 'dart:async';
 void main(List<String> args) {
   print('Start'); // Synchronous code, executes immediately
 
-  Future(() => 1).then(print);
+  Future(() => 1).then(print); // Default Future constructor
   Future(() => Future(() => 2)).then(print);
 
   Future.delayed(const Duration(seconds: 1), () => 3).then(print);
