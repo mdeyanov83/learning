@@ -34,15 +34,35 @@ asynchronous | Future<T> |  STREAM<T>   |
 ! Creating Iterables
   * Mark with the 'sync*' keyword between the function parameter list () and function body {}
 
+*1. Iterables are lazy-loaded - the generator function runs only when an element inside the iterable is accessed
+*2. Iterables generate only the right number of elements needed.
+
 
 */
 
 void main(List<String> args) {
-  // final a = showNormal(10);
-  // print(a);
+  // final a = showNormal(10); // The function runs and prints its output as it should, then returns a List assigned to a
 
-  final a = showGenerator(10);
-  print(a);
+  final a = showGenerator(10); // We assign the iterable, but the generator does not run until accessed
+
+  // The iterable is generated only when accessed
+  // runs through the code and finally the accessed element is printed
+  print(a.last);
+  print(a.first);
+  print(a.elementAt(4));
+
+  // Examples
+  final list = a.toList(); // generates a list from the iterable
+  print('list[3] -> ${list[3]}');
+
+  final list1 = [1, 2, 3, 4, 5, 6, 7];
+  final evenList = list1.where((element) => element.isEven); // evenList is of class Iterable<int>
+  print(evenList.elementAt(2));
+
+  // creating an instance of an iterable directly, using the generate constructor
+  final iterable = Iterable<int>.generate(3);
+  print('iterable.elementAt(1) --> ${iterable.elementAt(1)}');
+
 }
 
 // generate synchronously a single value
@@ -64,6 +84,7 @@ List<int> showNormal(int n) {
 Iterable<int> showGenerator(int n) sync* {
   print('Generator started');
   for (var i = 1; i <= n; i++) {
+    print('i -> $i');
     yield i;
   }
   print('Generator ended');
