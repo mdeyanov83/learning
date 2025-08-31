@@ -12,7 +12,7 @@ Future<T> - A single value, that will be calculated and retrieved later
 Stream<T> - emit multiple values Asynchronously, while other tasks are executed in the background
 
 ! FUTURES
-Asynchronous event
+(Single async result)
 
 
 
