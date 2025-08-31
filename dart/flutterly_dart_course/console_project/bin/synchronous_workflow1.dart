@@ -37,6 +37,18 @@ asynchronous | Future<T> |  STREAM<T>   |
 *1. Iterables are lazy-loaded - the generator function runs only when an element inside the iterable is accessed
 *2. Iterables generate only the right number of elements needed, they don't continue past the value we are looking for.
 
+! Generator functions (creating iterables)
+* A function becomes a generator if it uses either:
+  - sync* - for synchronous generators, produces an Iterable<T>
+  - async* - for Asynchronous generators, produces a Stream<t>
+* Instead of return, use yield
+  - yield - emits a single value
+  - yield* - delegates to another generator or iterable/stream
+
+* Declaration syntax:
+Iterable<type> functionName(attributes) sync* {function body}
+
+
 
 */
 
@@ -62,7 +74,6 @@ void main(List<String> args) {
   // creating an instance of an iterable directly, using the generate constructor
   final iterable = Iterable<int>.generate(3);
   print('iterable.elementAt(1) --> ${iterable.elementAt(1)}');
-
 }
 
 // generate synchronously a single value
