@@ -62,3 +62,11 @@ void main(List<String> args) {
 
   print('End'); // Synchronous code, executes immediately
 }
+
+//Read from the Isolate Right -> Left
+
+// READ: End 12 11 10 9 8 7 6 5 4 3 2 1 Start
+
+//! MICROTASK:
+//* EVENT: 1
+//? OUTPUT: Start
