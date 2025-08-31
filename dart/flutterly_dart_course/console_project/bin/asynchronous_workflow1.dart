@@ -19,7 +19,10 @@ Stream<T> - emit multiple values Asynchronously, while other tasks are executed 
   - Completed with value of the expected type - async operation succeeded, a result is available
   - Completed with error - async operation failed, an error/exception is available
 
-
+* Future(() => ) - Default Future constructor
+* Future.delayed
+* Future.value - takes a value and resolves it immediately
+* Future.sync - takes a closure function and resolves it immediately
 
 
 
@@ -49,7 +52,7 @@ void main(List<String> args) {
   Future.value(Future(() => 6)).then(print); // == Future(() => 6); Event Queue
 
   Future.sync(() => 7).then(print); // == Future.value(7); // Microtask Queue
-  Future.sync(() => Future(() => 8)).then(print); // == Future(() => 8); // 
+  Future.sync(() => Future(() => 8)).then(print); // == Future(() => 8); // Event Queue
 
   Future.microtask(() => 9).then(print); // Microtask Queue
   Future.microtask(() => Future(() => 10)).then(print);
