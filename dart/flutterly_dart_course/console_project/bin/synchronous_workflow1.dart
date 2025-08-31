@@ -87,13 +87,14 @@ Iterable<int> showGenerator(int n) sync* {
     print('i -> $i');
     yield i;
   }
+  yield* showNegativeGenerator(n); // calling a generator within a generator
   print('Generator ended');
 }
 
 Iterable<int> showNegativeGenerator(int n) sync* {
   print('Negative Generator started');
   for (var i = 1; i <= n; i++) {
-    print('i -> $i');
+    print('-i -> ${-i}');
     yield i;
   }
   print('Negative Generator ended');
