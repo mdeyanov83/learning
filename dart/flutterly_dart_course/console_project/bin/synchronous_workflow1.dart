@@ -31,12 +31,6 @@ synchronous  |     T     |  ITERABLE<T> |
 ------------------------------------------
 asynchronous | Future<T> |  STREAM<T>   |
 
-! Creating Iterables
-  * Mark with the 'sync*' keyword between the function parameter list () and function body {}
-
-*1. Iterables are lazy-loaded - the generator function runs only when an element inside the iterable is accessed
-*2. Iterables generate only the right number of elements needed, they don't continue past the value we are looking for.
-
 ! Generator functions (creating iterables)
 * A function becomes a generator if it uses either:
   - sync* - for synchronous generators, produces an Iterable<T>
@@ -48,7 +42,8 @@ asynchronous | Future<T> |  STREAM<T>   |
 * Declaration syntax:
 Iterable<type> functionName(attributes) sync* {function body}
 
-
+? 1. Iterables are lazy-loaded - the generator function runs only when an element inside the iterable is accessed
+? 2. Iterables generate only the right number of elements needed, they don't continue past the value we are looking for.
 
 */
 
