@@ -48,8 +48,8 @@ void main(List<String> args) {
   Future.value(5).then(print); // Microtask Queue
   Future.value(Future(() => 6)).then(print); // == Future(() => 6); Event Queue
 
-  Future.sync(() => 7).then(print); // Microtask Queue
-  Future.sync(() => Future(() => 8)).then(print);
+  Future.sync(() => 7).then(print); // == Future.value(7) // Microtask Queue
+  Future.sync(() => Future(() => 8)).then(print); // == Future(() =>)
 
   Future.microtask(() => 9).then(print); // Microtask Queue
   Future.microtask(() => Future(() => 10)).then(print);
