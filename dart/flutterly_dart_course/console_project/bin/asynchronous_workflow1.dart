@@ -21,7 +21,7 @@ Stream<T> - emit multiple values Asynchronously, while other tasks are executed 
 
 * Future(() => ) - Default Future constructor
 * Future.delayed
-* Future.value - takes a value and resolves it immediately
+* Future.value - takes a value and resolves it immediately but asynchronously
 * Future.sync - takes a closure function and resolves it immediately
 
 
@@ -63,10 +63,11 @@ void main(List<String> args) {
   print('End'); // Synchronous code, executes immediately
 }
 
-//Read from the Isolate Right -> Left
+// Read from the Isolate Right -> Left
+// Enter the Queues from the left, and push everything to the right, read from the right
 
 // READ: End 12 11 10 9 8 7 6 5 4 3 2 1 Start
 
 //! MICROTASK:
-//* EVENT: 1
+//* EVENT: F(4) 3      F(2) 1
 //? OUTPUT: Start
