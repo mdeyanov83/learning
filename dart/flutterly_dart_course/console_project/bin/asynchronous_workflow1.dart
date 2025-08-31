@@ -69,5 +69,5 @@ void main(List<String> args) {
 // READ: End 12 11 10 9 8 7 6 5 4 3 2 1 Start
 
 //! MICROTASK: F(10) 9 7 5
-//* EVENT:  F(4) 3   F(12) 11 8 6 F(2) 1
-//? OUTPUT: Start End 5 7 9 
+//* EVENT:  F(4) 3 10 F(12) 11 8 6 F(2) 1
+//? OUTPUT: Start End 5 7 9 1 6 8 11 10 2 12 3 4
