@@ -33,7 +33,7 @@ current time 7:24:25
 import 'dart:async';
 
 void main(List<String> args) {
-  print('Start');
+  print('Start'); // Synchronous code, executes immediately
 
   Future(() => 1).then(print);
   Future(() => Future(() => 2)).then(print);
@@ -53,5 +53,5 @@ void main(List<String> args) {
   Future(() => 11).then(print);
   Future(() => Future(() => 12)).then(print);
 
-  print('End');
+  print('End'); // Synchronous code, executes immediately
 }
