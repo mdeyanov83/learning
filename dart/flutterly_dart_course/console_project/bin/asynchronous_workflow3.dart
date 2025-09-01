@@ -15,7 +15,7 @@ Current - 7:44:30
 
 import 'dart:async';
 
-void main(List<String> args) async {
+void main(List<String> args) {
   late final int a;
 
   print('Start');
@@ -23,8 +23,10 @@ void main(List<String> args) async {
   // Future(() => 1).then((value) => a = value);
   // print(a); //! Throws LateInitializationError, because the Future has not completed yet, therefor 'a' is not initialized
 
+  // awaits for the future to complete then assigns its value to 'a'
   a = await Future(() => 1);
 
+  Duration(seconds: 1);
   print(a);
 
   print('End');
