@@ -50,7 +50,25 @@ Data: 3
   * Pause, resume, or cancel the subscription
   * Handle events (onData, onError, onDone) in a more granular way
 
-Exmaple
+Example:
+void main() {
+  var controller = StreamController<int>();
+  var subscription = controller.stream.listen(
+    (value) => print('Data: $value'),
+    onError: (err) => print('Error: $err'),
+    onDone: () => print('Stream closed'),
+  );
+  controller.sink.add(1);
+  controller.sink.addError('Oops');
+  controller.close();
+  // Cancel subscription (optional)
+  subscription.cancel();
+}
+Output:
+Data: 1
+Error: Oops
+Stream closed
+
 
 
 
