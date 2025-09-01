@@ -25,9 +25,8 @@ void main(List<String> args) {
       streamController.close();
       streamSubscription.cancel();
     } else {
-      
+      streamController.add(value++);
     }
-    streamController.add(value++);
   });
 
 
