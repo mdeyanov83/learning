@@ -25,7 +25,10 @@ void main(List<String> args) {
 
   Future.delayed(const Duration(seconds: 1), () => print('3'));
 
-  // Chained methods e
+  // Chained methods execute immediately after the previous one returns its result
+  // If the chained method returns a future, subsequent chained methods execute
+  // after that future resolves
+  
   Future(() => print('4')).then((_) => print('5')).then((_) {
     print('6');
     scheduleMicrotask(() => print('7'));
