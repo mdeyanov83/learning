@@ -44,8 +44,9 @@ Stream<T> - emit multiple values Asynchronously, while other tasks are executed 
   If value is not a future -> completes synchronously
   Completes immediately, but .then(...) runs in the microtask queue
 
-
 * Future.sync - takes a closure function and resolves it immediately
+  Runs the function synchronously, wraps the result in a future
+  Syntax: Future.sync(callback)
 
 
 
