@@ -20,7 +20,9 @@ void main(List<String> args) {
   var value = 0;
   // Adding values to the stream
   Timer.periodic(const Duration(seconds: 1), (timer) {
-    if (value == 5) { // Cancel everything once value reaches 5
+
+    // Cancel everything once value reaches 5
+    if (value == 5) {
       timer.cancel();
       streamController.close();
       streamSubscription.cancel();
