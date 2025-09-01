@@ -31,10 +31,14 @@ void main(List<String> args) async {
   });
 
   var max = 0;
-  await for (final value in streamController.stream) {
 
+  await for (final value in streamController.stream) {
     max = (value > max) ? value : max;
   }
+  // We can do the same with .forEach
+  await stream
+
+
   print('Max is --> $max');
 
 }
