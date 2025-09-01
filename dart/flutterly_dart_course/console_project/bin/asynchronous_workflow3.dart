@@ -10,7 +10,7 @@
     with the result (or throws if the future completed with an error).
 * 'await' can be used only in an 'async' function
   Syntax: Type functionName(args) async {body}
-  
+
 
 
 
@@ -48,3 +48,4 @@ void main(List<String> args) async {
 
   print('End');
 }
+
