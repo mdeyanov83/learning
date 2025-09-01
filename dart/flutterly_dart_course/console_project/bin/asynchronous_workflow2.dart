@@ -9,9 +9,10 @@
   - It's just "fire-and-forget"
 
 
+
 07:22:51 - (22.1) Futures in-depth
 07:50:31 - (22.2) Streams in-depth
-Current - 7:39:35
+Current - 7:39:50
 */
 
 
