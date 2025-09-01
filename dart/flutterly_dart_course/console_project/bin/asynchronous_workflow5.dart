@@ -13,16 +13,22 @@ void main(List<String> args) {
   // Initialize the StreamController
   final StreamController streamController = StreamController<int>();
 
-  var value = 0;
-
-  // Adding values to the stream
-  Timer.periodic(const Duration(seconds: 1), (timer) {
-    streamController.add(value++);
-  });
-
   // Initialize the StreamSubscription (.listen) and print received values
   // streamController.stream.listen((value) => print('Data: $value++'));
   final streamSubscription = streamController.stream.listen(print); // same as above line
+
+  var value = 0;
+  // Adding values to the stream
+  Timer.periodic(const Duration(seconds: 1), (timer) {
+    if (value == 5) { // Cancel everything once value reaches 5
+      timer.cancel();
+      streamController.close();
+      streamSubscription.cancel();
+    } else {
+      
+    }
+    streamController.add(value++);
+  });
 
 
 }
