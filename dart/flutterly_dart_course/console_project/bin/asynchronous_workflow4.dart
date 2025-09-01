@@ -20,6 +20,7 @@ stream values are returned asynchronously one by one in the future
   .sink.add(value) - Add a new value event to the stream
   .sink.addError(error) - Add an error event to the stream
   .close() - Signal that no more events will come
+  .broadcast(); - multiple listeners
 
 Example:
 import 'dart:async';
@@ -39,7 +40,10 @@ Data: 1
 Data: 2
 Data: 3
 
-
+* The controller is the producer side, the stream is the consumer side
+* Can be single-subscription or broadcast
+  StreamController.broadcast(); // multiple listeners
+  
 
 ! StreamSubscription
 
