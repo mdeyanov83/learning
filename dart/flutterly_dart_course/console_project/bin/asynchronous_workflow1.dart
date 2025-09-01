@@ -54,21 +54,20 @@ Stream<T> - emit multiple values Asynchronously, while other tasks are executed 
   Syntax: Future.microtask(callback)
   Callback executes as a microtask
   .then(...) also executes as a microtask
-
-
-
-
-
-
-
-
-
-07:22:51 - (22.1) Futures in-depth
-07:50:31 - (22.2) Streams in-depth
-
-current time 7:24:20
 */
 
+/*
+! Example order of execution
+Read from the Isolate Right -> Left, as a conveyor belt running Left to right, elements are picked on the right
+Enter the Queues from the left, and push everything to the right, read from the right
+READ: End 12 11 10 9 8 7 6 5 4 3 2 1 Start
+! MICROTASK: F(10) 9 7 5
+* EVENT:  F(4) 3 10 F(12) 11 8 6 F(2) 1
+Processing: Start End 5 7 9 F(10) 1 F(2) 6 8 11 F(12) 10 2 12 3 F(4) 4
+During processing, when a Value is processed -> Printed,
+when F(Value) is processed -> it is resolved and Value is placed back on the queue
+? OUTPUT: Start End 5 7 9 1 6 8 11 10 2 12 3 4
+*/
 
 import 'dart:async';
 
@@ -89,21 +88,11 @@ void main(List<String> args) {
   Future.sync(() => Future(() => 8)).then(print); // == Future(() => 8); // Event Queue
 
   Future.microtask(() => 9).then(print); // Microtask Queue
-  Future.microtask(() => Future(() => 10)).then(print); // == Future (() => 10), but placed on the Microtask Queue
+  Future.microtask(() => Future(() => 10)).then(print); // == Future (() => 10), but schedules the closure function on the Microtask Queue
 
   Future(() => 11).then(print);
   Future(() => Future(() => 12)).then(print);
 
   print('End'); // Synchronous code, executes immediately
 }
-
-// Read from the Isolate Right -> Left
-// Enter the Queues from the left, and push everything to the right, read from the right
-// READ: End 12 11 10 9 8 7 6 5 4 3 2 1 Start
-//! MICROTASK: F(10) 9 7 5
-//* EVENT:  F(4) 3 10 F(12) 11 8 6 F(2) 1
-// Processing: Start End 5 7 9 F(10) 1 F(2) 6 8 11 F(12) 10 2 12 3 F(4) 4
-// During processing, when a Value is processed -> Printed,
-// when F(Value) is processed -> it is resolved and Value is placed back on the queue
-//? OUTPUT: Start End 5 7 9 1 6 8 11 10 2 12 3 4
 
