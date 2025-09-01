@@ -3,7 +3,11 @@
 
 ! Futures (continues, 2nd example)
 
-* scheduleMicrotask - 
+* scheduleMicrotask - schedules a void callback to run in the microtask queue
+  - It does NOT return a Future
+  - You canNOT 'await' it or attach .then(...)
+  - It's just "fire-and-forget"
+
 
 07:22:51 - (22.1) Futures in-depth
 07:50:31 - (22.2) Streams in-depth
