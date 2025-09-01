@@ -4,7 +4,8 @@
 ! Streams / StreamController / StreamSubscription (continued 3)
 
 ? How do we know exactly when a value will come down the stream?
-
+* await - used for a single future result
+* await for - used 
 
 current 7:58:00
 */
