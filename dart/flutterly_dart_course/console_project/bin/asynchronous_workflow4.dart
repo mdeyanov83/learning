@@ -21,6 +21,23 @@ stream values are returned asynchronously one by one in the future
   .sink.addError(error) - Add an error event to the stream
   .close() - Signal that no more events will come
 
+Example:
+import 'dart:async';
+void main() {
+  var controller = StreamController<int>();
+  // Consumer listens to the stream
+  controller.stream.listen((value) => print('Data: $value'));
+  // Emit some events
+  controller.sink.add(1);
+  controller.sink.add(2);
+  controller.sink.add(3);
+  controller.close(); // end of stream
+}
+
+Output:
+Data: 1
+Data: 2
+Data: 3
 
 
 
