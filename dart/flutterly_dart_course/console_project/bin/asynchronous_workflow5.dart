@@ -20,6 +20,9 @@ void main(List<String> args) {
     streamController.add(value++);
   });
 
-  // 
-  streamController.stream.listen(print);
+  // Initialize the StreamSubscription (.listen) and print received values
+  // streamController.stream.listen((value) => print('Data: $value++'));
+  final streamSubscription = streamController.stream.listen(print); // same as above line
+
+
 }
