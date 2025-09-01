@@ -43,8 +43,8 @@ void main(List<String> args) {
 
 
 //! MICRO:
-//* EVENT: 3(1s delay) F(11) 5 13
+//* EVENT:
 
 //: Processing:
 
-//? Output: 1 15 2 9 14 4 10
+//? Output: 1 15 2 9 14 4 5 6 8 7 10 12 13 11 3
