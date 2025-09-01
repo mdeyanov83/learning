@@ -70,4 +70,7 @@ void main(List<String> args) {
 
 //! MICROTASK: F(10) 9 7 5
 //* EVENT:  F(4) 3 10 F(12) 11 8 6 F(2) 1
+// Processing: Start End 5 7 9 F(10) 1 F(2) 6 8 11 F(12) 10 2 12 3 F(4) 4
+// During processing, when a Value is processed -> Printed,
+// when F(Value) is processed -> it is resolved and Value is placed back on the queue
 //? OUTPUT: Start End 5 7 9 1 6 8 11 10 2 12 3 4
