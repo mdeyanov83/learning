@@ -5,8 +5,8 @@
 
 ? How do we know exactly when a value will come down the stream?
 
-! async vs async* functions
-* sync - used for functions that return a single result
+! async vs async* functions (* is for generators - multiple values)
+* async - used for functions that return a single result
   Declaration: Future<T> functionName() async { ... }
   Can use await inside to pause until a future completes
   Returns a single future that completes when the function finishes
