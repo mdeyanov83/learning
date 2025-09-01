@@ -10,8 +10,6 @@
 
 * Chained .then methods after a Future execute immediately after the Future resolves
 ? If a chained .then() returns a Future, subsequent chained methods execute once that Future resolves
-
-
 */
 
 //! MICRO: 14 9 2
