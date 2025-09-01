@@ -1,7 +1,7 @@
 /*
 ! Asynchronous Workflow (continued 4) - Timestamp 7:50:00
 
-! Streams
+! Streams / StreamController / StreamSubscription
 * stream<T>
 Streams can return 0, 1 or multiple values in the future.
 The difference between Stream and Iterable is that
@@ -15,12 +15,12 @@ stream values are returned asynchronously one by one in the future
   * Add data, errors, or signal completion.
   * Control whether multiple listeners are allowed (single-distribution or broadcast)
 
-* Basic properties:
-  .stream - The actual stream object consumers can listen to
-  .sink.add(value) - Add a new value event to the stream
-  .sink.addError(error) - Add an error event to the stream
-  .close() - Signal that no more events will come
-  .broadcast(); - multiple listeners
+? Methods, basic properties:
+  .stream -> The actual stream object consumers can listen to
+  .sink.add(value) -> Add a new value event to the stream
+  .sink.addError(error) -> Add an error event to the stream
+  .close() -> Signal that no more events will come
+  .broadcast(); -> multiple listeners
 
 Example:
 import 'dart:async';
@@ -50,6 +50,11 @@ Data: 3
   * Pause, resume, or cancel the subscription
   * Handle events (onData, onError, onDone) in a more granular way
 
+? Methods of StreamSubscription:
+  .pause() -> temporarily stop receiving events
+  .resume() -> resume after pause
+  .cancel() -> stop listening and free resources
+
 Example:
 void main() {
   var controller = StreamController<int>();
@@ -69,9 +74,17 @@ Data: 1
 Error: Oops
 Stream closed
 
+! How they work together
+[StreamController] → produces events →  [Stream] <- -> [StreamSubscription] → receives events
+* StreamController -> pushes events / produces/manages events
+* Stream -> observable object / the observable sequence of events
+* Subscription -> manages the listening and callbacks / the handle that listens to the stream
+  Can pause/resume/cancel, and handle events/errors/done
 
-
-
+! User Cases:
+* Handling multiple asynchronous events like button clicks, socket messages or timer ticks.
+* Pausing/Resuming streams dynamically.
+* Creating broadcast streams that multiple listeners can observe.
 */
 
 
