@@ -54,6 +54,12 @@ Stream<T> - emit multiple values Asynchronously, while other tasks are executed 
   Syntax: Future.microtask(callback)
   Callback executes as a microtask
   .then(...) also executes as a microtask
+
+! Chaining Future methods
+Future(() => 1).then(print).onError((error, stackTrace) => null).whenComplete(() => null);
+  .onError - m
+
+
 */
 
 /*
@@ -94,5 +100,8 @@ void main(List<String> args) {
   Future(() => Future(() => 12)).then(print);
 
   print('End'); // Synchronous code, executes immediately
+
+  Future(() => 1).then(print).onError((error, stackTrace) => null)
+    .whenComplete(() => null);
 }
 
