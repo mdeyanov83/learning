@@ -10,10 +10,10 @@ stream values are returned asynchronously one by one in the future
 * .listen -> similar to .then on Futures
 
 ! StreamController
-* A StreamController is like a pipeline or manager for a stream. It lets you:
-  - Create a stream that can emit multiple values over time
-  - Add data, errors, or signal completion.
-  - Control whether multiple listeners are allowed (single-distribution or broadcast)
+? A StreamController is like a pipeline or manager for a stream. It lets you:
+  * Create a stream that can emit multiple values over time
+  * Add data, errors, or signal completion.
+  * Control whether multiple listeners are allowed (single-distribution or broadcast)
 
 * Basic properties:
   .stream - The actual stream object consumers can listen to
@@ -43,10 +43,10 @@ Data: 3
 * The controller is the producer side, the stream is the consumer side
 * Can be single-subscription or broadcast
   StreamController.broadcast(); // multiple listeners
-  
+
 
 ! StreamSubscription
-
+? When you listen to a stream, you get a StreamSubscription object. It lets you.
 
 
 
