@@ -3,8 +3,6 @@
 
 ! Streams / StreamController / StreamSubscription (continued 2)
 
-
-current 7:54:00
 */
 
 import 'dart:async';
@@ -29,10 +27,9 @@ void main(List<String> args) {
       timer.cancel();
       streamController.close();
       streamSubscription.cancel();
+      otherStreamSubscription.cancel();
     } else {
       streamController.add(value++);
     }
   });
-
-
 }
