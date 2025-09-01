@@ -8,13 +8,11 @@
   - You canNOT 'await' it or attach .then(...)
   - It's just "fire-and-forget"
 
+* Chained .then methods after a Future execute immediately after the Future resolves
+? If a chained .then() returns a Future, subsequent chained methods execute once that Future resolves
 
 
-07:22:51 - (22.1) Futures in-depth
-07:50:31 - (22.2) Streams in-depth
-Current - 7:39:50
 */
-
 
 //! MICRO: 14 9 2
 //* EVENT: 3(1sec delay) 13 10(F(11).print 12) 4(print 5, print 6, M(7), print 8)
@@ -23,16 +21,13 @@ Current - 7:39:50
 import 'dart:async';
 
 void main(List<String> args) {
-
   print('1');
   scheduleMicrotask(() => print('2'));
 
   Future.delayed(const Duration(seconds: 1), () => print('3'));
 
-  // Chained methods execute immediately after the previous one returns its result
-  // If the chained method returns a future, subsequent chained methods execute
-  // after that future resolves
-
+  // chained .then methods will execute immediately after the F(4) resolves
+  // by the event loop
   Future(() => print('4')).then((_) => print('5')).then((_) {
     print('6');
     scheduleMicrotask(() => print('7'));
@@ -40,6 +35,9 @@ void main(List<String> args) {
 
   scheduleMicrotask(() => print('9'));
 
+  // chained .then will execute once F(10) resolves by the event loop
+  // The .then(print 12) will only execute, once the F(11) returned by
+  // the previous .then is resolved
   Future(() => print('10'))
     .then((_) => Future(() => print('11')))
     .then((_) => print('12'));
