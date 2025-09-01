@@ -19,10 +19,30 @@ Stream<T> - emit multiple values Asynchronously, while other tasks are executed 
   - Completed with value of the expected type - async operation succeeded, a result is available
   - Completed with error - async operation failed, an error/exception is available
 
-* Future(() => ) - Default Future constructor
+
+  Fut
+
+* Future(() => 1)
+  default future constructor
+  Syntax: Future(() => value);
+  Event Queue
+
+? Future(() => Future(() => 2))
+  Returns another future. Dart automatically unwraps (flattens) nested futures
+  Syntax: Future(() => Future(...))
+  Outer future -> Event
+  Inner future -> another event, once processed
+
 * Future.delayed
+  Schedules work after a delay
+  Syntax: Future.delayed(Duration, callback)
+  Waits Duration before execution, delayed event queue
+
+
 * Future.value - takes a value and resolves it immediately but asynchronously
 * Future.sync - takes a closure function and resolves it immediately
+
+
 
 
 
