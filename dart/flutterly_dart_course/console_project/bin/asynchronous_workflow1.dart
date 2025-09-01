@@ -87,7 +87,7 @@ void main(List<String> args) {
   print('Start'); // Synchronous code, executes immediately
 
   // Events, set on the Event Queue inside the isolate - next 4 futures
-  Future(() => 1).then(print). // Default Future constructor
+  Future(() => 1).then(print); // Default Future constructor
   Future(() => Future(() => 2)).then(print);
 
   Future.delayed(const Duration(seconds: 1), () => 3).then(print);
@@ -106,8 +106,5 @@ void main(List<String> args) {
   Future(() => Future(() => 12)).then(print);
 
   print('End'); // Synchronous code, executes immediately
-
-  Future(() => 1).then(print).onError((error, stackTrace) => null)
-    .whenComplete(() => null);
 }
 
