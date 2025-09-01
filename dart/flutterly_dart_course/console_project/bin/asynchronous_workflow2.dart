@@ -40,3 +40,13 @@ void main(List<String> args) {
   scheduleMicrotask(() => print('14'));
   print('15');
 }
+
+
+// READ: 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2
+
+//! MICRO:   2
+//* EVENT: 3(1s delay)  6 5 4
+
+//: Processing:
+
+//? Output: 1
