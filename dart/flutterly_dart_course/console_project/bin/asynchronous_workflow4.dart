@@ -19,9 +19,9 @@ import 'dart:async';
 void main(List<String> args) {
 
   print('start');
-  
+
   //? Emits values from 0 to infinite with 1 second delay each
-  Stream.periodic(const Duration(seconds: 1), (x) => x) //? 0 1 2 3 4 5 ...
+  Stream.periodic(const Duration(milliseconds: 1), (x) => x) //? 0 1 2 3 4 5 ...
     .listen(print);
 
   print('end');
