@@ -10,12 +10,11 @@ current 7:58:00
 */
 
 import 'dart:async';
-void main(List<String> args) {
+void main(List<String> args) async {
 
   final StreamController streamController = StreamController<int>.broadcast();
 
-  final streamSubscription = streamController.stream.listen(print);
-
+  // final streamSubscription = streamController.stream.listen(print);
 
   var value = 0;
 
@@ -24,11 +23,18 @@ void main(List<String> args) {
     if (value == 5) {
       timer.cancel();
       streamController.close();
-      streamSubscription.cancel();
+      // streamSubscription.cancel();
 
     } else {
       streamController.add(value++);
     }
   });
+
+  var max = 0;
+  await for (final value in streamController.stream) {
+
+    max = (value > max) ? value : max;
+  }
+  print('Max is --> $max');
 
 }
