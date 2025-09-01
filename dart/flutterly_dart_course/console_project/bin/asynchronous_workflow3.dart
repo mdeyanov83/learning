@@ -11,6 +11,10 @@
 * 'await' can be used only in an 'async' function
   Syntax: Type functionName(args) async {body}
 
+? await is syntactic sugar for
+? “pause this async function until the future completes,
+? then continue execution in a microtask”.
+
 
 
 
