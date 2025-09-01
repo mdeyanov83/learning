@@ -16,7 +16,13 @@
 ? then continue execution in a microtask”.
 
 ! Await Mechanics
-1. You call an as
+1. You call an "async" function -> it immediately returns a Future (even before hitting await)
+2. When execution reaches an await someFuture; :
+  - if someFuture is already completed:
+    -> execution continues in the microtask queue (so it resumes before event-queue tasks)
+  - if someFuture is not completed yet:
+    -> Dart suspends the async function, returns control to the event loop.
+    
 
 
 
