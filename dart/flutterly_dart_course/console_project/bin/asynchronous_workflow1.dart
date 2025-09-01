@@ -57,12 +57,18 @@ Stream<T> - emit multiple values Asynchronously, while other tasks are executed 
 
 ! Chaining Future methods
 Future(() => 1).then(print).onError((error, stackTrace) => null).whenComplete(() => null);
-  .onError - m
+* Future(() => 1) - creates a new future whose computation runs async in the event queue
+* .then(print) - a callback to run when the future completes successfully
+  Equivalent: .then((value) => print(value))
+  .then(...) - returns a new future that completes with whatever teh callback returns
+* .onError((error, stackTrace) => null) - Error handler. If the previous future completes with an error, this handler is invoked
+  if the previous future completes normally, this handler is skipped
+  .onError(...) - also returns a new future, that completes with the original value if no error,
+    or completes with the handler's return value if there was an error
+* whenCompletes(() => null) - registers a finally-style callback that runs whenever the future completes regardless of success or error
+  This is like a "finally" block in a try/catch/finally statement: it always runs
 
 
-*/
-
-/*
 ! Example order of execution
 Read from the Isolate Right -> Left, as a conveyor belt running Left to right, elements are picked on the right
 Enter the Queues from the left, and push everything to the right, read from the right
@@ -81,7 +87,7 @@ void main(List<String> args) {
   print('Start'); // Synchronous code, executes immediately
 
   // Events, set on the Event Queue inside the isolate - next 4 futures
-  Future(() => 1).then(print); // Default Future constructor
+  Future(() => 1).then(print). // Default Future constructor
   Future(() => Future(() => 2)).then(print);
 
   Future.delayed(const Duration(seconds: 1), () => 3).then(print);
