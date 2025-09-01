@@ -10,6 +10,16 @@ current 7:54:00
 import 'dart:async';
 void main(List<String> args) {
 
+  // Initialize the StreamController
   final StreamController streamController = StreamController<int>();
-  streamController.stream
+
+  var value = 0;
+
+  // Adding values to the stream
+  Timer.periodic(const Duration(seconds: 1), (timer) {
+    streamController.add(value++);
+  });
+
+  // 
+  streamController.stream.listen(print);
 }

@@ -16,7 +16,7 @@ stream values are returned asynchronously one by one in the future
   * Control whether multiple listeners are allowed (single-distribution or broadcast)
 
 ? Methods, basic properties:
-  .stream -> The actual stream object consumers can listen to
+  .stream -> The actual stream object consumers can listen to (a getter returning the created stream)
   .sink.add(value) -> Add a new value event to the stream
   .sink.addError(error) -> Add an error event to the stream
   .close() -> Signal that no more events will come
