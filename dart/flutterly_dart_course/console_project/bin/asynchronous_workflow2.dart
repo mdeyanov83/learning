@@ -25,6 +25,7 @@ void main(List<String> args) {
 
   Future.delayed(const Duration(seconds: 1), () => print('3'));
 
+  // Chained methods e
   Future(() => print('4')).then((_) => print('5')).then((_) {
     print('6');
     scheduleMicrotask(() => print('7'));
@@ -42,8 +43,8 @@ void main(List<String> args) {
 }
 
 
-//! MICRO:
-//* EVENT:
+//! MICRO: 14 9 2
+//* EVENT: 3(1sec delay) 13 10 4
 
 //: Processing:
 
