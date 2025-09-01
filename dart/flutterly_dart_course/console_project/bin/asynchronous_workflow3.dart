@@ -15,7 +15,8 @@
 ? “pause this async function until the future completes,
 ? then continue execution in a microtask”.
 
-
+! Await Mechanics
+1. You call an as
 
 
 
