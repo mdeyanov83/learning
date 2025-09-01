@@ -13,14 +13,12 @@ Stream<T> - emit multiple values Asynchronously, while other tasks are executed 
 
 ! FUTURES - timestamp 7:22:50
 (Single async result)
-* States:
+
+! States:
   - Unprocessed - not yet processed by the event loop
   - Uncompleted (pending)- processed but not yet finished. No value or error yet
   - Completed with value of the expected type - async operation succeeded, a result is available
   - Completed with error - async operation failed, an error/exception is available
-
-
-  Fut
 
 * Future(() => 1)
   default future constructor
@@ -42,11 +40,21 @@ Stream<T> - emit multiple values Asynchronously, while other tasks are executed 
   Wraps an immediate value in a future. Takes a value and resolves it immediately
   Syntax: Future.value(value)
   If value is not a future -> completes synchronously
-  Completes immediately, but .then(...) runs in the microtask queue
+  Completes immediately, but .then(...) runs as microtask
 
-* Future.sync - takes a closure function and resolves it immediately
+* Future.sync
+  Takes a closure function and resolves it immediately.
   Runs the function synchronously, wraps the result in a future
   Syntax: Future.sync(callback)
+  If callback returns non-future -> completes immediately
+  Runs synchronously (completes immediately), but .then(...) runs as microtask
+
+* Future.microtask
+  Schedules a callback in the microtask queue
+  Syntax: Future.microtask(callback)
+  Callback executes as a microtask
+  .then(...) also executes as a microtask
+
 
 
 
