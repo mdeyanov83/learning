@@ -29,10 +29,10 @@ void main(List<String> args) async {
   // });
 
 
-  // awaits for the future to complete then assigns its value to 'a'
+  // awaits for the future to complete then assigns its value to 'a' and continues
   a = await Future(() => 1);
 
-
+  print('Print(a) -> $a');
 
 
   print('End');
