@@ -28,11 +28,13 @@ void main(List<String> args) async {
   //   print('Print(a) -> $a');
   // });
 
-
   // awaits for the future to complete then assigns its value to 'a' and continues
+  // Both examples below are the same, but with different syntax
+
+  // await Future(() => 1).then((value) => a = value);
   a = await Future(() => 1);
 
-  print('Print(a) -> $a');
+  // print('Print(a) -> $a');
 
 
   print('End');
