@@ -46,7 +46,11 @@ Data: 3
 
 
 ! StreamSubscription
-? When you listen to a stream, you get a StreamSubscription object. It lets you.
+? When you listen to a stream, you get a StreamSubscription object. It lets you:
+  * Pause, resume, or cancel the subscription
+  * Handle events (onData, onError, onDone) in a more granular way
+
+Exmaple
 
 
 

@@ -55,8 +55,8 @@ void main(List<String> args) async {
 
   // await Future(() => 1).then((value) => a = value);
   a = await Future(() => 1);
-
-  // print('Print(a) -> $a');
+  
+  print('Print(a) -> $a');
 
   print('End');
 }
