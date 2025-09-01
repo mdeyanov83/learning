@@ -22,7 +22,7 @@ void main(List<String> args) {
 
   Future(() => 1).then((value) => a = value);
 
-  print(a);
+  print(a); //! Throws LateInitializationError, because the Future has not completed yet, therefor 'a' is not initialized
 
   print('End');
 }
