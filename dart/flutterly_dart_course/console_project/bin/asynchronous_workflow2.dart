@@ -16,6 +16,10 @@ Current - 7:39:50
 */
 
 
+//! MICRO: 14 9 2
+//* EVENT: 3(1sec delay) 13 10(F(11).print 12) 4(print 5, print 6, M(7), print 8)
+//? Output: 1 15 2 9 14 4 5 6 8 7 10 13 11 12 3
+
 import 'dart:async';
 
 void main(List<String> args) {
@@ -46,7 +50,4 @@ void main(List<String> args) {
 }
 
 
-//! MICRO: 14 9 2
-//* EVENT: 3(1sec delay) 13 10(F(11).print 12) 4(print 5, print 6, M(7), print 8)
 
-//? Output: 1 15 2 9 14 4 5 6 8 7 10 13 11 12 3
