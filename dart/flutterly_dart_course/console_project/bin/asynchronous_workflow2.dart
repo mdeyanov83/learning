@@ -42,11 +42,9 @@ void main(List<String> args) {
 }
 
 
-// READ: 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2
-
-//! MICRO:   2
-//* EVENT: 3(1s delay)  6 5 4
+//! MICRO:
+//* EVENT: 3(1s delay) F(11) 5 13
 
 //: Processing:
 
-//? Output: 1
+//? Output: 1 15 2 9 14 4 10
