@@ -3,6 +3,15 @@
 
 ! Futures (continued 3)
 
+! await - keyword
+* await - pauses the execution of an async function until the given future completes
+  - While waiting, the Dart isolate is not blocked - the event loop can keep running other microtasks and events
+  - When the awaited future completes, execution resumes, right after the 'await',
+    with the result (or throws if the future completed with an error).
+* 'await' can be used only in an 'async' function
+  Syntax: Type functionName(args) async {body}
+  
+
 
 
 
