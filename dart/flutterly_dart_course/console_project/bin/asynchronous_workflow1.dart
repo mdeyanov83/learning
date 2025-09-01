@@ -38,8 +38,13 @@ Stream<T> - emit multiple values Asynchronously, while other tasks are executed 
   Syntax: Future.delayed(Duration, callback)
   Waits Duration before execution, delayed event queue
 
+* Future.value
+  Wraps an immediate value in a future. Takes a value and resolves it immediately
+  Syntax: Future.value(value)
+  If value is not a future -> completes synchronously
+  Completes immediately, but .then(...) runs in the microtask queue
 
-* Future.value - takes a value and resolves it immediately but asynchronously
+
 * Future.sync - takes a closure function and resolves it immediately
 
 
