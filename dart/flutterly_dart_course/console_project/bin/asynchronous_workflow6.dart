@@ -4,8 +4,16 @@
 ! Streams / StreamController / StreamSubscription (continued 3)
 
 ? How do we know exactly when a value will come down the stream?
+
+! async vs async* functions
+* sync - used for functions that return a single result
+  Declaration: Future<T> functionName() async { ... }
+  Can use await inside to pause until a future completes
+  Returns a single future that completes when the function finishes
+* async* - for functions that return multiple values over time, i.e. a Stream
+
 * await - used for a single future result
-* await for - used 
+* await for - used
 
 current 7:58:00
 */
@@ -37,7 +45,7 @@ void main(List<String> args) async {
     max = (value > max) ? value : max;
   }
   // We can do the same with .forEach
-  await stream
+  // await stream
 
 
   print('Max is --> $max');
