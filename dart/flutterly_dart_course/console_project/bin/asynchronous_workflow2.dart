@@ -28,7 +28,7 @@ void main(List<String> args) {
   // Chained methods execute immediately after the previous one returns its result
   // If the chained method returns a future, subsequent chained methods execute
   // after that future resolves
-  
+
   Future(() => print('4')).then((_) => print('5')).then((_) {
     print('6');
     scheduleMicrotask(() => print('7'));
@@ -47,8 +47,6 @@ void main(List<String> args) {
 
 
 //! MICRO: 14 9 2
-//* EVENT: 3(1sec delay) 13 10 4
-
-//: Processing:
+//* EVENT: 3(1sec delay) 13 10(F(11), print 12) 4(print 5, print 6, M(7), print 8)
 
 //? Output: 1 15 2 9 14 4 5 6 8 7 10 13 11 12 3
