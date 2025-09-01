@@ -21,11 +21,14 @@ void main(List<String> args) {
   print('start');
 
   //? Emits values from 0 to infinite with 1 second delay each
-  Stream.periodic(const Duration(seconds: 1), (x) => x) //? 0 1 2 3 4 5 ...
-    .listen(print);
+  // Stream.periodic(const Duration(seconds: 1), (x) => x) //? 0 1 2 3 4 5 ...
+  //   .listen(print);
 
-  Stream.periodic(const Duration(seconds: 2), (x) => -x) //? 0 -1 -2 -3 -4 -5 ...
-    .listen(print);
+  // Stream.periodic(const Duration(seconds: 2), (x) => -x) //? 0 -1 -2 -3 -4 -5 ...
+  //   .listen(print);
+
+  // Future.value completes first(microtask) compared to the normal future
+  Stream.fromFutures([Future(() => 3), Future.value(2)]).listen(print);
 
   print('end');
 }
