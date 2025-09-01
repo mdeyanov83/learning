@@ -22,7 +22,8 @@
     -> execution continues in the microtask queue (so it resumes before event-queue tasks)
   - if someFuture is not completed yet:
     -> Dart suspends the async function, returns control to the event loop.
-    
+    -> When the future completes, a continuation (the "rest of the async function")
+      is scheduled in the microtask queue
 
 
 
