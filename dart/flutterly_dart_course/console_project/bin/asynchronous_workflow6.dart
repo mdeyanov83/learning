@@ -42,7 +42,7 @@ async* → an asynchronous generator, returns a Stream<T>.
   Purpose: Iterate over all values emitted by the stream, pausing at each event
   Syntax: await for (var item in someStream) { // process item }
   - Works only on Streams
-  - Function must be marked 'async' or 'async'
+  - Function must be marked 'async' or 'async*'?
   - Each iteration waits for the next stream event, not just a single value
 
 current 7:58:00
