@@ -3,7 +3,9 @@
 
 ! Streams / StreamController / StreamSubscription (continued 3)
 
-? How do we know exactly when a value will come down the stream?
+sync* → a synchronous generator, returns an Iterable<T>.
+async → an asynchronous function, returns a Future<T>.
+async* → an asynchronous generator, returns a Stream<T>.
 
 ! async vs async* functions (* is for generators - multiple values)
 * async - used for functions that return a single result
@@ -11,7 +13,11 @@
   Can use await inside to pause until a future completes
   Returns a single future that completes when the function finishes
 * async* - for functions that return multiple values over time, i.e. a Stream
+  Declaration: Stream<T> functionName() async* { ... }
+  Uses 'yield' or 'yield*' to emit values incrementally
+  Returns a stream that can produce many values asynchronously
 
+? How do we know exactly when a value will come down the stream?
 * await - used for a single future result
 * await for - used
 
