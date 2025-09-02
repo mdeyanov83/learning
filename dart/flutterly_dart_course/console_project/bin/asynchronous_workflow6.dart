@@ -27,8 +27,20 @@ async* → an asynchronous generator, returns a Stream<T>.
   Usage       |Fetch data once|Event streams, sequences, timers
 
 ? How do we know exactly when a value will come down the stream?
-* await - used for a single future result
-* await for - used
+
+* await
+  Used with: a single future result
+  Purpose: pause execution of an async function until the future completes
+  Syntax: var result = await someFuture;
+  Execution resumes after the future completes, returning the value (or throwing if the future fails)
+  - Works only on Futures
+  - Function must be marked 'async'
+  - Pauses execution at that line
+
+* await for
+  Used with: a Stream (asynchronous sequence of values)
+  Purpose: Iterate over all values emitted by the stream, pausing at each event
+  Syntax: await for (var item in someStream) { // process item }
 
 current 7:58:00
 */
@@ -38,7 +50,7 @@ void main(List<String> args) async {
 
   final StreamController streamController = StreamController<int>.broadcast();
 
-  // final streamSubscription = streamController.stream.listen(print);
+  final streamSubscription = streamController.stream.listen(print);
 
   var value = 0;
 
@@ -47,7 +59,7 @@ void main(List<String> args) async {
     if (value == 5) {
       timer.cancel();
       streamController.close();
-      // streamSubscription.cancel();
+      streamSubscription.cancel();
 
     } else {
       streamController.add(value++);
@@ -56,11 +68,15 @@ void main(List<String> args) async {
 
   var max = 0;
 
-  await for (final value in streamController.stream) {
-    max = (value > max) ? value : max;
-  }
+  // find the max value of a stream of ints
+  // await for (final value in streamController.stream) {
+  //   max = (value > max) ? value : max;
+  // }
+
   // We can do the same with .forEach
-  // await stream
+  await streamController.stream.forEach((value) {
+    max = (value > max) ? value : max;
+  });
 
 
   print('Max is --> $max');
