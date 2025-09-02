@@ -18,14 +18,13 @@ async* → an asynchronous generator, returns a Stream<T>.
   Execution is suspended at 'await' and at each 'yield'
   Returns a stream that can produce many values asynchronously
 
-  Feature       async          |async*
-  ---------------------------------
-  Returns       Future<T>      |Stream<T>
-  Produces      Single value   |Multiple values over time
-  Emits values  'return'       |'yield' / 'yield*'
-  Pauses exec   At 'await'     |At 'await' and at 'yield'
-  Usage         Fetch data once|Event streams, sequences, timers
-
+  Feature     |async          |async*
+  ------------------------------------
+  Returns     |Future<T>      |Stream<T>
+  Produces    |Single value   |Multiple values over time
+  Emits values|'return'       |'yield' / 'yield*'
+  Pauses exec |At 'await'     |At 'await' and at 'yield'
+  Usage       |Fetch data once|Event streams, sequences, timers
 
 ? How do we know exactly when a value will come down the stream?
 * await - used for a single future result
