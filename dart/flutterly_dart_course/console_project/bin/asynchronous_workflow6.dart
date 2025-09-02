@@ -26,6 +26,7 @@ async* → an asynchronous generator, returns a Stream<T>.
   Pauses exec   At 'await'     |At 'await' and at 'yield'
   Usage         Fetch data once|Event streams, sequences, timers
 
+
 ? How do we know exactly when a value will come down the stream?
 * await - used for a single future result
 * await for - used
