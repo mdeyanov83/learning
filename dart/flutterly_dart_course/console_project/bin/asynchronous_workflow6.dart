@@ -15,6 +15,7 @@ async* → an asynchronous generator, returns a Stream<T>.
 * async* - for functions that return multiple values over time, i.e. a Stream
   Declaration: Stream<T> functionName() async* { ... }
   Uses 'yield' or 'yield*' to emit values incrementally
+  Execution is suspended at 'await' and at each 'yield'
   Returns a stream that can produce many values asynchronously
 
 ? How do we know exactly when a value will come down the stream?
