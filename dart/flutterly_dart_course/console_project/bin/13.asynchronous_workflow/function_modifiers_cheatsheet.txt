@@ -1,0 +1,24 @@
+Dart Function Modifiers Cheat Sheet
+
+| Feature / Keyword     | `sync*` (Synchronous Generator)           | `async` (Async Function)           | `async*` (Async Generator)           |
+| --------------------- | ----------------------------------------- | ---------------------------------- | ------------------------------------ |
+| **Return type**       | `Iterable<T>`                             | `Future<T>`                        | `Stream<T>`                          |
+| **Produces**          | Multiple values **synchronously**         | A single value **asynchronously**  | Multiple values **asynchronously**   |
+| **Emit values**       | `yield`, `yield*`                         | ❌ Not allowed                     | `yield`, `yield*`                    |
+| **Return value**      | `return value;` (ends iteration, may pass | `return value;` (completes future) | `return;` (closes stream, no value)  |
+                        |   value to `Iterator.returnValue`)        |                                    |                                      |
+| **`await` usage**     | ❌ Not allowed                           | ✅ Allowed (wait for futures)      | ✅ Allowed (wait for futures)        |
+| **`await for` usage** | ❌ Not allowed                           | ❌ Not allowed (outside `async*`)  | ✅ Allowed (consume another stream)  |
+| **Example**           | dart Iterable<int> syncGen() sync*        | dart Future<int> f() async         | dart Stream<int> asyncGen() async* {  |
+                        |   { yield 1; yield 2; }                   |   { await Future.delayed(          |  yield 1; await Future.delayed(
+                                                                            Duration(seconds: 1));       |      Duration(seconds: 1)); yield 2; }
+                                                                            return 42; }
+
+🔹 Quick Rules to Remember
+Use sync* → when you need a lazy synchronous iterable (like generators in Python).
+Use async → when you need a single future result.
+Use async* → when you need a stream of async values.
+yield / yield* → only valid in generator functions (sync*, async*).
+await / await for → only valid in async contexts (async, async*).
+Plain return value; → works in sync* (to stop iteration with optional returnValue) and async (to complete the future).
+In async*, you can only return; without a value → to signal the stream is finished.

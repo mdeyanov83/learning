@@ -26,7 +26,7 @@ linter:
 analyzer:
   exclude:
 #     - path/to/excluded/files/**
-      - bin/*/*.dart
+      - bin/*/*.dart # so it does not show warning and errors in explorer for already completed portions of the course (in sub folders)
 
 
 # For more information about the core and recommended set of lints, see
