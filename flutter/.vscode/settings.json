@@ -1,3 +1,3 @@
 {
-    "dart.flutterSdkPath": "/opt/flutter"
+    "dart.flutterSdkPath": "/opt/flutter/bin"
 }
