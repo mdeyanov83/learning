@@ -7,7 +7,7 @@ void main() {
 
 void test() {
 
-  final name = 'Foo';
+  const name = 'Foo';
   if (name == 'Foo') {
     print('Yes this is foo');
   } else {
