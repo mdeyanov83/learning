@@ -9,8 +9,9 @@ void test() {
 
   final name = 'Foo';
   if (name == 'Foo') {
-    
-
+    print('Yes this is foo');
+  } else {
+    print('No this is not foo');
   }
 }
 
