@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
 
+String getFullName (String firstName, String lastName) {
+
+  return '$firstName $lastName';
+}
+
 void main() {
   runApp(const MyApp());
 }
@@ -10,6 +15,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    print(getFullName('Foo','Bar'));
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
