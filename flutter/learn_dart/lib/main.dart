@@ -7,7 +7,7 @@ void main() {
 
 void test() {
 
-  const person = {
+  const Map<String, Object> person = {
     'age': 20,
     'name': 'Foo'
   };
