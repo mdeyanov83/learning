@@ -7,7 +7,7 @@ void main() {
 
 void test() {
   Set<String> names = {'foo'};
-
+  names.
   print(names.first);
 
 }
