@@ -6,9 +6,10 @@ void main() {
 }
 
 void test() {
+  final names = {'foo'};
 
-
-
+  print(names.first);
+  print("test");
 }
 
 
