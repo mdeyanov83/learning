@@ -11,6 +11,7 @@ void test() {
   names = null;
   print("test");
   print("test");
+  print("test2");
 }
 
 
@@ -43,7 +44,7 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page 2'),
+      home: const MyHomePage(title: 'Flutter Demo Home Page 3'),
     );
   }
 }
