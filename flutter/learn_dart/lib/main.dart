@@ -11,8 +11,12 @@ void test() {
     'age': 20,
     'name': 'Foo'
   };
-
+  print(person);
   person['name'] = 'Fooooo';
+  print(person);
+  person['last'] = 'sdfadsf';
+  print(person);
+  
 
 }
 
