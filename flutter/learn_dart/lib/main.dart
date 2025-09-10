@@ -6,9 +6,13 @@ void main() {
 }
 
 void test() {
-  Set<String> names = {'foo'};
-  names.
-  print(names.first);
+
+  const person = {
+    'age': 20,
+    'name': 'Foo'
+  };
+
+  person
 
 }
 
