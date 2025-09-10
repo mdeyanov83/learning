@@ -12,7 +12,7 @@ void test() {
     'name': 'Foo'
   };
 
-  person
+  person['name'] = 'Fooooo';
 
 }
 
