@@ -9,9 +9,6 @@ void test() {
 
   List<String?>? names = ['Foo', 'Bar', null];
   names = null;
-  print("test");
-  print("test");
-  print("test2");
 }
 
 
@@ -44,7 +41,7 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page 3'),
+      home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }
