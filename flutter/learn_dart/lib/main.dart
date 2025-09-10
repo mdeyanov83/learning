@@ -6,10 +6,10 @@ void main() {
 }
 
 void test() {
-  final names = {'foo'};
+  Set<String> names = {'foo'};
 
   print(names.first);
-  print("test");
+
 }
 
 
