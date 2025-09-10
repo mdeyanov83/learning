@@ -10,6 +10,7 @@ void test() {
   List<String?>? names = ['Foo', 'Bar', null];
   names = null;
   print("test");
+  print("test2");
 }
 
 
