@@ -7,16 +7,8 @@ void main() {
 
 void test() {
 
-  var person = {
-    'age': 20,
-    'name': 'Foo'
-  };
-  print(person);
-  person['name'] = 'Fooooo';
-  print(person);
-  person['last'] = 'sdfadsf';
-  print(person);
-
+  List<String?>? names = ['Foo', 'Bar', null];
+  names = null;
 
 }
 
