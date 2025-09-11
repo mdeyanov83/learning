@@ -1,18 +1,10 @@
 
 
 
-abstract class LivingThing {
-  void breathe() {
-    print('Living thing is breathing');
-  }
-  void move() {
-    print('I am moving');
-  }
-}
+class Cat {
+  final String name;
 
-
-class Cat extends LivingThing {
-
+  Cat(this.name);
 
 }
 
@@ -21,10 +13,9 @@ class Cat extends LivingThing {
 
 
 void test() {
-  final fluffers = Cat();
 
-  fluffers.breathe();
-  fluffers.move();
+  final fluffBall = Cat('FluffBall');
+  print(fluffBall.name);
 }
 
 void main(List<String> arguments) {
