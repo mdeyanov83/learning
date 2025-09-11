@@ -1,10 +1,19 @@
-//! Conditional expressions
-//! syntax:
-//! condition ? expr1 : expr2;
-//! If condition is true, then expr1, else expr2
+/*
 
-//! ?? - null-coalescing operator - it provides a default value if something is null
+! Conditional expressions    /   Conditional Invocation Operator
+! syntax:
+! condition ? expr1 : expr2;
+! If condition is true, then expr1, else expr2
 
+! ?? - null-coalescing operator - it provides a default value if something is null
+
+! ?. - conditional invocation operator
+null-aware operator that lets you safely call a method or access a property only if the object is not null.
+If the object is null, the entire expression returns null instead of throwing an error.
+object?.method();
+object?.property;
+
+*/
 void main(List<String> args) {
 
 }
