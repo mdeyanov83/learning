@@ -30,6 +30,7 @@
   // x ^= 1;    // 011 ^ 001 → 010 → 2
 
 //! ??= null aware assignment operator
+// If the variable is null, then it gets assigned a value, if it is already assigned a value, nothing happens.
 //! shorthand syntax for the assignment operator for a variable
 //! only if the variable hasn't been assigned a value yet
   // int? x;
