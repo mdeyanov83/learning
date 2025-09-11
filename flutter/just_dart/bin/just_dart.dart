@@ -7,7 +7,7 @@ class Cat {
   Cat(this.name);
 
   factory Cat.fluffBall() {
-    this.name = 'FluffBall'
+    return Cat('FluffBall');
   }
 
 }
@@ -18,7 +18,7 @@ class Cat {
 
 void test() {
 
-  final fluffBall = Cat('FluffBall');
+  final fluffBall = Cat.fluffBall();
   print(fluffBall.name);
 }
 
