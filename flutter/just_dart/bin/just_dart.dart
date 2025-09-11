@@ -5,7 +5,9 @@ class Person {
 
   Person(this.name);
 
-
+  void printName() {
+    print(name);
+  }
 
 }
 
