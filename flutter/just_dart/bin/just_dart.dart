@@ -1,12 +1,10 @@
 
-enum PersonProperties {
-  firstName, lastName, age
-}
+enum AnimalType { cat, dog, bunny }
 
 
-void test() {
+void test(AnimalType animalType) {
 
-  print(PersonProperties.firstName.name);
+
 }
 
 
