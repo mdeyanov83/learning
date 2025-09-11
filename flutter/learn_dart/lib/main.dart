@@ -5,11 +5,10 @@ void main() {
   runApp(const MyApp());
 }
 
-void test(String? firstName, String? middleName, String? lastName) {
+void test(List<String>? names) {
 
 
-  final firstNonNullName = firstName ?? middleName ?? lastName;
-  firstNonNullName;
+  final numberOfNames = names.length;
 
 }
 
@@ -20,7 +19,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    test();
+    test(['Foo']);
 
     return MaterialApp(
       title: 'Flutter Demo',
