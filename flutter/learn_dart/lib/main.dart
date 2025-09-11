@@ -9,10 +9,7 @@ void test() {
 
   List<String?>? names = ['Foo', 'Bar', null];
   names = null;
-  print("test");
-  print("test2");
 }
-
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
