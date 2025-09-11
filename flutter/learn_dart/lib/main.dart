@@ -9,9 +9,9 @@ void test() {
 
   const String? firstName = null;
   const String? middleName = null;
-  const String? lastName = 'Baz';
+  const String? lastName = null;
 
-  const firstNonNullName = firstName ?? middleName ?? lastName;
+  const String firstNonNullName = !(firstName ?? middleName ?? lastName);
 
 
 }
