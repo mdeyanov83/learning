@@ -1,7 +1,7 @@
 
 
 
-abstract  class LivingThing {
+abstract class LivingThing {
   void breathe() {
     print('Living thing is breathing');
   }
