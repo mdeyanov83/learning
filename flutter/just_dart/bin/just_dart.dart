@@ -8,5 +8,7 @@ void test() {
 
 
 void main(List<String> arguments) {
+
   test();
+
 }
