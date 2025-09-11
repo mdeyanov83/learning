@@ -1,5 +1,5 @@
-//! enum  !!!!
-//! Special class used ot represent a fixed set of constant values
+//! enum  !!!! Enumerations
+//! Special class (type) used ot represent a fixed set of constant values
 // UpperCamelCase is used for enums identifiers
 // enum Color { red, green, blue }
 //! Accessing enum values
