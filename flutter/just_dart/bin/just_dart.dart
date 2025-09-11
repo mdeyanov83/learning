@@ -1,7 +1,7 @@
 
 
 
-class Cat {
+class Cat extends Object{
   final String name;
   Cat(this.name);
   @override
