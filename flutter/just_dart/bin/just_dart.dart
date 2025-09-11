@@ -16,13 +16,13 @@ void test(AnimalType animalType) {
   }
 
 
-  print("Function is finised"); 
+  print("Function is finised");
 
 }
 
 
 void main(List<String> arguments) {
 
-  test(AnimalType.bunny);
+  test( );
 
 }
