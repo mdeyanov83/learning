@@ -37,3 +37,11 @@ class Car {
   final String name;
   Car(this.name);
 }
+
+//! Demonstrate .? and ??
+int listLength(List<String>? names) {
+
+  // If names is null, names?.length is null, therefore length gets assigned 0, otherwise it get assigned the actual value returned by .length
+  final length = names?.length ?? 0;
+  return length;
+}
