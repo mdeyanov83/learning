@@ -4,6 +4,11 @@
 class Cat {
   final String name;
   Cat(this.name);
+  @override
+  bool operator ==(covariant Cat other) => other.name == name;
+
+  @override
+  int get hashCode => name.hashCode;
 }
 
 
@@ -20,6 +25,11 @@ void test() {
   } else {
     print('They are not equal');
   }
+
+  print(cat1.hashCode);
+  print(cat2.hashCode);
+  print(identical(cat1, cat2));
+
 
 
 }
