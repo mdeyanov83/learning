@@ -11,7 +11,7 @@ void test() {
   const String? middleName = null;
   const String? lastName = null;
 
-  const String firstNonNullName = !(firstName ?? middleName ?? lastName);
+  String firstNonNullName = firstName ?? middleName ?? lastName;
 
 
 }
