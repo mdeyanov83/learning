@@ -1,8 +1,16 @@
 
-Function
+
+class Person {
+  void run() {
+    print('Running');
+  }
+  void breathe() {
+    print('Breathing');
+  }
+}
 
 
-void test(AnimalType animalType) {
+void test() {
 
 
 }
