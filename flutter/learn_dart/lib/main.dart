@@ -5,14 +5,11 @@ void main() {
   runApp(const MyApp());
 }
 
-void test() {
+void test(String? firstName, String? middleName, String? lastName) {
 
-  const String? firstName = null;
-  const String? middleName = null;
-  const String? lastName = 'Baz';
 
-  const firstNonNullName = firstName ?? middleName ?? lastName;
-
+  final firstNonNullName = firstName ?? middleName ?? lastName;
+  firstNonNullName;
 
 }
 
