@@ -1,4 +1,4 @@
-//! TYPE TEST Operators
+//! TYPE CAST Operators
 
 //! as - Typecast (also used with library prefixes)
 //! is - True if the object is of the specified type
@@ -26,7 +26,7 @@ void main(List<String> args) {
       //! Dart automatically converts element to int inside the if block if the statement is true
       //! so we can use the proper type methods inside the if block
       print(element.isEven);
-      
+
     } else if (element is double) {
       print('$element is of type double');
     } else if (element is String) {
