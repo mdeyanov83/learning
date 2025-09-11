@@ -12,10 +12,10 @@ class Person {
 
 void test() {
 
-  final person = Person();
+  final foo = Person('Foo Bar');
 
 
-
+  print(foo.name);
 }
 
 
