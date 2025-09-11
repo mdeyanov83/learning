@@ -7,8 +7,13 @@ void main() {
 
 void test() {
 
-  List<String?>? names = ['Foo', 'Bar', null];
-  names = null;
+  const String? firstName = null;
+  const String? middleName = null;
+  const String? lastName = 'Baz';
+
+  const firstNonNullName = firstName ?? middleName ?? lastName;
+
+
 }
 
 class MyApp extends StatelessWidget {
