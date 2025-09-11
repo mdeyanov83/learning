@@ -1,25 +1,31 @@
 
 
-class Person {
-  final String name;
 
-  Person(this.name);
-
-  void printName() {
-    print('I will now print the name of this person');
-    print(name);
+class LivingThing {
+  void breathe() {
+    print('Living thing is breathing');
   }
+  void move() {
+    print('I am moving');
+  }
+}
+
+
+class Cat extends LivingThing {
+
 
 }
+
+
+
 
 
 void test() {
+  final fluffers = Cat();
 
-  final foo = Person('Foo Bar');
-
-  foo.printName();
+  fluffers.breathe();
+  fluffers.move();
 }
-
 
 void main(List<String> arguments) {
 
