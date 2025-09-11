@@ -9,7 +9,6 @@ void test(List<String>? names) {
 
   final length = names?.length ?? 0;
 
-  return length;
 }
 
 class MyApp extends StatelessWidget {
