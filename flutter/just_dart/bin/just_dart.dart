@@ -3,13 +3,7 @@
 
 class Cat {
   final String name;
-
   Cat(this.name);
-
-  factory Cat.fluffBall() {
-    return Cat('FluffBall');
-  }
-
 }
 
 
@@ -17,9 +11,17 @@ class Cat {
 
 
 void test() {
+  final cat1 = Cat('Foo');
+  final cat2 = Cat('Foo');
 
-  final fluffBall = Cat.fluffBall();
-  print(fluffBall.name);
+  if (cat1 == cat2) {
+    print('They are equal');
+
+  } else {
+    print('They are not equal');
+  }
+
+
 }
 
 void main(List<String> arguments) {
