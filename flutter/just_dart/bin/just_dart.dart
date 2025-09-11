@@ -16,6 +16,7 @@ void test(AnimalType animalType) {
   }
 
 
+  print("Function is finised"); 
 
 }
 
