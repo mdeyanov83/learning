@@ -6,6 +6,10 @@ class Cat {
 
   Cat(this.name);
 
+  factory Cat.fluffBall() {
+    this.name = 'FluffBall'
+  }
+
 }
 
 
