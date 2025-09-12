@@ -3,7 +3,7 @@ int multipliedByTwo(int a) => a * 2;
 
 
 Future<int> heavyFutureThatMultipliesByTwo(int a) {
-  return Future.delayed(const Duration(seconds: 3), () => a);
+  return Future.delayed(Duration(seconds: 2), () => a * 2);
 }
 
 
