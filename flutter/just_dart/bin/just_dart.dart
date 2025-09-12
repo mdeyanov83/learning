@@ -16,20 +16,7 @@ class Cat extends Object{
 
 
 void test() {
-  final cat1 = Cat('Foo');
-  final cat2 = Cat('Foo');
-
-  if (cat1 == cat2) {
-    print('They are equal');
-
-  } else {
-    print('They are not equal');
-  }
-
-  print(cat1.hashCode);
-  print(cat2.hashCode);
-  print(identical(cat1, cat2));
-
+ 
 
 
 }
