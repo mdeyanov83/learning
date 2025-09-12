@@ -9,6 +9,7 @@ Iterable<int> getOneTwoThree() sync* {
 
 void test() async {
   for (final value in getOneTwoThree()) {
+    if (value == 5) break;
     print(value);
   }
 }
