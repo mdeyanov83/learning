@@ -8,7 +8,8 @@ Future<int> heavyFutureThatMultipliesByTwo(int a) {
 
 
 void test() async {
-
+  final result = await heavyFutureThatMultipliesByTwo(10);
+  print(result);
 
 }
 
