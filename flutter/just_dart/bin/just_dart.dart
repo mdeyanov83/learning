@@ -1,11 +1,12 @@
 
 
 Stream<String> getName() {
-  return 'Hello';
+  return Stream.value('Foo');
 }
 
 void test() async {
-
+  await for (final value in getName());
+  print(value);
 
 }
 
