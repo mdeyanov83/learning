@@ -1,7 +1,7 @@
 
 
 Stream<String> getName() {
-  return Stream.value('Foo');
+  return Stream.periodic(const Duration(seconds: 1), );
 }
 
 void test() async {
