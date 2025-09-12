@@ -7,7 +7,7 @@ Future<int> heavyFutureThatMultipliesByTwo(int a) {
 }
 
 
-void test() {
+void test() async {
 
 
 }
