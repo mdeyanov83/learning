@@ -14,8 +14,17 @@ class PairOfIntegers {
 
 }
 
-void test() async {
+class Pair<A, B> {
+  final A value1;
+  final B value2;
+  Pair(this.value1, this.value2);
 
+}
+
+void test() async {
+  final names = Pair('foo', 2);
+  print(names.value1);
+  print(names.value2);
 }
 
 void main(List<String> arguments) {
