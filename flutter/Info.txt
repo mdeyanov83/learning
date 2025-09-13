@@ -1,4 +1,5 @@
-Chapter 4 - Dart Control Statements and Collections
+My Notes App
 
-    Prefix, Infix and Suffix operators
-    
+Firebase:
+flutter pub add firebase_core
+flutter pub add firebase_auth
