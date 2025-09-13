@@ -1,5 +1,6 @@
 My Notes App
 
-Firebase:
-flutter pub add firebase_core
-flutter pub add firebase_auth
+* Adding dependencies (firebase_core, firebase_auth, clout_firestore, firebase_analytics):
+flutter pub add <dependency>
+Adds dependency to pubspec.yaml and downloads it.
+
