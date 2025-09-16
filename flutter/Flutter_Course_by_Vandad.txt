@@ -21,7 +21,10 @@ Chapter 11 - firebase
 
 * Install FlutterFireCLI and add to path
     dart pub global activate flutterfire_cli
-    
+    export PATH="$PATH":"$HOME/.pub-cache/bin"
+    - add permanently to ~/.bashrc
+        
+
 
 
 
