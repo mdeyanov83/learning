@@ -23,7 +23,7 @@ Chapter 11 - firebase
     dart pub global activate flutterfire_cli
     export PATH="$PATH":"$HOME/.pub-cache/bin"
     - add permanently to ~/.bashrc
-        
+        echo 'export PATH=$HOME/.pub-cache/bin:$PATH' >> ~/.bashrc
 
 
 
