@@ -32,7 +32,7 @@ Chapter 11 - firebase
         firebase projects:list
     - Update to latest version (optional use with "sudo", if permissions issues)
         curl -sL https://firebase.tools | upgrade=true bash
-    - If you want to uninstall the CLI - use script again:
+    - If you want to uninstall the CLI - use script again (sudo - if permissions issues):
         curl -sL https://firebase.tools | uninstall=true bash
 
 
