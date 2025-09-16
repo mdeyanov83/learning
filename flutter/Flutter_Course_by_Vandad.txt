@@ -19,11 +19,8 @@ Chapter 10 - Android App Setup
 
 Chapter 11 - firebase
 
-* Login to Firebase using Google account
-    https://console.firebase.google.com/
-
+* Login to Firebase using Google account - (https://console.firebase.google.com/)
     - Create Firebase Project
-
 
 * Install Firebase CLI - (https://firebase.google.com/docs/cli#install-cli-mac-linux)
     - Using automatic script:
@@ -36,8 +33,6 @@ Chapter 11 - firebase
         curl -sL https://firebase.tools | upgrade=true bash
     - If you want to uninstall the CLI - use script again (sudo - if permissions issues):
         curl -sL https://firebase.tools | uninstall=true bash
-
-
 
 * Install FlutterFireCLI and add to path
     - Install and add to path:
