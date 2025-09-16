@@ -19,5 +19,7 @@ Chapter 10 - Android App Setup
 
 Chapter 11 - firebase
 
+* flutterfire_cli 
+
 
 
