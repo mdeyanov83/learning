@@ -42,8 +42,9 @@ Chapter 11 - firebase
         echo 'export PATH=$HOME/.pub-cache/bin:$PATH' >> ~/.bashrc
 
 * Configure the backend:
-    flutterfire configure
-    - Choose platforms to be supported by the configuration (android, ios, web)
+    - Run configuration, choose project(from firebase) and platforms to be supported (android, ios, web):
+        flutterfire configure
+
 
 
 
