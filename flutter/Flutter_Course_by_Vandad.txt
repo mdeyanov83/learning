@@ -27,7 +27,7 @@ Chapter 11 - firebase
     - Using automatic script:
         curl -sL https://firebase.tools | bash
     - Login:
-        firebase Login
+        firebase login
     - Test the CLI - accessing your account and listing your Firebase projects:
         firebase projects:list
     - Update to latest version (optional use with "sudo", if permissions issues)
