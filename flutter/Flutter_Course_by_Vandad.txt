@@ -19,7 +19,15 @@ Chapter 10 - Android App Setup
 
 Chapter 11 - firebase
 
-* Install Firebase CLI - 
+* Install Firebase CLI - (https://firebase.google.com/docs/cli#install-cli-mac-linux)
+    - Using automatic script:
+        curl -sL https://firebase.tools | bash
+    - Login:
+        firebase Login
+    - Test the CLI - accessing your account and listing your Firebase projects:
+        firebase projects:list
+    - Update to latest version:
+        
 
 * Install FlutterFireCLI and add to path
     dart pub global activate flutterfire_cli
