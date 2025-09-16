@@ -19,6 +19,8 @@ Chapter 10 - Android App Setup
 
 Chapter 11 - firebase
 
+* Install Firebase CLI - 
+
 * Install FlutterFireCLI and add to path
     dart pub global activate flutterfire_cli
     export PATH=$HOME/.pub-cache/bin:$PATH
