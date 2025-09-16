@@ -41,8 +41,10 @@ Chapter 11 - firebase
     - Install and add to path:
         dart pub global activate flutterfire_cli
         export PATH=$HOME/.pub-cache/bin:$PATH
-    - add permanently to ~/.bashrc
+    - Add permanently to ~/.bashrc
         echo 'export PATH=$HOME/.pub-cache/bin:$PATH' >> ~/.bashrc
+    - Configure the backend:
+        flutterfire configure
 
 
 
