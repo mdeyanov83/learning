@@ -1,5 +1,6 @@
 *** My Notes App ***
 
+
 Chapter 8 - Project Setup
 
 - Adding dependencies (firebase_core, firebase_auth, cloud_firestore, firebase_analytics):
@@ -8,10 +9,15 @@ Chapter 8 - Project Setup
 
 Chapter 10 - Android App Setup
 
+- Android SDK (Host and Devcontainer)
+- USB Debugging (on device, developer options)
 - Setup ADB (Android Debug Bridge) on both Windows Host and DevEnv (if using devcontainer)
-- USB Debugging (on device)
-- Disable screen sleeping
-    
+- Disable screen sleeping (on device, developer options)
 - Android Mirroring (Optional):
     https://github.com/Genymobile/scrcpy/
+
+
+Chapter 11 - firebase
+
+
 
