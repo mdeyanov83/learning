@@ -40,9 +40,10 @@ Chapter 11 - firebase
         export PATH=$HOME/.pub-cache/bin:$PATH
     - Add permanently to ~/.bashrc
         echo 'export PATH=$HOME/.pub-cache/bin:$PATH' >> ~/.bashrc
-    - Configure the backend:
-        flutterfire configure
-        - Choose platforms to be supported by the configuration (android, ios, web)
+
+* Configure the backend:
+    flutterfire configure
+    - Choose platforms to be supported by the configuration (android, ios, web)
 
 
 
