@@ -6,4 +6,12 @@ Chapter 8 - Project Setup
     flutter pub add <dependency>   - Adds dependency to pubspec.yaml and downloads it.
 
 
+Chapter 10 - Android App Setup
+
+- Setup ADB (Android Debug Bridge) on both Windows Host and DevEnv (if using devcontainer)
+- USB Debugging (on device)
+- Disable screen sleeping
+    
+- Android Mirroring (Optional):
+    https://github.com/Genymobile/scrcpy/
 
