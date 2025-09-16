@@ -19,7 +19,9 @@ Chapter 10 - Android App Setup
 
 Chapter 11 - firebase
 
-* Install FlutterFireCLU
+* Install FlutterFireCLI and add to path
+    dart pub global activate flutterfire_cli
+    
 
 
 
