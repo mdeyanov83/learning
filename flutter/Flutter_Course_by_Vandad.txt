@@ -17,9 +17,11 @@ Chapter 10 - Android App Setup
     https://github.com/Genymobile/scrcpy/
 
 - Enabling Multi-Dex (Optional, for projects with a lot of dependencies, exceeding 65,536 methods (including your code + libraries))
-    - Check (if build is successful, multi-dex NOT requried, if):
+    - Check (if build is successful, multi-dex NOT required)
+    - If execution fails with error: Method count exceeds 64K
     android/gradlew app:dependencies
-    - Enable (if required)
+    - Enable (if required):
+    
 
 
 Chapter 11 - firebase
