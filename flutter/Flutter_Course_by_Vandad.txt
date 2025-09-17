@@ -3,20 +3,20 @@
 
 Chapter 8 - Project Setup
 
-- Adding dependencies (firebase_core, firebase_auth, cloud_firestore, firebase_analytics):
+* Adding dependencies (firebase_core, firebase_auth, cloud_firestore, firebase_analytics):
     flutter pub add <dependency>   - Adds dependency to pubspec.yaml and downloads it.
 
 
 Chapter 10 - Android App Setup
 
 * Android SDK (Host and Devcontainer)
-- USB Debugging (on device, developer options)
-- Setup ADB (Android Debug Bridge) on both Windows Host and DevEnv (if using devcontainer)
-- Disable screen sleeping (on device, developer options)
-- Android Mirroring (Optional):
+* USB Debugging (on device, developer options)
+* Setup ADB (Android Debug Bridge) on both Windows Host and DevEnv (if using devcontainer)
+* Disable screen sleeping (on device, developer options)
+* Android Mirroring (Optional):
     https://github.com/Genymobile/scrcpy/
 
-- Enabling Multi-Dex (Optional, for projects with a lot of dependencies, exceeding 65,536 methods (including your code + libraries))
+* Enabling Multi-Dex (Optional, for projects with a lot of dependencies, exceeding 65,536 methods (including your code + libraries))
     - Check (if build is successful, multi-dex NOT required)
     - If execution fails with error: Method count exceeds 64K
     android/gradlew app:dependencies
