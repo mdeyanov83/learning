@@ -9,7 +9,7 @@ Chapter 8 - Project Setup
 
 Chapter 10 - Android App Setup
 
-- Android SDK (Host and Devcontainer)
+* Android SDK (Host and Devcontainer)
 - USB Debugging (on device, developer options)
 - Setup ADB (Android Debug Bridge) on both Windows Host and DevEnv (if using devcontainer)
 - Disable screen sleeping (on device, developer options)
@@ -20,8 +20,12 @@ Chapter 10 - Android App Setup
     - Check (if build is successful, multi-dex NOT required)
     - If execution fails with error: Method count exceeds 64K
     android/gradlew app:dependencies
-    - Enable (if required):
-    
+    - Enable (if required) - add to android/app/build.gradle.kts
+        android {
+            defaultConfig {
+                multiDexEnabled = true // <-- Enable MultiDex
+            }
+        }
 
 
 Chapter 11 - firebase
