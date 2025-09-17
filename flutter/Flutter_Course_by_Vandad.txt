@@ -16,8 +16,10 @@ Chapter 10 - Android App Setup
 - Android Mirroring (Optional):
     https://github.com/Genymobile/scrcpy/
 
-- Enabling Multi-Dex (Optional, if exceeding 65,536 methods (including your code + libraries))
-    
+- Enabling Multi-Dex (Optional, for projects with a lot of dependencies, exceeding 65,536 methods (including your code + libraries))
+    - Check (if build is successful, multi-dex NOT requried, if):
+    android/gradlew app:dependencies
+    - Enable (if required)
 
 
 Chapter 11 - firebase
