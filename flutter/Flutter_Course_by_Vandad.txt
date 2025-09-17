@@ -27,6 +27,14 @@ Chapter 10 - Android App Setup
             }
         }
 
+* WHEN YOU WANT A CLEAN BUILD:
+    flutter clean       # remove old build artifacts (After upgrading dependencies or changing Gradle/Android/iOS configurations)
+    flutter pub get     # fetch dependencies (After adding or updating a dependency in pubspec.yaml)
+    flutter build apk   # build the Android APK
+        options:
+            flutter build apk --debug → Debug APK
+            flutter build apk --release → Optimized release APK
+
 
 Chapter 11 - firebase
 
