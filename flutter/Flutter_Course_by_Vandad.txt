@@ -16,6 +16,8 @@ Chapter 10 - Android App Setup
 - Android Mirroring (Optional):
     https://github.com/Genymobile/scrcpy/
 
+- Enabling Multi-Dex (Optional, if )
+
 
 Chapter 11 - firebase
 
