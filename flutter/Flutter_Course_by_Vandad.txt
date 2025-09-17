@@ -20,12 +20,13 @@ Chapter 10 - Android App Setup
     - Check (if build is successful, multi-dex NOT required)
     - If execution fails with error: Method count exceeds 64K
     android/gradlew app:dependencies
-    - Enable (if required) - add to android/app/build.gradle.kts
+    - Enable (if required) - add to android/app/build.gradle.kts, then do a clean build
         android {
             defaultConfig {
                 multiDexEnabled = true // <-- Enable MultiDex
             }
         }
+
 
 * WHEN YOU WANT A CLEAN BUILD:
     flutter clean       # remove old build artifacts (After upgrading dependencies or changing Gradle/Android/iOS configurations)
