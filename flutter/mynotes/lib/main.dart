@@ -5,17 +5,13 @@ void main() {
     MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        primarySwatch: Colors.blue,
       ),
       home: const HomePage(),
     ),
 
   );
 }
-
-
-
-
 
 
 class HomePage extends StatelessWidget {
@@ -26,6 +22,10 @@ class HomePage extends StatelessWidget {
     return const Placeholder();
   }
 }
+
+
+
+
 
 
 
