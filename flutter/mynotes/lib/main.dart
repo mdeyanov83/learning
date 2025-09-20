@@ -61,7 +61,8 @@ class _HomePageState extends State<HomePage> {
           ),
           TextButton(
             onPressed: () async {
-
+              final email = _email.text;
+              final password = _password.text;
             },
             child: const Text('Register')
           ),
