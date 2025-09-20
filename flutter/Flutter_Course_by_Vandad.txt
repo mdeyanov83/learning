@@ -78,11 +78,11 @@ Chapter 12 - Basic Registration Screen
 
 * Scaffold - a top-level layout widget that provides the basic visual structure for a screen in a Material Design app
     Key Features of Scaffold
-    - AppBar – The top bar of the screen.
-    - Body – The main content area.
-    - Drawer – A side navigation drawer.
-    - BottomNavigationBar – For navigation tabs at the bottom.
-    - FloatingActionButton (FAB) – A prominent circular action button.
+    - appBar – The top bar of the screen.
+    - body – The main content area.
+    - drawer – A side navigation drawer.
+    - bottomNavigationBar – For navigation tabs at the bottom.
+    - floatingActionButton (FAB) – A prominent circular action button.
     - SnackBars & BottomSheets – Easily show temporary messages or modals.
 
 
