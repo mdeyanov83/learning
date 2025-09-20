@@ -73,6 +73,9 @@ Chapter 12 - Basic Registration Screen
     - hot restart - apply code changes and reset state
 * State - any data that can change over time and affect what is displayed on the screen
 * Stateless vs Stateful
+    - Stateful - widget that contains mutable variables, contains information that can be changes
+    - Stateless - widget that does not contain any mutable information
+
 
 
 
