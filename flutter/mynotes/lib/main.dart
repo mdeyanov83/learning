@@ -83,7 +83,7 @@ class _HomePageState extends State<HomePage> {
                     email: email,
                     password: password
                     );
-                  print(userCredential);
+                  print(userCredential.user);
                 },
                 child: const Text('Register')
               ),
