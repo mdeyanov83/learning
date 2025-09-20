@@ -55,6 +55,20 @@ class _HomePageState extends State<HomePage> {
           options: DefaultFirebaseOptions.currentPlatform,
         ),
         builder: (context, snapshot) {
+          switch (snapshot.connectionState) {
+            case ConnectionState.none:
+              // TODO: Handle this case.
+              throw UnimplementedError();
+            case ConnectionState.waiting:
+              // TODO: Handle this case.
+              throw UnimplementedError();
+            case ConnectionState.active:
+              // TODO: Handle this case.
+              throw UnimplementedError();
+            case ConnectionState.done:
+              // TODO: Handle this case.
+              throw UnimplementedError();
+          }
           return Column(
             children: [
               TextField(
