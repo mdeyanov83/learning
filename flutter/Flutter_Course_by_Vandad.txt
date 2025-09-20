@@ -71,7 +71,6 @@ Chapter 12 - Basic Registration Screen
 * Hot reload/restart
     - hot reload - apply code changes to a running app (on device) without resetting state
     - hot restart - apply code changes and reset state
-* State - 
 * Stateless vs Stateful
 
 
