@@ -83,7 +83,7 @@ Chapter 12 - Basic Registration Screen
     - drawer – A side navigation drawer.
     - bottomNavigationBar – For navigation tabs at the bottom.
     - floatingActionButton (FAB) – A prominent circular action button.
-    - SnackBars & BottomSheets – Easily show temporary messages or modals.
+    - snackBars & bottomSheets – Easily show temporary messages or modals.
 
 
 
