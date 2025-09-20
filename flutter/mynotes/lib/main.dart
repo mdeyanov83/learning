@@ -24,7 +24,7 @@ class HomePage extends StatelessWidget {
       ),
       body: Center(
         child: TextButton(
-          onPressed: () {},
+          onPressed: () async {},
           child: const Text('Register')
         ),
       ),
