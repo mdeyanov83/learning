@@ -9,7 +9,6 @@ void main() {
       ),
       home: const HomePage(),
     ),
-
   );
 }
 
