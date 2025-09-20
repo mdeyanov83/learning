@@ -76,6 +76,7 @@ Chapter 12 - Basic Registration Screen
     - Stateful - widget that contains mutable variables, contains information that can be changes
     - Stateless - widget that does not contain any mutable information
 
+* Scaffold - 
 
 
 
