@@ -66,6 +66,9 @@ Chapter 11 - firebase
         flutterfire configure
 
 
+Chapter 12 - Basic Registration Screen
+
+* Hot reload/restart
 
 
 
