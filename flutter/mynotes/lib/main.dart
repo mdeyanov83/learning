@@ -63,6 +63,10 @@ class _HomePageState extends State<HomePage> {
             onPressed: () async {
               final email = _email.text;
               final password = _password.text;
+              await FirebaseAuth.instance.createUserWithEmailAndPassword(
+                email: email,
+                password: password
+                );
             },
             child: const Text('Register')
           ),
