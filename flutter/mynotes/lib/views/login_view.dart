@@ -3,7 +3,6 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:mynotes/firebase_options.dart';
 
-
 class LoginView extends StatefulWidget {
   const LoginView({super.key});
 
@@ -12,7 +11,6 @@ class LoginView extends StatefulWidget {
 }
 
 class _LoginViewState extends State<LoginView> {
-
   late final TextEditingController _email;
   late final TextEditingController _password;
 
@@ -33,9 +31,7 @@ class _LoginViewState extends State<LoginView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Login'),
-      ),
+      appBar: AppBar(title: const Text('Login')),
       body: FutureBuilder(
         future: Firebase.initializeApp(
           options: DefaultFirebaseOptions.currentPlatform,
@@ -67,20 +63,24 @@ class _LoginViewState extends State<LoginView> {
                     onPressed: () async {
                       final email = _email.text;
                       final password = _password.text;
-                      final userCredential = await FirebaseAuth.instance.signInWithEmailAndPassword(
-                        email: email,
-                        password: password
-                      );
-                      print(userCredential.user);
+                      try {
+                        final userCredential = await FirebaseAuth.instance
+                            .signInWithEmailAndPassword(
+                              email: email,
+                              password: password,
+                            );
+                        print(userCredential.user);
+                      } on Exception catch (e) {
+                        // TODO
+                      }
                     },
-                    child: const Text('Login')
+                    child: const Text('Login'),
                   ),
                 ],
               );
             default:
               return const Text('Loading...');
           }
-
         },
       ),
     );
