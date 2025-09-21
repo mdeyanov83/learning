@@ -27,7 +27,6 @@ Chapter 10 - Android App Setup
             }
         }
 
-
 * WHEN YOU WANT A CLEAN BUILD:
     flutter clean       # remove old build artifacts (After upgrading dependencies or changing Gradle/Android/iOS configurations)
     flutter pub get     # fetch dependencies (After adding or updating a dependency in pubspec.yaml)
@@ -90,6 +89,6 @@ Chapter 13 - Login View
 
 Chapter 14 - Separating App Initialization from Login and Register Screens
 
-
+Chapter 15 - Setting up Git and GitHub
 
 
