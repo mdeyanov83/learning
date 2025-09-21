@@ -10,10 +10,10 @@ void main() {
   runApp(
     MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(
+      theme: ThemeData( 
         primarySwatch: Colors.blue,
       ),
-      home: const RegisterView(),
+      home: const LoginView(),
     ),
   );
 }
