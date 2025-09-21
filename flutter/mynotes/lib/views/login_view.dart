@@ -71,9 +71,7 @@ class _LoginViewState extends State<LoginView> {
                             );
                         print(userCredential.user);
                       } on FirebaseAuthException catch (e) {
-                        print("Something bad happened");
-                        print(e.runtimeType);
-                        print(e);
+                        print(e.code);
                       }
                     },
                     child: const Text('Login'),
