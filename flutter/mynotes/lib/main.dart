@@ -42,7 +42,7 @@ class _RegisterViewState extends State<RegisterView> {
     super.dispose();
   }
 
-@override
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
