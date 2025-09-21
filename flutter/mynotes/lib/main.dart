@@ -31,14 +31,14 @@ class _RegisterViewState extends State<RegisterView> {
 }
 
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class LoginView extends StatefulWidget {
+  const LoginView({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<LoginView> createState() => _LoginViewState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _LoginViewState extends State<LoginView> {
   late final TextEditingController _email;
   late final TextEditingController _password;
 
