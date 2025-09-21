@@ -13,7 +13,7 @@ void main() {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const LoginView(),
+      home: const RegisterView(),
     ),
   );
 }
@@ -88,7 +88,7 @@ class _RegisterViewState extends State<RegisterView> {
                           );
                         print(userCredential.user);
                       } on FirebaseAuthException catch (e) {
-                        
+                        // TODO
                       }
                     },
                     child: const Text('Register')
