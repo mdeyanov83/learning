@@ -72,6 +72,7 @@ class _LoginViewState extends State<LoginView> {
                         print(userCredential.user);
                       } on Exception catch (e) {
                         print("Something bad happened");
+                        print(e.runtimeType);
                         print(e);
                       }
                     },
