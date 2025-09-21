@@ -88,7 +88,7 @@ class _RegisterViewState extends State<RegisterView> {
                           );
                         print(userCredential.user);
                       } on FirebaseAuthException catch (e) {
-                        // TODO
+                        print(e.code);
                       }
                     },
                     child: const Text('Register')
