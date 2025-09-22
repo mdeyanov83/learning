@@ -31,9 +31,10 @@ class HomePage extends StatelessWidget {
             case ConnectionState.done:
               final user = FirebaseAuth.instance.currentUser;
               if (user?.emailVerified ?? false) {
-                print('You are a verified user');
+
               } else {
-                print('You need to verify your email first');
+
+                Navigator.of(context).push(MaterialPageRoute(builder: (context) => const VerifyEmailView()));
               }
               return Text('Done');
             default:
