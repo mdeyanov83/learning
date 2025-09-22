@@ -53,7 +53,6 @@ class HomePage extends StatelessWidget {
   }
 }
 
-
 class NotesView extends StatefulWidget {
   const NotesView({super.key});
 
@@ -67,9 +66,9 @@ class _NotesViewState extends State<NotesView> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Main UI'),
-        backgroundColor: Colors.blue),
-      );
-      // body:
-
+        backgroundColor: Colors.blue,
+      ),
+    );
+    // body:
   }
 }
