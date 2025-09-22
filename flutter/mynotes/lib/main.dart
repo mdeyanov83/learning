@@ -58,6 +58,6 @@ class VerifyEmailView extends StatefulWidget {
 class _VerifyEmailViewState extends State<VerifyEmailView> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold();
+    return Scaffold(appBar: AppBar(title: const Text('Verify email')));
   }
 }
