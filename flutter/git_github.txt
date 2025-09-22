@@ -1,0 +1,41 @@
+Chapter 16 - Setting up Git and GitHub
+
+* Installing Git (For Debian based, e.g. Ubuntu)
+    sudo apt install git
+    sudo apt install git-all      <--- for git-all meta package
+
+* Configuring Git Identity and Settings
+    git config --global
+        <user.name>, <user.email>
+        settings - look them up
+
+* Initializing a git repository
+    git init .          <--- Initialize current folder as a git repo
+    git status          <--- Show the working tree status
+
+* Saving changes to the repository
+    git add <filename>              <--- Add file contents to the index
+    git add --all                     <--- Add all files and folders
+    git commit -m "commit message"  <--- Record changes to the repository
+
+* File can be in 1 of 3 states:
+    - untracked - Files in your working directory that Git doesn’t know about yet.
+    - tracked - Files that Git is already monitoring for changes.
+    - staged - Files that have been marked for the next commit (because changes were made)
+
+git log         <--- Show commit logs
+
+* Adding a GitHub remote repository to local repository
+    git remote add <name> <ssh url>
+        <name> = origin
+    git remote set-url origin "$REMOTE_URL"
+    git push <name>
+    git push -u origin HEAD
+    git push -u origin HEAD -f      <--- force push local contents to remote
+* Cloning an existing GitHub repo locally
+    git clone <ssh url>
+
+* Tags - a label to a specific commit (must be explicitly pushed to remote)
+    git tag "tag-name"              <--- tags the current commit with "tag-name"
+    git push origin "tag-name"      <--- pushes "tag-name" to remote
+    git push origin --tags          <--- pushes all tags to remote
