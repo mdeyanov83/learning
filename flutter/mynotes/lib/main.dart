@@ -12,6 +12,7 @@ void main() {
       title: 'Flutter Demo',
       theme: ThemeData(primarySwatch: Colors.blue),
       home: const HomePage(),
+      routes: 
     ),
   );
 }
