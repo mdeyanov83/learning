@@ -31,10 +31,12 @@ class HomePage extends StatelessWidget {
             case ConnectionState.done:
               final user = FirebaseAuth.instance.currentUser;
               if (user?.emailVerified ?? false) {
-                
               } else {
-
-                Navigator.of(context).push(MaterialPageRoute(builder: (context) => const VerifyEmailView()));
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => const VerifyEmailView(),
+                  ),
+                );
               }
               return Text('Done');
             default:
@@ -45,7 +47,6 @@ class HomePage extends StatelessWidget {
     );
   }
 }
-
 
 class VerifyEmailView extends StatefulWidget {
   const VerifyEmailView({super.key});
