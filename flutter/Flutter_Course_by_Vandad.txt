@@ -89,6 +89,7 @@ Chapter 13 - Login View
 
 Chapter 14 - Separating App Initialization from Login and Register Screens
 
-Chapter 15 - Setting up Git and GitHub
+Chapter 15 - Setting up Git and GitHub (written in outside file)
 
+Chapter 16 - Email Verification View
 
