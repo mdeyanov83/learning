@@ -44,7 +44,6 @@ class HomePage extends StatelessWidget {
             } else {
               return const LoginView();
             }
-
           default:
             return const CircularProgressIndicator();
         }
@@ -68,6 +67,7 @@ class _NotesViewState extends State<NotesView> {
         title: const Text('Main UI'),
         backgroundColor: Colors.blue,
       ),
+      body: const Text('Hello world'),
     );
     // body:
   }
