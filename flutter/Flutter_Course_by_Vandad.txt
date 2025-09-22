@@ -94,3 +94,5 @@ Chapter 15 - Setting up Git and GitHub (written in outside file)
 Chapter 16 - Email Verification View
 
 Chapter 17 - Link Between Login and Register View
+
+Chapter 18 - Logout View
