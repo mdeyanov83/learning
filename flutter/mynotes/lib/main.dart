@@ -64,7 +64,7 @@ class _NotesViewState extends State<NotesView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Main UI'),
+        title: const Text('Main UI', style: TextStyle(color: Colors.white)),
         backgroundColor: Colors.blue,
       ),
       body: const Text('Hello world'),
