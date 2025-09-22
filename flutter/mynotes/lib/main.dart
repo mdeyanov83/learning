@@ -68,7 +68,9 @@ class _NotesViewState extends State<NotesView> {
       appBar: AppBar(
         title: const Text('Main UI', style: TextStyle(color: Colors.white)),
         backgroundColor: Colors.blue,
-        
+        actions: [
+          
+        ],
       ),
       body: const Text('Hello world'),
     );
