@@ -39,9 +39,7 @@ class HomePage extends StatelessWidget {
               if (user.emailVerified) {
                 return const NotesView();
               } else {
-                // return const VerifyEmailView();
-                return PopupMenuItem();
-
+                return const VerifyEmailView();
               }
             } else {
               return const LoginView();
@@ -53,6 +51,8 @@ class HomePage extends StatelessWidget {
     );
   }
 }
+
+enum MenuAction { logout }
 
 class NotesView extends StatefulWidget {
   const NotesView({super.key});
@@ -68,6 +68,7 @@ class _NotesViewState extends State<NotesView> {
       appBar: AppBar(
         title: const Text('Main UI', style: TextStyle(color: Colors.white)),
         backgroundColor: Colors.blue,
+        
       ),
       body: const Text('Hello world'),
     );
