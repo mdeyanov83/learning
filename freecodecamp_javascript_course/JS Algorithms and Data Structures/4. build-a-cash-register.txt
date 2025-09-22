@@ -1,0 +1,166 @@
+** start of index.html **
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Cash Register</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Cash Register</h1>
+  </header>
+
+  <main>
+    <label for="cash">Cash</label>
+    <input id="cash"></input>
+    <button id="purchase-btn">Purchase</button>
+    <hr>
+    <div>
+      <span id="change-due"></span>
+    <div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Martin Deyanov</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+** end of index.html **
+
+** start of script.js **
+
+// let price = 1.87;
+// let cid = [
+//   ['PENNY', 1.01],
+//   ['NICKEL', 2.05],
+//   ['DIME', 3.1],
+//   ['QUARTER', 4.25],
+//   ['ONE', 90],
+//   ['FIVE', 55],
+//   ['TEN', 20],
+//   ['TWENTY', 60],
+//   ['ONE HUNDRED', 100]
+// ];
+
+let price = 19.5;
+let cid = [["PENNY", 0.5], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]];
+
+const values = {
+  "PENNY": 0.01,
+  "NICKEL": 0.05,
+  "DIME": 0.1,
+  "QUARTER": 0.25,
+  "ONE": 1,
+  "FIVE": 5,
+  "TEN": 10,
+  "TWENTY": 20,
+  "FIFTY": 50,
+  "ONE HUNDRED": 100
+}
+const names = {
+  0.01: "PENNY",
+  0.05: "NICKEL",
+  0.1: "DIME",
+  0.25: "QUARTER",
+  1: "ONE",
+  5: "FIVE",
+  10: "TEN",
+  20: "TWENTY",
+  50: "FIFTY",
+  100: "ONE HUNDRED"
+}
+
+const inputField = document.getElementById("cash");
+const purchaseBtn = document.getElementById("purchase-btn");
+const changeField = document.getElementById("change-due");
+
+purchaseBtn.addEventListener("click", () => {
+  if (inputField.value === "") {
+    alert("Please enter a cash amount");
+  }
+  const cash = parseFloat(inputField.value);
+  if (cash === price) {
+    changeField.textContent = "No change due - customer paid with exact cash";
+    return;
+  } else if (cash < price) {
+    alert("Customer does not have enough money to purchase the item");
+    return;
+  }
+
+  const result = checkCashRegister(price, cash, cid);
+  
+  if (result.status === "INSUFFICIENT_FUNDS") {
+    changeField.textContent = `Status: ${result.status}`;
+    return;
+  } 
+
+  changeField.textContent = `Status: ${result.status}`
+  // console.log(result);
+  result.change.forEach((denom) => {
+    changeField.textContent += ` ${denom[0]}: $${denom[1]}`
+  })
+})
+
+function checkCashRegister(price, cash, cid) {
+  
+  const result = {status: "", change: []};
+  let change = cash - price;
+  let total = 0;
+  const cashInDrawer = new Map();
+
+  cid = cid.reverse();
+  
+  for (let amount of cid) {
+    total += amount[1];
+    cashInDrawer.set(values[amount[0]], Math.round(amount[1]/values[amount[0]]));
+  }
+  // console.log(cashInDrawer);
+  if (change > total) {
+    result.status = "INSUFFICIENT_FUNDS";
+    return result;
+  } else if (change === total) {
+    result.status = "CLOSED";
+    result.change = cid.filter(el => el[1] > 0).reverse();
+    return result;
+  }
+
+  for (let [denomination, qty] of cashInDrawer ) {
+    // console.log(denomination, qty);
+    const currentDenominationChange = [names[denomination], 0];
+
+    while (qty > 0 && change >= denomination && change > 0) {
+      change = Number((change - denomination).toFixed(2));
+      qty -= 1;
+      currentDenominationChange[1] += denomination;
+    }
+
+    if (currentDenominationChange[1] > 0) {
+      result.change.push(currentDenominationChange);
+    }
+    // console.log(denomination, qty, change, result.change);
+  }
+
+  if (change === 0) {
+    result.status = "OPEN"
+    return result;
+  } else {
+    result.status = "INSUFFICIENT_FUNDS"
+    result.change = [];
+  }
+  return result;
+}
+
+
+** end of script.js **
+
+** start of styles.css **
+
+
+
+** end of styles.css **
+

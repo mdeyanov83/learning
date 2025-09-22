@@ -1,0 +1,103 @@
+** start of index.html **
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Roman Numeral Converter</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Roman Numeral Converter</h1>
+    </header>
+
+    <main>
+      <input id="number"></input>
+      <button id="convert-btn">Convert</button>
+      <hr>
+      <div>
+        <span id="output"></span>
+      </div
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Martin Deyanov</p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
+
+
+** end of index.html **
+
+** start of script.js **
+
+const inputField = document.getElementById("number");
+const convertBtn = document.getElementById("convert-btn");
+const output = document.getElementById("output");
+
+const checkInput = () => {
+  const input = inputField.value;
+  const number = parseInt(input);
+
+  if (Number.isNaN(number)) {
+    output.textContent = "Please enter a valid number";
+    inputField.value = "";
+  } else if (number <= 0) {
+    output.textContent = "Please enter a number greater than or equal to 1";
+    inputField.value = "";
+  } else if (number >= 4000) {
+    output.textContent = "Please enter a number less than or equal to 3999";
+  } else
+  {
+    output.textContent = convertInput(number);
+  }
+  
+}
+
+function findNext(num) {
+  const values = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1];
+  for (let value of values) {
+    if (value <= num) {
+      return value;
+    }
+  }
+  return undefined;
+}
+
+const convertInput = (num) => {
+  const romValues = {
+    1000: 'M',
+    900: 'CM',
+    500: 'D',
+    400: 'CD',
+    100: 'C',
+    90: 'XC',
+    50: 'L',
+    40: 'XL',
+    10: 'X',
+    9: 'IX',
+    5: 'V',
+    4: 'IV',
+    1: 'I'
+  }
+  let rom = "";
+  while (num > 0) {
+    const next = findNext(num);
+    rom = rom + romValues[next];
+    num -= next;
+  }
+  return rom;
+}
+
+convertBtn.addEventListener("click", checkInput);
+
+** end of script.js **
+
+** start of styles.css **
+
+
+
+** end of styles.css **
+

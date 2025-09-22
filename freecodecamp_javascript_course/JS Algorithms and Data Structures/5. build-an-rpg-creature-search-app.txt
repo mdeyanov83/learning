@@ -1,0 +1,187 @@
+** start of index.html **
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>RPG Creature Search App</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>RPG Creature Search App</h1>
+  </header>
+
+  <main>
+    <button id="populate-creatures-table">Populate Creatures</button>
+    <hr>
+    <label for="search-input">Search by creature name or ID</label>
+    <input id="search-input" required></input>
+    <button id="search-button">Search</button>
+    <hr>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Creature ID</th>
+            <th>Creature Name</th>
+          </tr>
+
+        </thead>
+        <tbody id="creatures-table-body">
+
+        </tbody>
+        
+      </table>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Stat</td>
+            <th>Value</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Creature name:</td>
+            <td id="creature-name"></td>
+          </tr>
+          <tr>
+            <td>Creature ID:</td>
+            <td id="creature-id"></td>
+          </tr>
+          <tr>
+            <td>Weight: </td>
+            <td id="weight"></td>
+          </tr>
+          <tr>
+            <td>Height: </td>
+            <td id="height"></td>
+          </tr>
+          <tr>
+            <td>Types: </td>
+            <td id="types"></td>
+          </tr>
+          <tr>
+            <td>HP:</td>
+            <td id="hp"></td>
+          </tr>
+          <tr>
+            <td>Attack:</td>
+            <td id="attack"></td>
+          </tr>
+          <tr>
+            <td>Defense:</td>
+            <td id="defense"></td>
+          </tr>
+          <tr>
+            <td>Special attack:</td>
+            <td id="special-attack"></td>
+          </tr>
+          <tr>
+            <td>Special defence:</td>
+            <td id="special-defense"></td>
+          </tr>
+          <tr>
+            <td>Speed:</td>
+            <td id="speed"></td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+    <hr>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Martin Deyanov</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+** end of index.html **
+
+** start of script.js **
+
+const populateCreaturesTableBtn = document.getElementById("populate-creatures-table");
+const creaturesTableBody = document.getElementById("creatures-table-body");
+
+const searchInput = document.getElementById("search-input");
+const searchBtn = document.getElementById("search-button");
+
+const creatureNameField = document.getElementById("creature-name");
+const creatureIdField = document.getElementById("creature-id");
+const weightField = document.getElementById("weight");
+const heightField = document.getElementById("height");
+
+const typesField = document.getElementById("types");
+
+// const hpField = document.getElementById("hp");
+// const attackField = document.getElementById("attack");
+// const defenseField = document.getElementById("defense");
+// const specialAttackField = document.getElementById("special-attack");
+// const specialDefenseField = document.getElementById("special-defense");
+// const speedField = document.getElementById("speed");
+
+populateCreaturesTableBtn.addEventListener("click", () => {
+  fetch("https://rpg-creature-api.freecodecamp.rocks/api/creatures")
+  .then(res => res.json())
+  .then(data => {
+    // console.log(data);
+    data.forEach((creature) => {
+      creaturesTableBody.innerHTML += `
+      <tr>
+        <td>${creature.id}</td>
+        <td>${creature.name}</td>
+      </tr>`
+    });
+  })
+  .catch(err => {
+    console.error("API Error: ", err);
+  });
+});
+
+const fetchCreature = (nameOrId) => {
+  fetch(`https://rpg-creature-api.freecodecamp.rocks/api/creature/${nameOrId}`)
+  .then(res => res.json())
+  .then(data => {
+    // console.log(data);
+    creatureNameField.textContent = data.name;
+    creatureIdField.textContent = data.id;
+    weightField.textContent = data.weight;
+    heightField.textContent = data.height;
+    data.stats.forEach(stat => 
+      document.getElementById(`${stat.name}`).textContent = stat.base_stat)
+    typesField.innerHTML = "";
+    data.types.forEach(stat => {
+      typesField.innerHTML += `<span>${stat.name.toUpperCase()}</span>\n`
+    })
+  })
+  .catch(err => {
+    alert("Creature not found");
+  })
+};
+
+searchBtn.addEventListener("click", () => {
+  const searchValue = searchInput.value;
+  fetchCreature(searchValue);
+});
+
+** end of script.js **
+
+** start of styles.css **
+
+.table-container {
+  display: flex;
+  gap: 20px;
+}
+
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+** end of styles.css **
+

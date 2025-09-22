@@ -1,0 +1,68 @@
+** start of index.html **
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Palindrome Checker</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Palindrome Checker Project</h1>
+    </header>
+
+    <main>
+      <input id="text-input" placeholder="Enter text"></input>
+      <button id="check-btn">Check</button>
+      <hr>
+      <div>
+        <span id="result"></span>
+      </div>
+
+
+
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Martin Deyanov</p>
+    </footer>
+    <script src="./script.js"></script>
+  </body>
+</html>
+
+** end of index.html **
+
+** start of script.js **
+
+const inputField = document.getElementById("text-input");
+const checkButton = document.getElementById("check-btn");
+const resultField = document.getElementById("result");
+
+checkButton.addEventListener("click", checkInput);
+
+function checkInput() {
+  const input = inputField.value;
+  if (input === "") 
+  {
+    resultField.innerText = "";
+    alert("Please input a value");
+  } else {
+    resultField.innerText = `${input} is ${checkPalindrome(input)? "" : "not"} a palindrome.`;
+  }
+}
+
+function checkPalindrome(str) {
+  const cleaned = str.replace(/[\s_\-\\\/:,.!?()]/g, "").toLowerCase();
+  
+  return cleaned === cleaned.split("").reverse().join("");
+}
+
+** end of script.js **
+
+** start of styles.css **
+
+
+
+** end of styles.css **
+

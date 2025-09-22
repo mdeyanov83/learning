@@ -1,0 +1,79 @@
+** start of index.html **
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Telephone Number Validator</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Telephone Number Validator</h1>
+  </header>
+
+  <main>
+    <label for="user-input">Enter A Phone Number:</label>
+    <input id="user-input"></input>
+    <button id="check-btn">Check</button>
+    <button id="clear-btn">Clear</button>
+    <hr>
+
+    <div>
+      <span id="results-div"></span>
+    </div>
+
+    
+  
+  
+  
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Martin Deyanov</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+** end of index.html **
+
+** start of script.js **
+
+const inputField = document.getElementById("user-input");
+const checkButton = document.getElementById("check-btn");
+const clearButton = document.getElementById("clear-btn");
+const resultsField = document.getElementById("results-div");
+
+clearButton.addEventListener("click", () => {
+  inputField.value = "";
+  resultsField.textContent = "";
+})
+
+checkButton.addEventListener("click", () => {
+  const input = inputField.value;
+  if (!input) {
+    alert("Please provide a phone number")
+  }
+  if (checkNumber(input)) {
+    resultsField.innerText = `Valid US number: ${input}`
+  } else {
+    resultsField.innerText = `Invalid US number: ${input}`
+  }
+})
+
+const checkNumber = (str) => {
+  const regex = /^(1\s?)?((\(\d{3}\))|(\d{3}))[\s-]?\d{3}[\s-]?\d{4}$/;
+  
+  return regex.test(str);
+}
+
+** end of script.js **
+
+** start of styles.css **
+
+
+
+** end of styles.css **
+
