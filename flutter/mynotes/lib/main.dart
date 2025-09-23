@@ -83,7 +83,6 @@ class _NotesViewState extends State<NotesView> {
                   }
                   break;
               }
-              ;
             },
             itemBuilder: (context) {
               return const [
