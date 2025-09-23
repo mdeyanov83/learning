@@ -38,8 +38,10 @@ class HomePage extends StatelessWidget {
             if (user != null) {
               if (user.emailVerified) {
                 return const NotesView();
+
               } else {
-                return const VerifyEmailView();
+                // return const VerifyEmailView();
+                return const LoginView();
               }
             } else {
               return const LoginView();
