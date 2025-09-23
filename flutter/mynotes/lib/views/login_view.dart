@@ -68,7 +68,7 @@ class _LoginViewState extends State<LoginView> {
 
                 Navigator.of(
                   context,
-                ).pushNamedAndRemoveUntil('/notes/', (route) => false);
+                ).pushNamedAndRemoveUntil(notesRoute, (route) => false);
               } on FirebaseAuthException catch (e) {
                 if (e.code == 'user-not-found') {
                   devtools.log('User not found');
