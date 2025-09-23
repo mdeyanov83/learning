@@ -70,7 +70,9 @@ class _NotesViewState extends State<NotesView> {
         backgroundColor: Colors.blue,
         actions: [
           PopupMenuButton<MenuAction>(
-            onSelected: (value) {},
+            onSelected: (value) {
+              print(value);
+            },
             itemBuilder: (context) {
               return const [
                 PopupMenuItem<MenuAction>(
