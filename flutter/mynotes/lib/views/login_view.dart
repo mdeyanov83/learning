@@ -103,22 +103,19 @@ Future<void> showErrorDialog(
 
   return showDialog(
     context: context,
-    builder: (context)
-  ) {
+    builder: (context) {
+      return AlertDialog(
+        title: const Text('An error occurred'),
+        content: Text(text),
 
-    return AlertDialog(
-      title: const Text('An error occurred'),
-      content: Text(text),
+        actions: [
+          TextButton(
+            onPressed:() {},
+            child: const Text('OK'),
+          ),
+        ],
 
-      actions: [
-        TextButton(
-          onPressed:() {},
-          child: const Text('OK')
-        ),
-
-      ]
-
-       }
+        }
     )
 
 }
