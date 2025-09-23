@@ -73,8 +73,7 @@ class _LoginViewState extends State<LoginView> {
                 if (e.code == 'user-not-found') {
                   await showErrorDialog(context, 'User not found');
                 } else if (e.code == 'wrong-password') {
-                  devtools.log('Wrong password');
-                }
+                  await showErrorDialog(context, 'Wrong credentials');
               }
             },
             child: const Text('Login'),
