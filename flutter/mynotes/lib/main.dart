@@ -70,8 +70,14 @@ class _NotesViewState extends State<NotesView> {
         backgroundColor: Colors.blue,
         actions: [
           PopupMenuButton<MenuAction>(
-            onSelected: (value) {
-              devtools.log(value.toString());
+            onSelected: (value) async {
+              switch (value) {
+                case MenuAction.logout:
+                  final shouldLogout = await showLogoutDialog(context);
+                  devtools.log(shouldLogout.toString());
+                  break;
+              }
+              ;
             },
             itemBuilder: (context) {
               return const [
