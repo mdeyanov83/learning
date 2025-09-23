@@ -69,7 +69,11 @@ class _NotesViewState extends State<NotesView> {
         title: const Text('Main UI', style: TextStyle(color: Colors.white)),
         backgroundColor: Colors.blue,
         actions: [
-          PopupMenuButton(itemBuilder: itemBuilder)
+          PopupMenuButton<MenuAction>(
+            onSelected: (value) {},
+            itemBuilder: (context) {
+              const PopupMenuItem<MenuAction>(value: MenuAction.logout, child: Text('Log out'));
+            })
         ],
       ),
       body: const Text('Hello world'),
