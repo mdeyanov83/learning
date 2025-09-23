@@ -91,17 +91,15 @@ class _NotesViewState extends State<NotesView> {
 }
 
 Future<bool> showLogoutDialog(BuildContext context) {
-  showDialog(
+  return showDialog<bool>(
     context: (context),
     builder: (context) {
       return AlertDialog(
         title: const Text('Sign out'),
         content: const Text('Are you sure you want to sign out?'),
         actions: [
-          TextButton(
-            onPressed: () {},
-            child: null
-          ),
+          TextButton(onPressed: () {}, child: const Text('Cancel')),
+          TextButton(onPressed: () {}, child: const Text('Log out')),
         ],
       );
     },
