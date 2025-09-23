@@ -78,8 +78,7 @@ class _LoginViewState extends State<LoginView> {
                   await showErrorDialog(context, 'Error: ${e.code}');
                 }
               } catch (e) {
-                
-
+                await showErrorDialog(context, e.toString());
               }
             },
             child: const Text('Login'),
@@ -110,8 +109,8 @@ Future<void> showErrorDialog(BuildContext context, String text) {
             onPressed: () {
               Navigator.of(context).pop();
             },
-            child: const Text('OK')
-          )
+            child: const Text('OK'),
+          ),
         ],
       );
     },
