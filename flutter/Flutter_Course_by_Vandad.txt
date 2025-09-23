@@ -102,3 +102,5 @@ Chapter 19 - Go From Login to Notes View
 Chapter 20 - Cleaning Up our Routes
 
 Chapter 21 - Error Handling in LoginView
+
+Chapter 22 - Error Handling in Register View, Next Screen After Registration
