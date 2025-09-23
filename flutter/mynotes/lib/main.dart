@@ -89,3 +89,8 @@ class _NotesViewState extends State<NotesView> {
     // body:
   }
 }
+
+
+Future<bool> showLogoutDialog(BuildContext context) {
+  
+}
