@@ -103,5 +103,5 @@ Future<bool> showLogoutDialog(BuildContext context) {
         ],
       );
     },
-  );
+  ).then((value) => value ?? false);
 }
