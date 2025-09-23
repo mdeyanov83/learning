@@ -92,3 +92,10 @@ class _LoginViewState extends State<LoginView> {
     );
   }
 }
+
+Future<void> showErrorDialog(BuildContext context, String text) {
+
+
+  return showDialog(context: context, builder);
+
+}
