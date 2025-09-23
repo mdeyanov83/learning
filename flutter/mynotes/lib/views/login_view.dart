@@ -96,10 +96,15 @@ class _LoginViewState extends State<LoginView> {
   }
 }
 
-Future<void> showErrorDialog(BuildContext context, String text)
+Future<void> showErrorDialog(
+  BuildContext context,
+  String text
+) {
 
-
-  return showDialog(context: context, builder: (context)) {
+  return showDialog(
+    context: context,
+    builder: (context)
+  ) {
 
     return AlertDialog(
       title: const Text('An error occurred'),
@@ -113,8 +118,8 @@ Future<void> showErrorDialog(BuildContext context, String text)
 
       ]
 
-
+       }
     )
-  }
 
+}
 
