@@ -98,3 +98,6 @@ Chapter 17 - Link Between Login and Register View
 Chapter 18 - Logout View
 
 Chapter 19 - Go From Login to Notes View
+
+Chapter 20 - Cleaning Up our Routes
+
