@@ -104,7 +104,13 @@ Future<void> showErrorDialog(BuildContext context, String text) {
         title: const Text('An error occurred'),
         content: Text(text),
         actions: [
-          TextButton(onPressed: () {}, child: const Text('OK'))],
+          TextButton(
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+            child: const Text('OK')
+          )
+        ],
       );
     },
   );
