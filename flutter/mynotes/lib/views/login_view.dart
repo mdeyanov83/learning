@@ -76,17 +76,17 @@ class _LoginViewState extends State<LoginView> {
                     context,
                   ).pushNamedAndRemoveUntil(verifyEmailRoute, (route) => false);
                 }
-              } on UserNotFoundAuthException catch (e) {
+              } on UserNotFoundAuthException {
                 await showErrorDialog(
                   context,
                   'User not found',
                 );
-              } on WrongPasswordAuthException catch (e) {
+              } on WrongPasswordAuthException {
                 await showErrorDialog(
                   context,
                   'Wrong credentials',
                 );
-              } on GenericAuthException catch (e) {
+              } on GenericAuthException {
                 await showErrorDialog(
                   context,
                   'Authentication error',
