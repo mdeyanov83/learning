@@ -110,3 +110,5 @@ Chapter 23 - Confirming Identity Before Going to Main UI
 Chapter 24 - Auth Service
 
 Chapter 25 - Migrating to Auth Service
+
+Chapter 26 - Unit Testing our AuthService
