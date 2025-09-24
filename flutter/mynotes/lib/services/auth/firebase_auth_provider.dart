@@ -5,9 +5,12 @@ import 'package:mynotes/services/auth/auth_exceptions.dart';
 import 'package:firebase_auth/firebase_auth.dart'
     show FirebaseAuth, FirebaseAuthException;
 
-class FirebaseAuthProvider implements AuthProvider{
+class FirebaseAuthProvider implements AuthProvider {
   @override
-  Future<AuthUser> createUser({required String email, required String password}) {
+  Future<AuthUser> createUser({
+    required String email,
+    required String password,
+  }) {
     // TODO: implement createUser
     throw UnimplementedError();
   }
