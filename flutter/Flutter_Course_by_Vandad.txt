@@ -112,3 +112,7 @@ Chapter 24 - Auth Service
 Chapter 25 - Migrating to Auth Service
 
 Chapter 26 - Unit Testing our AuthService
+* Adding dev dependencies to a project
+    flutter pub add <dependency> --dev
+    flutter pug add test --dev
+    
