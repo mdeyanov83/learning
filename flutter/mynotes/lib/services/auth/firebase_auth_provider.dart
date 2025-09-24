@@ -33,4 +33,4 @@ class FirebaseAuthProvider implements AuthProvider{
     // TODO: implement sendEmailVerification
     throw UnimplementedError();
   }
-};
+}
