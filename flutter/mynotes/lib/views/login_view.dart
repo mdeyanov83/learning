@@ -77,9 +77,16 @@ class _LoginViewState extends State<LoginView> {
                   ).pushNamedAndRemoveUntil(verifyEmailRoute, (route) => false);
                 }
               } on UserNotFoundAuthException catch (e) {
-                
-              }
-              on FirebaseAuthException catch (e) {
+                await showErrorDialog(
+                  context,
+                  'User not found',
+                );
+              } on WrongPasswordAuthException catch (e) {
+                await showErrorDialog(
+                  context,
+                  'Wrong credentials',
+                );
+              } on FirebaseAuthException catch (e) {
                 if (e.code == 'user-not-found') {
                   await showErrorDialog(context, 'User not found');
                 } else if (e.code == 'wrong-password') {
