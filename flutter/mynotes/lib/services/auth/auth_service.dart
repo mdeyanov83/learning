@@ -6,17 +6,20 @@ class AuthService implements AuthProvider {
   const AuthService(this.provider);
 
   @override
-  Future<AuthUser> createUser({required String email, required String password}) {
-    // TODO: implement createUser
-    throw UnimplementedError();
-  }
-  
+  Future<AuthUser> createUser({
+    required String email,
+    required String password,
+  }) => provider.createUser(email: email, password: password);
+
   @override
   // TODO: implement currentUser
   AuthUser? get currentUser => throw UnimplementedError();
-  
+
   @override
-  Future<AuthUser> logIn({required String email, required String password}) {
+  Future<AuthUser> logIn({
+    required String email,
+    required String password,
+  }) {
     // TODO: implement logIn
     throw UnimplementedError();
   }
@@ -32,5 +35,4 @@ class AuthService implements AuthProvider {
     // TODO: implement sendEmailVerification
     throw UnimplementedError();
   }
-
 }
