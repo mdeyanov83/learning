@@ -83,7 +83,7 @@ class _RegisterViewState extends State<RegisterView> {
                   'This is an invalid email address',
                 );
               } on GenericAuthException {
-                await showErrorDialog(context, 'Failed to register',)
+                await showErrorDialog(context, 'Failed to register',);
               }
             },
             child: const Text('Register'),
