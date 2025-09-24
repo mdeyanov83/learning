@@ -108,3 +108,5 @@ Chapter 22 - Error Handling in Register View, Next Screen After Registration
 Chapter 23 - Confirming Identity Before Going to Main UI
 
 Chapter 24 - Auth Service
+
+Chapter 25 - Migrating to Auth Service
