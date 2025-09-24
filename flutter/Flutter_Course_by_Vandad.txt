@@ -104,3 +104,7 @@ Chapter 20 - Cleaning Up our Routes
 Chapter 21 - Error Handling in LoginView
 
 Chapter 22 - Error Handling in Register View, Next Screen After Registration
+
+Chapter 23 - Confirming Identity Before Going to Main UI
+
+Chapter 24 - Auth Service
