@@ -77,8 +77,7 @@ class FirebaseAuthProvider implements AuthProvider {
 
   @override
   Future<void> logOut() {
-    // TODO: implement logOut
-    throw UnimplementedError();
+    final user = FirebaseAuth.insta
   }
 
   @override
