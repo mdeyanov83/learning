@@ -13,8 +13,9 @@ class FirebaseAuthProvider implements AuthProvider{
   }
 
   @override
-  // TODO: implement currentUser
-  AuthUser? get currentUser => throw UnimplementedError();
+  AuthUser? get currentUser {
+    
+  }
 
   @override
   Future<AuthUser> logIn({required String email, required String password}) {
