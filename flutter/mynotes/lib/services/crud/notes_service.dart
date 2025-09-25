@@ -10,6 +10,8 @@ class NotesService {
 
   Database? _db;
 
+  
+
   Future<void> open() async {
     if (_db != null) {
       throw DatabaseAlreadyOpenException();
@@ -22,15 +24,14 @@ class NotesService {
 
       // create the user table
       await db.execute(createUserTable);
-
       // create the note table
       await db.execute(createNoteTable);
 
     } on MissingPlatformDirectoryException {
       throw UnableToGetDocumentsDirectory();
     }
-
   }
+
 
 }
 
