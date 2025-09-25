@@ -26,13 +26,12 @@ class MockAuthProvider implements AuthProvider {
   }
 
   @override
-  // TODO: implement currentUser
-  AuthUser? get currentUser => throw UnimplementedError();
+  AuthUser? get currentUser => _user;
 
   @override
-  Future<void> initialize() {
-    // TODO: implement initialize
-    throw UnimplementedError();
+  Future<void> initialize() async {
+    await Future.delayed(const Duration(seconds: 1));
+    _isInitialized = true;
   }
 
   @override
