@@ -14,7 +14,11 @@ class NotesService {
 
   Future<void> deleteUser({required String email}) async {
     final db = _getDatabaseOrThrow();
-    db.delete(table)
+    final deletedCount = await db.delete(
+      userTable,
+      where: 'email = ?',
+      whereArgs: [email.toLowerCase()],
+    );
   }
 
   Database _getDatabaseOrThrow() {
