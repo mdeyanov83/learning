@@ -16,7 +16,12 @@ class NotesService {
 
   Future<DatabaseUser> createUser({required String email}) async {
     final db = _getDatabaseOrThrow();
-    db.query(table)
+    final result = db.query(
+      userTable,
+      limit: 1,
+      where: 'email = ?',
+      whereArgs: [email.toLowerCase()],
+    );
   }
 
   Future<void> deleteUser({required String email}) async {
@@ -69,7 +74,6 @@ class NotesService {
     }
   }
 }
-
 
 @immutable
 class DatabaseUser {
