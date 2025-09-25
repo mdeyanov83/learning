@@ -41,10 +41,17 @@ class DatabaseNotes {
     required this.isSyncedWithCloud,
   });
 
-  
+  DatabaseNotes.fromRow(Map<String, Object?> map)
+    : id = map[idColumn] as int,
+      userId = map[userIdColumn] as int,
+      text = map[]
+
 
 
 }
 
 const idColumn = 'id';
 const emailColumn = 'email';
+const userIdColumn = 'user_id';
+const textColumn = 'text';
+const isSyncedWithCloudColumn = 'is_synced_with_cloud';
