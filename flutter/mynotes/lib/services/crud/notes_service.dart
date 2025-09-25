@@ -4,12 +4,22 @@ import 'package:path_provider/path_provider.dart';
 import 'package:path/path.dart' show join;
 
 class DatabaseAlreadyOpenException implements Exception {}
+
 class UnableToGetDocumentsDirectory implements Exception {}
+
 class DatabaseIsNotOpen implements Exception {}
 
 class NotesService {
-
   Database? _db;
+
+  Database _getDatabaseOrThrow() {
+    final db = _db;
+    if (db == null) {
+      throw DatabaseIsNotOpen();
+    } else {
+      return db;
+    }
+  }
 
   Future<void> close() async {
     final db = _db;
@@ -17,9 +27,8 @@ class NotesService {
       throw DatabaseIsNotOpen();
     } else {
       await db.close();
+      _db = null;
     }
-
-
   }
 
   Future<void> open() async {
@@ -28,7 +37,7 @@ class NotesService {
     }
     try {
       final docsPath = await getApplicationDocumentsDirectory();
-      final dbPath = join(docsPath.path,dbName);
+      final dbPath = join(docsPath.path, dbName);
       final db = await openDatabase(dbPath);
       _db = db;
 
@@ -36,16 +45,11 @@ class NotesService {
       await db.execute(createUserTable);
       // create the note table
       await db.execute(createNoteTable);
-
     } on MissingPlatformDirectoryException {
       throw UnableToGetDocumentsDirectory();
     }
   }
-
-
 }
-
-
 
 @immutable
 class DatabaseUser {
