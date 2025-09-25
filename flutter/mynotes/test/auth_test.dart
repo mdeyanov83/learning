@@ -26,15 +26,28 @@ void main() {
       expect(provider.currentUser, null);
     });
 
-    test('Should be able to initialize in less than 2 seconds', () async {
-      await provider.initialize();
-      expect(provider.isInitialized, true);
-    }, timeout: const Timeout(Duration(seconds: 2)));
+    test(
+      'Should be able to initialize in less than 2 seconds',
+      () async {
+        await provider.initialize();
+        expect(provider.isInitialized, true);
+      },
+      timeout: const Timeout(Duration(seconds: 2)),
+    );
+
+    test('Create user should delegate to logIn function', () {
+      final badEmailUser = provider.createUser(
+        email: 'foo@bar.com',
+        password: 'anypassword',
+      );
+      expect(badEmailUser, throwsA(const TypeMatcher<UserNotFoundAuthException>()));
+      
+    });
+
+
+
+
   });
-
-  test 
-
-
 }
 
 class NotInitializedException implements Exception {}
