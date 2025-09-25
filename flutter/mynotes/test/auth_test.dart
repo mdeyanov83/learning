@@ -40,13 +40,22 @@ void main() {
         email: 'foo@bar.com',
         password: 'anypassword',
       );
-      expect(badEmailUser, throwsA(const TypeMatcher<UserNotFoundAuthException>()));
+      expect(
+        badEmailUser,
+        throwsA(const TypeMatcher<UserNotFoundAuthException>()),
+      );
+
+      final badPasswordUser = provider.createUser(
+        email: 'someone@bar.com',
+        password: 'foobar',
+      );
+      expect(
+        badPasswordUser,
+        throwsA(const TypeMatcher<WrongPasswordAuthException>()),
+      );
+
       
     });
-
-
-
-
   });
 }
 
