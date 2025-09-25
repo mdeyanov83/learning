@@ -9,6 +9,8 @@ class UnableToGetDocumentsDirectory implements Exception {}
 
 class DatabaseIsNotOpen implements Exception {}
 
+class CouldNotDeleteUser implements Exception {}
+
 class NotesService {
   Database? _db;
 
@@ -19,6 +21,9 @@ class NotesService {
       where: 'email = ?',
       whereArgs: [email.toLowerCase()],
     );
+    if (deletedCount != 1) {
+      throw CouldNotDeleteUser();
+    }
   }
 
   Database _getDatabaseOrThrow() {
@@ -59,6 +64,7 @@ class NotesService {
     }
   }
 }
+
 
 @immutable
 class DatabaseUser {
