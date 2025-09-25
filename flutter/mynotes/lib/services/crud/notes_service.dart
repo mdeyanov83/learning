@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
 import 'package:sqflite/sqflite.dart';
@@ -23,7 +25,13 @@ class CouldNotFindNote implements Exception {}
 class NotesService {
   Database? _db;
 
-  Future<
+  Future<List<DatabaseNote>> getAllNotes() async {
+    final db = _getDatabaseOrThrow();
+    final notes = await db.query(
+      noteTable,
+    );
+    return notes;
+  }
 
   Future<DatabaseNote> getNote({required int id}) async {
     final db = _getDatabaseOrThrow();
@@ -38,7 +46,6 @@ class NotesService {
     } else {
       return DatabaseNote.fromRow(notes.first);
     }
-
   }
 
   Future<int> deleteAllNotes() async {
