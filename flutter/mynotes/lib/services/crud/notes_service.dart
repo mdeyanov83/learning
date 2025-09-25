@@ -23,10 +23,19 @@ class NotesService {
   Future<DatabaseNotes> createNote({required DatabaseUser owner}) async {
     final db = _getDatabaseOrThrow();
 
+    // make sure owner exists in the database with the correct id
     final dbUser = await getUser(email: owner.email);
+    if (dbUser != owner) {
+      throw CouldNotFindUser();
+    }
 
-    
-
+    const text = '';
+    // create the note
+    final noteId = await db.insert(noteTable, {
+      userIdColumn: owner.id,
+      textColumn: text,
+      isSyncedWithCloudColumn: 1,
+    });
   }
 
   Future<DatabaseUser> getUser({required String email}) async {
