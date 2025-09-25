@@ -11,8 +11,10 @@ class DatabaseUser {
     required this.email,
   });
 
-  Database
+  DatabaseUser.fromRow(Map<String, Object?> map) : id = map["idColumn"]
+
 
 
 }
 
+const idColumn = "id"
