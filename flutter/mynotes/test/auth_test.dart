@@ -2,18 +2,25 @@ import 'package:mynotes/services/auth/auth_provider.dart';
 import 'package:mynotes/services/auth/auth_user.dart';
 import 'package:test/test.dart';
 
-void main() {
+void main() {}
 
-}
+class NotInitialziedException implements Exception {}
 
 class MockAuthProvider implements AuthProvider {
-
   var _isInitialized = false;
+  bool get isInitialized => _isInitialized;
+
+
 
   @override
-  Future<AuthUser> createUser({required String email, required String password}) {
-    // TODO: implement createUser
-    throw UnimplementedError();
+  Future<AuthUser> createUser({
+    required String email,
+    required String password,
+  }) {
+    if (!isInitialized) throw NotInitialziedException();
+
+
+    
   }
 
   @override
@@ -27,7 +34,10 @@ class MockAuthProvider implements AuthProvider {
   }
 
   @override
-  Future<AuthUser> logIn({required String email, required String password}) {
+  Future<AuthUser> logIn({
+    required String email,
+    required String password,
+  }) {
     // TODO: implement logIn
     throw UnimplementedError();
   }
@@ -43,5 +53,4 @@ class MockAuthProvider implements AuthProvider {
     // TODO: implement sendEmailVerification
     throw UnimplementedError();
   }
-
 }
