@@ -20,7 +20,7 @@ class CouldNotFindUser implements Exception {}
 class NotesService {
   Database? _db;
 
-  Future<DatabaseNotes> createNote({required DatabaseUser owner}) async {
+  Future<DatabaseNote> createNote({required DatabaseUser owner}) async {
     final db = _getDatabaseOrThrow();
 
     // make sure owner exists in the database with the correct id
