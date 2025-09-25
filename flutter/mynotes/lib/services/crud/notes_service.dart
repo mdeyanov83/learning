@@ -20,7 +20,12 @@ class NotesService {
       final db = await openDatabase(dbPath);
       _db = db;
 
-      
+      const createUserTable = '''CREATE TABLE "user" (
+        "id" INTEGER NOT NULL,
+        "email" TEXT NOT NULL UNIQUE,
+        PRIMARY KEY("id" AUTOINCREMENT)
+      );''';
+
     } on MissingPlatformDirectoryException {
       throw UnableToGetDocumentsDirectory();
     }
