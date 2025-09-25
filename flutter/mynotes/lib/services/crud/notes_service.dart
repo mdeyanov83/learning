@@ -47,6 +47,8 @@ class DatabaseNotes {
       text = map[textColumn] as String,
       isSyncedWithCloud = (map[isSyncedWithCloudColumn] as int) == 1 ? true : false;
 
+  @override
+  String toString() => 'Note, ID = $id, userId = $userId, isSyncedWithCloud = $isSyncedWithCloud';
 }
 
 const idColumn = 'id';
