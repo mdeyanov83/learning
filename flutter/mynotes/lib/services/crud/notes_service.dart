@@ -4,6 +4,13 @@ import 'package:path_provider/path_provider.dart'
     show getApplicationDocumentsDirectory;
 import 'package:path/path.dart' show join;
 
+class NotesService {
+
+
+}
+
+
+
 @immutable
 class DatabaseUser {
   final int id;
@@ -45,12 +52,24 @@ class DatabaseNotes {
     : id = map[idColumn] as int,
       userId = map[userIdColumn] as int,
       text = map[textColumn] as String,
-      isSyncedWithCloud = (map[isSyncedWithCloudColumn] as int) == 1 ? true : false;
+      isSyncedWithCloud = (map[isSyncedWithCloudColumn] as int) == 1
+          ? true
+          : false;
 
   @override
-  String toString() => 'Note, ID = $id, userId = $userId, isSyncedWithCloud = $isSyncedWithCloud';
+  String toString() =>
+      'Note, ID = $id, userId = $userId, isSyncedWithCloud = $isSyncedWithCloud, text = $text';
+
+  @override
+  bool operator ==(covariant DatabaseNotes other) => id == other.id;
+
+  @override
+  int get hashCode => id.hashCode;
 }
 
+const dbName = 'notes.db';
+const noteTable = 'note';
+const userTable = 'user';
 const idColumn = 'id';
 const emailColumn = 'email';
 const userIdColumn = 'user_id';
