@@ -1,10 +1,11 @@
 import 'package:flutter/foundation.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:path_provider/path_provider.dart'
-    show getApplicationDocumentsDirectory;
+    show MissingPlatformDirectoryException, getApplicationDocumentsDirectory;
 import 'package:path/path.dart' show join;
 
 class DatabaseAlreadyOpenException implements Exception {}
+class UnableToGetDocumentsDirectory implements Exception {}
 
 class NotesService {
 
@@ -16,8 +17,10 @@ class NotesService {
     }
     try {
       final docsPath = await getApplicationDocumentsDirectory();
-      
 
+
+    } on MissingPlatformDirectoryException {
+      throw UnableToGetDocumentsDirectory();
     }
 
   }
