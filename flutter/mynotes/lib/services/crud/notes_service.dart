@@ -36,6 +36,8 @@ class NotesService {
       textColumn: text,
       isSyncedWithCloudColumn: 1,
     });
+
+    final note = DatabaseNote(id: noteId: owner.id, text: text, isSyncedWithCloud: true,);
   }
 
   Future<DatabaseUser> getUser({required String email}) async {
