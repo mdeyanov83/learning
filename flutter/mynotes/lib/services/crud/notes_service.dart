@@ -14,6 +14,11 @@ class CouldNotDeleteUser implements Exception {}
 class NotesService {
   Database? _db;
 
+  Future<DatabaseUser> createUser({required String email}) async {
+    final db = _getDatabaseOrThrow();
+    db.query(table)
+  }
+
   Future<void> deleteUser({required String email}) async {
     final db = _getDatabaseOrThrow();
     final deletedCount = await db.delete(
