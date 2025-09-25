@@ -10,17 +10,18 @@ class MockAuthProvider implements AuthProvider {
   var _isInitialized = false;
   bool get isInitialized => _isInitialized;
 
-
-
   @override
   Future<AuthUser> createUser({
     required String email,
     required String password,
-  }) {
+  }) async {
     if (!isInitialized) throw NotInitialziedException();
 
-
-    
+    await Future.delayed(const Duration(seconds: 1));
+    return logIn(
+      email: email,
+      password: password,
+    );
   }
 
   @override
