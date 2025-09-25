@@ -21,7 +21,10 @@ class DatabaseUser {
   @override
   String toString() => 'Person, ID = $id, email = $email';
 
-  @override bool operator ==(covariant Database other) => id == other.id;
+  @override
+  bool operator ==(covariant DatabaseUser other) => id == other.id;
+  @override
+  int get hashCode
 }
 
 const idColumn = 'id';
