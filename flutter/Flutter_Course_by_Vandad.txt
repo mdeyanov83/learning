@@ -117,3 +117,4 @@ Chapter 26 - Unit Testing our AuthService
     flutter pug add test --dev
 
 Chapter 27 - CRUD Local Storage (SQLite)
+* Required additional dependencies: sqflite, path, 
