@@ -21,6 +21,8 @@ class CouldNotDeleteNote implements Exception {}
 class NotesService {
   Database? _db;
 
+  Future<int> delete
+
   Future<void> deleteNote({required int id}) async {
     final db = _getDatabaseOrThrow();
     final deletedCount = await db.delete(
