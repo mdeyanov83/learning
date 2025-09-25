@@ -54,7 +54,8 @@ void main() {
         throwsA(const TypeMatcher<WrongPasswordAuthException>()),
       );
 
-      
+      final user = await provider.createUser(email: 'foo', password: 'bar',);
+
     });
   });
 }
