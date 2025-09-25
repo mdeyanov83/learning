@@ -115,4 +115,5 @@ Chapter 26 - Unit Testing our AuthService
 * Adding dev dependencies to a project
     flutter pub add <dependency> --dev
     flutter pug add test --dev
-    
+
+Chapter 27 - CRUD Local Storage
