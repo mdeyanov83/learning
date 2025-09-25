@@ -30,7 +30,19 @@ class DatabaseUser {
 
 class DatabaseNotes {
   final int id;
+  final int userId;
+  final String text;
+  final bool isSyncedWithCloud;
+
+  DatabaseNotes({
+    required this.id,
+    required this.userId,
+    required this.text,
+    required this.isSyncedWithCloud,
+  });
+
   
+
 
 }
 
