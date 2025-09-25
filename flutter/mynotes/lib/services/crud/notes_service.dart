@@ -44,9 +44,8 @@ class DatabaseNotes {
   DatabaseNotes.fromRow(Map<String, Object?> map)
     : id = map[idColumn] as int,
       userId = map[userIdColumn] as int,
-      text = map[]
-
-
+      text = map[textColumn] as String,
+      isSyncedWithCloud = map[isSyncedWithCloudColumn] as bool;
 
 }
 
