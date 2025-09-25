@@ -30,6 +30,9 @@ class NotesService {
     final notes = await db.query(
       noteTable,
     );
+
+    final result = notes.map((noteRow) => DatabaseNote.fromRow(noteRow));
+
     return notes;
   }
 
