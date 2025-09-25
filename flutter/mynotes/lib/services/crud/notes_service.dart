@@ -12,6 +12,11 @@ class DatabaseIsNotOpen implements Exception {}
 class NotesService {
   Database? _db;
 
+  Future<void> deleteUser({required String email}) async {
+    final db = _getDatabaseOrThrow();
+    db.delete(table)
+  }
+
   Database _getDatabaseOrThrow() {
     final db = _db;
     if (db == null) {
