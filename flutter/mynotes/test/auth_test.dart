@@ -7,6 +7,9 @@ void main() {
 }
 
 class MockAuthProvider implements AuthProvider {
+
+  var _isInitialized = false;
+
   @override
   Future<AuthUser> createUser({required String email, required String password}) {
     // TODO: implement createUser
