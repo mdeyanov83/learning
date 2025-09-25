@@ -8,6 +8,7 @@ import 'package:path/path.dart' show join;
 class DatabaseUser {
   final int id;
   final String email;
+
   const DatabaseUser({
     required this.id,
     required this.email,
@@ -16,6 +17,11 @@ class DatabaseUser {
   DatabaseUser.fromRow(Map<String, Object?> map)
     : id = map[idColumn] as int,
       email = map[emailColumn] as String;
+
+  @override
+  String toString() => 'Person, ID = $id, email = $email';
+
+  @override bool operator ==(covariant Database other)
 }
 
 const idColumn = 'id';
