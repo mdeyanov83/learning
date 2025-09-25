@@ -13,7 +13,7 @@ class DatabaseUser {
 
   DatabaseUser.fromRow(Map<String, Object?> map)
     : id = map[idColumn] as int,
-      email = map[emailColumn];
+      email = map[emailColumn] as String;
 }
 
 const idColumn = 'id';
