@@ -34,6 +34,10 @@ class _NotesViewState extends State<NotesView> {
         title: const Text('Your Notes', style: TextStyle(color: Colors.white)),
         backgroundColor: Colors.blue,
         actions: [
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(Icons.add),
+          ),
           PopupMenuButton<MenuAction>(
             onSelected: (value) async {
               switch (value) {
