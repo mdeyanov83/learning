@@ -64,7 +64,8 @@ class _NotesViewState extends State<NotesView> {
         builder: (context, snapshot) {
           switch (snapshot.connectionState) {
             case ConnectionState.done:
-              return const Text('Hello');
+            
+              return const Text('Your notes will appear here');
             default:
               return const CircularProgressIndicator();
           }
