@@ -18,7 +18,7 @@ class _NewNoteViewState extends State<NewNoteView> {
     if (existingNote != null) {
       return existingNote;
     }
-    createNote
+    _notesService.createNote
 
 
   }
