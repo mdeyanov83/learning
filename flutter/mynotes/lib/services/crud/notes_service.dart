@@ -42,8 +42,9 @@ class NotesService {
 
     if (updatesCount == 0) {
       throw CouldNotUpdateNote();
+    } else {
+      return await getNote(id: note.id);
     }
-
   }
 
   Future<Iterable<DatabaseNote>> getAllNotes() async {
