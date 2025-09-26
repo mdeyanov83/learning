@@ -17,13 +17,13 @@ class NotesService {
   Future<DatabaseUser> getOrCreateUser({required String email}) async {
     try {
       final user = await getUser(email: email);
+      return user;
     } on CouldNotFindUser {
       final createdUser = await createUser(email: email);
       return createdUser;
     } catch (e) {
       rethrow;
     }
-
   }
 
   Future<void> _cacheNotes() async {
