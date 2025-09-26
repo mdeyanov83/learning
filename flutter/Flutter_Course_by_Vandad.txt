@@ -127,3 +127,5 @@ Chapter 28 - Working with Streams in Notes Service
 Chapter 29 - Preparing Notes View to Read All Notes
 
 Chapter 30 - Preparing to Create New Notes
+
+Chapter 31 - Creating New Notes
