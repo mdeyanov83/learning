@@ -68,21 +68,12 @@ class _NotesViewState extends State<NotesView> {
                 stream: _notesService.allNotes,
                 builder: (context, snapshot) {
                   switch (snapshot.connectionState) {
-
-                    case ConnectionState.none:
-                      // TODO: Handle this case.
-                      throw UnimplementedError();
                     case ConnectionState.waiting:
-                      return const Text('Waiting for all notes');
-                    case ConnectionState.active:
-                      // TODO: Handle this case.
-                      throw UnimplementedError();
-                    case ConnectionState.done:
-                      // TODO: Handle this case.
-                      throw UnimplementedError();
+                      return const Text('Waiting for all notes...');
+                    default:
+                      return const CircularProgressIndicator();
                   }
-                }
-                ),
+                },
               );
             default:
               return const CircularProgressIndicator();
