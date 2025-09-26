@@ -90,8 +90,8 @@ class _NewNoteViewState extends State<NewNoteView> {
               _setupTextControllerListener();
               return TextField(
                 controller: _textController,
-                keyboardType: TextInputType.multiline;
-                
+                keyboardType: TextInputType.multiline,
+                maxLines: null,
               );
             default:
               return const CircularProgressIndicator();
