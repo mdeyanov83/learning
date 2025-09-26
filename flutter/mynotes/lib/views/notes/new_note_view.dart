@@ -16,7 +16,7 @@ class _NewNoteViewState extends State<NewNoteView> {
 
   @override
   void initState() {
-    _notes Service = NotesService();
+    _notesService = NotesService();
     _textController = TextEditingController();
     super.initState();
   }
@@ -81,7 +81,18 @@ class _NewNoteViewState extends State<NewNoteView> {
       appBar: AppBar(
         title: const Text('New Note'),
       ),
-      body: const Text('Write your new note here...'),
+      body: FutureBuilder(
+        future: createNewNote(),
+        builder: (context, snapshot) {
+          switch (snapshot.connectionState) {
+            case ConnectionState.done:
+
+              break;
+            default:
+              return const CircularProgressIndicator();
+          }
+        },
+      ),
     );
   }
 }
