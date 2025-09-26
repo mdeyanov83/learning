@@ -14,6 +14,10 @@ class NotesService {
 
   final _notesStreamController = StreamController<List<DatabaseNote>>.broadcast();
 
+  Future<void> _cacheNotes() async {
+    final allNotes = await getAllNotes();
+  }
+
   Future<DatabaseNote> updateNote({
     required DatabaseNote note,
     required String text,
