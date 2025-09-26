@@ -124,4 +124,6 @@ Chapter 27 - CRUD Local Storage (SQLite)
 
 Chapter 28 - Working with Streams in Notes Service
 
+Chapter 29 - Preparing Notes View to Read All Notes
+
 
