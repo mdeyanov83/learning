@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
 import 'package:mynotes/services/crud/crud_exceptions.dart';
@@ -10,7 +12,7 @@ class NotesService {
 
   List<DatabaseNote> _notes = [];
 
-
+  final _notesStreamController = StreamController<List<DatabaseNote>>.broadcast();
 
   Future<DatabaseNote> updateNote({
     required DatabaseNote note,
