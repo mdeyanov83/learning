@@ -129,3 +129,5 @@ Chapter 29 - Preparing Notes View to Read All Notes
 Chapter 30 - Preparing to Create New Notes
 
 Chapter 31 - Creating New Notes
+
+Chapter 32 - Displaying Notes in Notes View
