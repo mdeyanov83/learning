@@ -121,3 +121,5 @@ Chapter 27 - CRUD Local Storage (SQLite)
     flutter pub add sqflite
     flutter pub add path_provider
     flutter pub add path
+
+Chapter 28 - Working with Streams in Notes Service
