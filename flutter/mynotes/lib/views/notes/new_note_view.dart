@@ -13,8 +13,8 @@ class _NewNoteViewState extends State<NewNoteView> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('New Note'),
-        body: const Text('Write your new note here...'),
       ),
+      body: const Text('Write your new note here...'),
     );
   }
 }
