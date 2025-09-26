@@ -10,7 +10,7 @@ class NotesService {
 
   List<DatabaseNote> _notes = [];
 
-  
+
 
   Future<DatabaseNote> updateNote({
     required DatabaseNote note,
