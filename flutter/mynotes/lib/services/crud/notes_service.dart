@@ -65,7 +65,10 @@ class NotesService {
 
   Future<int> deleteAllNotes() async {
     final db = _getDatabaseOrThrow();
-    return await db.delete(noteTable);
+    final numberOfDeletions = await db.delete(noteTable);
+    _notes = [];
+    _notesStreamController.add(_notes);
+    return numberOfDeletions;
   }
 
   Future<void> deleteNote({required int id}) async {
@@ -80,10 +83,7 @@ class NotesService {
     } else {
       final countBefore = _notes.length;
       _notes.removeWhere((note) => note.id == id);
-      if (_notes.length != countBefore) {
-        _notesStreamController.add(_notes);
-      }
-
+      _notesStreamController.add(_notes);
     }
   }
 
