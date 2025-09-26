@@ -8,6 +8,10 @@ import 'package:path/path.dart' show join;
 class NotesService {
   Database? _db;
 
+  List<DatabaseNote> _notes = [];
+
+  
+
   Future<DatabaseNote> updateNote({
     required DatabaseNote note,
     required String text,
