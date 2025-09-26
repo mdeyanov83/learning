@@ -12,7 +12,7 @@ void main() {
   runApp(
     MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(primarySwatch: Colors.blue),
+      theme: ThemeData(primarySwatch: Colors.blue, secondaryHeaderColor: Colors.white),
       home: const HomePage(),
       routes: {
         loginRoute: (context) => const LoginView(),
