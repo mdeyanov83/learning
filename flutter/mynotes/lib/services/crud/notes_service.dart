@@ -38,7 +38,7 @@ class NotesService {
     if (updatesCount == 0) {
       throw CouldNotUpdateNote();
     } else {
-      final update await getNote(id: note.id);
+      final updateNote = await getNote(id: note.id);
     }
   }
 
