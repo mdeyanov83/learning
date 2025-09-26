@@ -26,8 +26,10 @@ class NotesService {
   }) async {
     final db = _getDatabaseOrThrow();
 
+    // make sure ote exists
     await getNote(id: note.id);
 
+    // update DB
     final updatesCount = await db.update(noteTable, {
       textColumn: text,
       isSyncedWithCloudColumn: 0,
@@ -36,7 +38,7 @@ class NotesService {
     if (updatesCount == 0) {
       throw CouldNotUpdateNote();
     } else {
-      return await getNote(id: note.id);
+      final update await getNote(id: note.id);
     }
   }
 
@@ -59,7 +61,11 @@ class NotesService {
     if (notes.isEmpty) {
       throw CouldNotFindNote();
     } else {
-      return DatabaseNote.fromRow(notes.first);
+      final note = DatabaseNote.fromRow(notes.first);
+      _notes.removeWhere((note) => note.id == id);
+      _notes.add(note);
+      _notesStreamController.add(_notes);
+      return note;
     }
   }
 
