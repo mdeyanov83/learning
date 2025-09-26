@@ -15,6 +15,12 @@ class _NotesViewState extends State<NotesView> {
   String get userEmail => AuthService.firebase().currentUser!.email!;
 
   @override
+  void initState() {
+    
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
