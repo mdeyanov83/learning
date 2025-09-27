@@ -1,3 +1,5 @@
+import 'dart:nativewrappers/_internal/vm/lib/ffi_patch.dart';
+
 import 'package:flutter/material.dart';
 import 'package:mynotes/constants/routes.dart';
 import 'package:mynotes/enums/menu_action.dart';
@@ -70,7 +72,13 @@ class _NotesViewState extends State<NotesView> {
                   switch (snapshot.connectionState) {
                     case ConnectionState.waiting:
                     case ConnectionState.active:
-                      return const Text('Waiting for all notes...');
+                      if (snapshot.hasData) {
+                        
+                      }
+                      return ListView.builder(
+                        itemCount:
+                        itemBuilder:
+                      ,)
                     default:
                       return const CircularProgressIndicator();
                   }
