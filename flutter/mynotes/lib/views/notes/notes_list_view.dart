@@ -16,15 +16,21 @@ class NotesListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      itemCount: allNotes.length,
+      itemCount: notes.length,
       itemBuilder: (context, index) {
-        final note = allNotes[index];
+        final note = notes[index];
         return ListTile(
           title: Text(
             note.text,
             maxLines: 1,
             softWrap: true,
             overflow: TextOverflow.ellipsis,
+          ),
+          trailing: IconButton(
+            onPressed: () {
+
+            },
+            icon: const Icon(Icons.delete),
           ),
         );
       },
