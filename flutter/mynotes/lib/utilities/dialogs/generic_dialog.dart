@@ -19,10 +19,15 @@ Future<T?> showGenericDialog<T>({
         content: Text(content),
         actions: options.keys.map((optionTitle) {
           final T value = options[optionTitle];
+          return TextButton(
+            onPressed: () {
 
+            },
+            
+          );
 
-        }),
-      ),
+        }).toList(),
+      );
 
     },
   );
