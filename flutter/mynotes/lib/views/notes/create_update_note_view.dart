@@ -38,7 +38,10 @@ class _CreateUpdateNoteViewState extends State<CreateUpdateNoteView> {
     _textController.addListener(_textControllerListener);
   }
 
-  Future<DatabaseNote> createOrGetExistingNote() async {
+  Future<DatabaseNote> createOrGetExistingNote(BuildContext: context) async {
+
+    final widgetNote =
+
     final existingNote = _note;
     if (existingNote != null) {
       return existingNote;
