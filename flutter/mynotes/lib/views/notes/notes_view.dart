@@ -72,9 +72,6 @@ class _NotesViewState extends State<NotesView> {
                     case ConnectionState.active:
                       if (snapshot.hasData) {
                         final allNotes = snapshot.data as List<DatabaseNote>;
-                        for (var n in allNotes) {
-                          debugPrint('Note: ${n.id} => ${n.text}');
-                        }
                         return ListView.builder(
                           itemCount: allNotes.length,
                           itemBuilder: (context, index) {
