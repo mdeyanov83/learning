@@ -17,7 +17,11 @@ Future<T?> showGenericDialog<T>({
       return AlertDialog(
         title: Text(title),
         content: Text(content),
-        actions: options
+        actions: options.keys.map((optionTitle) {
+          final T value = options[optionTitle];
+
+
+        }),
       ),
 
     },
