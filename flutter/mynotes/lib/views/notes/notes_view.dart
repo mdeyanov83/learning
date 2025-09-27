@@ -77,12 +77,14 @@ class _NotesViewState extends State<NotesView> {
                           itemBuilder: (context, index) {
                             final note = allNotes[index];
                             return ListTile(
-                              title: Text(note.text),
-                              
+                              title: Text(
+                                note.text,
+                                maxLines: 1,
+                                softWrap: true,
+                                overflow: TextOverflow.ellipsis,
+                              ),
                             );
-
-                          }
-
+                          },
                         );
                       } else {
                         return const CircularProgressIndicator();
