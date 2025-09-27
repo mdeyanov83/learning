@@ -57,6 +57,8 @@ class _CreateUpdateNoteViewState extends State<CreateUpdateNoteView> {
     final email = currentUser.email!;
     final owner = await _notesService.getUser(email: email);
     final newNote = await _notesService.createNote(owner: owner);
+    _note = newNote;
+    return newNote;
   }
 
   void _deletNoteIfTextIsEmpty() {
@@ -96,7 +98,6 @@ class _CreateUpdateNoteViewState extends State<CreateUpdateNoteView> {
         builder: (context, snapshot) {
           switch (snapshot.connectionState) {
             case ConnectionState.done:
-              _note = snapshot.data as DatabaseNote;
               _setupTextControllerListener();
               return TextField(
                 controller: _textController,
