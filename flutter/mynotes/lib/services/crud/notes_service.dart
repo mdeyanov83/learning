@@ -43,6 +43,7 @@ class NotesService {
     _notesStreamController.add(_notes);
   }
 
+  // fixed to update only the current note, not all notes in DB
   Future<DatabaseNote> updateNote({
     required DatabaseNote note,
     required String text,
