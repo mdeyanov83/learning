@@ -27,8 +27,11 @@ class NotesListView extends StatelessWidget {
             overflow: TextOverflow.ellipsis,
           ),
           trailing: IconButton(
-            onPressed: () {
-
+            onPressed: () async {
+              final shouldDelete = await showDeleteDialog(context);
+              if (shouldDelete) {
+                onDeleteNote(note);
+              }
             },
             icon: const Icon(Icons.delete),
           ),
