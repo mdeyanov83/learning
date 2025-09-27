@@ -131,3 +131,5 @@ Chapter 30 - Preparing to Create New Notes
 Chapter 31 - Creating New Notes
 
 Chapter 32 - Displaying Notes in Notes View
+
+Chapter 33 - Deleting Existing Notes in Notes View
