@@ -136,3 +136,5 @@ Chapter 33 - Deleting Existing Notes in Notes View
 
 Chapter 34 - Updating Existing Notes
 
+Chapter 35 - Protecting NotesService with Current User
+
