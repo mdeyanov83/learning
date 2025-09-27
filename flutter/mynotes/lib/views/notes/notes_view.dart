@@ -81,7 +81,7 @@ class _NotesViewState extends State<NotesView> {
                                 note.text,
                                 maxLines: 1,
                                 softWrap: true,
-                                overflow: TextOverflow.ellipsis,
+                                overflow: TextOverflow.fade,
                               ),
                             );
                           },
