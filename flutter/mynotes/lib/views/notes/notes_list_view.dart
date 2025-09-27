@@ -7,11 +7,13 @@ typedef NoteCallback = void Function(DatabaseNote note);
 class NotesListView extends StatelessWidget {
   final List<DatabaseNote> notes;
   final NoteCallback onDeleteNote;
+  final NoteCallback onTap;
 
   const NotesListView({
     Key? key,
     required this.notes,
     required this.onDeleteNote,
+    required this.onTap,
   }) : super(key: key);
 
   @override
