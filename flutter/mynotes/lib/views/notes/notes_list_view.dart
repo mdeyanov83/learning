@@ -7,11 +7,14 @@ class NotesListView extends StatelessWidget {
   final List<DatabaseNote> notes;
   final DeleteNoteCallback onDeleteNote;
 
-  const NotesListView({ Key? key }) : super(key: key);
+  const NotesListView({
+    Key? key,
+    required this.notes,
+    required this.onDeleteNote,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container();
   }
 }
-
