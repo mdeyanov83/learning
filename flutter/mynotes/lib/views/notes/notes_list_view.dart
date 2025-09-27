@@ -15,6 +15,19 @@ class NotesListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return ListView.builder(
+      itemCount: allNotes.length,
+      itemBuilder: (context, index) {
+        final note = allNotes[index];
+        return ListTile(
+          title: Text(
+            note.text,
+            maxLines: 1,
+            softWrap: true,
+            overflow: TextOverflow.ellipsis,
+          ),
+        );
+      },
+    );
   }
 }
