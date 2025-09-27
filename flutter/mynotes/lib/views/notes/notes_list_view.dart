@@ -5,6 +5,7 @@ typedef DeleteNoteCallback = void Function(DatabaseNote note);
 
 class NotesListView extends StatelessWidget {
   final List<DatabaseNote> notes;
+  final DeleteNoteCallback onDeleteNote;
 
   const NotesListView({ Key? key }) : super(key: key);
 
