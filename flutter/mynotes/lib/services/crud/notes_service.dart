@@ -33,7 +33,7 @@ class NotesService {
           return note.userId == currentUser.id;
         } else {
           throw UserShouldBeSetBeforeReadingAllNotes();
-        }
+        } 
       });
 
   Future<DatabaseUser> getOrCreateUser({
