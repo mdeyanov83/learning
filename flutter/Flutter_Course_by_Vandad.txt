@@ -138,3 +138,4 @@ Chapter 34 - Updating Existing Notes
 
 Chapter 35 - Protecting NotesService with Current User
 
+Chapter 36 - Writing Notes to Cloud Firestore
