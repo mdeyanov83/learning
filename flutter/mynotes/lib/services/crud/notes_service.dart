@@ -28,12 +28,12 @@ class NotesService {
 
   Stream<List<DatabaseNote>> get allNotes =>
       _notesStreamController.stream.filter((note) {
-        final currentUser = _user;
-        if (currentUser != null) {
-          return note.userId == currentUser.id;
-        } else {
-          throw UserShouldBeSetBeforeReadingAllNotes();
-        }
+        // final currentUser = _user;
+        // if (currentUser != null) {
+        //   return note.userId == currentUser.id;
+        // } else {
+        //   throw UserShouldBeSetBeforeReadingAllNotes();
+        // }
       });
 
   Future<DatabaseUser> getOrCreateUser({
