@@ -154,5 +154,6 @@ https://firebase.google.com/docs/firestore
 * Create a collection
     Collection - a group of related objects (documents)
     - Start a collection - Collection ID - notes
-    A document - analogy like a schema (table) in SQL
+    A document - each document will be an individual notes
+    - 
 
