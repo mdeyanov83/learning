@@ -145,7 +145,8 @@ Chapter 36 - Writing Notes to Cloud Firestore
     - In the FireBase Console, go to FireStore Database, Create Database
         - Choose Edition (Standard), Location, and Mode (Test Mode)
 * Editing Security Rules
-    - Allow read / write only if the user is authenticated
-
+    - Allow read / write only if the user is authenticated.
+    This gives access to every authenticated user to all the database, not very secure
+        match /{document=**} {allow read, write: if request.auth != null;}
 
 
