@@ -14,6 +14,7 @@ class NotesService {
 
   DatabaseUser? _user;
 
+  // Singleton
   static final NotesService _shared = NotesService._sharedInstance();
   NotesService._sharedInstance() {
     _notesStreamController = StreamController<List<DatabaseNote>>.broadcast(
@@ -33,7 +34,7 @@ class NotesService {
           return note.userId == currentUser.id;
         } else {
           throw UserShouldBeSetBeforeReadingAllNotes();
-        } 
+        }
       });
 
   Future<DatabaseUser> getOrCreateUser({
