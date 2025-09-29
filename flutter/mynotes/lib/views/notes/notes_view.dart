@@ -61,7 +61,17 @@ class _NotesViewState extends State<NotesView> {
           ),
         ],
       ),
-      body: ,
+      body: FutureBuilder(
+        future: _notesService.getOrCreateUser(email: userEmail),
+        builder: (context, snapshot) {
+          switch (snapshot.connectionState) {
+            case ConnectionState.done:
+              return ;
+            default:
+              return const CircularProgressIndicator();
+          }
+        },
+      ),
     );
     // body:
   }
