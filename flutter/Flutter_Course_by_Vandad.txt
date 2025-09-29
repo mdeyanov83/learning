@@ -163,5 +163,5 @@ https://firebase.google.com/docs/firestore
 We are going to user User.uid as the "user_id" field for each document.
 
 Chapter 37 - Migrating to our Firestore Service
-
+*** 
 
