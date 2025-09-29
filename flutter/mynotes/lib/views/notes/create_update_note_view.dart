@@ -31,7 +31,7 @@ class _CreateUpdateNoteViewState extends State<CreateUpdateNoteView> {
     }
     final text = _textController.text;
     await _notesService.updateNote(
-      note: note,
+      documentId: note.documentId,
       text: text,
     );
   }
@@ -104,7 +104,7 @@ class _CreateUpdateNoteViewState extends State<CreateUpdateNoteView> {
                 keyboardType: TextInputType.multiline,
                 maxLines: null,
                 decoration: const InputDecoration(
-                  hintText: 'Start typing your note...'
+                  hintText: 'Start typing your note...',
                 ),
               );
             default:
