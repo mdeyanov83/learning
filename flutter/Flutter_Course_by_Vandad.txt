@@ -141,6 +141,8 @@ Chapter 34 - Updating Existing Notes
 Chapter 35 - Protecting NotesService with Current User
 
 Chapter 36 - Writing Notes to Cloud Firestore
+https://firebase.google.com/docs/firestore
+
 * Creating a FireStore Database
     - In the FireBase Console, go to FireStore Database, Create Database
         - Choose Edition (Standard), Location, and Mode (Test Mode)
