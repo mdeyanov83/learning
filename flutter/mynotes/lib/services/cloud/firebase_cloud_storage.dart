@@ -13,7 +13,7 @@ class FirebaseCloudStorage {
 
   Future<Iterable<CloudNote>> getNotes({required String ownerUserId}) async {
     try {
-      await notes
+      return await notes
           .where(
             ownerUserIdFieldName,
             isEqualTo: ownerUserId,
