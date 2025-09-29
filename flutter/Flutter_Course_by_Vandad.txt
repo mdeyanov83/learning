@@ -153,6 +153,6 @@ https://firebase.google.com/docs/firestore
 
 * Create a collection
     Collection - a group of related objects (documents)
-    - 
+    - Start a collection - Collection ID - notes
 
 
