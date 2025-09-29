@@ -154,8 +154,10 @@ https://firebase.google.com/docs/firestore
 * Create a collection
     Collection - a group of related objects (documents)
     - Start a collection - Collection ID - ""notes"
-        A document - each document will be an individual notes
+        A document - each document will be an individual note
         - Add a new document with Auto ID and 2 fields:
             "text" type string
             "user_id" type string
+        - Once collection is created delete the empty document, so we are left with an empty Collection
+        
 
