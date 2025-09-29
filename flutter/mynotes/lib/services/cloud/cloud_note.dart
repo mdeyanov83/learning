@@ -18,6 +18,4 @@ class CloudNote {
     : documentId = snapshot.id,
       ownerUserId = snapshot.data()[ownerUserIdFieldName],
       text = snapshot.data()[textFieldName] as String;
-
-
 }
