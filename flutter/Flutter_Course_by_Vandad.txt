@@ -151,4 +151,5 @@ https://firebase.google.com/docs/firestore
     This gives access to every authenticated user to all the database, not very secure
         match /{document=**} {allow read, write: if request.auth != null;}
 
+! Collection - a group of related objects (documents)
 
