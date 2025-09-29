@@ -1,4 +1,4 @@
-// import 'package:flutter/foundation.dart';
+import 'package:flutter/foundation.dart';
 
 @immutable
 class CloudNote {
@@ -6,7 +6,7 @@ class CloudNote {
   final String ownerUserId;
   final String text;
 
-  CloudNote(
+  const CloudNote(
     this.documentId,
     this.ownerUserId,
     this.text,
