@@ -37,6 +37,8 @@ Chapter 10 - Android App Setup
 
 
 Chapter 11 - firebase
+* Add firebase dependencies to flutter project(firebase_core, firebase_auth, cloud_firestore, firebase_analytics):
+    flutter pub add firebase_core firebase_auth cloud_firestore firebase_analytics
 
 * Login to Firebase using Google account - (https://console.firebase.google.com/)
     - Create Firebase Project
