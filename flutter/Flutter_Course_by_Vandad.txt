@@ -159,5 +159,7 @@ https://firebase.google.com/docs/firestore
             "text" type string
             "user_id" type string
         - Once collection is created delete the empty document, so we are left with an empty Collection
-        
+
+We are going to user User.uid as the "user_id" field for each document.
+
 
