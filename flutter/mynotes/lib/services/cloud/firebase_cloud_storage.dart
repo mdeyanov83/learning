@@ -6,13 +6,23 @@ import 'package:mynotes/services/cloud/cloud_storage_exceptions.dart';
 class FirebaseCloudStorage {
   final notes = FirebaseFirestore.instance.collection('notes');
 
+  Future<void> deleteNote({
+    required String documentId,
+  }) async {
+    try {
+      await notes.doc(documentId).delete();
+    } catch (e) {
+      throw CouldNotDeleteNoteException();
+    }
+  }
+
   Future<void> updateNote({
     required String documentId,
     required String text,
   }) async {
     try {
-      await notes.doc(documentId).update({textFieldName: })
-    } catch  (e) {
+      await notes.doc(documentId).update({textFieldName: text});
+    } catch (e) {
       throw CouldNotUpdateNoteException();
     }
   }
