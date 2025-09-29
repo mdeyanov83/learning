@@ -8,7 +8,20 @@ class FirebaseCloudStorage {
 
   Future<Iterable<CloudNote>> getNotes({required String ownerUserId}) async {
     try {
-      await notes.where(ownerUserIdFieldName, isEqualTo: ownerUserId).get().then((value) => null);
+      await notes
+          .where(ownerUserIdFieldName, isEqualTo: ownerUserId)
+          .get()
+          .then(
+            (value) => value.docs.map(
+              (doc) {
+                return CloudNote(
+                  documentId: doc.id,
+                  ownerUserId: doc.data()[ownerUserIdFieldName] as String,
+                  text: doc.data()[textFieldName],
+                );
+              },
+            ),
+          );
     } catch (e) {
       throw CouldNotGetAllNotesException();
     }
