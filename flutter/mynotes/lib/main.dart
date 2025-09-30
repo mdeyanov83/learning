@@ -88,7 +88,9 @@ class _HomePageState extends State<HomePage> {
           listener: (context, state) {
             _controller.clear();
           },
-          builder: listener,
+          builder: (context, state) {
+            final invalidvalue = (state is CounterStateInvalidNumber) ? state.invalidValue : '';
+          },
         ),
       ),
     );
