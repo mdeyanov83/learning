@@ -89,7 +89,18 @@ class _HomePageState extends State<HomePage> {
             _controller.clear();
           },
           builder: (context, state) {
-            final invalidValue = (state is CounterStateInvalidNumber) ? state.invalidValue : '';
+            final invalidValue = (state is CounterStateInvalidNumber)
+                ? state.invalidValue
+                : '';
+            return Column(
+              children: [
+                Text('Current value => ${state.value}'),
+                Visibility(
+                  child: Text('Invalid input: $invalidValue'),
+                  visible: state is CounterStateInvalidNumber,
+                ),
+              ],
+            );
           },
         ),
       ),
