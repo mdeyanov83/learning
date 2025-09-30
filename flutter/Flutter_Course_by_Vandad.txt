@@ -183,7 +183,7 @@ Chapter 38 - Sharing Notes
     );
 
 
-Chapter 39 - Introduction to BloC (Business Logic Component)
+Chapter 39 - Introduction to BLoC (Business Logic Component)
 
 
 
