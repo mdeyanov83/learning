@@ -125,7 +125,7 @@ class CounterBloc extends Bloc<CounterEvent, CounterState> {
           ),
         );
       } else {
-        emit(CounterStateValid(state.value + integer));
+        emit(CounterStateValid(state.value - integer));
       }
     });
   }
