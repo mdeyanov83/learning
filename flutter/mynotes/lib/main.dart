@@ -84,9 +84,11 @@ class _HomePageState extends State<HomePage> {
         appBar: AppBar(
           title: const Text('Testing bloc'),
         ),
-        body: BlocConsumer(
-          builder: builder,
-          listener: listener,
+        body: BlocConsumer<CounterBloc, CounterState>(
+          listener: (context, state) {
+            _controller.clear();
+          },
+          builder: listener,
         ),
       ),
     );
