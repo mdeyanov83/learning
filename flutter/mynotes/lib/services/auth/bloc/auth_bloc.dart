@@ -5,6 +5,7 @@ import 'package:mynotes/services/auth/bloc/auth_state.dart';
 
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
   AuthBloc(AuthProvider provider) : super(const AuthStateLoading()) {
+    // initialize
     on<AuthEventInitialize>((event, emit) async {
       await provider.initialize();
       final user = provider.currentUser;
@@ -13,9 +14,14 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       } else if (!user.isEmailVerified) {
         emit(const AuthStateNeedsVerification());
       } else {
-        emit(const AuthStateLoggedIn(user));
+        emit(AuthStateLoggedIn(user));
       }
     });
 
+    // log in
+    on<AuthEventLogIn>((event, emit) async {
+      await
+
+    });
   }
 }
