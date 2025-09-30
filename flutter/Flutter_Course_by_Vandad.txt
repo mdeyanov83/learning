@@ -167,3 +167,5 @@ Chapter 37 - Migrating to our Firestore Service
 *** - lib folder backup before migrating service
 
 Chapter 38 - Sharing Notes
+* Installing Share Plus plugin (https://pub.dev/packages/share_plus)
+
