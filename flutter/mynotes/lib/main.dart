@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mynotes/constants/routes.dart';
 import 'package:mynotes/services/auth/auth_service.dart';
 import 'package:mynotes/views/login_view.dart';
@@ -77,7 +78,7 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return BlocProvider(create: create);
   }
 }
 
