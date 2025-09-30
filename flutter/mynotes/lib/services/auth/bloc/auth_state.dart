@@ -9,3 +9,6 @@ class AuthStateLoading extends AuthState {
   const AuthStateLoading();
 }
 
+class AuthStateLoggedIn extends AuthState {
+  
+}
