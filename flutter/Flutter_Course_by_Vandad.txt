@@ -28,6 +28,7 @@ Chapter 10 - Android App Setup
         }
 
 * WHEN YOU WANT A CLEAN BUILD:
+    ** sometimes required after adding new dependencies and encountering errors
     flutter clean       # remove old build artifacts (After upgrading dependencies or changing Gradle/Android/iOS configurations)
     flutter pub get     # fetch dependencies (After adding or updating a dependency in pubspec.yaml)
     flutter build apk   # build the Android APK
@@ -172,12 +173,12 @@ Chapter 38 - Sharing Notes
 * Usage
     import 'package:share_plus/share_plus.dart';
 
+    * Share.share() - deprecated
+
     SharePlus.instance.share(
     ShareParams(text: 'check out my website https://example.com')
     );
 
-** When adding new dependencies it is good to perform a clean and rebuild the app
-    flutter clean
-    flutter clean android
-    * Then rebuild dependencies
-    flutter pub get
+Chapter 39 - Introduction to Bloc
+
+
