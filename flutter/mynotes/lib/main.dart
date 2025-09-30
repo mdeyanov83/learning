@@ -111,8 +111,22 @@ class CounterBloc extends Bloc<CounterEvent, CounterState> {
             previousValue: state.value,
           ),
         );
-      } else {}
+      } else {
+        emit(CounterStateValid(state.value + integer));
+      }
     });
-    on<DecrementEvent>((event, emit) {});
+    on<DecrementEvent>((event, emit) {
+      final integer = int.tryParse(event.value);
+      if (integer == null) {
+        emit(
+          CounterStateInvalidNumber(
+            invalidValue: event.value,
+            previousValue: state.value,
+          ),
+        );
+      } else {
+        emit(CounterStateValid(state.value + integer));
+      }
+    });
   }
 }
