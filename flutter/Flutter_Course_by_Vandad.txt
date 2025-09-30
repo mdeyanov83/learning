@@ -179,3 +179,5 @@ Chapter 38 - Sharing Notes
 ** When adding new dependencies it is good to perform a clean and rebuild the app
     flutter clean
     flutter clean android
+    * Then rebuild dependencies
+    flutter pub get
