@@ -184,7 +184,7 @@ Chapter 38 - Sharing Notes
 
 
 Chapter 39 - Introduction to BLoC (Business Logic Component)
-* Add BLoC dependencies - "bloc", "flutter_bloc"
+* Add BLoC dependencies: bloc, flutter_bloc
 flutter pub add bloc flutter_bloc
 
 
