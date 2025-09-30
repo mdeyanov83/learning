@@ -14,10 +14,10 @@ class CloudNote {
     required this.text,
   });
 
-  CloudNote.fromSnapshot(QueryDocumentSnapshot<Map<String, CloudNote>> snapshot)
+  CloudNote.fromSnapshot(QueryDocumentSnapshot<Map<String, dynamic>> snapshot)
     : documentId = snapshot.id,
       ownerUserId = snapshot.data()[ownerUserIdFieldName],
       text = snapshot.data()[textFieldName] as String;
 
-  static fromSnapShot(QueryDocumentSnapshot<Map<String, CloudNote>> doc) {}
+  static fromSnapShot(QueryDocumentSnapshot<Map<String, dynamic>> doc) {}
 }
