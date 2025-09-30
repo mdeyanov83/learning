@@ -1,3 +1,4 @@
+import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:mynotes/constants/routes.dart';
 import 'package:mynotes/services/auth/auth_service.dart';
@@ -53,7 +54,6 @@ void main() {
 //   }
 // }
 
-
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -83,5 +83,36 @@ class CounterStateInvalidNumber extends CounterState {
   const CounterStateInvalidNumber({
     required this.invalidValue,
     required int previousValue,
-  });
+  }) : super(previousValue);
+}
+
+@immutable
+abstract class CounterEvent {
+  final String value;
+  const CounterEvent(this.value);
+}
+
+class IncrementEvent extends CounterEvent {
+  const IncrementEvent(super.value);
+}
+
+class DecrementEvent extends CounterEvent {
+  const DecrementEvent(super.value);
+}
+
+class CounterBloc extends Bloc<CounterEvent, CounterState> {
+  CounterBloc() : super(const CounterStateValid(0)) {
+    on<IncrementEvent>((event, emit) {
+      final integer = int.tryParse(event.value);
+      if (integer == null) {
+        emit(
+          CounterStateInvalidNumber(
+            invalidValue: event.value,
+            previousValue: state.value,
+          ),
+        );
+      } else {}
+    });
+    on<DecrementEvent>((event, emit) {});
+  }
 }
