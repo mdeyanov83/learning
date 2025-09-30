@@ -96,8 +96,8 @@ class _HomePageState extends State<HomePage> {
               children: [
                 Text('Current value => ${state.value}'),
                 Visibility(
-                  child: Text('Invalid input: $invalidValue'),
                   visible: state is CounterStateInvalidNumber,
+                  child: Text('Invalid input: $invalidValue'),
                 ),
                 TextField(
                   controller: _controller,
@@ -106,6 +106,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                   keyboardType: TextInputType.number,
                 ),
+                Row()
               ],
             );
           },
