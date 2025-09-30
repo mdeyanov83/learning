@@ -62,6 +62,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  late final TextEditingController _controller;
   @override
   Widget build(BuildContext context) {
     return const Placeholder();
