@@ -176,4 +176,6 @@ Chapter 38 - Sharing Notes
     ShareParams(text: 'check out my website https://example.com')
     );
 
-
+** When adding new dependencies it is good to perform a clean and rebuild the app
+    flutter clean
+    flutter clean android
