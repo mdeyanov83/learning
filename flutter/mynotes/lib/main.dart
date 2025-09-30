@@ -99,6 +99,13 @@ class _HomePageState extends State<HomePage> {
                   child: Text('Invalid input: $invalidValue'),
                   visible: state is CounterStateInvalidNumber,
                 ),
+                TextField(
+                  controller: _controller,
+                  decoration: const InputDecoration(
+                    hintText: 'Enter a number here',
+                  ),
+                  keyboardType: TextInputType.number,
+                ),
               ],
             );
           },
