@@ -119,11 +119,13 @@ Chapter 26 - Unit Testing our AuthService
     flutter pub add <dependency> --dev
     flutter pug add test --dev
 
+
 Chapter 27 - CRUD Local Storage (SQLite)
 * Required additional dependencies: sqflite, path, path_provider
     flutter pub add sqflite
     flutter pub add path_provider
     flutter pub add path
+
 
 Chapter 28 - Working with Streams in Notes Service
 
@@ -167,6 +169,7 @@ We are going to user User.uid as the "user_id" field for each document.
 Chapter 37 - Migrating to our Firestore Service
 *** - lib folder backup before migrating service
 
+
 Chapter 38 - Sharing Notes
 * Installing Share Plus plugin (https://pub.dev/packages/share_plus)
     flutter pub add share_plus
@@ -179,6 +182,8 @@ Chapter 38 - Sharing Notes
     ShareParams(text: 'check out my website https://example.com')
     );
 
-Chapter 39 - Introduction to Bloc
+
+Chapter 39 - Introduction to BloC (Business Logic Component)
+
 
 
