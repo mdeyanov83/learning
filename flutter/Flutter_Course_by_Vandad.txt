@@ -168,4 +168,12 @@ Chapter 37 - Migrating to our Firestore Service
 
 Chapter 38 - Sharing Notes
 * Installing Share Plus plugin (https://pub.dev/packages/share_plus)
+    flutter pub add share_plus
+* Usage
+    import 'package:share_plus/share_plus.dart';
+
+    SharePlus.instance.share(
+    ShareParams(text: 'check out my website https://example.com')
+    );
+
 
