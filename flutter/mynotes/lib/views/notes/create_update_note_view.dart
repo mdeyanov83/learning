@@ -98,9 +98,9 @@ class _CreateUpdateNoteViewState extends State<CreateUpdateNoteView> {
             onPressed: () async {
               final text = _textController.text;
               if (_note == null || text.isEmpty) {
-                await showCannotShareEmtpyNoteDialog(context);
+                await showCannotShareEmptyNoteDialog(context);
               } else {
-                SharePlus.instance.share(text);
+                SharePlus.instance.share(text as ShareParams);
               }
             },
             icon: const Icon(Icons.share),
