@@ -167,7 +167,7 @@ We are going to user User.uid as the "user_id" field for each document.
 
 
 Chapter 37 - Migrating to our Firestore Service
-*** - lib folder backup before migrating service
+*** - lib_before_crud_migration_backup/    -> backup whole project before migrating crud service to FireStore
 
 
 Chapter 38 - Sharing Notes

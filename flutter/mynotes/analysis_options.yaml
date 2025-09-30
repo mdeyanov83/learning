@@ -31,4 +31,9 @@ formatter:
 
 analyzer:
   exclude:
-    - lib_crud_migration_backup/**
+    # backup before migrating from CRUD to FireStore (Chapter 37)
+    - lib_before_crud_migration_backup/**
+    # backup of BLoC example Counter App in main.dart
+    - lib_bloc_counter_app_example/**
+
+    
