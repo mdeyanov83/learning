@@ -1,4 +1,5 @@
 import 'package:flutter/foundation.dart' show immutable;
+import 'package:mynotes/services/auth/auth_user.dart';
 
 @immutable
 abstract class AuthState {
@@ -10,5 +11,8 @@ class AuthStateLoading extends AuthState {
 }
 
 class AuthStateLoggedIn extends AuthState {
-  
+  final AuthUser user;
+  const AuthStateLoggedIn(this.user);
 }
+
+class 
