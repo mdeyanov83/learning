@@ -100,7 +100,7 @@ class _CreateUpdateNoteViewState extends State<CreateUpdateNoteView> {
               if (_note == null || text.isEmpty) {
                 await showCannotShareEmtpyNoteDialog(context);
               } else {
-                Share.share(text);
+                SharePlus.instance.share(text);
               }
             },
             icon: const Icon(Icons.share),
