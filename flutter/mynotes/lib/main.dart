@@ -78,7 +78,18 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(create: create);
+    return BlocProvider(
+      create: (context) => CounterBloc(),
+      child: Scaffold(
+        appBar: AppBar(
+          title: const Text('Testing bloc'),
+        ),
+        body: BlocConsumer(
+          builder: builder,
+          listener: listener,
+        ),
+      ),
+    );
   }
 }
 
