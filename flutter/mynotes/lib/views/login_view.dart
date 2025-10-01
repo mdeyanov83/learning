@@ -42,7 +42,7 @@ class _LoginViewState extends State<LoginView> {
           if (!state.isLoading && closeDialog != null) {
             closeDialog();
             _closeDialogHandle = null;
-          } else if (state.isLoading && closeDialog != null) {
+          } else if (state.isLoading && closeDialog == null) {
             _closeDialogHandle = showLoadingDialog(
               context: context,
               text: 'Loading...',
