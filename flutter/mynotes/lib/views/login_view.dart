@@ -59,8 +59,14 @@ class _LoginViewState extends State<LoginView> {
             ),
           ),
           BlocListener<AuthBloc, AuthState>(
-            listener: (context, state) {
-              
+            listener: (context, state) async {
+              if (state is AuthStateLoggedOut) {
+                if (state.exception is UserNotFoundAuthException) {
+                  await showErrorDialog(contect, 'User not found');
+                } else if (state.exception is WrongPasswordAuthException) {
+                  await showErrorDialog(context, 'Wrong credentials');
+                } else if (state.exception is )
+              }
             },
             child: TextButton(
               onPressed: () async {
