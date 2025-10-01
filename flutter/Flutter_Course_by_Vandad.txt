@@ -199,3 +199,6 @@ Chapter 41 - Handling Auth Bloc Exceptions During Login
 Chapter 42 - Moving to Bloc for Routing and Dialogs
 * Add "equatable" package (https://pub.dev/packages/equatable)
     flutter pub add equatable
+
+
+Chapter 43 - Loading Screens
