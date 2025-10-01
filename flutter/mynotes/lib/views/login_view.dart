@@ -70,21 +70,18 @@ class _LoginViewState extends State<LoginView> {
                 hintText: 'Enter your password here',
               ),
             ),
-            BlocListener<AuthBloc, AuthState>(
-              listener: (context, state) async {},
-              child: TextButton(
-                onPressed: () async {
-                  final email = _email.text;
-                  final password = _password.text;
-                  context.read<AuthBloc>().add(
-                    AuthEventLogin(
-                      email,
-                      password,
-                    ),
-                  );
-                },
-                child: const Text('Login'),
-              ),
+            TextButton(
+              onPressed: () async {
+                final email = _email.text;
+                final password = _password.text;
+                context.read<AuthBloc>().add(
+                  AuthEventLogin(
+                    email,
+                    password,
+                  ),
+                );
+              },
+              child: const Text('Login'),
             ),
             TextButton(
               onPressed: () {
