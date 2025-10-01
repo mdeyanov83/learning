@@ -15,11 +15,13 @@ CloseDialog showLoadingDialog({
         Text(text),
       ],
     ),
-  ),
+  );
+
   showDialog(
     context: context,
     barrierDismissible: false,
     builder: (context) => dialog,
   );
-
+  
+  return () => Navigator.of(context).pop();
 }
