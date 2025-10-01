@@ -10,6 +10,11 @@ class AuthStateUninitialized extends AuthState {
   const AuthStateUninitialized();
 }
 
+class AuthStateRegistering extends AuthState {
+  final Exception? exception;
+  const AuthStateRegistering(this.exception);
+}
+
 class AuthStateLoggedIn extends AuthState {
   final AuthUser user;
   const AuthStateLoggedIn(this.user);
@@ -22,9 +27,4 @@ class AuthStateNeedsVerification extends AuthState {
 class AuthStateLoggedOut extends AuthState {
   final Exception? exception;
   const AuthStateLoggedOut(this.exception);
-}
-
-class AuthStateLogoutFailure extends AuthState {
-  final Exception exception;
-  const AuthStateLogoutFailure(this.exception);
 }
