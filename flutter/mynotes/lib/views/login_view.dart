@@ -74,29 +74,12 @@ class _LoginViewState extends State<LoginView> {
               onPressed: () async {
                 final email = _email.text;
                 final password = _password.text;
-                try {
-                  context.read<AuthBloc>().add(
-                    AuthEventLogin(
-                      email,
-                      password,
-                    ),
-                  );
-                } on UserNotFoundAuthException {
-                  await showErrorDialog(
-                    context,
-                    'User not found',
-                  );
-                } on WrongPasswordAuthException {
-                  await showErrorDialog(
-                    context,
-                    'Wrong credentials',
-                  );
-                } on GenericAuthException {
-                  await showErrorDialog(
-                    context,
-                    'Authentication error',
-                  );
-                }
+                context.read<AuthBloc>().add(
+                  AuthEventLogin(
+                    email,
+                    password,
+                  ),
+                );
               },
               child: const Text('Login'),
             ),
