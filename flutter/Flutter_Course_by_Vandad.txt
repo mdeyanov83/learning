@@ -195,3 +195,5 @@ Chapter 40 - Converting our Auth Process to Bloc
 
 
 Chapter 41 - Handling Auth Bloc Exceptions During Login
+
+Chapter 42 - Moving to Bloc for Routing and Dialogs
