@@ -194,3 +194,4 @@ Chapter 40 - Converting our Auth Process to Bloc
 *** - lib_before_auth_to_bloc/    -> backup whole project before converting Auth process to BLoC
 
 
+Chapter 41 - Handling Auth Bloc Exceptions During Login
