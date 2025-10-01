@@ -67,11 +67,23 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
               isLoading: false,
             ),
           );
+          emit(const AuthStateNeedsVerification());
+        } else {
+          emit(
+            const AuthStateLoggedOut(
+              exception: null,
+              isLoading: false,
+            ),
+          );
+          emit(AuthStateLoggedIn(user));
         }
-
-        emit(AuthStateLoggedIn(user));
       } on Exception catch (e) {
-        emit(AuthStateLoggedOut(e));
+        emit(
+          AuthStateLoggedOut(
+            exception: e,
+            isLoading: false,
+          ),
+        );
       }
     });
 
