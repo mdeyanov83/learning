@@ -20,7 +20,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     });
 
     // log in
-    on<AuthEventLogIn>((event, emit) async {
+    on<AuthEventLogin>((event, emit) async {
       emit(const AuthStateLoading());
       final email = event.email;
       final password = event.password;
