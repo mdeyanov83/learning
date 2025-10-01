@@ -5,6 +5,7 @@ import 'package:mynotes/services/auth/bloc/auth_state.dart';
 
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
   AuthBloc(AuthProvider provider) : super(const AuthStateLoading()) {
+
     // initialize
     on<AuthEventInitialize>((event, emit) async {
       await provider.initialize();
@@ -31,6 +32,17 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         emit(AuthStateLoggedIn(user));
       } on Exception catch (e) {
         emit(AuthStateLoginFailure(e));
+      }
+    });
+
+    // log out
+    on<AuthEventLogout>((event, emit) async {
+      try {
+        emit(const AuthStateLoading());
+        await provider.logOut();
+        emit(const AuthStateLoggedOut());
+      } on Exception catch (e) {
+        emit(AuthStateLogoutFailure(e));
       }
     });
   }
