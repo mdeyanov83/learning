@@ -167,7 +167,7 @@ We are going to user User.uid as the "user_id" field for each document.
 
 
 Chapter 37 - Migrating to our Firestore Service
-*** - lib_before_crud_migration_backup/    -> backup whole project before migrating crud service to FireStore
+**** - lib_before_crud_migration_backup/    -> backup whole project before migrating crud service to FireStore
 
 
 Chapter 38 - Sharing Notes
@@ -191,5 +191,6 @@ flutter pub add bloc flutter_bloc
 
 
 Chapter 40 - Converting our Auth Process to Bloc
+*** - lib_before_auth_to_bloc/    -> backup whole project before converting Auth process to BLoC
 
 
