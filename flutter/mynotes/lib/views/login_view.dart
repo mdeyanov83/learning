@@ -60,7 +60,7 @@ class _LoginViewState extends State<LoginView> {
           ),
           BlocListener<AuthBloc, AuthState>(
             listener: (context, state) {
-                
+              
             },
             child: TextButton(
               onPressed: () async {
