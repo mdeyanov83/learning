@@ -6,8 +6,8 @@ abstract class AuthState {
   const AuthState();
 }
 
-class AuthStateLoading extends AuthState {
-  const AuthStateLoading();
+class AuthStateUninitialized extends AuthState{
+  const AuthStateUninitialized();
 }
 
 class AuthStateLoggedIn extends AuthState {
