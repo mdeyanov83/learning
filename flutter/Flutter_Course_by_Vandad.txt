@@ -216,6 +216,11 @@ Chapter 45 - App Icons and App Name
         - place .png icon file in assets/icon/icon.png (as per flutter_launcher_icons.yaml file)
         - execute:
         flutter pub run flutter_launcher_icons
-*** Changing the app name
+*** Changing the app name (may need a clean build)
     * iOS - edit ios/Runner/Info.plist
+        - <key>CFBundleDisplayName</key>
+            <string>MyNotes</string/
+        - <key>CFBundleName</key>  (optional, this is actually the binary name, not what the user sees)
+            <string>MyNotes</string>
+    * Android - edit android/app/src/main/AndroidManifest.xml
 
