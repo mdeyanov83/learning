@@ -1,3 +1,5 @@
+import 'dart:async';
+import 'package:flutter/material.dart';
 import 'package:mynotes/helpers/loading/loading_screen_controller.dart';
 
 class LoadingScreen {
@@ -10,9 +12,13 @@ class LoadingScreen {
   LoadingScreenController showOverlay({
     required BuildContext: context,
     required text: text,
+  }) {
+
+    final _text = StreamController();
+    _text.add(text);
+
+    Overlay.of(context)
+
   }
-
-
-  )
 
 }
