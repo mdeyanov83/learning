@@ -10,11 +10,11 @@ class LoadingScreen {
   LoadingScreenController? controller;
 
   LoadingScreenController showOverlay({
-    required BuildContext: context,
-    required text: text,
+    required BuildContext context,
+    required String text,
   }) {
 
-    final _text = StreamController();
+    final _text = StreamController<String>();
     _text.add(text);
 
     final state = Overlay.of(context)
