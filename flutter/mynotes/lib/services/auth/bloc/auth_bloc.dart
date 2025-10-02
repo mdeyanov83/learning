@@ -10,6 +10,13 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
           isLoading: true,
         ),
       ) {
+    // forgot password
+    on<AuthEventForgotPassword>((event, emit) async {
+
+
+      
+    });
+
     // send email verification
     on<AuthEventSendEmailVerification>((event, emit) async {
       await provider.sendEmailVerification();
