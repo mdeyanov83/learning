@@ -38,9 +38,21 @@ class LoadingScreen {
               child: Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: SingleChildScrollView(
-                  
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const SizedBox(height: 10),
+                      const CircularProgressIndicator(),
+                      const SizedBox(height: 20),
+                      StreamBuilder(
+                        stream: _text.stream,
+                        builder: ,
+                      ),
+                    ],
+                  ),
                 ),
-              )
+              ),
             ),
           ),
         );
