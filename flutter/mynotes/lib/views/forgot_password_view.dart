@@ -11,7 +11,6 @@ class ForgotPasswordView extends StatefulWidget {
 }
 
 class _ForgotPasswordViewState extends State<ForgotPasswordView> {
-
   late final TextEditingController _controller;
   @override
   void initState() {
@@ -27,6 +26,9 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocListener<AuthBloc, AuthState>(listener: listener)
+    return BlocListener<AuthBloc, AuthState>(
+      listener: (context, state) {},
+      child: const Scaffold(),
+    );
   }
 }
