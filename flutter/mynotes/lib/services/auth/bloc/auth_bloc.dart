@@ -32,8 +32,8 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
           isLoading: false,
         ),
       );
+      
 
-      }
     });
 
     // send email verification
