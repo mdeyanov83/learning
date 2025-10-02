@@ -104,4 +104,14 @@ class FirebaseAuthProvider implements AuthProvider {
       throw UserNotLoggedInAuthException();
     }
   }
+
+  @override
+  Future<void> sendPasswordReset({required String toEmail}) {
+    try {
+
+
+    } catch (_) {
+      throw GenericAuthException();
+    }
+  }
 }
