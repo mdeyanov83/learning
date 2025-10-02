@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mynotes/services/auth/bloc/auth_bloc.dart';
 import 'package:mynotes/services/auth/bloc/auth_state.dart';
+import 'package:mynotes/utilities/dialogs/error_dialog.dart';
 import 'package:mynotes/utilities/dialogs/password_reset_email_sent_dialog.dart';
 
 class ForgotPasswordView extends StatefulWidget {
@@ -28,11 +29,17 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
   @override
   Widget build(BuildContext context) {
     return BlocListener<AuthBloc, AuthState>(
-      listener: (context, state) {
+      listener: (context, state) async {
         if (state is AuthStateForgotPassword) {
           if (state.hasSentEmail) {
             _controller.clear();
             await showPasswordResetSentDialog(context);
+          }
+          if (state.exception != null) {
+            await showErrorDialog(
+              context,
+              'We could not process your request. Please make sure you are a registered user, or if not, register a user now by going back one step.',
+            );
           }
         }
       },
