@@ -4,16 +4,22 @@ import 'package:equatable/equatable.dart';
 
 @immutable
 abstract class AuthState {
-  const AuthState();
+  final bool isLoading;
+  final String? loadingText;
+  const AuthState({
+    required this.isLoading,
+    this.loadingText = 'Please wait a moment',
+  });
 }
 
 class AuthStateUninitialized extends AuthState {
-  const AuthStateUninitialized();
+  const AuthStateUninitialized({required super.isLoading});
 }
 
 class AuthStateRegistering extends AuthState {
   final Exception? exception;
-  const AuthStateRegistering(this.exception);
+  const AuthStateRegistering({required this.exception, required isLoading})
+    : super(isLoading: isLoading);
 }
 
 class AuthStateLoggedIn extends AuthState {
@@ -33,6 +39,6 @@ class AuthStateLoggedOut extends AuthState with EquatableMixin {
     required this.isLoading,
   });
 
-  @override 
+  @override
   List<Object?> get props => [exception, isLoading];
 }
