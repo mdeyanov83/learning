@@ -20,8 +20,8 @@ class AuthStateRegistering extends AuthState {
   final Exception? exception;
   const AuthStateRegistering({
     required this.exception,
-    required isLoading,
-  }) : super(isLoading: isLoading);
+    required super.isLoading,
+  });
 }
 
 class AuthStateLoggedIn extends AuthState {
