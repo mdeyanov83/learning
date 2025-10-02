@@ -206,13 +206,16 @@ Chapter 43 - Loading Screens
 Chapter 44 - Final Touches Before App Release
 
 Chapter 45 - App Icons and App Name
-* stockio.com   ---> Free photos, vectors, icons...
-* appicon.co    ---> generate mobile icons from .svg
-* Flutter Launcher Icons  ---> https://pub.dev/packages/flutter_launcher_icons
-    - command-line tool for updating the app's launcher icon
-    flutter pub add flutter_launcher_icons
-    dart run flutter_launcher_icons:generate
-    - place .png icon file in assets/icon/icon.png (as per flutter_launcher_icons.yaml file)
-    - execute:
-    flutter pub run flutter_launcher_icons
+*** Updating the app icon
+    * stockio.com   ---> Free photos, vectors, icons...
+    * appicon.co    ---> generate mobile icons from .svg
+    * Flutter Launcher Icons  ---> https://pub.dev/packages/flutter_launcher_icons
+        - command-line tool for updating the app's launcher icon
+        flutter pub add flutter_launcher_icons
+        dart run flutter_launcher_icons:generate
+        - place .png icon file in assets/icon/icon.png (as per flutter_launcher_icons.yaml file)
+        - execute:
+        flutter pub run flutter_launcher_icons
+*** Changing the app name
+    * iOS - edit ios/Runner/Info.plist
 
