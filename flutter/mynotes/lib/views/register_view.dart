@@ -55,7 +55,9 @@ class _RegisterViewState extends State<RegisterView> {
         body: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              const Text('Enter your email and password to')
               TextField(
                 controller: _email,
                 enableSuggestions: false,
