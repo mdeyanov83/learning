@@ -223,4 +223,5 @@ Chapter 45 - App Icons and App Name
         - <key>CFBundleName</key>  (optional, this is actually the binary name, not what the user sees)
             <string>MyNotes</string>
     * Android - edit android/app/src/main/AndroidManifest.xml
+        - android:label="MyNotes"
 
