@@ -1,5 +1,3 @@
-import 'dart:nativewrappers/_internal/vm/lib/ffi_patch.dart';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mynotes/services/auth/bloc/auth_bloc.dart';
@@ -68,8 +66,10 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
               ),
               TextButton(
                 onPressed: () {
-
-                  
+                  final email = _controller.text;
+                  context.read<AuthBloc>().add(
+                    AuthEventForgotPassword(email: email),
+                  );
                 },
                 child: const Text('Send me password reset link'),
               ),
