@@ -213,5 +213,6 @@ Chapter 45 - App Icons and App Name
     flutter pub add flutter_launcher_icons
     dart run flutter_launcher_icons:generate
     - place .png icon file in assets/icon/icon.png (as per flutter_launcher_icons.yaml file)
-    
+    - execute:
+    flutter pub run flutter_launcher_icons
 
