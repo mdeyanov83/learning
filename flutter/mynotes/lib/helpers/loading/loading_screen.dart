@@ -47,7 +47,16 @@ class LoadingScreen {
                       const SizedBox(height: 20),
                       StreamBuilder(
                         stream: _text.stream,
-                        builder: ,
+                        builder: (context, snapshot) {
+                          if (snapshot.hasData) {
+                            return Text(
+                              snapshot.data as String,
+                              textAlign: TextAlign.center,
+                            );
+                          } else {
+                            return Container();
+                          }
+                        },
                       ),
                     ],
                   ),
@@ -56,6 +65,19 @@ class LoadingScreen {
             ),
           ),
         );
+      },
+    );
+
+    state.insert(overlay);
+
+    return LoadingScreenController(
+      close: () {
+        _text.close();
+        overlay.remove();
+        return true;
+      },
+      update: (text) {
+
       },
     );
   }
