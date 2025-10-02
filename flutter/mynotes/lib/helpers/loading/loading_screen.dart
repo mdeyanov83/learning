@@ -77,7 +77,8 @@ class LoadingScreen {
         return true;
       },
       update: (text) {
-
+        _text.add(text);
+        return true;
       },
     );
   }
