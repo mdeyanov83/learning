@@ -24,6 +24,10 @@ class AuthStateRegistering extends AuthState {
   });
 }
 
+class AuthStateForgotPassword extends AuthState {
+  
+}
+
 class AuthStateLoggedIn extends AuthState {
   final AuthUser user;
   const AuthStateLoggedIn({
