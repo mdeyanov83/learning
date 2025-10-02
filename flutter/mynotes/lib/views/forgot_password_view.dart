@@ -67,7 +67,10 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
                 ),
               ),
               TextButton(
-                onPressed: () {},
+                onPressed: () {
+
+                  
+                },
                 child: const Text('Send me password reset link'),
               ),
               TextButton(
