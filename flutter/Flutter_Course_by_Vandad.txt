@@ -211,5 +211,5 @@ Chapter 45 - App Icons and App Name
 * Flutter Launcher Icons  ---> https://pub.dev/packages/flutter_launcher_icons
     - command-line tool for updating the app's launcher icon
     flutter pub add flutter_launcher_icons
-        - create flutter_launcher_icons.yaml in project root folder
-        
+    dart run flutter_launcher_icons:generate
+
