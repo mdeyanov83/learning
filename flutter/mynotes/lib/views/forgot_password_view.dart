@@ -1,6 +1,9 @@
+import 'dart:nativewrappers/_internal/vm/lib/ffi_patch.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mynotes/services/auth/bloc/auth_bloc.dart';
+import 'package:mynotes/services/auth/bloc/auth_event.dart';
 import 'package:mynotes/services/auth/bloc/auth_state.dart';
 import 'package:mynotes/utilities/dialogs/error_dialog.dart';
 import 'package:mynotes/utilities/dialogs/password_reset_email_sent_dialog.dart';
@@ -51,8 +54,30 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
           padding: const EdgeInsets.all(16.0),
           child: Column(
             children: [
-              const Text('If you forgot your password, simply enter your email and we will send you a password'),
-
+              const Text(
+                'If you forgot your password, simply enter your email and we will send you a password reset link.',
+              ),
+              TextField(
+                keyboardType: TextInputType.emailAddress,
+                autocorrect: false,
+                autofocus: true,
+                controller: _controller,
+                decoration: const InputDecoration(
+                  hintText: 'Your email address...',
+                ),
+              ),
+              TextButton(
+                onPressed: () {},
+                child: const Text('Send me password reset link'),
+              ),
+              TextButton(
+                onPressed: () {
+                  context.read<AuthBloc>().add(
+                    const AuthEventLogout(),
+                  );
+                },
+                child: const Text('Back to login page'),
+              ),
             ],
           ),
         ),
