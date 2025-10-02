@@ -26,7 +26,10 @@ class AuthStateRegistering extends AuthState {
 
 class AuthStateLoggedIn extends AuthState {
   final AuthUser user;
-  const AuthStateLoggedIn(this.user);
+  const AuthStateLoggedIn({
+    required this.user,
+    required super.isLoading,
+  });
 }
 
 class AuthStateNeedsVerification extends AuthState {
