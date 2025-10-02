@@ -17,7 +17,7 @@ class LoadingScreen {
     final _text = StreamController();
     _text.add(text);
 
-    Overlay.of(context)
+    final state = Overlay.of(context)
 
   }
 
