@@ -207,4 +207,4 @@ Chapter 44 - Final Touches Before App Release
 
 Chapter 45 - App Icons and App Name
 * stockio.com   ---> Free photos, vectors, icons...
-
+* appicon.co    ---> generate mobile icons from .svg
