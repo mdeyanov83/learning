@@ -205,7 +205,7 @@ Chapter 43 - Loading Screens
 
 Chapter 44 - Final Touches Before App Release
 
-Chapter 45 - App Icons and App Name
+Chapter 45 - App Icons and App Name (complete)
 *** Updating the app icon
     * stockio.com   ---> Free photos, vectors, icons...
     * appicon.co    ---> generate mobile icons from .svg
@@ -225,3 +225,5 @@ Chapter 45 - App Icons and App Name
     * Android - edit android/app/src/main/AndroidManifest.xml
         - android:label="MyNotes"
 
+
+Chapter 46 - Splash Screen
