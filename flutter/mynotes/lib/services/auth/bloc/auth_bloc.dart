@@ -44,13 +44,12 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         exception = e;
       }
       emit(
-        const AuthStateForgotPassword(
+        AuthStateForgotPassword(
           exception: exception,
-          hasSentEmail: false,
+          hasSentEmail: didSendEmail,
           isLoading: true,
         ),
       );
-
     });
 
     // send email verification
