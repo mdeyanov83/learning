@@ -205,4 +205,4 @@ Chapter 43 - Loading Screens
 
 Chapter 44 - Final Touches Before App Release
 
-
+Chapter 45 - App Icons and App Name
