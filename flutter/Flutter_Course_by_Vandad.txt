@@ -241,3 +241,7 @@ Chapter 46 - Splash Screen
         - Edit item "android:windowBackground" under parent "Launch Theme" to:
             "@mipmap/splash"
 
+
+Chapter 47 - Sending our iOS app to App Store Connect
+
+
