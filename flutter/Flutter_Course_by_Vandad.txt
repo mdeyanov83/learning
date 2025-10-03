@@ -227,3 +227,5 @@ Chapter 45 - App Icons and App Name (complete)
 
 
 Chapter 46 - Splash Screen
+*** Design a splash screen in Figma
+
