@@ -247,3 +247,6 @@ Chapter 47 - Sending our iOS app to App Store Connect
 
 Chapter 48 - Releasing our iOS App
 
+Chapter 49 - Fixing Firebase Security Rules and Resubmitting the iOS App
+
+
