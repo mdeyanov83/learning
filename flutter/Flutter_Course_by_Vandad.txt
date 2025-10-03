@@ -278,5 +278,6 @@ Chapter 49 - Fixing Firebase Security Rules and Resubmitting the iOS App
 
 
 Chapter 50 - Releasing our Android App
-https://developer.android.com/distribute/console
-https://play.google.com/console/about
+    https://developer.android.com/distribute/console
+*** Sign up for a developer account:
+    https://play.google.com/console
