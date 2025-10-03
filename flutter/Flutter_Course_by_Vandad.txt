@@ -231,6 +231,10 @@ Chapter 46 - Splash Screen
 *** Design a splash screen in Figma
     * Export in 1x, 2x, 3x for iOS
 *** for Android - https://developer.android.com/develop/ui/views/launch/splash-screen
+    * Image resolution for mdpi, hdpi, xhdpi and xxhdpi
+    https://stackoverflow.com/questions/28507609/image-resolution-for-mdpi-hdpi-xhdpi-and-xxhdpi
+
+    
 
 
 
