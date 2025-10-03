@@ -31,11 +31,7 @@ class FirebaseCloudStorage {
     final allNotes = notes
         .where(ownerUserIdFieldName, isEqualTo: ownerUserId)
         .snapshots()
-        .map(
-          (event) => event.docs
-              .map((doc) => CloudNote.fromSnapshot(doc))
-              .where((note) => note.ownerUserId == ownerUserId),
-        );
+        .map((event) => event.docs.map((doc) => CloudNote.fromSnapshot(doc)));
     return allNotes;
   }
 
