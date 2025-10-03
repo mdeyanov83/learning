@@ -235,6 +235,9 @@ Chapter 46 - Splash Screen
     * Export with suffixes in 1x - mdpi, 1.5x - hdpi, 2x - xhdpi, 3x - xxhdpi, 4x - xxxhdpi
         - Rename each file to splash.png and place in the corresponding folder
             android/app/main/res/mipmap  --> according to suffix
-
-    android/app/src/main/res/values/styles.xml
+    * Edit in 2 files:
+        - android/app/src/main/res/values/styles.xml
+        - android/app/src/main/res/values-night/styles.xml
+        - Edit item "android:windowBackground" under parent "Launch Theme" to:
+            "@mipmap/splash"
 
