@@ -15,7 +15,6 @@ import 'package:mynotes/views/verify_email_view.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Future.delayed(Duration(seconds: 3));
   runApp(
     MaterialApp(
       title: 'Flutter Demo',
