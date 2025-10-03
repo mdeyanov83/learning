@@ -274,4 +274,5 @@ Chapter 49 - Fixing Firebase Security Rules and Resubmitting the iOS App
         }
     }
 
-    - Update 
+    - Update getNotes function in firebase_cloud_storage.dart
+    
