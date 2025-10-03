@@ -13,8 +13,9 @@ import 'package:mynotes/views/notes/notes_view.dart';
 import 'package:mynotes/views/register_view.dart';
 import 'package:mynotes/views/verify_email_view.dart';
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await Future.delayed(Duration(seconds: 3));
   runApp(
     MaterialApp(
       title: 'Flutter Demo',
