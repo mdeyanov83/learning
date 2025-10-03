@@ -276,3 +276,5 @@ Chapter 49 - Fixing Firebase Security Rules and Resubmitting the iOS App
 
     - Update allNotes() function in firebase_cloud_storage.dart
 
+
+Chapter 50 - Releasing our Android App
