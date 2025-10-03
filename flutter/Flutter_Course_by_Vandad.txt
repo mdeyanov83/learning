@@ -230,5 +230,7 @@ Chapter 46 - Splash Screen
 *** for iOS - LaunchScreen.storyboard file, edit via xcode (requires a mac)
 *** Design a splash screen in Figma
     * Export in 1x, 2x, 3x for iOS
+*** for Android - https://developer.android.com/develop/ui/views/launch/splash-screen
+
 
 
