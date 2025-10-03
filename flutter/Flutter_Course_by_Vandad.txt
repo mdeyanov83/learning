@@ -233,7 +233,7 @@ Chapter 46 - Splash Screen
 *** for Android - https://developer.android.com/develop/ui/views/launch/splash-screen
     * Image resolution for mdpi, hdpi, xhdpi and xxhdpi
     https://stackoverflow.com/questions/28507609/image-resolution-for-mdpi-hdpi-xhdpi-and-xxhdpi
-
+    * Export in 1x - mdpi, 1.5x - hdpi, 2x - xhdpi, 3x - xxhdpi, 4x - xxxhdpi
     
 
 
