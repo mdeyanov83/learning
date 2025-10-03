@@ -236,5 +236,5 @@ Chapter 46 - Splash Screen
         - Rename each file to splash.png and place in the corresponding folder
             mynotes/android/app/main/res/mipmap  --> according to suffix
 
-
+    mynotes
 
