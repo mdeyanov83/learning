@@ -245,3 +245,5 @@ Chapter 46 - Splash Screen
 Chapter 47 - Sending our iOS app to App Store Connect
 *** App Store Connect - the developer portal to the app store
 
+Chapter 48 - Releasing our iOS App
+
