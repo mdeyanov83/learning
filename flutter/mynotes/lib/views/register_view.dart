@@ -54,7 +54,7 @@ class _RegisterViewState extends State<RegisterView> {
         ),
         body: Padding(
           padding: const EdgeInsets.all(16.0),
-          child: widget(
+          child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
