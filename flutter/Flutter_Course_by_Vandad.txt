@@ -283,3 +283,6 @@ Chapter 50 - Releasing our Android App
     https://developer.android.com/distribute/console
 *** Sign up for a developer account:
     https://play.google.com/console
+
+
+Chapter 51 - Localization in Flutter
