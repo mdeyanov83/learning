@@ -294,12 +294,14 @@ https://docs.flutter.dev/ui/accessibility-and-internationalization/international
     flutter pub add flutter_localizations --sdk=flutter
     flutter pub add intl:any
     Should look like this:
-        dependencies:
-            flutter:
-                sdk: flutter
-            flutter_localizations:
-                sdk: flutter
-            intl: any
+    dependencies:
+        flutter:
+            sdk: flutter
+        flutter_localizations:
+            sdk: flutter
+        intl: any
 
-
+*** Enable code generation in pubspec.yaml
+    flutter:
+        generate: true
 
