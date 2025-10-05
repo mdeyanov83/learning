@@ -9,5 +9,5 @@ class AppLocalizationsSv extends AppLocalizations {
   AppLocalizationsSv([String locale = 'sv']) : super(locale);
 
   @override
-  String get my_title => 'My title goes here';
+  String get my_title => 'My title goes here (SVE)';
 }

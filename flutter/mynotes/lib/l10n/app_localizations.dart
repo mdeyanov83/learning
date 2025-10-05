@@ -101,7 +101,7 @@ abstract class AppLocalizations {
   /// No description provided for @my_title.
   ///
   /// In en, this message translates to:
-  /// **'My title goes here'**
+  /// **'My title goes here (ENG)'**
   String get my_title;
 }
 

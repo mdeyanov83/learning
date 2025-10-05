@@ -9,5 +9,5 @@ class AppLocalizationsEn extends AppLocalizations {
   AppLocalizationsEn([String locale = 'en']) : super(locale);
 
   @override
-  String get my_title => 'My title goes here';
+  String get my_title => 'My title goes here (ENG)';
 }
