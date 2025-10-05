@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart' show ReadContext;
 import 'package:mynotes/constants/routes.dart';
 import 'package:mynotes/enums/menu_action.dart';
+import 'package:mynotes/extensions/buildcontext/loc.dart';
 import 'package:mynotes/services/auth/auth_service.dart';
 import 'package:mynotes/services/auth/bloc/auth_bloc.dart';
 import 'package:mynotes/services/auth/bloc/auth_event.dart';
@@ -37,12 +38,18 @@ class _NotesViewState extends State<NotesView> {
       appBar: AppBar(
         title: StreamBuilder(
           stream: _notesService.allNotes(ownerUserId: userId).getLength,
-          builder: (context, asyncSnapshot) {
-            return const Text(
-              'Your Notes',
-              style: TextStyle(color: Colors.white),
-            );
-          }
+          builder: (context, AsyncSnapshot<int> asyncSnapshot) {
+            if (asyncSnapshot.hasData) {
+              final noteCount = asyncSnapshot.data ?? 0;
+              final text = context.loc.notes_title(noteCount);
+              return Text(
+                text,
+                style: TextStyle(color: Colors.white),
+              );
+            } else {
+              return const Text('');
+            }
+          },
         ),
         backgroundColor: Colors.blue,
         actions: [
