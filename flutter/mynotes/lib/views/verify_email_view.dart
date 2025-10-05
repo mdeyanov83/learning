@@ -15,15 +15,16 @@ class _VerifyEmailViewState extends State<VerifyEmailView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(context.loc.verify_email)),
+      appBar: AppBar(
+        title: Text(
+          context.loc.verify_email,
+        ),
+      ),
       body: SingleChildScrollView(
         child: Column(
           children: [
-            const Text(
-              "We've sent you an email verification. Please open it to verify your account.",
-            ),
-            const Text(
-              "If you haven't received a verification email yet, plress the button below",
+            Text(
+              context.loc.verify_email_view_prompt,
             ),
             TextButton(
               onPressed: () {
@@ -31,7 +32,9 @@ class _VerifyEmailViewState extends State<VerifyEmailView> {
                   const AuthEventSendEmailVerification(),
                 );
               },
-              child: const Text('Send email verification'),
+              child: Text(
+                context.loc.verify_email_send_email_verification,
+              ),
             ),
             TextButton(
               onPressed: () async {
@@ -39,7 +42,9 @@ class _VerifyEmailViewState extends State<VerifyEmailView> {
                   const AuthEventLogout(),
                 );
               },
-              child: const Text('Restart'),
+              child: Text(
+                context.loc.restart,
+              ),
             ),
           ],
         ),
