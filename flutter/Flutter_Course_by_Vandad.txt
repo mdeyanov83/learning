@@ -301,7 +301,7 @@ https://docs.flutter.dev/ui/accessibility-and-internationalization/international
             sdk: flutter
         intl: any
 
-*** Enable code generation in pubspec.yaml
+*** Enable automatic code generation in pubspec.yaml
     flutter:
         generate: true
 
