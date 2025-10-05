@@ -312,3 +312,5 @@ https://docs.flutter.dev/ui/accessibility-and-internationalization/international
             <string>en</string>
             <string>sv</string>
         </array>
+
+*** Create l10n.yaml file in project root folder
