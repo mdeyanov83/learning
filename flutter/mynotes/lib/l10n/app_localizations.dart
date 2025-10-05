@@ -98,12 +98,6 @@ abstract class AppLocalizations {
     Locale('sv'),
   ];
 
-  /// No description provided for @my_title.
-  ///
-  /// In en, this message translates to:
-  /// **'My title goes here (ENG)'**
-  String get my_title;
-
   /// No description provided for @logout_button.
   ///
   /// In en, this message translates to:
