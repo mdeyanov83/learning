@@ -20,7 +20,7 @@ void main() async {
   runApp(
     MaterialApp(
       supportedLocales: AppLocalizations.supportedLocales,
-      localizationsDelegates: ,
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(primarySwatch: Colors.blue),
