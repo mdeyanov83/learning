@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:mynotes/extensions/buildcontext/loc.dart';
 import 'package:mynotes/services/auth/auth_exceptions.dart';
 import 'package:mynotes/services/auth/bloc/auth_bloc.dart';
 import 'package:mynotes/services/auth/bloc/auth_event.dart';
@@ -51,7 +52,7 @@ class _LoginViewState extends State<LoginView> {
       child: Scaffold(
         appBar: AppBar(
           // title: const Text('Login', style: TextStyle(color: Colors.white)),
-          title: Text(AppLocalizations.of(context)!.my_title, style: TextStyle(color: Colors.white)),
+          title: Text(context.loc.my_title, style: TextStyle(color: Colors.white)),
           backgroundColor: Colors.blue,
         ),
         body: Padding(
