@@ -320,5 +320,6 @@ https://docs.flutter.dev/ui/accessibility-and-internationalization/international
         output-localization-file: app_localizations.dart
 
 *** What are .ARB files (Application Resource Bundle)
-    Basically JSON files (key-value)
-        keys - 
+    Basically JSON files (key-value), but can include also logic
+        keys - a handle for the application to reach into the localization and grab a string
+        value - the actual strings that need to be displayed for the specific language
