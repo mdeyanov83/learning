@@ -73,10 +73,10 @@ class _NotesViewState extends State<NotesView> {
               }
             },
             itemBuilder: (context) {
-              return const [
+              return [
                 PopupMenuItem<MenuAction>(
                   value: MenuAction.logout,
-                  child: Text('Log out'),
+                  child: Text(context.loc.logout_button),
                 ),
               ];
             },

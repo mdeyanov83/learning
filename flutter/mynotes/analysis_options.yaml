@@ -37,5 +37,7 @@ analyzer:
     - lib_bloc_counter_app_example/**
     # project backup before converting Auth process to BLoC
     - lib_before_auth_to_bloc/**
+    # project backup before implementing localization keys instead of strings
+    - lib_before_localizations/**
 
 
