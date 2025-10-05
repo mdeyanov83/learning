@@ -290,4 +290,16 @@ https://docs.flutter.dev/ui/accessibility-and-internationalization/international
 * i18n -> internationalization
 * l10n -> localization
 
+*** Add dependencies in pubspec.yaml
+    flutter pub add flutter_localizations --sdk=flutter
+    flutter pub add intl:any
+    Should look like this:
+        dependencies:
+            flutter:
+                sdk: flutter
+            flutter_localizations:
+                sdk: flutter
+            intl: any
+
+
 
