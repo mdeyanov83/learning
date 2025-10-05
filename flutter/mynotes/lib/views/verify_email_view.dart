@@ -23,8 +23,11 @@ class _VerifyEmailViewState extends State<VerifyEmailView> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Text(
-              context.loc.verify_email_view_prompt,
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Text(
+                context.loc.verify_email_view_prompt,
+              ),
             ),
             TextButton(
               onPressed: () {
