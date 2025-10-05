@@ -287,5 +287,7 @@ Chapter 50 - Releasing our Android App
 
 Chapter 51 - Localization in Flutter
 https://docs.flutter.dev/ui/accessibility-and-internationalization/internationalization
+* i18n -> internationalization
+* l10n -> localization
 
 
