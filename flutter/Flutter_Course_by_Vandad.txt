@@ -324,4 +324,6 @@ https://docs.flutter.dev/ui/accessibility-and-internationalization/international
         keys - a handle for the application to reach into the localization and grab a string
         value - the actual strings that need to be displayed for the specific language
     Can also include logic, for example for plural/singular words based on the number of notes you have
-    l
+
+*** Create /lib/l10n/intl_en.arb  and  intl_sv.arb files
+    These files will contain the actual localization strings
