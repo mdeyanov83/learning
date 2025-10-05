@@ -305,3 +305,5 @@ https://docs.flutter.dev/ui/accessibility-and-internationalization/international
     flutter:
         generate: true
 
+*** Support for iOS - Add supported localizations to ios/Runner/info.plist using:
+    <key>CFBundleLocalizations</key>
