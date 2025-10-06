@@ -7,5 +7,5 @@
     analysis_options.yaml - analyzer configuration file
 
 #6 - Widgets
-    Almost everything in Flutter is a Widget
+    Almost everything in Flutter is a Widget. Widgets are basically classes
     MyApp() - root widget (or whatever is passed to the runApp() function)
