@@ -8,4 +8,4 @@
 
 #6 - Widgets
     Almost everything in Flutter is a Widget
-    
+    MyApp(), or whatever is passed to the runApp() function 
