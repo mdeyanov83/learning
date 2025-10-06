@@ -9,3 +9,4 @@
 #6 - Widgets
     Almost everything in Flutter is a Widget. Widgets are basically classes
     MyApp() - root widget (or whatever is passed to the runApp() function)
+    build() - function in MyApp must return a widget or a widget tree
