@@ -47,7 +47,10 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
       },
       child: Scaffold(
         appBar: AppBar(
-          title: Text(context.loc.forgot_password),
+          title: Text(
+            context.loc.forgot_password,
+            style: TextStyle(color: Colors.white),
+          ),
           backgroundColor: Colors.blue,
         ),
         body: Padding(

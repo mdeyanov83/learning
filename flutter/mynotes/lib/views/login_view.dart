@@ -53,7 +53,10 @@ class _LoginViewState extends State<LoginView> {
       },
       child: Scaffold(
         appBar: AppBar(
-          title: Text(context.loc.login, style: TextStyle(color: Colors.white)),
+          title: Text(
+            context.loc.login,
+            style: TextStyle(color: Colors.white),
+          ),
           backgroundColor: Colors.blue,
         ),
         body: Padding(
