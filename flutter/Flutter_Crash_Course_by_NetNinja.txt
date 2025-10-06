@@ -2,4 +2,4 @@
     flutter create coffee_card
 
 #5 - Quick Project Overview
-
+    lib/ - All the application source code
