@@ -3,3 +3,5 @@
 
 #5 - Quick Project Overview
     lib/ - All the application source code
+    pubspec.yaml - project configuration file
+    analysis_options.yaml - analyzer configuration file
