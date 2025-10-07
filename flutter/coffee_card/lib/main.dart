@@ -39,7 +39,7 @@ class Sandbox extends StatelessWidget {
             color: Colors.blue,
             child: const Text('three'),
           ),
-          Image.asset('assets/img/coffee_bg.jpg'),
+          Image.asset('assets/img/coffee_bg - orig.jpg'),
         ],
       ),
     );
