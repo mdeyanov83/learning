@@ -6,7 +6,7 @@ void main() {
       home: Scaffold(
         appBar: AppBar(
           title: const Text('My Coffee Id'),
-          backgroundColor: Colors.brown[700],
+          backgroundColor: Colors.brown[900],
 
         ),
         body: Center(
