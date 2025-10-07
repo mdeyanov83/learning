@@ -73,4 +73,11 @@ $15 - Buttons & Press Events
     *** Material 3 button types:
         ElevatedButton(), FilledButton(), FilledButton.tonal(),
         OutlinedButton(), TextButton()
-    
+    FilledButton(
+        style: FilledButton.styleFrom(
+            backgroundColor: Colors.brown,
+            foregroundColor: Colors.white,
+        ),
+        onPressed: increaseStrength,
+        child: const Text('+'),
+    ),
