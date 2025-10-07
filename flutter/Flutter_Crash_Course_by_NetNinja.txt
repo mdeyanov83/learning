@@ -69,10 +69,12 @@
     Expanded() - tells its child to take up as much space as possible
         along the main axis (the direction of the Row or Column).
 
-$15 - Buttons & Press Events
+#15 - Buttons & Press Events
     *** Material 3 button types:
         ElevatedButton(), FilledButton(), FilledButton.tonal(),
         OutlinedButton(), TextButton()
+    * To set style: property, easiest way is ButtonType.styleFrom()
+    * onPressed: property - function that executes when pressed
     FilledButton(
         style: FilledButton.styleFrom(
             backgroundColor: Colors.brown,
@@ -81,3 +83,6 @@ $15 - Buttons & Press Events
         onPressed: increaseStrength,
         child: const Text('+'),
     ),
+
+#16 - Stateful widgets
+

@@ -49,9 +49,10 @@ class CoffeePrefs extends StatelessWidget {
             const Expanded(
               child: SizedBox(),
             ),
-            TextButton(
-              style: TextButton.styleFrom(
-                foregroundColor: Colors.brown,
+            FilledButton(
+              style: FilledButton.styleFrom(
+                backgroundColor: Colors.brown,
+                foregroundColor: Colors.white,
               ),
               onPressed: increaseSugars,
               child: const Text('+'),
