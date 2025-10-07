@@ -88,3 +88,7 @@
     A widget that can change over time — it has mutable state that affects how it
     looks or behaves. In contrast to a StatelessWidget (which is fixed once built),
     a StatefulWidget can rebuild itself whenever its state changes.
+
+    It consists of 2 classes:
+    - The widget itself, extends the StatefulWidget class
+    - The state itself, extends the State class
