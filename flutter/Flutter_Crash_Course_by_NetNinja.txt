@@ -21,3 +21,4 @@
         ex. Scaffold()
     Scaffold() - provides a base layout for the application, appBar at the top with a title, body, etc.
 
+#8 - Stateless Widgets
