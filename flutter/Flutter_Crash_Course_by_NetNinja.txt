@@ -70,4 +70,7 @@
         along the main axis (the direction of the Row or Column).
 
 $15 - Buttons & Press Events
-
+    *** Material 3 button types:
+        ElevatedButton(), FilledButton(), FilledButton.tonal(),
+        OutlinedButton(), TextButton()
+    
