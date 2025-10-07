@@ -64,3 +64,5 @@
     * Image() - Widget that displays an image
         - several named constructors, depending on image source:
             .asset() .file() .memory() .network()
+
+#14 - Expanded Widget
