@@ -85,4 +85,5 @@
     ),
 
 #16 - Stateful widgets
-
+    A widget that can change over time — it has mutable state that affects how it
+    looks or behaves.
