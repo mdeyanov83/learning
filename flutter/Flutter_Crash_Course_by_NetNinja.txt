@@ -22,15 +22,17 @@
     Scaffold() - provides a base layout for the application, appBar at the top with a title, body, etc.
 
 #8 - Stateless Widgets
-    A widget 
-    * Insert boilerplate code with 'stl'
-    class MyWidget extends StatelessWidget {
-        const MyWidget({super.key});
+    A widget that does not have any mutable (changeable) state. once it’s built, it can’t change
+        its appearance or data unless its parent widget rebuilds it with new information.
 
-        @override
-        Widget build(BuildContext context) {
-            return const Placeholder();
+    * Insert boilerplate code with 'stl':
+        class MyWidget extends StatelessWidget {
+            const MyWidget({super.key});
+
+            @override
+            Widget build(BuildContext context) {
+                return const Placeholder();
+            }
         }
-    }
 
 
