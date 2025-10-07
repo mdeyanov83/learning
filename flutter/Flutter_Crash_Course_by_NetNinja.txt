@@ -16,3 +16,6 @@
         need when building an app that follows Material Design guidelines
     CuperitnoApp() - used to build iOS-style applications following Apple’s Cupertino
         design guidelines
+
+    * Text widgets must be wrapped in a Material ancestor widget to be styled correctly
+        ex. Scaffold()
