@@ -38,3 +38,6 @@
     * BuildContext context - the widget's location in the tree (plus access to the widget tree above it)
 
 #9 - Containers
+    * Container() - widget that acts as a wrapper to other Widgets
+        We can apply margin and padding around the inside Widgets
+        
