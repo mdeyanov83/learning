@@ -9,9 +9,7 @@ void main() {
           backgroundColor: Colors.brown[700],
           centerTitle: true,
         ),
-        body: Center(
-          child: Text('Hello, Ninjas'),
-        ),
+        body: const Text('Hello, Ninjas'),
       ),
     ),
   );
