@@ -54,3 +54,4 @@
     * Row() - widget that lets us create a row of multiple child widgets
     * children: [widget1, widget2, ...]
 
+#13 - Images
