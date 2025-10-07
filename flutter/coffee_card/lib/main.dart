@@ -21,10 +21,25 @@ class Sandbox extends StatelessWidget {
         backgroundColor: Colors.grey,
       ),
       body: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-
-          
-        ]
+          Container(
+            height: 100,
+            color: Colors.red,
+            child: const Text('one'),
+          ),
+          Container(
+            height: 200,
+            color: Colors.green,
+            child: const Text('two'),
+          ),
+          Container(
+            height: 300,
+            color: Colors.blue,
+            child: const Text('three'),
+          ),
+        ],
       ),
     );
   }
