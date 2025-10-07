@@ -1,13 +1,8 @@
 import 'package:flutter/material.dart';
 
-class CoffeePrefs extends StatefulWidget {
+class CoffeePrefs extends StatelessWidget {
   const CoffeePrefs({super.key});
 
-  @override
-  State<CoffeePrefs> createState() => _CoffeePrefsState();
-}
-
-class _CoffeePrefsState extends State<CoffeePrefs> {
   void increaseStrength() {
     print('inc strength by 1');
   }
