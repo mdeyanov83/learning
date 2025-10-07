@@ -2,12 +2,18 @@ import 'package:flutter/material.dart';
 
 void main() {
   runApp(
-    const MaterialApp(
+    MaterialApp(
       home: Scaffold(
+        appBar: AppBar(
+          title: const Text('My Coffee Id'),
+          backgroundColor: Colors.brown[700],
+
+        ),
         body: Center(
-          child: Text('Hello, ninjas'),
+          child: Text('Hello, Ninjas'),
         ),
       ),
     ),
   );
 }
+

@@ -19,3 +19,5 @@
 
     * Text widgets must be wrapped in a Material ancestor widget to be styled correctly
         ex. Scaffold()
+    Scaffold() - provides a base layout for the application, appBar at the top with a title, body, etc.
+
