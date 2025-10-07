@@ -24,3 +24,12 @@ class Home extends StatelessWidget {
     return const Placeholder();
   }
 }
+
+class MyWidget extends StatelessWidget {
+  const MyWidget({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Placeholder();
+  }
+}
