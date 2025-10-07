@@ -5,12 +5,14 @@ class CoffeePrefs extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
+    return Column(
       children: [
         Row(
           children: [
             Text('Strength: '),
             Text('3'),
+            Image.asset('assets/img/coffee_bean.png'),
+            Image.file(),
             SizedBox(
               width: 50,
             ),
