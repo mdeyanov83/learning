@@ -55,9 +55,10 @@
     * children: [widget1, widget2, ...]
 
 #13 - Images
-    *** To use images, place them in project/assets folder
-        * In pubspec.yaml:
-        flutter:
-            assets:
-                - path/to/image.jpg
-                - path/to/image2.png
+    * Place images in project/assets folder
+    * In pubspec.yaml:
+    flutter:
+        assets:
+            - path/to/image.jpg
+            - path/to/image2.png
+    * Image() - 
