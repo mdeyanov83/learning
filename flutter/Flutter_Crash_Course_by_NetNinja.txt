@@ -45,3 +45,7 @@
             Size can be overridden with width: and height: properties
 
 #10 - Imports & Quick Refactor
+
+#11 - Columns
+    * Column() - widget that lets us create a columns of multiple child widgets
+    * children: [widget1, widget2, ...]
