@@ -21,6 +21,7 @@ class Sandbox extends StatelessWidget {
         backgroundColor: Colors.grey,
       ),
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Container(
             width: 100,
