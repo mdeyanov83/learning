@@ -11,8 +11,10 @@ class CoffeePrefs extends StatelessWidget {
           children: [
             Text('Strength: '),
             Text('3'),
-            Image.asset('assets/img/coffee_bean.png'),
-            Image.file(),
+            Image.asset(
+              'assets/img/coffee_bean.png',
+              width: 25,
+            ),
             SizedBox(
               width: 50,
             ),
@@ -22,6 +24,10 @@ class CoffeePrefs extends StatelessWidget {
           children: [
             Text('Sugars: '),
             Text('3'),
+            Image.asset(
+              'assets/img/sugar_cube.png',
+              width: 25,
+            ),
             SizedBox(
               width: 50,
             ),

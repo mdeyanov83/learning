@@ -61,4 +61,6 @@
         assets:
             - path/to/image.jpg
             - path/to/image2.png
-    * Image() - 
+    * Image() - Widget that displays an image
+        - several named constructors, depending on image source:
+            .asset() .file() .memory() .network()
