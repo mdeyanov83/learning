@@ -5,9 +5,9 @@ void main() {
     MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('My Coffee Id'),
-          backgroundColor: Colors.brown[900],
-
+          title: Text('My Coffee Id'),
+          backgroundColor: Colors.brown[700],
+          centerTitle: true,
         ),
         body: Center(
           child: Text('Hello, Ninjas'),
@@ -16,4 +16,3 @@ void main() {
     ),
   );
 }
-
