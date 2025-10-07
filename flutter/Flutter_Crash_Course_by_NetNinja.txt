@@ -66,3 +66,5 @@
             .asset() .file() .memory() .network()
 
 #14 - Expanded Widget
+    Expanded() - A widget that takes up the rest of available space and whatever its
+        contents will not exceed its boundaries
