@@ -14,4 +14,5 @@
 #7 - MaterialApp & Scaffold
     MaterialApp() - a convenience widget that sets up many of the things you typically
         need when building an app that follows Material Design guidelines
-    CuperitnoApp() - 
+    CuperitnoApp() - used to build iOS-style applications following Apple’s Cupertino
+        design guidelines
