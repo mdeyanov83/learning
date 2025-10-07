@@ -33,9 +33,9 @@ class Home extends StatelessWidget {
           ),
           Expanded(
             child: Image.asset(
-              'assets/img/coffee_bg - orig.jpg',
+              'assets/img/coffee_bg.jpg',
               fit: BoxFit.fitWidth,
-              alignment: AlignmentGeometry.bottomRight,
+              alignment: AlignmentGeometry.bottomLeft,
             ),
           ),
         ],
