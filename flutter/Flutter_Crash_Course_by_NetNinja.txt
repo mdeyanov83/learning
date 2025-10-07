@@ -34,5 +34,6 @@
                 return const Placeholder();
             }
         }
+    * the build() function must return a widget or a widget tree
 
 
