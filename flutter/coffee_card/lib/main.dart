@@ -4,6 +4,6 @@ void main() {
   runApp(
     const MaterialApp(
       home: Text('Hello, ninjas'),
-    ), 
+    ),
   );
 }
