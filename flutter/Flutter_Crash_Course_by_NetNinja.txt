@@ -12,3 +12,5 @@
     build() - function in MyApp must return a widget or a widget tree
 
 #7 - MaterialApp & Scaffold
+    MaterialApp() - a convenience widget that sets up many of the things you typically
+        need when building an app that follows Material Design guidelines
