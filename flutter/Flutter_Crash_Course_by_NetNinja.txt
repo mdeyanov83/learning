@@ -92,3 +92,8 @@
     It consists of 2 classes:
     - The widget itself, extends the StatefulWidget class
     - The state itself, extends the State class
+
+    To invoke state change:
+    setState(() {
+        state changing statement
+    });
