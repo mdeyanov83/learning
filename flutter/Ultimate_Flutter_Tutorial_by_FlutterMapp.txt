@@ -5,8 +5,6 @@ Chapters
 🚀 1. Key Concepts
     00:00:00​ Create a project
     00:02:22 Widget inside Widget
-
-    
     00:04:56 Widget vs Argument
     00:07:12 Types
     00:09:30 Mouse over
