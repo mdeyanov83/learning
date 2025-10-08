@@ -29,6 +29,7 @@ class Home extends StatelessWidget {
               style: TextStyle(
                 color: Colors.brown[900],
                 fontWeight: FontWeight.bold,
+                fontSize: 18,
               ),
             ),
           ),
