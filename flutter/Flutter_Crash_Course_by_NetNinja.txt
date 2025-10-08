@@ -1,3 +1,7 @@
+•	Flutter Crash Course, by Net Ninja
+https://www.youtube.com/playlist?list=PL4cUxeGkcC9giLVXCHSQmWqlHc9BLXdVx
+
+
 #4 - Making a New Flutter Project
     flutter create coffee_card
 
@@ -108,4 +112,3 @@
     * Same goes for if statements
 
 #18 - Making Reusable Widgets
-    
