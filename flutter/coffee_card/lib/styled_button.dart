@@ -13,12 +13,15 @@ class StyledButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextButton(
+      style: TextButton.styleFrom(
+        backgroundColor: Colors.brown[700],
+        foregroundColor: Colors.white,
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadiusGeometry.all(Radius.circular(5)),
+        ),
+      ),
       onPressed: onPressed,
       child: child,
-      style: TextButton.styleFrom(
-         backgroundColor: Colors.brown,
-                foregroundColor: Colors.white,
-      ),
     );
   }
 }
