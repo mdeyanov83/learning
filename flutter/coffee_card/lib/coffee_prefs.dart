@@ -13,7 +13,7 @@ class _CoffeePrefsState extends State<CoffeePrefs> {
   int sugars = 1;
 
   void increaseStrength() {
-    print('inc strength by 1');
+    strength++;
   }
 
   void increaseSugars() {
