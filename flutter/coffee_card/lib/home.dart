@@ -24,7 +24,13 @@ class Home extends StatelessWidget {
           Container(
             color: Colors.brown[200],
             padding: const EdgeInsets.all(20),
-            child: const Text('How I like my coffee...'),
+            child: Text(
+              'How I like my coffee...',
+              style: TextStyle(
+                color: Colors.brown[900],
+                fontWeight: FontWeight.bold,
+              ),
+            ),
           ),
           Container(
             color: Colors.brown[100],
