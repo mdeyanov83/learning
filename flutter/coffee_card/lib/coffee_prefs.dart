@@ -13,11 +13,15 @@ class _CoffeePrefsState extends State<CoffeePrefs> {
   int sugars = 1;
 
   void increaseStrength() {
-    strength < 5 ? strength + 1 : 1;
+    setState(() {
+      strength = strength < 5 ? strength + 1 : 1;
+    });
   }
 
   void increaseSugars() {
-    sugars < 5 ? sugars + 1 : 0;
+    setState(() {
+      sugars = sugars < 5 ? sugars + 1 : 0;
+    });
   }
 
   @override
