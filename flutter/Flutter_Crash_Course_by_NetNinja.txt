@@ -99,5 +99,10 @@
     });
 
 #17 - Control Flow in Lists
-
-
+    * Using 'for' loops inside a List of widgets:
+        children: [
+            for (conditions)
+                    widget,
+        ]
+    this will output the widget multiple times based on the for loop conditions
+    * Same goes for if statements
