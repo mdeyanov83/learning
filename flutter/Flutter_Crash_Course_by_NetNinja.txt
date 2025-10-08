@@ -1,5 +1,8 @@
-•	Flutter Crash Course, by Net Ninja
+Flutter Crash Course, by Net Ninja
 https://www.youtube.com/playlist?list=PL4cUxeGkcC9giLVXCHSQmWqlHc9BLXdVx
+
+*** Coffee Card App ***
+coffee_card/
 
 
 #4 - Making a New Flutter Project
