@@ -32,8 +32,8 @@ class LoadingScreen {
     required BuildContext context,
     required String text,
   }) {
-    final _text = StreamController<String>();
-    _text.add(text);
+    final text_ = StreamController<String>();
+    text_.add(text);
 
     final state = Overlay.of(context);
     final renderBox = context.findRenderObject() as RenderBox;
@@ -91,12 +91,12 @@ class LoadingScreen {
 
     return LoadingScreenController(
       close: () {
-        _text.close();
+        text_.close();
         overlay.remove();
         return true;
       },
       update: (text) {
-        _text.add(text);
+        text_.add(text);
         return true;
       },
     );
