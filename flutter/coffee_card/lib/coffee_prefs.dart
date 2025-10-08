@@ -54,7 +54,7 @@ class _CoffeePrefsState extends State<CoffeePrefs> {
           children: [
             const StyledBodyText('Sugars: '),
             if (sugars == 0)
-              const Text('No sugars'),
+              const StyledBodyText('No sugars'),
             for (int i = 0; i < sugars; i++)
               Image.asset(
                 'assets/img/sugar_cube.png',
