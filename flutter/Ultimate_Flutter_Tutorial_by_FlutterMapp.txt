@@ -83,10 +83,32 @@ Chapters
         );
 
     00:37:33 Icon
+        Used to display material design icons. It’s lightweight and commonly used in
+        buttons, navigation bars, and UI decorations.
+        Icon(
+            Icons.star,
+            color: Colors.yellow,
+            size: 30,
+        );
 
     00:38:56 ListTile
+        Prebuilt widget for creating a single row in a list with a leading icon or image,
+        a title, a subtitle, and a trailing widget (like an arrow or button).
+        ListTile(
+            leading: Icon(Icons.person),
+            title: Text('John Doe'),
+            subtitle: Text('Online'),
+            trailing: Icon(Icons.arrow_forward),
+            onTap: () {
+                print('Tile tapped');
+            },
+        );
+
     00:40:59 print
+        print() - prints to the console
+
     00:41:47 Wrap
+    
 
 🐦‍🔥 3. Master Layout
     00:43:17 MaterialApp & Scaffold
