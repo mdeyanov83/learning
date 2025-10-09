@@ -123,6 +123,33 @@ Chapters
 
 🐦‍🔥 3. Master Layout
     00:43:17 MaterialApp & Scaffold
+
+        MaterialApp is the root widget for apps that use Material Design.
+        It provides essential features like theming, routing, navigation,
+        and localization out of the box.
+
+        MaterialApp(
+            title: 'My App',
+            theme: ThemeData(
+                primarySwatch: Colors.blue,
+            ),
+            home: HomePage(),  // your first screen widget
+        );
+        
+        🧱 Common properties:
+            title → name of the app (shown in task switchers, etc.)
+            theme → defines colors, fonts, and overall visual style
+            home → the default screen shown when the app starts
+            routes → named routes for navigation
+            initialRoute → route shown at launch (instead of home)
+            debugShowCheckedModeBanner → remove the “debug” banner in debug mode
+
+        Scaffold is a basic layout structure for Material Design apps.
+        It provides predefined slots for common app elements like AppBar, Drawer,
+        BottomNavigationBar, FloatingActionButton, and body content.
+
+
+
     00:47:21 AppBar
     00:50:05 NavigationBar
     00:53:53 FloatingActionButton
