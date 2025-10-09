@@ -75,7 +75,14 @@ Chapters
     00:36:46 SizedBox
         Like a Container(), but simpler -used to give a fixed width and/or height to its child or
         create empty space between widgets.
+        SizedBox(
+            width: 200,
+            height: 100,
+            child: Container(color: Colors.blue),
+        );
+
     00:37:33 Icon
+    
     00:38:56 ListTile
     00:40:59 print
     00:41:47 Wrap
