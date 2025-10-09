@@ -27,6 +27,7 @@ class MyApp extends StatelessWidget {
             Icon(Icons.local_activity_outlined),
           ],
           backgroundColor: Colors.teal,
+          elevation: 100,
         ),
       ),
     );

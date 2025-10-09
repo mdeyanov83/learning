@@ -201,7 +201,26 @@ Chapters
             backgroundColor → background color of the Scaffold
 
     00:47:21 AppBar
-    
+    The top navigation bar in a Material Design app.
+    It usually contains the title, actions, navigation buttons,
+    and optional widgets like tabs.
+    AppBar(
+        title: Text('Home'),
+        actions: [
+            IconButton(
+            icon: Icon(Icons.search),
+            onPressed: () {},
+            ),
+        ],
+    );
+    🧱 Common properties:
+        title → main text or widget displayed in the center (or start)
+        leading → widget at the start (commonly back button or drawer icon)
+        actions → list of widgets displayed at the end (icons, buttons)
+        backgroundColor → color of the AppBar
+        centerTitle → centers the title (default depends on platform)
+        elevation → shadow depth of the AppBar
+
     00:50:05 NavigationBar
     00:53:53 FloatingActionButton
     00:56:11 Drawer
