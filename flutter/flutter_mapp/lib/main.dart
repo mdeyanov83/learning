@@ -110,11 +110,11 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Container(
-              
               height: 100.0,
               width: 100.0,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(25.0),
+                color: Colors.red,
               ),
               child: const Text(
                 'You have pushed the button this many times:',
