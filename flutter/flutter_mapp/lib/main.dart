@@ -101,10 +101,19 @@ class _MyHomePageState extends State<MyHomePage> {
             borderRadius: BorderRadius.circular(25.0),
             color: Colors.red,
           ),
-          child: const Text(
-            'Hello',
-            style: TextStyle(
-              color: Colors.amber,
+          child: Container(
+            height: double.infinity,
+            width: double.infinity,
+            padding: EdgeInsets.all(50),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(25.0),
+              color: Colors.yellow,
+            ),
+            child: const Text(
+              'Hello',
+              style: TextStyle(
+                color: Colors.blue,
+              ),
             ),
           ),
         ),
