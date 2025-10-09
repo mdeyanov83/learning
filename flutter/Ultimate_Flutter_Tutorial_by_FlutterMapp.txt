@@ -73,6 +73,8 @@ Chapters
         );
 
     00:36:46 SizedBox
+        Like a Container(), but simpler -used to give a fixed width and/or height to its child or
+        create empty space between widgets.
     00:37:33 Icon
     00:38:56 ListTile
     00:40:59 print
