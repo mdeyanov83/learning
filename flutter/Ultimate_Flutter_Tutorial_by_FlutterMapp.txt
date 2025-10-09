@@ -180,6 +180,25 @@ Chapters
         *** Scaffold is a basic layout structure for Material Design apps.
         It provides predefined slots for common app elements like AppBar, Drawer,
         BottomNavigationBar, FloatingActionButton, and body content.
+        Scaffold(
+            appBar: AppBar(
+                title: Text('Home'),
+            ),
+            body: Center(
+                child: Text('Hello, Flutter!'),
+            ),
+            floatingActionButton: FloatingActionButton(
+                onPressed: () {},
+                child: Icon(Icons.add),
+            ),
+        );
+        🧱 Common properties:
+            appBar → top bar of the screen (AppBar)
+            body → main content area (usually Column, Row, ListView, etc.)
+            floatingActionButton → circular action button
+            drawer → side navigation panel
+            bottomNavigationBar → bar at the bottom for navigation
+            backgroundColor → background color of the Scaffold
 
 
 
