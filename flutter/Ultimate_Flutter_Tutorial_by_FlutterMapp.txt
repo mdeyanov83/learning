@@ -304,6 +304,17 @@ Chapters
             You can use DrawerHeader or UserAccountsDrawerHeader for profile info.
 
     00:57:53 SafeArea
+        SafeArea is a widget that automatically adds padding to its child so that it doesn’t get covered
+        by system UI elements like the status bar, notch, or navigation bar. It’s super useful for making
+        your layout look good on all devices, especially phones with notches.
+        SafeArea(
+            child: Text('Hello, Safe Area!'),
+        );
+        🧱 Common properties:
+            child → the widget to be displayed safely
+            left, top, right, bottom → booleans to enable/disable padding on specific sides
+            minimum → adds extra padding beyond the safe area
+            maintainBottomViewPadding → keeps bottom padding even when keyboard is open
 
 🔧 4. Debugging
     00:59:49 Type 1
