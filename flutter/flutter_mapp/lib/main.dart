@@ -22,6 +22,18 @@ class MyApp extends StatelessWidget {
           title: Text('Flutter Mapp'),
           centerTitle: true,
         ),
+        drawer: Drawer(
+          child: Column(
+            children: [
+              DrawerHeader(
+                child: Text('Header'),
+              ),
+              ListTile(
+                title: Text('Logout'),
+              ),
+            ],
+          ),
+        ),
         floatingActionButton: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
