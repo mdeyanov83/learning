@@ -222,6 +222,26 @@ Chapters
             elevation → shadow depth of the AppBar
 
     00:50:05 NavigationBar
+        NavigationBar is the modern Material 3 widget for bottom navigation in Flutter.
+        It lets users switch between top-level destinations of your app with a clean, minimal design.
+        It’s the updated alternative to the older BottomNavigationBar.
+        NavigationBar(
+            selectedIndex: 0,
+            onDestinationSelected: (int index) {
+                print('Selected index: $index');
+            },
+            destinations: const [
+                NavigationDestination(
+                icon: Icon(Icons.home),
+                label: 'Home',
+                ),
+                NavigationDestination(
+                icon: Icon(Icons.settings),
+                label: 'Settings',
+                ),
+            ],
+        );
+
 
 
     00:53:53 FloatingActionButton
