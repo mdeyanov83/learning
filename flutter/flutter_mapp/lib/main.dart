@@ -22,9 +22,18 @@ class MyApp extends StatelessWidget {
           title: Text('Flutter Mapp'),
           centerTitle: true,
         ),
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {},
-          child: Icon(Icons.add),
+        floatingActionButton: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            FloatingActionButton(
+              onPressed: () {},
+              child: Icon(Icons.add),
+            ),
+            FloatingActionButton(
+              onPressed: () {},
+              child: Icon(Icons.add),
+            ),
+          ],
         ),
         bottomNavigationBar: NavigationBar(
           destinations: [

@@ -252,6 +252,8 @@ Chapters
     00:53:53 FloatingActionButton
         FloatingActionButton (FAB) is a circular button that floats above the UI, usually in the bottom-right
         corner. It’s used for primary actions on a screen — like adding, creating, or composing something.
+        ! If more than 1 button is needed, can be wrapped in a Row/Column Widget
+
         FloatingActionButton(
             onPressed: () {
                 print('FAB pressed');
