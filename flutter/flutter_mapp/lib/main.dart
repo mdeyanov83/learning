@@ -110,21 +110,24 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Container(
-              height: 100,
-              width: 100,
-              padding: EdgeInsets.all(50),
+              height: double.infinity,
+              width: double.infinity,
+              padding: EdgeInsets.all(5),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(25.0),
                 color: Colors.red,
               ),
               child: const Text(
                 'You have pushed the button this many times:',
+                style: TextStyle(
+                  color: Colors.amber,
+                ),
               ),
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
+            // Text(
+            //   '$_counter',
+            //   style: Theme.of(context).textTheme.headlineMedium,
+            // ),
           ],
         ),
       ),
