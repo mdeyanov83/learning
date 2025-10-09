@@ -20,14 +20,13 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(
           title: Text('Flutter Mapp'),
-          centerTitle: true,
+          centerTitle: false,
           leading: Icon(Icons.login),
           actions: [
             Text('action1'),
             Icon(Icons.local_activity_outlined),
           ],
           backgroundColor: Colors.teal,
-          elevation: 100,
         ),
       ),
     );
