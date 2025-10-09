@@ -90,20 +90,23 @@ class _MyHomePageState extends State<MyHomePage> {
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
-      body: Stack(
-        children: [
-          Image.asset(
-            'assets/images/background.jpg',
-            fit: BoxFit.cover,
-            height: 300,
-          ),
-          SizedBox(
-            height: 300,
-            child: Center(
-              child: Text('Flutter'),
+      body: Container(
+        padding: EdgeInsets.all(50.0),
+        child: Stack(
+          children: [
+            Image.asset(
+              'assets/images/background.jpg',
+              fit: BoxFit.cover,
+              height: 300,
             ),
-          ),
-        ],
+            SizedBox(
+              height: 300,
+              child: Center(
+                child: Text('Flutter'),
+              ),
+            ),
+          ],
+        ),
       ),
 
       floatingActionButton: FloatingActionButton(

@@ -66,7 +66,7 @@ Chapters
 
     00:35:48 Padding
         Adds empty space inside its parent and around its child, helping control the layout and spacing of widgets
-        without affecting their size directly.
+        without affecting their size directly. ONLY used for padding. If you need other parameters/styles - use Container()
         Padding(
             padding: EdgeInsets.all(16.0), // space on all sides
             child: Text('Hello with padding'),
