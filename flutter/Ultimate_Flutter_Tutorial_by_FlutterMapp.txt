@@ -298,6 +298,10 @@ Chapters
                 ],
             ),
         );
+        🧱 Common properties:
+            child → the widget displayed inside the drawer (commonly a ListView)
+            backgroundColor → background color of the drawer
+            You can use DrawerHeader or UserAccountsDrawerHeader for profile info.
 
     00:57:53 SafeArea
 
