@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
           centerTitle: true,
         ),
         floatingActionButton: FloatingActionButton(
-          onPressed: (value) {},
+          onPressed: () {},
           child: Icon(Icons.add),
         ),
         bottomNavigationBar: NavigationBar(
