@@ -208,8 +208,8 @@ Chapters
             title: Text('Home'),
             actions: [
                 IconButton(
-                icon: Icon(Icons.search),
-                onPressed: () {},
+                    icon: Icon(Icons.search),
+                    onPressed: () {},
                 ),
             ],
         );
@@ -232,12 +232,12 @@ Chapters
             },
             destinations: const [
                 NavigationDestination(
-                icon: Icon(Icons.home),
-                label: 'Home',
+                    icon: Icon(Icons.home),
+                    label: 'Home',
                 ),
                 NavigationDestination(
-                icon: Icon(Icons.settings),
-                label: 'Settings',
+                    icon: Icon(Icons.settings),
+                    label: 'Settings',
                 ),
             ],
         );
@@ -274,6 +274,31 @@ Chapters
         )
 
     00:56:11 Drawer
+        Drawer is a side navigation panel that slides in from the left (or right) of the screen.
+        It’s commonly used for app-wide navigation — like accessing profile, settings, or other sections.
+        It’s typically paired with Scaffold and accessed via the hamburger menu in the AppBar.
+        Drawer(
+            child: ListView(
+                padding: EdgeInsets.zero,
+                children: [
+                    DrawerHeader(
+                        decoration: BoxDecoration(color: Colors.blue),
+                        child: Text('Menu', style: TextStyle(color: Colors.white)),
+                    ),
+                    ListTile(
+                        leading: Icon(Icons.home),
+                        title: Text('Home'),
+                        onTap: () {},
+                    ),
+                    ListTile(
+                        leading: Icon(Icons.settings),
+                        title: Text('Settings'),
+                        onTap: () {},
+                    ),
+                ],
+            ),
+        );
+
     00:57:53 SafeArea
 
 🔧 4. Debugging
