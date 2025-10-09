@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
           title: Text('Flutter Mapp'),
           centerTitle: true,
         ),
-        floatingActionButton: Column(
+        floatingActionButton: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
             FloatingActionButton(
