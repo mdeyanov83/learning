@@ -29,6 +29,7 @@ class MyApp extends StatelessWidget {
               onPressed: () {},
               child: Icon(Icons.add),
             ),
+            SizedBox(width: 10),
             FloatingActionButton(
               onPressed: () {},
               child: Icon(Icons.add),

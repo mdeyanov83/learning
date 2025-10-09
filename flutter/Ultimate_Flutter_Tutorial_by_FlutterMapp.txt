@@ -269,6 +269,7 @@ Chapters
         floatingActionButton: Row(
             mainAxisSize: MainAxisSize.min,
             FloatingActionButton(...),
+            SizedBox(width: 10),
             FloatingActionButton(...),
         )
 
