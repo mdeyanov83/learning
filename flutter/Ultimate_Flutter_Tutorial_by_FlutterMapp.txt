@@ -108,7 +108,19 @@ Chapters
         print() - prints to the console
 
     00:41:47 Wrap
-    
+        Automatically moves its children to the next line (or column) when there’s not enough space.
+        It’s perfect for chips, tags, buttons, or any content that should flow responsively.
+        Like a Row(), but wraps to next line
+        Wrap(
+            spacing: 8.0,       // space between items horizontally
+            runSpacing: 4.0,    // space between lines vertically
+            children: [
+                Chip(label: Text('Flutter')),
+                Chip(label: Text('Dart')),
+                Chip(label: Text('UI')),
+            ],
+        );
+
 
 🐦‍🔥 3. Master Layout
     00:43:17 MaterialApp & Scaffold
