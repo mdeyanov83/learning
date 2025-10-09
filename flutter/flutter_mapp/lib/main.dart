@@ -95,8 +95,14 @@ class _MyHomePageState extends State<MyHomePage> {
           Image.asset(
             'assets/images/background.jpg',
             fit: BoxFit.cover,
+            height: 300,
           ),
-          Center(child: Text('Flutter')),
+          SizedBox(
+            height: 300,
+            child: Center(
+              child: Text('Flutter'),
+            ),
+          ),
         ],
       ),
 
