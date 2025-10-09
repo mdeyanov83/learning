@@ -96,7 +96,7 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           children: [
             Container(
-              height: double.infinity,
+
               width: double.infinity,
               padding: EdgeInsets.all(50),
               decoration: BoxDecoration(
@@ -105,7 +105,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
             Container(
-              height: double.infinity,
+
               width: double.infinity,
               padding: EdgeInsets.all(50),
               decoration: BoxDecoration(
