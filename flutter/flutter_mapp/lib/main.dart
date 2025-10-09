@@ -91,7 +91,7 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Image.asset(
-        'images/background.jpg',
+        'assets/images/background.jpg',
         height: double.infinity,
         fit: BoxFit.cover,
       ),
