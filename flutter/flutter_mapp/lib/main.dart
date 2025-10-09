@@ -28,6 +28,10 @@ class MyApp extends StatelessWidget {
               icon: Icon(Icons.home),
               label: 'Home',
             ),
+            NavigationDestination(
+              icon: Icon(Icons.home),
+              label: 'Home',
+            ),
           ],
         ),
       ),
