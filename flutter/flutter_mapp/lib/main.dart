@@ -110,8 +110,9 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Container(
-              height: 100.0,
-              width: 100.0,
+              height: double.infinity,
+              width: double.infinity,
+              padding: EdgeInsets.all(50),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(25.0),
                 color: Colors.red,
