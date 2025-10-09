@@ -25,7 +25,6 @@ class MyApp extends StatelessWidget {
         drawer: Drawer(
           child: Column(
             children: [
-
               ListTile(
                 title: Text('Logout'),
               ),
