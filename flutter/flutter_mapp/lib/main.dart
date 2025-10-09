@@ -29,10 +29,12 @@ class MyApp extends StatelessWidget {
               label: 'Home',
             ),
             NavigationDestination(
-              icon: Icon(Icons.home),
-              label: 'Home',
+              icon: Icon(Icons.person),
+              label: 'Profile',
             ),
           ],
+          onDestinationSelected: (int value) {},
+          selectedIndex: 1,
         ),
       ),
     );

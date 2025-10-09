@@ -244,13 +244,14 @@ Chapters
         🧱 Common properties:
             selectedIndex → currently active tab index
             onDestinationSelected → callback when a tab is tapped
-            destinations → list of NavigationDestination widgets (tabs)
+            destinations → list of NavigationDestination widgets (tabs), must be 2+ items
             backgroundColor → background of the bar
             indicatorColor → highlight color for the selected destination
             animationDuration → how fast the transition animates
 
-
     00:53:53 FloatingActionButton
+
+    
     00:56:11 Drawer
     00:57:53 SafeArea
 
