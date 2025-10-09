@@ -74,7 +74,8 @@ Chapters
 
     00:36:46 SizedBox
         Like a Container(), but simpler -used to give a fixed width and/or height to its child or
-        create empty space between widgets.
+        create empty space between widgets. If no child is provided it acts as an invisible spacer.
+        Can also be used as SizedBox.expand() to fill available space.
         SizedBox(
             width: 200,
             height: 100,
@@ -82,7 +83,7 @@ Chapters
         );
 
     00:37:33 Icon
-    
+
     00:38:56 ListTile
     00:40:59 print
     00:41:47 Wrap
