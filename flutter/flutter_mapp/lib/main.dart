@@ -94,18 +94,20 @@ class _MyHomePageState extends State<MyHomePage> {
         // Center is a layout widget. It takes a single child and positions it
         // in the middle of the parent.
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             Container(
-              height: 100,
-              width: double.infinity,
+              height: 100.0,
+              width: 100.0,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(25.0),
                 color: Colors.red,
               ),
             ),
             Container(
-              height: 100,
-              width: double.infinity,
+              height: 100.0,
+              width: 100.0,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(25.0),
                 color: Colors.red,
