@@ -11,12 +11,59 @@ Chapters
 
 📐 2. Basic Layouts
     00:12:12: Container
+        A versatile box widget used for layout, styling, padding, margin, alignment, and decoration.
+        Container(
+            width: 100,
+            height: 100,
+            color: Colors.blue,
+            child: Text('Hello'),
+        );
+
     00:16:48 Column
+        Lays out its children vertically (top to bottom).
+        Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+                Text('First'),
+                Text('Second'),
+            ],
+        );
+
     00:22:10 Row
+        Lays out its children horizontally (left to right).
+        Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+                Icon(Icons.star),
+                Text('Star'),
+            ],
+        );
+
     00:25:22 Center
+        Centers its child both vertically and horizontally.
+        Center(
+            child: Text('Centered'),
+        );
+
     00:27:17 Images
+        Displays an image from assets, network, file, or memory.
+        Image.asset('assets/image.png');       // From assets (must configure assets: in pubspec.yaml)
+        Image.network('https://example.com');  // From network
+
     00:32:06 Extensions (only for VS code)
+
     00:33:27 Stack
+        Places widgets on top of each other (like layers).
+        Stack(
+            alignment: Alignment.center,
+            children: [
+                Container(width: 200, height: 200, color: Colors.red),
+                Text('On top'),
+            ],
+        );
+
     00:35:48 Padding
     00:36:46 SizedBox
     00:37:33 Icon
