@@ -96,18 +96,16 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           children: [
             Container(
-
+              height: 100,
               width: double.infinity,
-              padding: EdgeInsets.all(50),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(25.0),
                 color: Colors.red,
               ),
             ),
             Container(
-
+              height: 100,
               width: double.infinity,
-              padding: EdgeInsets.all(50),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(25.0),
                 color: Colors.red,
