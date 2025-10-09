@@ -200,9 +200,8 @@ Chapters
             bottomNavigationBar → bar at the bottom for navigation
             backgroundColor → background color of the Scaffold
 
-
-
     00:47:21 AppBar
+    
     00:50:05 NavigationBar
     00:53:53 FloatingActionButton
     00:56:11 Drawer
