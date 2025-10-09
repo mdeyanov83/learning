@@ -95,9 +95,8 @@ class _MyHomePageState extends State<MyHomePage> {
         // in the middle of the parent.
         child: Container(
           color: Colors.black38,
-          height: 500,
+          height: double.infinity,
           child: Row(
-
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
