@@ -250,8 +250,23 @@ Chapters
             animationDuration → how fast the transition animates
 
     00:53:53 FloatingActionButton
+        FloatingActionButton (FAB) is a circular button that floats above the UI, usually in the bottom-right
+        corner. It’s used for primary actions on a screen — like adding, creating, or composing something.
+        FloatingActionButton(
+            onPressed: () {
+                print('FAB pressed');
+            },
+            child: Icon(Icons.add),
+        );
+        🧱 Common properties:
+            onPressed → callback when the button is tapped (required)
+            child → usually an Icon or small Text widget
+            backgroundColor → background color of the FAB
+            foregroundColor → color of the icon/text inside the FAB
+            tooltip → text shown when the user long-presses
+            shape → custom shape for the button (e.g., rounded rectangle)
 
-    
+
     00:56:11 Drawer
     00:57:53 SafeArea
 
