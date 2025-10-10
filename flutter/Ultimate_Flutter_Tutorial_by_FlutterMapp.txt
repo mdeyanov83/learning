@@ -442,6 +442,16 @@ Chapters
 
 ⚡ 5. States
     01:07:19 Stateful
+        setState() is a method used inside a StatefulWidget to update the UI when the state changes.
+        When you call setState(), Flutter rebuilds the widget tree to reflect the new state.
+        setState(() {
+            // Update your state variables here
+        });
+        🧱 Key points:
+            Only works inside the State class of a StatefulWidget.
+            It triggers a rebuild of the widget to reflect the updated data.
+            Should be used only when the state actually changes (to avoid unnecessary rebuilds).
+
     01:11:42 Recap
     01:17:18 Split your Widgets
     01:20:30 Widget Tree
