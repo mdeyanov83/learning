@@ -79,14 +79,16 @@ class _ProfilePageState extends State<ProfilePage> {
                 });
               },
             ),
-            GestureDetector(
-              child: Image.asset(
-                'assets/images/background.jpg',
-              ),
+            InkWell(
+
               onTap: () {
                 print('tap');
               },
-
+              splashColor: Color(1),
+              radius: 15.0,
+              child: Image.asset(
+                'assets/images/background.jpg',
+              ),
             ),
           ],
         ),
