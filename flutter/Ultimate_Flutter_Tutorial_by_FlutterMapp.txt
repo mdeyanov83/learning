@@ -571,6 +571,25 @@ Chapters
             Use TextFormField for validation when working inside a form.
             Combine with InputDecoration for professional-looking input fields.
 
+    TextEditingController()
+        TextEditingController is a controller class used to manage and control the text inside a
+        TextField or TextFormField. It lets you read, modify, and listen to changes in the text input.
+
+        final myController = TextEditingController();
+
+        Listen for text changes:
+        myController.addListener(() {
+            print(myController.text);
+        });
+
+
+        🧱 Common uses:
+            Retrieve the current text: myController.text
+            Set new text: myController.text = 'Hello';
+            Clear the field: myController.clear();
+
+
+
     01:42:33 Checkbox
     01:45:09 Arrow function
     01:46:15 Switch
