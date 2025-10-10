@@ -31,6 +31,9 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+
+  int currentIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,8 +52,11 @@ class _MyHomePageState extends State<MyHomePage> {
               label: 'Profile',
             ),
           ],
-          onDestinationSelected: (int value) {},
-          selectedIndex: 0,
+          onDestinationSelected: (int value) {
+            currentIndex = value;
+            setState() )
+          },
+          selectedIndex: currentIndex,
         ),
       );
   }
