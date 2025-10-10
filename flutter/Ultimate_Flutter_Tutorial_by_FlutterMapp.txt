@@ -795,8 +795,36 @@ Chapters
             Combine with borderRadius to match the shape of the child for better visual appeal.
 
     01:55:34 Buttons
+        ElevatedButton is a Material Design button with a background color and elevation, giving it a raised look.
+        ElevatedButton(
+            onPressed: () {
+                print('Button pressed');
+            },
+            child: Text('Click Me'),
+        );
+        🧱 Common properties:
+            onPressed → callback when the button is tapped (set null to disable)
+            child → widget inside the button (usually Text or Icon)
+            style → customize the button (ButtonStyle)
+            onLongPress → callback when long-pressed
+        📌 Tip:
+            Use ElevatedButton for important actions that need emphasis.
+            Customize appearance using style or ElevatedButton.styleFrom.
+            For secondary actions, consider TextButton or OutlinedButton instead.
+        🧱 Other Buttons:
+            ElevatedButton()
+            ElevatedButton.icon()
+            TextButton()
+            OutlinedButton()
+            FilledButton()
+            IconButton()
+            FloatingActionButton()
+            AdaptiveButton()
+            DisabledButton()
+            StyledButton()
+            BackButton()
+            CloseButton()
 
-    
     01:59:07 DropdownButton
 
 🗺️ 7. Navigation
