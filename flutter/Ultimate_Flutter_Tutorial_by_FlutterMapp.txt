@@ -55,7 +55,9 @@ Chapters
     00:32:06 Extensions (only for VS code)
 
     00:33:27 Stack
-        Places widgets on top of each other (like layers).
+        Stack is a layout widget that allows you to place widgets on top of each other (like layers).
+        The first child is at the bottom, and each subsequent child is stacked above it.
+        It’s perfect for creating overlays, badges, floating elements, or custom designs.
         Stack(
             alignment: Alignment.center,
             children: [
@@ -63,6 +65,16 @@ Chapters
                 Text('On top'),
             ],
         );
+        🧱 Common properties:
+            children → list of widgets stacked in order
+            alignment → how to align children (default: topStart)
+            fit → how the non-positioned children are sized (loose, expand, passthrough)
+            clipBehavior → controls how content is clipped outside the stack
+            👉 You can also position individual children using Positioned.
+        📌 Tip:
+            Use Stack when you need overlapping layouts.
+            Combine with Positioned for precise control of element placement.
+            For responsive designs, use alignment instead of hardcoded positions when possible.
 
     00:35:48 Padding
         Adds empty space inside its parent and around its child, helping control the layout and spacing of widgets
