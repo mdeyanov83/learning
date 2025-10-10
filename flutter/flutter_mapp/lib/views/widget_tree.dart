@@ -18,7 +18,7 @@ class WidgetTree extends StatelessWidget {
       appBar: AppBar(
         title: Text('Flutter Mapp'),
         actions: []
-        IconButton(onPressed () {}, icon: Icon(Icons.light_mode),),
+        IconButton(onPressed: () {}, icon: Icon(Icons.light_mode),),
       ),
       body: ValueListenableBuilder(
         valueListenable: selectedPageNotifier,
