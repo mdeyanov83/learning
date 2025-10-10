@@ -475,7 +475,9 @@ Chapters
         Refactor widgets into separate files
 
     01:20:30 Widget Tree
-        Refactor the 
+        Refactor the main Scaffold() into a separate widget_tree.dart file outside of main
+        Main should be simple and only return the MaterialApp(home: WidgetTree())
+
 
     01:25:12 ValueNotifier
         ValueNotifier is a special class that holds a single value and notifies its listeners
