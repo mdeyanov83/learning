@@ -79,13 +79,14 @@ class _ProfilePageState extends State<ProfilePage> {
                 });
               },
             ),
-            InkWell(
+            InkResponse(
 
               onTap: () {
                 print('tap');
               },
+              highlightShape: BoxShape.circle,
               splashColor: Color(1),
-              radius: 15.0,
+              radius: 50.0,
               child: Image.asset(
                 'assets/images/background.jpg',
               ),
