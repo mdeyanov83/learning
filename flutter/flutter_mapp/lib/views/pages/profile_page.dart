@@ -29,6 +29,7 @@ class _ProfilePageState extends State<ProfilePage> {
           ),
           Text(controller.text),
           Checkbox(
+            tristate: true,
             value: isChecked,
             onChanged: (bool? value) {
               setState(() {
@@ -37,11 +38,14 @@ class _ProfilePageState extends State<ProfilePage> {
             },
           ),
           CheckboxListTile(
+            tristate: true,
+            title: Text('Click me'),
             value: isChecked,
             onChanged: (bool? value) {
               setState(() {
                 isChecked = value;
               });
+              print(value);
             },
           ),
         ],
