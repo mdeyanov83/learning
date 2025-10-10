@@ -51,6 +51,21 @@ Chapters
         Displays an image from assets, network, file, or memory.
         Image.asset('assets/image.png');       // From assets (must configure assets: in pubspec.yaml)
         Image.network('https://example.com');  // From network
+        🧱 Common constructors:
+            Image.asset() → load image from assets
+            Image.network() → load image from the internet
+            Image.file() → load image from a local file
+            Image.memory() → load image from memory (e.g., Uint8List)
+        🧰 Common properties:
+            width / height → control size of the image
+            fit → how the image should be inscribed in its box (BoxFit.cover, contain, etc.)
+            alignment → how to align the image inside its box
+            color / colorBlendMode → apply color filters
+            repeat → repeat the image if needed
+        📌 Tip:
+            For asset images, make sure to declare them in pubspec.yaml.
+            Use fit to control how images resize or crop.
+            Use FadeInImage for smoother loading of network images with placeholders.
 
     00:32:06 Extensions (only for VS code)
 
