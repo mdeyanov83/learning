@@ -71,7 +71,7 @@ class _ProfilePageState extends State<ProfilePage> {
             Slider(
               max: 10.0,
               value: sliderValue,
-              // divisions: 10,
+              divisions: 10,
               label: '$sliderValue',
               onChanged: (double value) {
                 setState(() {
