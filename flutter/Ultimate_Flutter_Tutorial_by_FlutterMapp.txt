@@ -549,8 +549,17 @@ Chapters
 
 🖋️ 6. User Inputs
     01:38:32 TextField
+        TextField is a widget that allows the user to enter and edit text input.
+        It’s commonly used for forms, search bars, login screens, and other input fields.
+
+    TextField(
+        decoration: InputDecoration(
+            labelText: 'Enter your name',
+        ),
+    );
 
     
+
     01:42:33 Checkbox
     01:45:09 Arrow function
     01:46:15 Switch
