@@ -826,6 +826,11 @@ Chapters
             CloseButton()
 
     01:59:07 DropdownButton
+        DropdownButton is a widget that lets users select one value from a list of items
+        displayed in a dropdown menu. It’s commonly used for forms, filters, or settings menus.
+
+
+
 
 🗺️ 7. Navigation
     02:02:34 Push
