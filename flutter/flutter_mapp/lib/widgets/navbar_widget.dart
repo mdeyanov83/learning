@@ -10,6 +10,25 @@ class NavBarWidget extends StatefulWidget {
 class _NavBarWidgetState extends State<NavBarWidget> {
   @override
   Widget build(BuildContext context) {
-    return 
+
+    int selectedIndex = 0;
+    return NavigationBar(
+          destinations: [
+            NavigationDestination(
+              icon: Icon(Icons.home),
+              label: 'Home',
+            ),
+            NavigationDestination(
+              icon: Icon(Icons.person),
+              label: 'Profile',
+            ),
+          ],
+          onDestinationSelected: (int value) {
+            setState(() {
+              selectedIndex = value;
+            });
+          },
+          selectedIndex: selectedIndex,
+        ),
   }
 }
