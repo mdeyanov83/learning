@@ -7,8 +7,11 @@ class ProfilePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        TextField(),
-
+        TextField(
+          decoration: InputDecoration(
+            border: OutlineInputBorder(),
+          ),
+        ),
       ],
     );
   }
