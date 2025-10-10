@@ -280,6 +280,11 @@ Chapters
             backgroundColor → background of the bar
             indicatorColor → highlight color for the selected destination
             animationDuration → how fast the transition animates
+        📌 Tip:
+            NavigationBar works great with Scaffold as bottomNavigationBar.
+            It’s part of Material 3, so make sure useMaterial3: true is set in your ThemeData.
+            Use NavigationDestination to define each tab’s icon and label.
+            For older Material 2 designs, use BottomNavigationBar instead.
 
     00:53:53 FloatingActionButton
         FloatingActionButton (FAB) is a circular button that floats above the UI, usually in the bottom-right
