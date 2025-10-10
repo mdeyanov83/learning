@@ -113,8 +113,15 @@ Chapters
             Use it to close dialogs, modals, or bottom sheets too (not just pages).
 
     02:09:16 PushReplacement
+        Navigator.pushReplacement() is used to navigate to a new screen while replacing the current one.
+        That means the previous screen is removed from the navigation stack — the user cannot go back using the back button.
+        It’s often used for navigation flows like login → home screen or splash → main app.
 
-    
+        Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(builder: (context) => NewScreen()),
+        );
+
     02:10:59 Send Data Through pages
 
 👾 8. Clean UI
