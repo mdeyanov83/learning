@@ -13,6 +13,7 @@ class _ProfilePageState extends State<ProfilePage> {
   bool? isChecked = false;
   bool isSwitched = false;
   double sliderValue = 0.0;
+  String? menuItem;
 
   @override
   Widget build(BuildContext context) {
@@ -23,6 +24,7 @@ class _ProfilePageState extends State<ProfilePage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             DropdownButton(
+              value: menuItem,
               items: [
                 DropdownMenuItem(
                   value: 'e1',
