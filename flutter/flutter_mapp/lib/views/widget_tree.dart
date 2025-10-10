@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mapp/views/pages/home_page.dart';
 import 'package:flutter_mapp/views/pages/profile_page.dart';
-import 'package:flutter_mapp/widgets/navbar_widget.dart';
+import 'package:flutter_mapp/views/widgets/navbar_widget.dart';
 
 List<Widget> pages = [
   HomePage(),
