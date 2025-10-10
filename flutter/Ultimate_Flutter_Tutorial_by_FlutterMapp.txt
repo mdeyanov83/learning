@@ -566,7 +566,10 @@ Chapters
             onChanged → callback triggered when text changes
             onSubmitted → callback when user presses "done" or "enter"
             maxLines → allows multiple lines of input
-
+        📌 Tip:
+            Always dispose of your TextEditingController in dispose() to prevent memory leaks.
+            Use TextFormField for validation when working inside a form.
+            Combine with InputDecoration for professional-looking input fields.
 
     01:42:33 Checkbox
     01:45:09 Arrow function
