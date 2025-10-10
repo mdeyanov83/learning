@@ -609,7 +609,7 @@ Chapters
     01:42:33 Checkbox
         Checkbox is a material design widget that lets the user select or deselect an option (true/false).
         It’s typically used for settings, preferences, or multi-select lists.
-        see also CheckboxListTile()
+        see also CheckboxListTile(title: )
 
         Checkbox(
             value: isChecked,
@@ -643,6 +643,8 @@ Chapters
     01:46:15 Switch
         Switch is a material design toggle button that represents a boolean (on/off) state.
         It’s commonly used in settings screens or anywhere the user needs to enable or disable a feature.
+        See also: SwitchListTile(title: )
+
         Switch(
             value: isSwitched,
             onChanged: (bool value) {
@@ -658,9 +660,14 @@ Chapters
             activeTrackColor → color of the track when ON
             inactiveThumbColor → color of the thumb when OFF
             inactiveTrackColor → color of the track when OFF
-
+        📌 Tip:
+            Switch itself only shows the toggle; use SwitchListTile for an easy labeled version.
+            You must handle the state (like setState or ValueNotifier).
+            Use Switch for binary (yes/no) options — not multiple choices.
 
     01:47:57 .adaptive
+
+    
     01:49:11 Slider
     01:51:12 SingleChildScrollView
     01:52:51 GestureDetector
