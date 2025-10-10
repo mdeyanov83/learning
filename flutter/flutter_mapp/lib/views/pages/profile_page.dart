@@ -31,7 +31,17 @@ class _ProfilePageState extends State<ProfilePage> {
           Checkbox(
             value: isChecked,
             onChanged: (bool? value) {
-              isChecked = value;
+              setState(() {
+                isChecked = value;
+              });
+            },
+          ),
+          CheckboxListTile(
+            value: isChecked,
+            onChanged: (bool? value) {
+              setState(() {
+                isChecked = value;
+              });
             },
           ),
         ],
