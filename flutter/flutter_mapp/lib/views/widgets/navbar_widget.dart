@@ -1,14 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mapp/data/notifiers.dart';
 
-class NavBarWidget extends StatefulWidget {
+class NavBarWidget extends StatelessWidget {
   const NavBarWidget({super.key});
 
-  @override
-  State<NavBarWidget> createState() => _NavBarWidgetState();
-}
-
-class _NavBarWidgetState extends State<NavBarWidget> {
   @override
   Widget build(BuildContext context) {
     return ValueListenableBuilder(
