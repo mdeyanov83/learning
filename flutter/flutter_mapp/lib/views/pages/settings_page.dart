@@ -23,7 +23,7 @@ class _SettingsPageState extends State<SettingsPage> {
         leading: BackButton(onPressed: () {
           Navigator.pop(context);
         }),
-        automaticallyImplyLeading: false,
+        // automaticallyImplyLeading: false,
       ),
       body: SingleChildScrollView(
         child: Padding(
