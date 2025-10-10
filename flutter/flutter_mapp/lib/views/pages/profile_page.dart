@@ -83,6 +83,10 @@ class _ProfilePageState extends State<ProfilePage> {
               child: Image.asset(
                 'assets/images/background.jpg',
               ),
+              onTap: () {
+                print('tap');
+              },
+
             ),
           ],
         ),
