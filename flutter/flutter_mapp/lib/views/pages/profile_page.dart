@@ -22,6 +22,20 @@ class _ProfilePageState extends State<ProfilePage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            DropdownButton(
+              items: [
+                DropdownMenuItem(
+                  child: Text('Element 1'),
+                ),
+                DropdownMenuItem(
+                  child: Text('Element 2'),
+                ),
+                DropdownMenuItem(
+                  child: Text('Element 3'),
+                ),
+              ],
+              onChanged: (value) {},
+            ),
             TextField(
               controller: controller,
               decoration: InputDecoration(
@@ -124,7 +138,6 @@ class _ProfilePageState extends State<ProfilePage> {
               onPressed: () {},
               child: Text('Click me'),
             ),
-            
           ],
         ),
       ),
