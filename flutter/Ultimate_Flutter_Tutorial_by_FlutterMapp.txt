@@ -631,8 +631,15 @@ Chapters
             Use Switch if you want a toggle-style interaction instead of a checkbox.
 
     01:45:09 Arrow function
+        A short syntax for writing functions that contain only one expression.
+        It uses the => operator instead of curly braces {} and return.
 
-    
+        returnType functionName(parameters) => expression;
+        is the same as:
+        returnType functionName(parameters) {
+            return expression;
+        }
+
     01:46:15 Switch
     01:47:57 .adaptive
     01:49:11 Slider
