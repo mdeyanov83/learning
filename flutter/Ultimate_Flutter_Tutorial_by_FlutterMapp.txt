@@ -683,7 +683,30 @@ Chapters
             It’s a quick way to achieve cross-platform design consistency without manually coding for each platform.
 
     01:49:11 Slider
+        Slider is a material design input widget that lets users select a value from a continuous range by
+        sliding a thumb along a track. It’s perfect for choosing numbers like volume, brightness, or progress.
 
+        Slider(
+            value: currentValue,
+            min: 0,
+            max: 100,
+            onChanged: (double newValue) {
+                setState(() {
+                    currentValue = newValue;
+                });
+            },
+        );
+
+        🧱 Common properties:
+            value → current slider position (a double)
+            min → minimum possible value
+            max → maximum possible value
+            onChanged → called when user moves the slider
+            divisions → splits the slider into discrete steps
+            label → shows a label when the slider thumb is dragged
+            activeColor → color of the track before the thumb
+            inactiveColor → color of the track after the thumb
+            
 
     01:51:12 SingleChildScrollView
     01:52:51 GestureDetector

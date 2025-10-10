@@ -69,6 +69,7 @@ class _ProfilePageState extends State<ProfilePage> {
           ),
           Slider(
             value: sliderValue,
+            label: 'Slider Label',
             onChanged: (double value) {
               setState(() {
                 sliderValue = value;
