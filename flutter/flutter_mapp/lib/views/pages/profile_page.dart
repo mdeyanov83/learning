@@ -106,6 +106,25 @@ class _ProfilePageState extends State<ProfilePage> {
               ),
               child: Text('Click me'),
             ),
+            BackButton(
+              onPressed: () {},
+            ),
+            CloseButton(
+              onPressed: () {},
+            ),
+            FilledButton(
+              onPressed: () {},
+              child: Text('Click me'),
+            ),
+            TextButton(
+              onPressed: () {},
+              child: Text('Click me'),
+            ),
+            OutlinedButton(
+              onPressed: () {},
+              child: Text('Click me'),
+            ),
+            
           ],
         ),
       ),
