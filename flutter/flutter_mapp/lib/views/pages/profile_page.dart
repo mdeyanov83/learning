@@ -88,6 +88,7 @@ class _ProfilePageState extends State<ProfilePage> {
               },
             ),
             InkWell(
+              splashColor: Colors.teal,
               onTap: () {
                 print('container tapped');
               },
