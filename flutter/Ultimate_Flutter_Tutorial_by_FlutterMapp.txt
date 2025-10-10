@@ -344,6 +344,10 @@ Chapters
             child → the widget displayed inside the drawer (commonly a ListView)
             backgroundColor → background color of the drawer
             You can use DrawerHeader or UserAccountsDrawerHeader for profile info.
+        📌 Tip:
+            Place Drawer in Scaffold’s drawer: property to enable the hamburger menu automatically.
+            Use Navigator.pop(context) inside onTap to close the drawer after selecting an option.
+            You can also use endDrawer to make the drawer slide in from the right side.
 
     00:57:53 SafeArea
         SafeArea is a widget that automatically adds padding to its child so that it doesn’t get covered
