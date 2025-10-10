@@ -24,7 +24,7 @@ class _ProfilePageState extends State<ProfilePage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             DropdownButton(
-              name:
+              hint: Text('Hint'),
               value: menuItem,
               items: [
                 DropdownMenuItem(
@@ -40,7 +40,11 @@ class _ProfilePageState extends State<ProfilePage> {
                   child: Text('Element 3'),
                 ),
               ],
-              onChanged: (value) {},
+              onChanged: (value) {
+                setState(() {
+                  menuItem = value;
+                });
+              },
             ),
             TextField(
               controller: controller,
