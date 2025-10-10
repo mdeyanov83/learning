@@ -767,8 +767,33 @@ Chapters
             For simple taps, InkWell() or InkResponse() can also be used, providing ripple effects.
 
     01:54:01 InkWell
+        InkWell is a material design widget that provides a ripple effect when tapped.
+        It’s used to make any widget clickable while giving visual feedback to the user.
+        Unlike GestureDetector, InkWell shows a ripple animation on tap.
 
-    
+        InkWell(
+            onTap: () {
+                print('Tapped!');
+            },
+            child: Container(
+                padding: EdgeInsets.all(16),
+                child: Text('Click Me'),
+            ),
+        );
+
+        🧱 Common properties:
+            onTap → callback when tapped
+            onDoubleTap → double tap
+            onLongPress → long press
+            onTapDown / onTapUp → touch start/end
+            borderRadius → rounds ripple corners
+            splashColor → ripple color
+            highlightColor → color when pressed
+        📌 Tip:
+            InkWell must be inside a Material widget (like Card, Container with Material, or Scaffold) for the ripple effect to show.
+            Use GestureDetector if you don’t need a ripple.
+            Combine with borderRadius to match the shape of the child for better visual appeal.
+
     01:55:34 Buttons
     01:59:07 DropdownButton
 
