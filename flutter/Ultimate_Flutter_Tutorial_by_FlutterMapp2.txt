@@ -98,8 +98,12 @@ Chapters
             Navigator.push() returns a Future that completes when the new route is popped — useful for receiving results back.
 
     02:02:34 Pop
+        Navigator.pop() is used to close the current screen (or route) and go back to the previous one.
+        It’s the reverse of Navigator.push().
+        When called, it pops the top route off the navigation stack.
 
-    
+        Navigator.pop(context);
+        
     02:09:16 PushReplacement
     02:10:59 Send Data Through pages
 
