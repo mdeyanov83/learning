@@ -139,8 +139,8 @@ Chapters
             );
 
     02:10:59 Send Data Through pages
+        To send data through to pages - use a required named parameter as an input
 
-    
 
 👾 8. Clean UI
     02:13:18 ClipRRect
