@@ -706,7 +706,12 @@ Chapters
             label → shows a label when the slider thumb is dragged
             activeColor → color of the track before the thumb
             inactiveColor → color of the track after the thumb
-            
+        📌 Tip:
+            Slider only supports double values — you can round it using .round() if needed.
+            Use Slider.adaptive() to automatically get iOS (Cupertino) or Android (Material) style.
+            For range selection (e.g., min and max values), use RangeSlider.
+
+
 
     01:51:12 SingleChildScrollView
     01:52:51 GestureDetector
