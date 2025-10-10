@@ -558,7 +558,15 @@ Chapters
         ),
     );
 
-    
+    🧱 Common properties:
+        controller → controls and retrieves the text entered (TextEditingController)
+        decoration → adds styling like labels, icons, borders (InputDecoration)
+        keyboardType → specifies the keyboard type (e.g., TextInputType.emailAddress)
+        obscureText → hides text for passwords
+        onChanged → callback triggered when text changes
+        onSubmitted → callback when user presses "done" or "enter"
+        maxLines → allows multiple lines of input
+
 
     01:42:33 Checkbox
     01:45:09 Arrow function
