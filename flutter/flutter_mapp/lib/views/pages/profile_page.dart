@@ -78,6 +78,9 @@ class _ProfilePageState extends State<ProfilePage> {
               });
             },
           ),
+          Image.asset('assets/images/background.jpg'),
+          Image.asset('assets/images/background.jpg'),
+
         ],
       ),
     );
