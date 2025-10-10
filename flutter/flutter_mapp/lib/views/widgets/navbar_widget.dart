@@ -26,7 +26,7 @@ class _NavBarWidgetState extends State<NavBarWidget> {
             ),
           ],
           onDestinationSelected: (int value) {
-
+            selectedPageNotifier.value = value;
           },
           selectedIndex: selectedPage,
         );
