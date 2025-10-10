@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mapp/widgets/navbar_widget.dart';
 
+List<Widget> pages = [
+  HomePage(),
+  ProfilePage(),
+];
+
 class WidgetTree extends StatelessWidget {
   const WidgetTree({super.key});
 
