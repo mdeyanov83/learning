@@ -739,7 +739,33 @@ Chapters
             When used inside a Column, wrap it with Expanded or give it a constrained height (like using SizedBox) to avoid overflow errors.
 
     01:52:51 GestureDetector
-    
+        GestureDetector is a widget that detects gestures (taps, swipes, long presses, etc.) on its child.
+        It doesn’t have a visible UI itself — it simply wraps another widget to make it interactive.
+
+        GestureDetector(
+            onTap: () {
+                print('Widget tapped!');
+            },
+            child: Container(
+                color: Colors.blue,
+                width: 100,
+                height: 100,
+                child: Center(child: Text('Tap me')),
+            ),
+        );
+
+        🧱 Common gesture callbacks:
+            onTap → single tap
+            onDoubleTap → double tap
+            onLongPress → long press
+            onPanUpdate → drag or swipe
+            onVerticalDragUpdate / onHorizontalDragUpdate → directional drag
+            onTapDown / onTapUp → when touch starts and ends
+        📌 Tip:
+            GestureDetector is invisible; you must wrap a widget to make it interactive.
+            Use it when you need custom gestures beyond standard buttons or switches.
+            For simple taps, InkWell or InkResponse can also be used, providing ripple effects.
+
     01:54:01 InkWell
     01:55:34 Buttons
     01:59:07 DropdownButton
