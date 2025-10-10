@@ -309,6 +309,11 @@ Chapters
             SizedBox(width: 10),
             FloatingActionButton(...),
         )
+        📌 Tip:
+            FAB is typically placed inside a Scaffold using floatingActionButton.
+            Use FloatingActionButton.extended when you want text + icon.
+            You can position it with floatingActionButtonLocation.
+            It should represent the most important action on the screen.
 
     00:56:11 Drawer
         Drawer is a side navigation panel that slides in from the left (or right) of the screen.
