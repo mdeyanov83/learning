@@ -113,6 +113,8 @@ Chapters
             Use it to close dialogs, modals, or bottom sheets too (not just pages).
 
     02:09:16 PushReplacement
+
+    
     02:10:59 Send Data Through pages
 
 👾 8. Clean UI
