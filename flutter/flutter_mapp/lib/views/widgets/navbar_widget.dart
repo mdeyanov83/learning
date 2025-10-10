@@ -14,37 +14,26 @@ class _NavBarWidgetState extends State<NavBarWidget> {
   Widget build(BuildContext context) {
     return ValueListenableBuilder(
       valueListenable: selectedPageNotifier,
-      builder: builder,
+      builder: (context, value, child) {
+        return NavigationBar(
+          destinations: [
+            NavigationDestination(
+              icon: Icon(Icons.home),
+              label: 'Home',
+            ),
+            NavigationDestination(
+              icon: Icon(Icons.person),
+              label: 'Profile',
+            ),
+          ],
+          onDestinationSelected: (int value) {
+            setState(() {
+              selectedIndex = value;
+            });
+          },
+          selectedIndex: selectedIndex,
+        );
+      },
     );
   }
 }
-
-// class _NavBarWidgetState extends State<NavBarWidget> {
-//   int selectedIndex = 0;
-//   @override
-//   Widget build(BuildContext context) {
-//     return ValueListenableBuilder(
-//       valueListenable: selectedPageNotifier,
-//       builder: (context, value, child) {
-//         return NavigationBar(
-//               destinations: [
-//                 NavigationDestination(
-//                   icon: Icon(Icons.home),
-//                   label: 'Home',
-//                 ),
-//                 NavigationDestination(
-//                   icon: Icon(Icons.person),
-//                   label: 'Profile',
-//                 ),
-//               ],
-//               onDestinationSelected: (int value) {
-//                 setState(() {
-//                   selectedIndex = value;
-//                 });
-//               },
-//               selectedIndex: selectedIndex,
-//             );
-//       }
-//     );
-//   }
-// }
