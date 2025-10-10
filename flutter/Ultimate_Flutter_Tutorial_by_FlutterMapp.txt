@@ -476,7 +476,28 @@ Chapters
     01:20:30 Widget Tree
 
     01:25:12 ValueNotifier
-    
+        ValueNotifier is a special class that holds a single value and notifies its listeners
+        whenever that value changes. It’s a lightweight alternative to setState() for updating UI reactively.
+
+        int counter = 0;
+        void _incrementCounter() {
+            setState(() {
+                counter++;
+            });
+        }
+
+        Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+                Text('Count: $counter'),
+                ElevatedButton(
+                onPressed: _incrementCounter,
+                child: Text('Increase'),
+                ),
+            ],
+        );
+
+
     01:31:41 Challenge
     01:34:30 Solution
 
