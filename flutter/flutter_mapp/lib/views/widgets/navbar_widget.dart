@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_mapp/data/notifiers.dart';
 
 class NavBarWidget extends StatefulWidget {
   const NavBarWidget({super.key});
@@ -12,7 +13,7 @@ class _NavBarWidgetState extends State<NavBarWidget> {
   @override
   Widget build(BuildContext context) {
     return ValueListenableBuilder(
-      valueListenable: valueListenable,
+      valueListenable: selectedPageNotifier,
       builder: (context, value, child) {
         return NavigationBar(
               destinations: [
