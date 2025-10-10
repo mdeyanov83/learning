@@ -485,7 +485,7 @@ Chapters
         1. Simple counter using ValueNotifier:
 
         final counter = ValueNotifier<int>(0);
-        
+
         ValueListenableBuilder<int>(
             valueListenable: counter,
             builder: (context, value, child) {
@@ -525,7 +525,10 @@ Chapters
             Unlike setState, you can use it even in a StatelessWidget because the rebuild happens through the listener.
 
     01:31:41 Challenge
+        *** Create an AppBar button to switch the theme between Light and Dark mode
     01:34:30 Solution
+        * Create a new bool notifier - isDarkModeNotifier
+        * 
 
 🖋️ 6. User Inputs
     01:38:32 TextField
