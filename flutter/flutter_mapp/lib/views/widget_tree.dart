@@ -20,7 +20,7 @@ class WidgetTree extends StatelessWidget {
         actions: [
           IconButton(
             onPressed: () {},
-            icon: Icon(Icons.light_mode),
+            icon: ValueListenableBuilder(valueListenable: isDarkModeNotifier, builder: ),
           ),
         ],
       ),
