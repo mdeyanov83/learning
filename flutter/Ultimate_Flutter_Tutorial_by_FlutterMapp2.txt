@@ -103,7 +103,15 @@ Chapters
         When called, it pops the top route off the navigation stack.
 
         Navigator.pop(context);
-        
+
+        🧱 Parameters:
+            context → The current widget’s build context.
+            result (optional) → Data you can return to the previous screen.
+        📌 Tip:
+            Navigator.pop() works only if a route was pushed before.
+            You can return data by passing it as the second argument.
+            Use it to close dialogs, modals, or bottom sheets too (not just pages).
+
     02:09:16 PushReplacement
     02:10:59 Send Data Through pages
 
