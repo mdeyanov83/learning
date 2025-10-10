@@ -121,6 +121,22 @@ Chapters
             context,
             MaterialPageRoute(builder: (context) => NewScreen()),
         );
+        🧱 Parameters:
+            context → current widget’s BuildContext
+            route → the route (screen) to replace with
+            result (optional) → data returned to the replaced route
+        📌 Tip:
+            Use pushReplacement() when you don’t want users to return to the previous screen.
+            For example:
+            After login → home screen
+            After splash → main app
+            After onboarding → main content
+            If you need to remove all previous routes, use:
+            Navigator.pushAndRemoveUntil(
+                context,
+                MaterialPageRoute(builder: (context) => HomeScreen()),
+                (route) => false, // removes all previous routes
+            );
 
     02:10:59 Send Data Through pages
 
