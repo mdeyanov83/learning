@@ -361,6 +361,11 @@ Chapters
             left, top, right, bottom → booleans to enable/disable padding on specific sides
             minimum → adds extra padding beyond the safe area
             maintainBottomViewPadding → keeps bottom padding even when keyboard is open
+        📌 Tip:
+            Use SafeArea around your main screen content to handle different screen cutouts automatically.
+            You don’t need it inside a Scaffold with AppBar, since the AppBar already respects the top safe area.
+            It’s especially useful for full-screen UIs or custom layouts without an AppBar.
+
 
 🔧 4. Debugging
     00:59:49 Type 1
