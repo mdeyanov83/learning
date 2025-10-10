@@ -829,7 +829,34 @@ Chapters
         DropdownButton is a widget that lets users select one value from a list of items
         displayed in a dropdown menu. It’s commonly used for forms, filters, or settings menus.
 
+        DropdownButton<String>(
+            value: selectedValue,
+            items: <String>['One', 'Two', 'Three'].map((String value) {
+                return DropdownMenuItem<String>(
+                    value: value,
+                    child: Text(value),
+                );
+            }).toList(),
+            onChanged: (String? newValue) {
+                setState(() {
+                    selectedValue = newValue!;
+                });
+            },
+        );
 
+        🧱 Common properties:
+            value → currently selected item
+            items → list of DropdownMenuItem widgets
+            onChanged → called when a new item is selected
+            hint → widget displayed when no value is selected
+            icon → custom dropdown arrow
+            isExpanded → makes the button take all available horizontal space
+            dropdownColor → background color of dropdown menu
+            underline → widget shown below the button (can remove with SizedBox())
+        📌 Tip:
+            Use DropdownButtonFormField inside a Form for better validation and styling.
+            To remove the underline, set underline: SizedBox().
+            For a custom look, wrap it in a Container or Card with decoration.
 
 
 🗺️ 7. Navigation
