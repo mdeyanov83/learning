@@ -8,10 +8,9 @@ class NavBarWidget extends StatefulWidget {
 }
 
 class _NavBarWidgetState extends State<NavBarWidget> {
+  int selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
-
-    int selectedIndex = 0;
     return NavigationBar(
           destinations: [
             NavigationDestination(
