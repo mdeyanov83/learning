@@ -22,7 +22,6 @@ class MyApp extends StatelessWidget {
   }
 }
 
-
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
 
@@ -31,35 +30,40 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   int currentIndex = 0;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text('Flutter Mapp'),
-          centerTitle: true,
-        ),
-        bottomNavigationBar: NavigationBar(
-          destinations: [
-            NavigationDestination(
-              icon: Icon(Icons.home),
-              label: 'Home',
+      appBar: AppBar(
+        title: Text('Flutter Mapp'),
+        centerTitle: true,
+      ),
+      body: currentIndex == 0
+          ? Center(
+              child: Text('1'),
+            )
+          : Center(
+              child: Text('2'),
             ),
-            NavigationDestination(
-              icon: Icon(Icons.person),
-              label: 'Profile',
-            ),
-          ],
-          onDestinationSelected: (int value) {
-
-            setState(() {
-              currentIndex = value;
-            });
-          },
-          selectedIndex: currentIndex,
-        ),
-      );
+      bottomNavigationBar: NavigationBar(
+        destinations: [
+          NavigationDestination(
+            icon: Icon(Icons.home),
+            label: 'Home',
+          ),
+          NavigationDestination(
+            icon: Icon(Icons.person),
+            label: 'Profile',
+          ),
+        ],
+        onDestinationSelected: (int value) {
+          setState(() {
+            currentIndex = value;
+          });
+        },
+        selectedIndex: currentIndex,
+      ),
+    );
   }
 }
