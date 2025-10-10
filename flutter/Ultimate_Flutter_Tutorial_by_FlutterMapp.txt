@@ -496,6 +496,10 @@ Chapters
                 ),
             ],
         );
+        📌 Tip:
+            Keep the code inside setState minimal—only update variables, not perform heavy logic.
+            If your state is complex or shared across multiple widgets, consider using state management solutions like Provider, Bloc, or Riverpod.
+            setState() does not rebuild the entire app, only the widget where it’s called.
 
 
     01:31:41 Challenge
