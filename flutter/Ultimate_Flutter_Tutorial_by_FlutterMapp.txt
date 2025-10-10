@@ -472,8 +472,10 @@ Chapters
 
 
     01:17:18 Split your Widgets
+        Refactor widgets into separate files
 
     01:20:30 Widget Tree
+        Refactor the 
 
     01:25:12 ValueNotifier
         ValueNotifier is a special class that holds a single value and notifies its listeners
@@ -524,6 +526,7 @@ Chapters
             For complex state, use more robust solutions like Provider, Riverpod, or Bloc.
             Unlike setState, you can use it even in a StatelessWidget because the rebuild happens through the listener.
 
+
     01:31:41 Challenge
         Create an AppBar button to switch the theme between Light and Dark mode
 
@@ -540,6 +543,7 @@ Chapters
         main.dart
             - To switch theme between light and dark, wrap MaterialApp in ValueListenableBuilder(context, isDarkMode, child)
             - switch theme: ThemeData(brightness: isDarkMode ? Brightness.dart : Brightness.light),
+
 
 🖋️ 6. User Inputs
     01:38:32 TextField
