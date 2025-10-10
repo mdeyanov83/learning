@@ -13,7 +13,7 @@ class _ProfilePageState extends State<ProfilePage> {
   bool? isChecked = false;
   bool isSwitched = false;
   double sliderValue = 0.0;
-  String? menuItem;
+  String? menuItem = 'e1';
 
   @override
   Widget build(BuildContext context) {
