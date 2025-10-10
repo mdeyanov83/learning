@@ -79,17 +79,24 @@ class _ProfilePageState extends State<ProfilePage> {
                 });
               },
             ),
-            InkResponse(
-
-              onTap: () {
-                print('tap');
-              },
-              highlightShape: BoxShape.circle,
-              splashColor: Color(1),
-              radius: 50.0,
+            GestureDetector(
               child: Image.asset(
                 'assets/images/background.jpg',
               ),
+              onTap: () {
+                print('tap');
+              },
+            ),
+            InkWell(
+              onTap: () {
+                print('container tapped');
+              },
+              child: Container(
+                height: 200,
+                width: double.infinity,
+                color: Colors.white12,
+              ),
+
             ),
           ],
         ),

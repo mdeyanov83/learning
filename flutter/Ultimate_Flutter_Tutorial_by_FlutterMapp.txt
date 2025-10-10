@@ -764,9 +764,11 @@ Chapters
         📌 Tip:
             GestureDetector is invisible; you must wrap a widget to make it interactive.
             Use it when you need custom gestures beyond standard buttons or switches.
-            For simple taps, InkWell or InkResponse can also be used, providing ripple effects.
+            For simple taps, InkWell() or InkResponse() can also be used, providing ripple effects.
 
     01:54:01 InkWell
+
+    
     01:55:34 Buttons
     01:59:07 DropdownButton
 
