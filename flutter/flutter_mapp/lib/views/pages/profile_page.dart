@@ -46,10 +46,25 @@ class _ProfilePageState extends State<ProfilePage> {
               setState(() {
                 isChecked = value;
               });
-              print(value);
             },
           ),
-          Switch(value: null,, onChanged: (bool value) {  },),
+          Switch(
+            value: isSwitched,
+            onChanged: (bool value) {
+              setState(() {
+                isSwitched = value;
+              });
+            },
+          ),
+          SwitchListTile(
+            title: Text('This is a swtich'),
+            value: isSwitched,
+            onChanged: (bool value) {
+              setState(() {
+                isSwitched = value;
+              });
+            },
+          ),
         ],
       ),
     );
