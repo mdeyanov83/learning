@@ -60,7 +60,7 @@ Chapters
     01:59:07 DropdownButton
 
 🗺️ 7. Navigation
-    Navigator is a Flutter widget and class that manages a stack of routes (screens). It lets you navigate
+    Navigator() is a Flutter widget and class that manages a stack of routes (screens). It lets you navigate
     between pages, push new screens, and pop back to previous ones — like a web browser’s history.
     * Stack-based navigation:
         - Each screen is a route.
@@ -83,7 +83,12 @@ Chapters
         Navigator works perfectly with Scaffold for building multi-screen apps.
 
     02:02:34 Push
-
+        Navigator.push() is used to navigate to a new screen (route) by pushing it onto the navigation stack.
+        It shows the new screen on top of the current one, allowing the user to go back later with Navigator.pop().
+        Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => NextPage()),
+        );
 
     02:02:34 Pop
     02:09:16 PushReplacement
