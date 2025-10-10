@@ -20,7 +20,8 @@ Chapters
         );
 
     00:16:48 Column
-        Lays out its children vertically (top to bottom).
+        Column is a layout widget that arranges its children vertically, from top to bottom.
+        It’s commonly used to stack widgets in a vertical direction.
         Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -29,6 +30,15 @@ Chapters
                 Text('Second'),
             ],
         );
+        🧱 Common properties:
+            children → list of widgets arranged vertically
+            mainAxisAlignment → controls vertical alignment (start, center, end, spaceBetween, etc.)
+            crossAxisAlignment → controls horizontal alignment (start, center, end)
+            mainAxisSize → controls how much vertical space the column takes (max or min)
+        📌 Tip:
+            If the content might not fit the screen, wrap the Column in a SingleChildScrollView.
+            Use Expanded or Flexible inside a Column to make widgets take up available space.
+            For horizontal layout, use Row.
 
     00:22:10 Row
         Row is a layout widget that arranges its children horizontally — from left to right.
