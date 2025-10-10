@@ -42,10 +42,17 @@ Chapters
         );
 
     00:25:22 Center
-        Centers its child both vertically and horizontally.
+        Centers its child both vertically and horizontally within the available space.
+        It’s often used to align a single widget in the middle of the screen or inside its parent.
         Center(
             child: Text('Centered'),
         );
+        🧱 Common property:
+            child → the widget you want to center.
+        📌 Tip:
+            Center expands to fill the available space of its parent and then centers its child.
+            If the parent has limited size, the child is centered within that area.
+            Useful inside Scaffold to quickly center content on the screen.
 
     00:27:17 Images
         Displays an image from assets, network, file, or memory.
