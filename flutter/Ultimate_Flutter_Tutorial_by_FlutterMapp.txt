@@ -607,6 +607,22 @@ Chapters
             Combine with TextField or TextFormField for reactive and interactive input fields.
 
     01:42:33 Checkbox
+        Checkbox is a material design widget that lets the user select or deselect an option (true/false).
+        It’s typically used for settings, preferences, or multi-select lists.
+        Checkbox(
+            value: isChecked,
+            onChanged: (bool? newValue) {
+                setState(() {
+                    isChecked = newValue!;
+                });
+            },
+        );
+        🧱 Common properties:
+            value → current state (true or false)
+            onChanged → callback triggered when user taps the checkbox
+            activeColor → color when the box is checked
+            checkColor → color of the check mark
+            tristate → allows null as a third state if set to true
 
 
     01:45:09 Arrow function
