@@ -66,14 +66,6 @@ class _ProfilePageState extends State<ProfilePage> {
               });
             },
           ),
-          CupertinoSwitch.adaptive(
-            value: isSwitched,
-            onChanged: (bool value) {
-              setState(() {
-                isSwitched = value;
-              });
-            },
-          ),
         ],
       ),
     );
