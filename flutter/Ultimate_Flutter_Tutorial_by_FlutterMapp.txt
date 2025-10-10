@@ -666,8 +666,14 @@ Chapters
             Use Switch for binary (yes/no) options — not multiple choices.
 
     01:47:57 .adaptive
+        The .adaptive constructor is available on some Flutter widgets
+        (like Switch, CupertinoSwitch, CircularProgressIndicator, etc.) to make them
+        automatically adapt to the platform’s design — Material (Android) or Cupertino (iOS).
+        That means:
+            On Android → shows a Material-style widget.
+            On iOS → shows a Cupertino-style (iOS-style) widget.
+            
 
-    
     01:49:11 Slider
     01:51:12 SingleChildScrollView
     01:52:51 GestureDetector
