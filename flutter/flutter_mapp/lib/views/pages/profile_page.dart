@@ -57,7 +57,7 @@ class _ProfilePageState extends State<ProfilePage> {
             },
           ),
           SwitchListTile(
-            title: Text('This is a swtich'),
+            title: Text('Switch me'),
             value: isSwitched,
             onChanged: (bool value) {
               setState(() {

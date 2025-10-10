@@ -641,8 +641,25 @@ Chapters
         }
 
     01:46:15 Switch
+        Switch is a material design toggle button that represents a boolean (on/off) state.
+        It’s commonly used in settings screens or anywhere the user needs to enable or disable a feature.
+        Switch(
+            value: isSwitched,
+            onChanged: (bool value) {
+                setState(() {
+                    isSwitched = value;
+                });
+            },
+        );
+        🧱 Common properties:
+            value → current state of the switch (true or false)
+            onChanged → function called when the user toggles the switch
+            activeColor → color of the thumb (the circle) when the switch is ON
+            activeTrackColor → color of the track when ON
+            inactiveThumbColor → color of the thumb when OFF
+            inactiveTrackColor → color of the track when OFF
 
-    
+
     01:47:57 .adaptive
     01:49:11 Slider
     01:51:12 SingleChildScrollView
