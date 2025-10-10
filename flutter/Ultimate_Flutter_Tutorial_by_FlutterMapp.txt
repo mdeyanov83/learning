@@ -549,6 +549,8 @@ Chapters
 
 🖋️ 6. User Inputs
     01:38:32 TextField
+
+    
     01:42:33 Checkbox
     01:45:09 Arrow function
     01:46:15 Switch
