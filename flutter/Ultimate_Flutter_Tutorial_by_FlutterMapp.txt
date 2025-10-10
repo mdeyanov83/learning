@@ -167,7 +167,7 @@ Chapters
 🐦‍🔥 3. Master Layout
     00:43:17 MaterialApp & Scaffold
 
-        *** MaterialApp is the root widget for apps that use Material Design.
+    *** MaterialApp is the root widget for apps that use Material Design.
         It provides essential features like theming, routing, navigation,
         and localization out of the box.
 
@@ -201,7 +201,7 @@ Chapters
             For iOS-style apps, you can use CupertinoApp instead.
             👉 Typically, MaterialApp is placed inside runApp() at the very top of your app.
 
-        *** Scaffold is a basic layout structure for Material Design apps.
+    *** Scaffold is a basic layout structure for Material Design apps.
         It provides predefined slots for common app elements like AppBar, Drawer,
         BottomNavigationBar, FloatingActionButton, and body content.
         Scaffold(
@@ -223,6 +223,10 @@ Chapters
             drawer → side navigation panel
             bottomNavigationBar → bar at the bottom for navigation
             backgroundColor → background color of the Scaffold
+        📌 Tip:
+            Scaffold is the foundation for most Material apps.
+            It handles layout, safe area, scrolling, and keyboard overlap automatically.
+            Combine with AppBar, Drawer, and FloatingActionButton for a complete UI structure.
 
     00:47:21 AppBar
         The top navigation bar in a Material Design app.
