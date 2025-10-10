@@ -451,6 +451,10 @@ Chapters
             Only works inside the State class of a StatefulWidget.
             It triggers a rebuild of the widget to reflect the updated data.
             Should be used only when the state actually changes (to avoid unnecessary rebuilds).
+        📌 Tip:
+            Keep the code inside setState minimal—only update variables, not perform heavy logic.
+            If your state is complex or shared across multiple widgets, consider using state management solutions like Provider, Bloc, or Riverpod.
+            setState() does not rebuild the entire app, only the widget where it’s called.
 
     01:11:42 Recap
     01:17:18 Split your Widgets
