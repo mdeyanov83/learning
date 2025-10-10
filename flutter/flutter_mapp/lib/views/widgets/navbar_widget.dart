@@ -9,12 +9,11 @@ class NavBarWidget extends StatefulWidget {
 }
 
 class _NavBarWidgetState extends State<NavBarWidget> {
-  int selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
     return ValueListenableBuilder(
       valueListenable: selectedPageNotifier,
-      builder: (context, value, child) {
+      builder: (context, selectedPage, child) {
         return NavigationBar(
           destinations: [
             NavigationDestination(
@@ -27,11 +26,9 @@ class _NavBarWidgetState extends State<NavBarWidget> {
             ),
           ],
           onDestinationSelected: (int value) {
-            setState(() {
-              selectedIndex = value;
-            });
+
           },
-          selectedIndex: selectedIndex,
+          selectedIndex: selectedPage,
         );
       },
     );
