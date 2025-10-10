@@ -4,16 +4,6 @@ void main() {
   runApp(const MyApp());
 }
 
-// Stateful Widget passed to runApp(const MyApp());
-// returns Material App
-// home: Scaffold(
-
-// )
-//    App Bar
-//    Bottom Navigation Bar (setState)
-
-
-
 class MyApp extends StatefulWidget {
   const MyApp({super.key});
 
@@ -22,7 +12,6 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-
   int selectedIndex = 0;
 
   @override
