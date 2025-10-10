@@ -641,6 +641,8 @@ Chapters
         }
 
     01:46:15 Switch
+
+    
     01:47:57 .adaptive
     01:49:11 Slider
     01:51:12 SingleChildScrollView
