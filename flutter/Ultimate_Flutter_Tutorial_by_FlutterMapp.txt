@@ -525,10 +525,21 @@ Chapters
             Unlike setState, you can use it even in a StatelessWidget because the rebuild happens through the listener.
 
     01:31:41 Challenge
-        *** Create an AppBar button to switch the theme between Light and Dark mode
+        Create an AppBar button to switch the theme between Light and Dark mode
+
     01:34:30 Solution
-        * Create a new bool notifier - isDarkModeNotifier
-        * 
+        notifiers.dart
+            - Create a new bool notifier - isDarkModeNotifier
+        widget_tree.dart
+            - In the AppBar, create actions: [IconButton(),]
+            - IconButton
+                - onPressed: toggle value of isDarkModeNotifier.value between true and false
+                - icon: Icon(Icons.light_mode)
+                - To switch icon between dark and light mode: wrap Icon() in ValueListenableBuilder(context, isDarkMode, child)
+                    - in the builder function return Icon(value ? light mode icon : dark mode icon)
+        main.dart
+            - To switch theme between light and dark, wrap MaterialApp in ValueListenableBuilder(context, isDarkMode, child)
+            - switch theme: ThemeData(brightness: isDarkMode ? Brightness.dart : Brightness.light),
 
 🖋️ 6. User Inputs
     01:38:32 TextField
