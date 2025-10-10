@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class ProfilePage extends StatefulWidget {
@@ -38,7 +39,7 @@ class _ProfilePageState extends State<ProfilePage> {
               });
             },
           ),
-          CheckboxListTile(
+          CheckboxListTile.adaptive(
             tristate: true,
             title: Text('Click me'),
             value: isChecked,
@@ -58,6 +59,14 @@ class _ProfilePageState extends State<ProfilePage> {
           ),
           SwitchListTile.adaptive(
             title: Text('Switch me'),
+            value: isSwitched,
+            onChanged: (bool value) {
+              setState(() {
+                isSwitched = value;
+              });
+            },
+          ),
+          CupertinoSwitch.adaptive(
             value: isSwitched,
             onChanged: (bool value) {
               setState(() {

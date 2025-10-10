@@ -677,7 +677,6 @@ Chapters
             Checkbox.adaptive
             CircularProgressIndicator.adaptive
             Slider.adaptive
-            CupertinoSwitch.adaptive
         📌 Tip:
             Use .adaptive when you want your app’s UI to feel native on both Android and iOS.
             Flutter automatically detects the current platform using Theme.of(context).platform.
