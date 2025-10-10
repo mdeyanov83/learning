@@ -24,6 +24,7 @@ class _ProfilePageState extends State<ProfilePage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             DropdownButton(
+              name:
               value: menuItem,
               items: [
                 DropdownMenuItem(
