@@ -29,6 +29,6 @@ class _NavBarWidgetState extends State<NavBarWidget> {
             });
           },
           selectedIndex: selectedIndex,
-        ),
+        );
   }
 }
