@@ -479,27 +479,28 @@ Chapters
         ValueNotifier is a special class that holds a single value and notifies its listeners
         whenever that value changes. It’s a lightweight alternative to setState() for updating UI reactively.
 
-        int counter = 0;
-        void _incrementCounter() {
-            setState(() {
-                counter++;
-            });
-        }
+        final counter = ValueNotifier<int>(0);
 
-        Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-                Text('Count: $counter'),
-                ElevatedButton(
-                onPressed: _incrementCounter,
-                child: Text('Increase'),
-                ),
-            ],
+        ValueListenableBuilder<int>(
+            valueListenable: counter,
+            builder: (context, value, child) {
+                return Text('Count: $value');
+            },
         );
-        📌 Tip:
-            Keep the code inside setState minimal—only update variables, not perform heavy logic.
-            If your state is complex or shared across multiple widgets, consider using state management solutions like Provider, Bloc, or Riverpod.
-            setState() does not rebuild the entire app, only the widget where it’s called.
+
+        FloatingActionButton(
+            onPressed: () {
+                counter.value++;
+            },
+            child: Icon(Icons.add),
+        );
+
+        🧱 Key points:
+            Works well with ValueListenableBuilder to rebuild widgets automatically.
+            value property holds the current state.
+            When you update value, all listeners are notified.
+            Doesn’t require a StatefulWidget — can be used inside StatelessWidget too.
+
 
 
     01:31:41 Challenge
