@@ -575,27 +575,22 @@ Chapters
         TextEditingController is a controller class used to manage and control the text inside a
         TextField or TextFormField. It lets you read, modify, and listen to changes in the text input.
 
-        final myController = TextEditingController();
-
         Listen for text changes:
-        myController.addListener(() {
-            print(myController.text);
-        });
+            final myController = TextEditingController();
+            myController.addListener(() {
+                print(myController.text);
+            });
 
         Basic usage with TextField:
-        final nameController = TextEditingController();
-
-        TextField(
-            controller: nameController,
-            decoration: InputDecoration(
-                labelText: 'Enter your name',
-            ),
-        );
-
-// Access the text value
-print(nameController.text);
-
-
+            final nameController = TextEditingController();
+            TextField(
+                controller: nameController,
+                decoration: InputDecoration(
+                    labelText: 'Enter your name',
+                ),
+            );
+            // Access the text value
+            print(nameController.text);
 
         🧱 Common uses:
             Retrieve the current text: myController.text
@@ -611,9 +606,9 @@ print(nameController.text);
             Use one controller per text field when you need to track or control input directly.
             Combine with TextField or TextFormField for reactive and interactive input fields.
 
-
-
     01:42:33 Checkbox
+
+
     01:45:09 Arrow function
     01:46:15 Switch
     01:47:57 .adaptive
