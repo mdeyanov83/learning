@@ -479,9 +479,13 @@ Chapters
         ValueNotifier is a special class that holds a single value and notifies its listeners
         whenever that value changes. It’s a lightweight alternative to setState() for updating UI reactively.
 
+        ValueNotifier: holds the data
+        ValueListenableBuilder: listens to the data (don't need the setState())
+
         1. Simple counter using ValueNotifier:
 
         final counter = ValueNotifier<int>(0);
+        
         ValueListenableBuilder<int>(
             valueListenable: counter,
             builder: (context, value, child) {
@@ -496,6 +500,7 @@ Chapters
         );
 
         2. Updating a string value:
+
         final nameNotifier = ValueNotifier<String>('Guest');
 
         ValueListenableBuilder<String>(
