@@ -68,7 +68,9 @@ class _ProfilePageState extends State<ProfilePage> {
             },
           ),
           Slider(
+            max: 10.0,
             value: sliderValue,
+            divisions: 10,
             label: 'Slider Label',
             onChanged: (double value) {
               setState(() {
