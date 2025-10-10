@@ -582,6 +582,20 @@ Chapters
             print(myController.text);
         });
 
+        Basic usage with TextField:
+        final nameController = TextEditingController();
+
+        TextField(
+            controller: nameController,
+            decoration: InputDecoration(
+                labelText: 'Enter your name',
+            ),
+        );
+
+// Access the text value
+print(nameController.text);
+
+
 
         🧱 Common uses:
             Retrieve the current text: myController.text
