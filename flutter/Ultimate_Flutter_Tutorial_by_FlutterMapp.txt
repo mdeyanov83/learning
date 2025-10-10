@@ -11,13 +11,25 @@ Chapters
 
 📐 2. Basic Layouts
     00:12:12: Container
-        A versatile box widget used for layout, styling, padding, margin, alignment, and decoration.
+        Container is a versatile box widget in Flutter that can be used for layout, styling, padding, margin,
+        alignment, and decoration. It can contain a single child and is often used as a building block for UI design.
         Container(
             width: 100,
             height: 100,
             color: Colors.blue,
             child: Text('Hello'),
         );
+    🧱 Common properties:
+        child → the widget inside the container
+        width / height → size of the container
+        padding → space inside the container around the child (EdgeInsets)
+        margin → space outside the container
+        decoration → background color, border, border radius, gradients
+        alignment → alignment of the child inside the container
+    📌 Tip:
+        Use Container when you need styling and positioning in your UI.
+        For simple spacing, Padding or SizedBox can be more lightweight.
+        Combine Container with Column, Row, or Stack for flexible layouts.
 
     00:16:48 Column
         Column is a layout widget that arranges its children vertically, from top to bottom.
