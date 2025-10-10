@@ -457,6 +457,8 @@ Chapters
             setState() does not rebuild the entire app, only the widget where it’s called.
 
     01:11:42 Recap
+
+    
     01:17:18 Split your Widgets
     01:20:30 Widget Tree
     01:25:12 ValueNotifier

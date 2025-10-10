@@ -4,10 +4,13 @@ void main() {
   runApp(const MyApp());
 }
 
-// Material App (Stateful)
-// Scaffold
-// App Title
-// Bottom Navigation Bar (setState)
+// Stateful Widget passed to runApp(const MyApp());
+// returns Material App
+// home: Scaffold(
+
+)
+//    App Bar
+//    Bottom Navigation Bar (setState)
 
 class MyApp extends StatefulWidget {
   const MyApp({super.key});
