@@ -587,6 +587,15 @@ Chapters
             Retrieve the current text: myController.text
             Set new text: myController.text = 'Hello';
             Clear the field: myController.clear();
+        📌 Tip:
+            Always dispose of controllers when they’re no longer needed to free resources:
+                @override
+                void dispose() {
+                    nameController.dispose();
+                    super.dispose();
+                }
+            Use one controller per text field when you need to track or control input directly.
+            Combine with TextField or TextFormField for reactive and interactive input fields.
 
 
 
