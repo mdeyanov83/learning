@@ -31,7 +31,8 @@ Chapters
         );
 
     00:22:10 Row
-        Lays out its children horizontally (left to right).
+        Row is a layout widget that arranges its children horizontally — from left to right.
+        It’s ideal when you want to place multiple widgets side by side.
         Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -40,6 +41,15 @@ Chapters
                 Text('Star'),
             ],
         );
+        🧱 Common properties:
+            children → list of widgets arranged horizontally
+            mainAxisAlignment → controls horizontal alignment (start, center, end, spaceBetween, etc.)
+            crossAxisAlignment → controls vertical alignment (start, center, end)
+            mainAxisSize → controls how much horizontal space the row takes (max or min)
+        📌 Tip:
+            Row doesn’t scroll by default — if you need scrolling, wrap it in SingleChildScrollView with scrollDirection: Axis.horizontal.
+            If children overflow the screen, use Expanded or Flexible to control their sizes.
+            For vertical layout, use Column instead.
 
     00:25:22 Center
         Centers its child both vertically and horizontally within the available space.
