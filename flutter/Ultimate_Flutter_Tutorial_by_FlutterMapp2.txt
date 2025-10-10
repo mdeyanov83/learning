@@ -89,6 +89,9 @@ Chapters
             context,
             MaterialPageRoute(builder: (context) => NextPage()),
         );
+        🧱 Parameters:
+            context → The current widget’s build context.
+            route → The route (page/screen) to display, usually a MaterialPageRoute.
 
     02:02:34 Pop
     02:09:16 PushReplacement
