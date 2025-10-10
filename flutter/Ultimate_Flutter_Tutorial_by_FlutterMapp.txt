@@ -609,6 +609,8 @@ Chapters
     01:42:33 Checkbox
         Checkbox is a material design widget that lets the user select or deselect an option (true/false).
         It’s typically used for settings, preferences, or multi-select lists.
+        see also CheckboxListTile()
+        
         Checkbox(
             value: isChecked,
             onChanged: (bool? newValue) {
@@ -623,6 +625,10 @@ Chapters
             activeColor → color when the box is checked
             checkColor → color of the check mark
             tristate → allows null as a third state if set to true
+        📌 Tip:
+            Always manage the state (with setState, ValueNotifier, or a state management solution).
+            Use CheckboxListTile() for a built-in label and better accessibility.
+            Use Switch if you want a toggle-style interaction instead of a checkbox.
 
 
     01:45:09 Arrow function
