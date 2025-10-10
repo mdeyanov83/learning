@@ -248,6 +248,10 @@ Chapters
             backgroundColor → color of the AppBar
             centerTitle → centers the title (default depends on platform)
             elevation → shadow depth of the AppBar
+        📌 Tip:
+            AppBar is usually used inside a Scaffold.
+            You can place custom widgets inside title or actions for flexible UI.
+            For tabs, combine AppBar with TabBar inside a DefaultTabController.
 
     00:50:05 NavigationBar
         NavigationBar is the modern Material 3 widget for bottom navigation in Flutter.
