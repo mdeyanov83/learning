@@ -53,8 +53,10 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           ],
           onDestinationSelected: (int value) {
-            currentIndex = value;
-            setState() )
+
+            setState(() {
+              currentIndex = value;
+            });
           },
           selectedIndex: currentIndex,
         ),
