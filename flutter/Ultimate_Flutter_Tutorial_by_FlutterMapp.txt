@@ -75,11 +75,14 @@ Chapters
             EdgeInsets.all(value) → same padding on all sides
             EdgeInsets.symmetric(horizontal: x, vertical: y) → padding on horizontal & vertical sides
             EdgeInsets.only(left: x, top: y, right: z, bottom: w) → padding on specific sides
+        📌 Tip:
+            Padding only affects the space around the child, not the size of the child itself.
+            It’s often used inside Column, Row, or Stack for cleaner UI spacing.
+            If only padding + size is needed use Padding() + SizedBox(). If decorations -> Container()
 
     00:36:46 SizedBox
         Like a Container(), but simpler -used to give a fixed width and/or height to its child or
-        create empty space between widgets. If no child is provided it acts as an invisible spacer.
-        Can also be used as SizedBox.expand() to fill available space.
+        create empty space between widgets.
         SizedBox(
             width: 200,
             height: 100,
@@ -89,6 +92,10 @@ Chapters
             Fix the size of a widget.
             Add spacing between widgets (when child is null).
             Expand to fill all available space with SizedBox.expand().
+        📌 Tip:
+            SizedBox is lightweight and preferred over Container when you just need fixed spacing or sizing.
+            If no child is provided, it acts as an invisible spacer.
+            Can also be used as SizedBox.expand() to fill available space.
 
     00:37:33 Icon
         Used to display material design icons. It’s lightweight and commonly used in
@@ -102,6 +109,10 @@ Chapters
             icon → the icon to display (e.g., Icons.home, Icons.star)
             color → color of the icon
             size → size of the icon in logical pixels
+        📌 Tip:
+            You can find built-in icons in Icons. class.
+            For custom icons, use Image.asset() or Image.network() instead.
+            Combine Icon with Row or Column for labels with icons.
 
     00:38:56 ListTile
         Prebuilt widget for creating a single row in a list with a leading icon or image,
@@ -121,6 +132,10 @@ Chapters
             subtitle → Secondary text (optional)
             trailing → Widget at the end (e.g., icon, switch, button)
             onTap → A
+        📌 Tip:
+            ListTile automatically handles padding and alignment.
+            You can use dense: true for a more compact look.
+            Great for settings menus, contact lists, and navigation lists.
 
     00:40:59 print
         print() - prints to the console
@@ -144,6 +159,10 @@ Chapters
             runSpacing → space between lines (runs) in the cross axis
             alignment → alignment of children in the main axis
             runAlignment → ali
+        📌 Tip:
+            Use Wrap instead of Row or Column when you want auto line breaking.
+            Unlike Row and Column, Wrap won’t overflow when space runs out — it wraps gracefully.
+            Commonly used in responsive UIs.
 
 🐦‍🔥 3. Master Layout
     00:43:17 MaterialApp & Scaffold
@@ -176,6 +195,11 @@ Chapters
                 );
 
             debugShowCheckedModeBanner → remove the “debug” banner in debug mode
+        📌 Tip:
+            Always wrap your Flutter app with MaterialApp if you want Material Design widgets (like Scaffold, AppBar, FloatingActionButton, etc.).
+            For more control over appearance, use theme or darkTheme.
+            For iOS-style apps, you can use CupertinoApp instead.
+            👉 Typically, MaterialApp is placed inside runApp() at the very top of your app.
 
         *** Scaffold is a basic layout structure for Material Design apps.
         It provides predefined slots for common app elements like AppBar, Drawer,
