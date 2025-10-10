@@ -93,11 +93,18 @@ class _ProfilePageState extends State<ProfilePage> {
                 print('container tapped');
               },
               child: Container(
-                height: 200,
+                height: 100,
                 width: double.infinity,
                 color: Colors.white12,
               ),
-
+            ),
+            ElevatedButton(
+              onPressed: () {},
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.teal,
+                foregroundColor: Colors.white,
+              ),
+              child: Text('Click me'),
             ),
           ],
         ),
