@@ -13,7 +13,7 @@ class WelcomePage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Lottie.asset(''),
+            Lottie.asset('assets/lotties/welcome.json'),
             FilledButton(
               onPressed: () {
                 Navigator.pushReplacement(
