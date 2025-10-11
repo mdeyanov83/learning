@@ -437,10 +437,10 @@ Chapters
     02:46:50 UI modification
 
 
-    02:54:33 Overrides
+    02:54:33 Overrides in a Stateful Widget
         *** @override
             dispose()
-            
+
     02:56:49 UI modification
     03:01:20 UI modification (again)
     03:06:49 Verify and fix your App

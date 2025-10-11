@@ -13,8 +13,14 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
 
   @override
+  void initState() {
+    print('initState');
+    super.initState();
+  }
+
+  @override
   void dispose() {
-    // TODO: implement dispose
+    controller.dispose();
     super.dispose();
   }
 
