@@ -386,7 +386,6 @@ Chapters
             Use ClipRRect or clipBehavior to ensure images inside the card respect the border radius.
             Cards are perfect for lists of items, product previews, or info panels.
 
-
     02:33:36 Text
 
 📦 9. Packages
