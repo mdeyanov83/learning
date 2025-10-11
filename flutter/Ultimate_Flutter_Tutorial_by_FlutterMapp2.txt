@@ -215,8 +215,33 @@ Chapters
             Great for quick feedback like “Saved”, “Copied”, “Deleted”, etc.
 
     02:25:29 Alert
+        AlertDialog() is a material design dialog that alerts the user to a situation and provides optional
+        actions (e.g., OK / Cancel). It usually contains a title, a content message, and action buttons.
 
-    
+        showDialog(
+            context: context,
+            builder: (context) {
+                return AlertDialog(
+                title: Text('Alert'),
+                content: Text('This is an alert message.'),
+                actions: [
+                    TextButton(
+                        onPressed: () => Navigator.pop(context),
+                        child: Text('Cancel'),
+                    ),
+                    TextButton(
+                        onPressed: () {
+                            // Do something
+                            Navigator.pop(context);
+                        },
+                        child: Text('OK'),
+                    ),
+                ],
+                );
+            },
+        );
+
+
     02:29:06 Divider
     02:30:40 Card
     02:33:36 Text
