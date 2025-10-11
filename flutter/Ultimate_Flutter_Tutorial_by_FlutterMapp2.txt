@@ -692,9 +692,24 @@ Chapters
                 reassemble() on hot reload
                 setState() whenever state updates
 
+        8️⃣ Quick Summary Table
+            Method	                When it’s called	                                Common use cases
+            ------                  ----------------                                    ----------------
+            initState()	            Once when State is created	                        Init controllers, listeners, load data
+            didChangeDependencies() After initState + when inherited widgets change     Access context-dependent data
+            build()	                On every rebuild	                                UI building (no side effects)
+            didUpdateWidget()	    When parent passes new widget with updated fields   Respond to prop changes
+            deactivate()	        When removed from tree                              Advanced cleanup, reparenting
+            dispose()	            When State is permanently removed	                Dispose controllers, cancel streams
+            reassemble()	        On hot reload (debug only)	                        Debugging, reloading assets
+            setState() (override)   On state change                                     Debugging, logging
 
-
-
+        ✅ In practice, the most commonly overridden methods besides are
+            build() (always)
+            initState()
+            dispose()
+            didChangeDependencies() → for context-related setup
+            didUpdateWidget() → for reacting to prop changes
 
 
     02:56:49 UI modification
