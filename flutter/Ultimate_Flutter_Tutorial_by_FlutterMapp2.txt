@@ -415,7 +415,6 @@ Chapters
             Use as a basic widget:
             Lottie.asset('path/to/asset/lottie.json'),
 
-
     02:43:17 FittedBox
     02:46:50 UI modification
     02:54:33 Overrides
