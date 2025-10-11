@@ -39,6 +39,10 @@ class _SettingsPageState extends State<SettingsPage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              ElevatedButton(
+                onPressed: () {},
+                child: Text('Open Snackbar'),
+              ),
               DropdownButton(
                 hint: Text('Hint'),
                 value: menuItem,
@@ -137,14 +141,6 @@ class _SettingsPageState extends State<SettingsPage> {
                   width: double.infinity,
                   color: Colors.white12,
                 ),
-              ),
-              ElevatedButton(
-                onPressed: () {},
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.teal,
-                  foregroundColor: Colors.white,
-                ),
-                child: Text('Click me'),
               ),
               BackButton(
                 onPressed: () {},
