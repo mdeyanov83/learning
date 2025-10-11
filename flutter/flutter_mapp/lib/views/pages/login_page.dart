@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_mapp/views/widget_tree.dart';
 import 'package:flutter_mapp/views/widgets/hero_widget.dart';
 
 class LoginPage extends StatefulWidget {
@@ -67,7 +68,7 @@ class _LoginPageState extends State<LoginPage> {
                   context,
                   MaterialPageRoute(
                     builder: (context) {
-                      return LoginPage();
+                      return WidgetTree();
                     },
                   ),
                 );
