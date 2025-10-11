@@ -40,7 +40,7 @@ class _LoginPageState extends State<LoginPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 HeroWidget(
-                  title: 'Login',
+                  title: widget.title,
                 ),
                 SizedBox(
                   height: 20.0,
