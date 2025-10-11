@@ -163,6 +163,33 @@ Chapters
         Use ClipOval if you want to make a circle or ellipse shape instead.
 
     02:17:40 Hero
+        Hero is a widget that provides a shared element transition between two routes (screens).
+        When you navigate to another page, the Hero widget animates the transition of a matching
+        widget smoothly between the screens.
+        This is great for image previews, profile pictures, or cards that expand into detail pages.
+
+        Hero(
+            tag: 'hero-tag',
+            child: Image.asset('assets/image.png'),
+        );
+
+        ⚡ Important:
+            Both the source and destination Hero must have the same tag.
+            The tag must be unique for each Hero pair.
+        🧱 Common properties:
+            tag → unique identifier to match Hero widgets between screens.
+            child → the widget to animate.
+            flightShuttleBuilder → optional, allows customizing the animation look.
+            transitionOnUserGestures → allows transitions during back gesture (iOS).
+        📌 Tip:
+            Hero animations work best with images or simple widgets.
+            Always use the same tag on both widgets.
+            Works automatically with Navigator.push() and Navigator.pop().
+            You can wrap any widget in a Hero—not just images!
+        🧭 Common use cases:
+            Profile avatar → profile page
+            Thumbnail image → fullscreen view
+            Card preview → detail screen
 
 
     02:22:14 SnackBar
