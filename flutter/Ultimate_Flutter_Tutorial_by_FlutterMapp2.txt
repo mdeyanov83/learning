@@ -366,6 +366,25 @@ Chapters
             It’s purely decorative — doesn’t affect layout structure beyond spacing.
 
     02:30:40 Card
+        Card is a material design container with rounded corners, elevation (shadow), and padding. It’s commonly
+        used to group related information like images, text, and buttons in a visually distinct box.
+        Card(
+            child: Padding(
+                padding: EdgeInsets.all(16),
+                child: Text('This is a simple card'),
+            ),
+        );
+        🧱 Common properties:
+            child → the content inside the card.
+            color → background color.
+            elevation → shadow depth; higher values create bigger shadows.
+            shape → custom border shape (e.g., rounded corners).
+            margin → space around the card.
+            clipBehavior → how child content is clipped (useful for images).
+        📌 Tip:
+            Cards automatically follow Material Design principles with shadows and rounded corners.
+            Use ClipRRect or clipBehavior to ensure images inside the card respect the border radius.
+            Cards are perfect for lists of items, product previews, or info panels.
 
 
     02:33:36 Text
