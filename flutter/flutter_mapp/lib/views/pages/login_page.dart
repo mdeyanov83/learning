@@ -31,7 +31,6 @@ class _LoginPageState extends State<LoginPage> {
       body: Padding(
         padding: const EdgeInsets.all(20.0),
         child: ListView(
-          physics: ScrollPhysics(),
           children: [
             HeroWidget(
               title: 'Login',
