@@ -62,7 +62,7 @@ class _LoginPageState extends State<LoginPage> {
               },
             ),
             SizedBox(height: 20.0),
-            FilledButton(
+            ElevatedButton(
               onPressed: () {
                 Navigator.pushReplacement(
                   context,
