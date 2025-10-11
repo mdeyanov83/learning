@@ -14,7 +14,7 @@ class WelcomePage extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              // Text('Flutter Mapp', style: KTextStyle.titleTealText,),
+              Lottie.asset('assets/lotties/welcome.json', height: 400.0),
               FittedBox(
                 child: Text(
                   'Flutter Mapp',
@@ -25,10 +25,7 @@ class WelcomePage extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(
-                height: 20.0,
-              ),
-              Lottie.asset('assets/lotties/welcome.json'),
+              SizedBox(height: 20.0),
               FilledButton(
                 onPressed: () {
                   Navigator.push(
