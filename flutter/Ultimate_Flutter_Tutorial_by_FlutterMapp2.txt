@@ -438,6 +438,7 @@ Chapters
 
 
     02:54:33 Overrides in a Stateful Widget
+
         *** InitState()
         initState() is a lifecycle method of the State class in Flutter.
         It is called exactly once when a StatefulWidget is inserted into
@@ -595,6 +596,9 @@ Chapters
                 _subscription.cancel();
                 super.dispose();
             }
+
+        *** Other common overrides
+        
 
 
     02:56:49 UI modification
