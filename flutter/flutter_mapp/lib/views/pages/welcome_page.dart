@@ -30,7 +30,7 @@ class WelcomePage extends StatelessWidget {
             Lottie.asset('assets/lotties/welcome.json'),
             FilledButton(
               onPressed: () {
-                Navigator.pushReplacement(
+                Navigator.push(
                   context,
                   MaterialPageRoute(
                     builder: (context) {
@@ -49,7 +49,7 @@ class WelcomePage extends StatelessWidget {
             ),
             TextButton(
               onPressed: () {
-                Navigator.pushReplacement(
+                Navigator.push(
                   context,
                   MaterialPageRoute(
                     builder: (context) {
