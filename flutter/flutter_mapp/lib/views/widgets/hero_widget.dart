@@ -24,7 +24,17 @@ class HeroWidget extends StatelessWidget {
             ),
           ),
         ),
-        Text(title),
+        FittedBox(
+          child: Text(
+            title,
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 50.0,
+              letterSpacing: 50.0,
+              color: Colors.white60,
+            ),
+          ),
+        ),
       ],
     );
   }
