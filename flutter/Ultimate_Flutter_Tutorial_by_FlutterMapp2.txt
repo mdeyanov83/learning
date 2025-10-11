@@ -345,9 +345,13 @@ Chapters
             Displaying app version and copyright.
             Giving credits or contact info.
 
-    02:29:06 Divider
+    02:29:06 Divider + VerticalDivider
+        Divider() is a simple horizontal line used to visually separate content in a layout — for example,
+        between list items or sections. It’s lightweight and commonly used in Column or ListView widgets.
 
-    
+        
+
+
     02:30:40 Card
     02:33:36 Text
 
