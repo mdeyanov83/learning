@@ -434,8 +434,7 @@ Chapters
             Be careful: scaling large widgets too much can affect performance or readability.
 
 
-    02:46:50 UI modification
-
+    02:46:50 UI modification (1)
 
     02:54:33 Overrides in a Stateful Widget
 
@@ -712,12 +711,12 @@ Chapters
             didUpdateWidget() → for reacting to prop changes
 
 
-    02:56:49 UI modification
-    03:01:20 UI modification (again)
+    02:56:49 UI modification (2)
+    03:01:20 UI modification (again) (2)
     03:06:49 Verify and fix your App
+    03:14:33 UI modification (3)
 
-
-    03:14:33 UI modification
+    
     03:18:30 Shared Preferences
     03:26:33 UI modification
     03:37:57 UI modification (again)
