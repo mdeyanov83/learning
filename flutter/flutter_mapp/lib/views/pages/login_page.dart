@@ -1,8 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mapp/views/widgets/hero_widget.dart';
 
-class LoginPage extends StatelessWidget {
+TextEditingController controller = TextEditingController();
+
+class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
+
+  @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -14,6 +28,15 @@ class LoginPage extends StatelessWidget {
           children: [
             HeroWidget(
               title: 'Login',
+            ),
+            TextField(
+              controller: controller,
+              decoration: InputDecoration(
+                border: OutlineInputBorder(),
+              ),
+              onEditingComplete: () {
+                setState(() {});
+              },
             ),
           ],
         ),
