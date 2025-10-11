@@ -412,7 +412,9 @@ Chapters
         * How to use:
             https://pub.dev/packages/lottie/example
 
-        
+            Use as a basic widget:
+            Lottie.asset('path/to/asset/lottie.json'),
+
 
     02:43:17 FittedBox
     02:46:50 UI modification
