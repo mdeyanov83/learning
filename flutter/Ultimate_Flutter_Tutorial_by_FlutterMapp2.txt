@@ -153,14 +153,14 @@ Chapters
             child: Image.asset('assets/image.png'),
         );
 
-    🧱 Common properties:
-        borderRadius → controls the roundness of the corners
-        clipBehavior → defines how clipping is applied (e.g., Clip.antiAlias, Clip.hardEdge)
-        child → the widget to be clipped
-    📌 Tip:
-        ClipRRect only clips the visible area — it doesn’t affect the layout.
-        For rounded corners on Container backgrounds, you can also use BoxDecoration with borderRadius.
-        Use ClipOval if you want to make a circle or ellipse shape instead.
+        🧱 Common properties:
+            borderRadius → controls the roundness of the corners
+            clipBehavior → defines how clipping is applied (e.g., Clip.antiAlias, Clip.hardEdge)
+            child → the widget to be clipped
+        📌 Tip:
+            ClipRRect only clips the visible area — it doesn’t affect the layout.
+            For rounded corners on Container backgrounds, you can also use BoxDecoration with borderRadius.
+            Use ClipOval if you want to make a circle or ellipse shape instead.
 
     02:17:40 Hero
         Hero is a widget that provides a shared element transition between two routes (screens).
