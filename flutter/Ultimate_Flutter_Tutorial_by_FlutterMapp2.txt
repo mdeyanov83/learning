@@ -215,6 +215,44 @@ Chapters
             Great for quick feedback like “Saved”, “Copied”, “Deleted”, etc.
 
     02:25:29 Alert - showDialog(), AlertDialog(), AboutDialog(), showAboutDialog()
+
+        *** showDialog() is a built-in function used to display a modal dialog on top of the current screen.
+        It blocks interaction with the rest of the app until the dialog is dismissed.
+        It’s commonly used with widgets like AlertDialog or SimpleDialog.
+
+        showDialog(
+            context: context,
+            builder: (BuildContext context) {
+                return AlertDialog(
+                    title: Text('Dialog Title'),
+                    content: Text('This is the content of the dialog.'),
+                    actions: [
+                        TextButton(
+                            onPressed: () => Navigator.pop(context),
+                            child: Text('Close'),
+                        ),
+                    ],
+                );
+            },
+        );
+
+        🧱 Common parameters:
+            context → required. The build context of the current widget.
+            builder → returns the widget to display (e.g., AlertDialog).
+            barrierDismissible → whether tapping outside closes the dialog (true by default).
+            barrierColor → color behind the dialog (e.g., semi-transparent black).
+            useSafeArea → ensures it doesn’t overlap system UI.
+            useRootNavigator → decides which navigator to use.
+        📌 Tips:
+            Always use Navigator.pop(context) to close the dialog.
+            Return values can be passed from the dialog to the previous screen using Navigator.pop(context, value).
+            You can also use showModalBottomSheet() for bottom popups.
+        🧭 Common use cases:
+            Confirmation dialogs (e.g., Delete / Cancel)
+            Error or success messages
+            Custom forms or widgets inside a popup
+
+
         *** AlertDialog() is a material design dialog that alerts the user to a situation and provides optional
         actions (e.g., OK / Cancel). It usually contains a title, a content message, and action buttons.
 
