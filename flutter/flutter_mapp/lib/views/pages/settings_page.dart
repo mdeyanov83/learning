@@ -52,10 +52,9 @@ class _SettingsPageState extends State<SettingsPage> {
               ),
               Divider(
                 color: Colors.teal,
-                thickness: 5.0,
+                thickness: 2.0,
                 endIndent: 200,
               ),
-              
               ElevatedButton(
                 onPressed: () {
                   showDialog(
