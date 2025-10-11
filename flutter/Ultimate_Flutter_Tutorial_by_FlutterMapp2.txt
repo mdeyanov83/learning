@@ -416,6 +416,24 @@ Chapters
             Lottie.asset('path/to/asset/lottie.json'),
 
     02:43:17 FittedBox
+        FittedBox() is a widget that scales and positions its child to fit within its parent.
+        It’s useful when you want a child (like Text, Image, or Container) to adjust size
+        automatically to avoid overflow or fill available space.
+        FittedBox(
+            child: Text('Hello, Flutter!'),
+        );
+
+        🧱 Common properties:
+            child → the widget to scale.
+            fit → how to fit the child (BoxFit.contain, .cover, .fill, .scaleDown).
+            alignment → alignment of the child inside the parent (Alignment.center, .topLeft, etc.).
+            clipBehavior → clipping behavior when child exceeds bounds
+        📌 Tip:
+            Use FittedBox to avoid overflow for long text or large images inside constrained spaces.
+            For scaling only text, consider combining with BoxConstraints or Flexible.
+            Be careful: scaling large widgets too much can affect performance or readability.
+
+
     02:46:50 UI modification
     02:54:33 Overrides
     02:56:49 UI modification
