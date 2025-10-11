@@ -597,8 +597,104 @@ Chapters
                 super.dispose();
             }
 
-        *** Other common overrides
-        
+        *** OTHER COMMON OVERRIDES
+
+        🧱 1️⃣ build(BuildContext context) — (always overridden)
+
+            @override
+            Widget build(BuildContext context) {
+                return Container();
+            }
+
+            Required for State classes.
+            Called every time the widget needs to be rebuilt.
+            Should be pure — no side effects (like network calls).
+
+        🧭 2️⃣ didChangeDependencies()
+
+            @override
+            void didChangeDependencies() {
+                super.didChangeDependencies();
+                // Called after initState, and whenever an InheritedWidget the state depends on changes
+            }
+            🧠 Use case:
+                Responding to changes in inherited widgets (like MediaQuery, Theme, Localizations).
+                Good place for code that relies on context (which isn’t fully available in initState() yet).
+            👉 Common example:
+                @override
+                void didChangeDependencies() {
+                    super.didChangeDependencies();
+                    final mediaQuery = MediaQuery.of(context);
+                }
+
+        🔁 3️⃣ didUpdateWidget(covariant MyWidget oldWidget)
+            @override
+            void didUpdateWidget(MyWidget oldWidget) {
+                super.didUpdateWidget(oldWidget);
+                if (oldWidget.someValue != widget.someValue) {
+                    // React to updated widget configuration
+                }
+            }
+            🧠 Use case:
+                When parent rebuilds the widget with new parameters (but the same State object).
+                Ideal for reacting to updated props without recreating the whole state.
+            👉 For example:
+                if (oldWidget.userId != widget.userId) {
+                    _loadUser(widget.userId);
+                }
+
+        🧪 4️⃣ deactivate()
+            @override
+            void deactivate() {
+                super.deactivate();
+                // Called when the State is removed from the tree (but may be reinserted later)
+            }
+            🧠 Use case:
+            Cleanup when the widget is temporarily removed (e.g., during a navigation or reparenting).
+            Rarely used compared to dispose(), but useful in some complex layouts.
+
+        🧹 5️⃣ reassemble() (debug only)
+            @override
+            void reassemble() {
+            super.reassemble();
+            // Called on hot reload in debug mode
+            }
+            🧠 Use case:
+                Used during hot reload only.
+                Handy for debugging, reloading assets, resetting timers, etc.
+            👉 Example:
+                @override
+                void reassemble() {
+                    super.reassemble();
+                    print('Hot reload triggered');
+                }
+
+        🧠 6️⃣ (Less common but valid) setState()
+            You don’t usually override it, but you can if you want to intercept state changes (e.g., logging or batching).
+            @override
+            void setState(VoidCallback fn) {
+                super.setState(fn);
+                print('State changed!');
+            }
+            ⚠️ Use carefully — this affects all setState calls in that widget.
+
+        7️⃣ Full State lifecycle overview
+            Order of execution:
+                createState() (in the widget)
+                initState() ✅
+                didChangeDependencies() ✅
+                build() ✅ (can be called many times)
+                didUpdateWidget() (if parent updates props) ✅
+                deactivate() (if removed from tree)
+                dispose() ✅
+
+            Also:
+                reassemble() on hot reload
+                setState() whenever state updates
+
+
+
+
 
 
     02:56:49 UI modification
