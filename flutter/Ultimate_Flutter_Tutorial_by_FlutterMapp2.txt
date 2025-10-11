@@ -215,31 +215,62 @@ Chapters
             Great for quick feedback like “Saved”, “Copied”, “Deleted”, etc.
 
     02:25:29 Alert
-        AlertDialog() is a material design dialog that alerts the user to a situation and provides optional
+        *** AlertDialog() is a material design dialog that alerts the user to a situation and provides optional
         actions (e.g., OK / Cancel). It usually contains a title, a content message, and action buttons.
 
         showDialog(
             context: context,
             builder: (context) {
                 return AlertDialog(
-                title: Text('Alert'),
-                content: Text('This is an alert message.'),
-                actions: [
-                    TextButton(
-                        onPressed: () => Navigator.pop(context),
-                        child: Text('Cancel'),
-                    ),
-                    TextButton(
-                        onPressed: () {
-                            // Do something
-                            Navigator.pop(context);
-                        },
-                        child: Text('OK'),
-                    ),
-                ],
+                    title: Text('Alert'),
+                    content: Text('This is an alert message.'),
+                    actions: [
+                        TextButton(
+                            onPressed: () => Navigator.pop(context),
+                            child: Text('Cancel'),
+                        ),
+                        TextButton(
+                            onPressed: () {
+                                // Do something
+                                Navigator.pop(context);
+                            },
+                            child: Text('OK'),
+                        ),
+                    ],
                 );
             },
         );
+
+        🧱 Common properties:
+            title → top of the dialog (usually Text).
+            content → main message or widget.
+            actions → list of buttons (e.g., TextButton).
+            shape → customize the border shape.
+            backgroundColor → set background color.
+
+        *** AboutDialog() is a prebuilt dialog that displays information about the app, such as its name,
+        version, icon, and legal info. It’s typically used in “About” sections of apps.
+
+        showAboutDialog(
+            context: context,
+            applicationName: 'My Flutter App',
+            applicationVersion: '1.0.0',
+            applicationIcon: Icon(Icons.info),
+            children: [
+                Text('This is a simple Flutter app.'),
+            ],
+        );
+        🧱 Common properties:
+            applicationName → app’s name.
+            applicationVersion → version number.
+            applicationIcon → icon widget shown at the top.
+            applicationLegalese → legal text (e.g., copyrights).
+            children → list of extra widgets or info.
+
+        📌 Tip:
+            AlertDialog is used for actions and confirmations.
+            AboutDialog is used for static info about the app.
+            Both appear on top of the UI and block interaction until dismissed.
 
 
     02:29:06 Divider
