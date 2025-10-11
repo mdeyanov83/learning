@@ -192,10 +192,31 @@ Chapters
             Card preview → detail screen
 
     02:22:14 SnackBar
+        SnackBar is a lightweight message displayed at the bottom of the screen to provide
+        brief feedback to the user. It can include a simple message, an action (like “UNDO”),
+        and disappears automatically after a few seconds.
 
+        ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+                content: Text('This is a SnackBar!'),
+            ),
+        );
 
+        🧱 Common properties:
+            content → the main widget, usually a Text.
+            backgroundColor → sets the background color of the snackbar.
+            action → adds an optional button (e.g., “Undo”).
+            duration → how long it stays visible.
+            behavior → e.g., SnackBarBehavior.floating to make it float above UI.
+            shape → gives rounded corners or custom shapes.
+        📌 Tip:
+            Always use ScaffoldMessenger.of(context) instead of the old Scaffold.of(context) (deprecated).
+            SnackBar disappears automatically, but you can also dismiss it programmatically.
+            Great for quick feedback like “Saved”, “Copied”, “Deleted”, etc.
 
     02:25:29 Alert
+
+    
     02:29:06 Divider
     02:30:40 Card
     02:33:36 Text
