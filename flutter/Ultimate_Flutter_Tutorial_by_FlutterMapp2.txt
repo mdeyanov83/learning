@@ -349,10 +349,25 @@ Chapters
         Divider() is a simple horizontal line used to visually separate content in a layout — for example,
         between list items or sections. It’s lightweight and commonly used in Column or ListView widgets.
 
-        
-
+        Divider(
+            color: Colors.teal,
+            thickness: 5.0,
+            endIndent: 200,
+        ),
+        🧱 Common properties:
+            color → color of the line.
+            thickness → how thick the line is.
+            height → total vertical space the divider takes (includes padding).
+            indent → empty space at the start of the line.
+            endIndent → empty space at the end of the line.
+        📌 Tip:
+            Use VerticalDivider() if you want a vertical line (e.g., in Row).
+            Divider automatically takes the full available width unless indents are applied.
+            It’s purely decorative — doesn’t affect layout structure beyond spacing.
 
     02:30:40 Card
+
+
     02:33:36 Text
 
 📦 9. Packages
