@@ -214,7 +214,7 @@ Chapters
             SnackBar disappears automatically, but you can also dismiss it programmatically.
             Great for quick feedback like “Saved”, “Copied”, “Deleted”, etc.
 
-    02:25:29 Alert
+    02:25:29 Alert - showDialog(), AlertDialog(), AboutDialog(), showAboutDialog()
         *** AlertDialog() is a material design dialog that alerts the user to a situation and provides optional
         actions (e.g., OK / Cancel). It usually contains a title, a content message, and action buttons.
 
