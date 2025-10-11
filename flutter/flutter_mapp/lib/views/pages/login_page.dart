@@ -12,7 +12,9 @@ class LoginPage extends StatelessWidget {
         padding: const EdgeInsets.all(10.0),
         child: Column(
           children: [
-            HeroWidget(),
+            HeroWidget(
+              title: 'Login',
+            ),
           ],
         ),
       ),
