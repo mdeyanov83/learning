@@ -62,7 +62,16 @@ class _LoginPageState extends State<LoginPage> {
             ),
             SizedBox(height: 20.0),
             FilledButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return LoginPage();
+                    },
+                  ),
+                );
+              },
               style: FilledButton.styleFrom(
                 minimumSize: Size(double.infinity, 40.0),
               ),
