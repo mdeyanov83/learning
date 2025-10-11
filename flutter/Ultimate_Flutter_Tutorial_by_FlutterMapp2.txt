@@ -406,12 +406,13 @@ Chapters
     02:36:57 Lottie
         Create, manage and implement lightweight animations across websites,
         apps, presentations, social and more. https://lottiefiles.com/
-        https://pub.dev/packages/lottie
-        flutter pub add lottie
+        * Install package:
+            https://pub.dev/packages/lottie
+            flutter pub add lottie
+        * How to use:
+            https://pub.dev/packages/lottie/example
 
-
-
-
+        
 
     02:43:17 FittedBox
     02:46:50 UI modification
