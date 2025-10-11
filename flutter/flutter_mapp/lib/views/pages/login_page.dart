@@ -80,7 +80,7 @@ class _LoginPageState extends State<LoginPage> {
                   style: FilledButton.styleFrom(
                     minimumSize: Size(double.infinity, 40.0),
                   ),
-                  child: Text('Login'),
+                  child: Text(widget.title),
                 ),
                 SizedBox(height: 50.0),
               ],
