@@ -492,7 +492,56 @@ Chapters
                 didUpdateWidget() → Respond to updates.
                 dispose() → Clean up resources. ✅
 
+        *** Examples of initState() and dispose()
 
+        ✅ Example 1 – Initializing a variable:
+
+            class MyWidgetState extends State<MyWidget> {
+                String message = '';
+                @override
+                void initState() {
+                    super.initState();
+                    message = 'Hello from initState!';
+                }
+                @override
+                Widget build(BuildContext context) {
+                    return Text(message);
+                }
+            }
+
+        ✅ Example 2 – Setting up a controller:
+        
+            class MyWidgetState extends State<MyWidget> {
+                final TextEditingController _controller = TextEditingController();
+                @override
+                void initState() {
+                    super.initState();
+                    _controller.text = 'Initial text';
+                }
+                @override
+                void dispose() {
+                    _controller.dispose(); // Always dispose controllers!
+                    super.dispose();
+                }
+                @override
+                Widget build(BuildContext context) {
+                    return TextField(controller: _controller);
+                }
+            }
+
+        ✅ Example 3 – Fetching data before UI builds:
+
+            @override
+            void initState() {
+                super.initState();
+                fetchData();
+            }
+
+            void fetchData() async {
+                // Simulate API call
+                await Future.delayed(Duration(seconds: 2));
+                print('Data loaded');
+            }
 
 
     02:56:49 UI modification
