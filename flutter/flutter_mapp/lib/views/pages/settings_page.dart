@@ -61,6 +61,14 @@ class _SettingsPageState extends State<SettingsPage> {
                         content: Text(
                           'This is the content of the alert dialog.',
                         ),
+                        actions: [
+                          FilledButton(
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
+                            child: Text('Close'),
+                          ),
+                        ],
                       );
                     },
                   );
