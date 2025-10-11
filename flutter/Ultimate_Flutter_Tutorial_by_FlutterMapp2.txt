@@ -403,11 +403,11 @@ Chapters
 
 
 📦 9. Packages
-    02:36:57 Lotties
+    02:36:57 Lottie
         Create, manage and implement lightweight animations across websites,
-        apps, presentations, social and more.
-        https://lottiefiles.com/
-        flutter pub add lotties
+        apps, presentations, social and more. https://lottiefiles.com/
+        https://pub.dev/packages/lottie
+        flutter pub add lottie
 
 
 
