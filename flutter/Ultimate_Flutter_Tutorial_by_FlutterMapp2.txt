@@ -286,30 +286,64 @@ Chapters
             shape → customize the border shape.
             backgroundColor → set background color.
 
-        *** AboutDialog() is a prebuilt dialog that displays information about the app, such as its name,
-        version, icon, and legal info. It’s typically used in “About” sections of apps.
+        *** AboutDialog() is a prebuilt widget that displays information about your app, such as its name, version,
+        icon, and legal details. It’s typically used in “About” sections of apps.
+
+        showDialog(
+            context: context,
+            builder: (context) {
+                return AboutDialog(
+                    applicationName: 'My Flutter App',
+                    applicationVersion: '1.0.0',
+                    applicationIcon: Icon(Icons.info),
+                    applicationLegalese: '© 2025 My Company',
+                );
+            },
+        );
+        🧱 Common properties:
+            applicationName → Name of your app.
+            applicationVersion → Version number of the app.
+            applicationIcon → Icon widget shown at the top.
+            applicationLegalese → Legal text or copyright.
+            children → Extra widgets for additional info.
+        🧭 Common use cases:
+            Adding an “About” section in your settings page.
+            Displaying app version and legal info.
+            Showing credits or acknowledgements.
+        📌 Tip:
+            AlertDialog is used for actions and confirmations.
+            AboutDialog is used for static info about the app.
+            Both appear on top of the UI and block interaction until dismissed.
+
+        *** showAboutDialog() is a built-in function that quickly displays an “About” dialog with your app’s
+        information (name, version, icon, legal text, etc.).
+        It’s a shortcut for showing an AboutDialog widget without manually wrapping it in showDialog().
 
         showAboutDialog(
             context: context,
             applicationName: 'My Flutter App',
             applicationVersion: '1.0.0',
             applicationIcon: Icon(Icons.info),
+            applicationLegalese: '© 2025 My Company',
             children: [
-                Text('This is a simple Flutter app.'),
+                Text('This app is built with Flutter.'),
             ],
         );
-        🧱 Common properties:
-            applicationName → app’s name.
+
+        🧱 Common parameters:
+            context → required, the build context of the current widget.
+            applicationName → name of your app.
             applicationVersion → version number.
-            applicationIcon → icon widget shown at the top.
-            applicationLegalese → legal text (e.g., copyrights).
-            children → list of extra widgets or info.
-
-        📌 Tip:
-            AlertDialog is used for actions and confirmations.
-            AboutDialog is used for static info about the app.
-            Both appear on top of the UI and block interaction until dismissed.
-
+            applicationIcon → widget displayed at the top (e.g., app icon).
+            applicationLegalese → legal text or copyright notice.
+            children → optional extra widgets to display below the legalese.
+        📌 Difference between AboutDialog and showAboutDialog():
+            🧱 AboutDialog → Widget (you can use it inside your own showDialog).
+            ⚡ showAboutDialog() → Function (displays the dialog immediately with less boilerplate).
+        🧭 Common use cases:
+            “About” section in settings screens.
+            Displaying app version and copyright.
+            Giving credits or contact info.
 
     02:29:06 Divider
     02:30:40 Card
