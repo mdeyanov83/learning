@@ -439,60 +439,33 @@ Chapters
 
     02:54:33 Overrides in a Stateful Widget
         *** InitState()
-            initState() is a lifecycle method of the State class in Flutter.
-            It is called exactly once when a StatefulWidget is inserted into
-            the widget tree, before the widget is displayed.
-            You typically use it to:
-                Initialize variables
-                Set up listeners or controllers
-                Fetch initial data
+        initState() is a lifecycle method of the State class in Flutter.
+        It is called exactly once when a StatefulWidget is inserted into
+        the widget tree, before the widget is displayed.
+        You typically use it to:
+            Initialize variables
+            Set up listeners or controllers
+            Fetch initial data
 
-            @override
-            void initState() {
-                super.initState();
-                // Initialization code here
-            }
+        @override
+        void initState() {
+            super.initState();
+            // Initialization code here
+        }
 
-            🧱 Key points:
-                Always call super.initState() first inside the method.
-                Runs before the build() method.
-                Called only once during the lifecycle of the state object.
-                Good place for setting up things like TextEditingController, AnimationController, or API calls.
-            📌 Tip:
-                Do not use BuildContext to access InheritedWidget (like Theme.of) directly inside initState() — use WidgetsBinding.instance.addPostFrameCallback if needed after build.
-                Use initState() for one-time setup logic only — not for UI updates.
-            🧭 Lifecycle Order (Simplified):
-                initState() → setup once ✅
-                build() → builds UI 🧱
-                didUpdateWidget() → when widget changes 🔁
-                dispose() → cleanup 🧼
-
-        *** dispose()
-            dispose() is a lifecycle method of the State class that is called when a StatefulWidget
-            is permanently removed from the widget tree. It’s used to clean up resources such as
-            controllers, listeners, animations, or streams to prevent memory leaks.
-
-            @override
-            void dispose() {
-                // Clean up resources here
-                super.dispose();
-            }
-
-            🧱 Key points:
-                Called only once when the state object is removed.
-                Always call super.dispose() at the end of the method.
-                Ideal for disposing controllers like TextEditingController, AnimationController, FocusNode, or streams.
-            📌 Tip:
-                Always clean up what you initialize in initState().
-                Forgetting to dispose can cause memory leaks and performance issues.
-                dispose() is never called if the app is force-closed, but always when a widget is removed properly from the tree.
-            🧭 Lifecycle Order Recap:
-                initState() → Initialize resources.
-                build() → Render UI.
-                didUpdateWidget() → Respond to updates.
-                dispose() → Clean up resources. ✅
-
-        *** Examples of initState() and dispose()
+        🧱 Key points:
+            Always call super.initState() first inside the method.
+            Runs before the build() method.
+            Called only once during the lifecycle of the state object.
+            Good place for setting up things like TextEditingController, AnimationController, or API calls.
+        📌 Tip:
+            Do not use BuildContext to access InheritedWidget (like Theme.of) directly inside initState() — use WidgetsBinding.instance.addPostFrameCallback if needed after build.
+            Use initState() for one-time setup logic only — not for UI updates.
+        🧭 Lifecycle Order (Simplified):
+            initState() → setup once ✅
+            build() → builds UI 🧱
+            didUpdateWidget() → when widget changes 🔁
+            dispose() → cleanup 🧼
 
         ✅ Example 1 – Initializing a variable:
 
@@ -510,7 +483,7 @@ Chapters
             }
 
         ✅ Example 2 – Setting up a controller:
-        
+
             class MyWidgetState extends State<MyWidget> {
                 final TextEditingController _controller = TextEditingController();
                 @override
@@ -536,11 +509,91 @@ Chapters
                 super.initState();
                 fetchData();
             }
-
             void fetchData() async {
                 // Simulate API call
                 await Future.delayed(Duration(seconds: 2));
                 print('Data loaded');
+            }
+
+        *** dispose()
+        dispose() is a lifecycle method of the State class that is called when a StatefulWidget
+        is permanently removed from the widget tree. It’s used to clean up resources such as
+        controllers, listeners, animations, or streams to prevent memory leaks.
+
+        @override
+        void dispose() {
+            // Clean up resources here
+            super.dispose();
+        }
+
+        🧱 Key points:
+            Called only once when the state object is removed.
+            Always call super.dispose() at the end of the method.
+            Ideal for disposing controllers like TextEditingController, AnimationController, FocusNode, or streams.
+        📌 Tip:
+            Always clean up what you initialize in initState().
+            Forgetting to dispose can cause memory leaks and performance issues.
+            dispose() is never called if the app is force-closed, but always when a widget is removed properly from the tree.
+        🧭 Lifecycle Order Recap:
+            initState() → Initialize resources.
+            build() → Render UI.
+            didUpdateWidget() → Respond to updates.
+            dispose() → Clean up resources. ✅
+
+        ✅ Example 1 – Disposing a controller:
+
+            class MyWidgetState extends State<MyWidget> {
+                final TextEditingController _controller = TextEditingController();
+                @override
+                void dispose() {
+                    _controller.dispose(); // important to prevent memory leaks
+                    super.dispose();
+                }
+                @override
+                Widget build(BuildContext context) {
+                    return TextField(controller: _controller);
+                }
+            }
+
+        ✅ Example 2 – Disposing an animation:
+
+            class MyAnimationWidget extends State<MyWidget> with SingleTickerProviderStateMixin {
+                late AnimationController _animationController;
+                @override
+                void initState() {
+                    super.initState();
+                    _animationController = AnimationController(
+                    vsync: this,
+                    duration: Duration(seconds: 2),
+                    )..repeat();
+                }
+                @override
+                void dispose() {
+                    _animationController.dispose(); // stop and clean up animation
+                    super.dispose();
+                }
+                @override
+                Widget build(BuildContext context) {
+                    return FadeTransition(
+                    opacity: _animationController,
+                    child: Text('Animating...'),
+                    );
+                }
+            }
+
+        ✅ Example 3 – Canceling a StreamSubscription:
+
+            late StreamSubscription<int> _subscription;
+            @override
+                void initState() {
+                super.initState();
+                _subscription = Stream.periodic(Duration(seconds: 1), (i) => i)
+                    .listen((event) => print(event));
+            }
+            @override
+                void dispose() {
+                _subscription.cancel();
+                super.dispose();
             }
 
 
