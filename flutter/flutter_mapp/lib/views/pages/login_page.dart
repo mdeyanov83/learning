@@ -77,6 +77,7 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   child: Text('Login'),
                 ),
+                SizedBox(height: 50.0),
               ],
             ),
           ),
