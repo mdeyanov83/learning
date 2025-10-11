@@ -42,7 +42,9 @@ class _SettingsPageState extends State<SettingsPage> {
                 onPressed: () {
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(
+                      duration: Duration(seconds: 2),
                       content: Text('SnackBar'),
+                      behavior: SnackBarBehavior.floating,
                     ),
                   );
                 },
