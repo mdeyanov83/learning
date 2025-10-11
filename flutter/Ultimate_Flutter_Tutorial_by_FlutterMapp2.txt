@@ -438,6 +438,34 @@ Chapters
 
 
     02:54:33 Overrides in a Stateful Widget
+        *** InitState()
+            initState() is a lifecycle method of the State class in Flutter.
+            It is called exactly once when a StatefulWidget is inserted into
+            the widget tree, before the widget is displayed.
+            You typically use it to:
+                Initialize variables
+                Set up listeners or controllers
+                Fetch initial data
+
+            @override
+            void initState() {
+                super.initState();
+                // Initialization code here
+            }
+
+            🧱 Key points:
+                Always call super.initState() first inside the method.
+                Runs before the build() method.
+                Called only once during the lifecycle of the state object.
+                Good place for setting up things like TextEditingController, AnimationController, or API calls.
+            📌 Tip:
+                Do not use BuildContext to access InheritedWidget (like Theme.of) directly inside initState() — use WidgetsBinding.instance.addPostFrameCallback if needed after build.
+                Use initState() for one-time setup logic only — not for UI updates.
+            🧭 Lifecycle Order (Simplified):
+                initState() → setup once ✅
+                build() → builds UI 🧱
+                didUpdateWidget() → when widget changes 🔁
+                dispose() → cleanup 🧼
         *** @override
             dispose()
 
