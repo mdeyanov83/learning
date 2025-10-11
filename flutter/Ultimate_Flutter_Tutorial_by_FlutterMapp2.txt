@@ -191,8 +191,10 @@ Chapters
             Thumbnail image → fullscreen view
             Card preview → detail screen
 
-
     02:22:14 SnackBar
+
+
+
     02:25:29 Alert
     02:29:06 Divider
     02:30:40 Card
