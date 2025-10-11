@@ -14,7 +14,15 @@ class WelcomePage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text('Flutter Mapp', style: KTextStyle.titleTealText,),
+            // Text('Flutter Mapp', style: KTextStyle.titleTealText,),
+            Text(
+              'Flutter Mapp',
+              style: TextStyle(
+                fontSize: 50,
+                fontWeight: FontWeight.bold,
+                letterSpacing: 50,
+              ),
+            ),
             Lottie.asset('assets/lotties/welcome.json'),
             FilledButton(
               onPressed: () {
