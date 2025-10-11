@@ -404,8 +404,15 @@ Chapters
 
 📦 9. Packages
     02:36:57 Lotties
+        Create, manage and implement lightweight animations across websites,
+        apps, presentations, social and more.
+        https://lottiefiles.com/
+        flutter pub add lotties
 
-    
+
+
+
+
     02:43:17 FittedBox
     02:46:50 UI modification
     02:54:33 Overrides
