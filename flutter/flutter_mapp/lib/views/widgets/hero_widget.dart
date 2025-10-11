@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class HeroWidget extends StatelessWidget {
   const HeroWidget({super.key});
@@ -9,7 +9,11 @@ class HeroWidget extends StatelessWidget {
       tag: 'hero1',
       child: ClipRRect(
         borderRadius: BorderRadius.circular(20.0),
-        child: Image.asset('assets/images/background.jpg'),
+        child: Image.asset(
+          'assets/images/background.jpg',
+          color: Colors.teal,
+          colorBlendMode: BlendMode.darken,
+        ),
       ),
     );
   }
