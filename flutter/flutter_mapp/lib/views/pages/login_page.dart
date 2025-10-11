@@ -30,7 +30,7 @@ class _LoginPageState extends State<LoginPage> {
       appBar: AppBar(),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
-        child: ListView(
+        child: ListView(  // was Column
           children: [
             HeroWidget(
               title: 'Login',
