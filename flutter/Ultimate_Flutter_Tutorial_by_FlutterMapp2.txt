@@ -387,9 +387,25 @@ Chapters
             Cards are perfect for lists of items, product previews, or info panels.
 
     02:33:36 Text
+        Text() is the most basic widget for displaying a string of text in Flutter.
+        You can style it, align it, and control how it behaves inside layouts.
+        Text('Hello, Flutter!');
+        🧱 Common properties:
+            style → customize font size, color, weight, etc. (TextStyle)
+            textAlign → horizontal alignment (TextAlign.left, .center, .right)
+            overflow → handling text overflow (TextOverflow.ellipsis, .fade)
+            maxLines → maximum number of lines to display
+            softWrap → whether text wraps at soft line breaks
+        📌 Tip:
+            Use Text for any static or dynamic text display.
+            For clickable or styled parts of text, combine Text.rich with GestureRecognizer.
+            Always consider wrapping Text in a Flexible or Expanded when inside Row or Column to prevent overflow.
+
 
 📦 9. Packages
     02:36:57 Lotties
+
+    
     02:43:17 FittedBox
     02:46:50 UI modification
     02:54:33 Overrides
