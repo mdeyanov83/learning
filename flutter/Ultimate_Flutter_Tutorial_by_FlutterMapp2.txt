@@ -466,8 +466,22 @@ Chapters
                 build() → builds UI 🧱
                 didUpdateWidget() → when widget changes 🔁
                 dispose() → cleanup 🧼
-        *** @override
-            dispose()
+
+        *** dispose()
+            dispose() is a lifecycle method of the State class that is called when a StatefulWidget
+            is permanently removed from the widget tree. It’s used to clean up resources such as
+            controllers, listeners, animations, or streams to prevent memory leaks.
+
+            @override
+            void dispose() {
+                // Clean up resources here
+                super.dispose();
+            }
+
+            🧱 Key points:
+                Called only once when the state object is removed.
+                Always call super.dispose() at the end of the method.
+                Ideal for disposing controllers like TextEditingController, AnimationController, FocusNode, or streams.
 
     02:56:49 UI modification
     03:01:20 UI modification (again)
