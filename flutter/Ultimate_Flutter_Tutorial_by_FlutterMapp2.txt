@@ -821,8 +821,6 @@ Chapters
                     widgetList[0],
                     widgetList[1],
                 ]
-
-
         📌 Tip:
             Great for building repetitive widgets in loops.
             Can be combined with UI widgets like ListView or GridView.

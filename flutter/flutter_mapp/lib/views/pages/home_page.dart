@@ -8,7 +8,6 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     List list = [
       KValue.basicLayout,
       KValue.cleanUi,
@@ -28,11 +27,6 @@ class HomePage extends StatelessWidget {
                 title: list.elementAt(index),
                 description: 'This is a description',
               ),
-            ),
-
-            ContainerWidget(
-              title: 'Default Value',
-              description: 'This is a description',
             ),
           ],
         ),
