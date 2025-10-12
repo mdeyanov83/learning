@@ -802,6 +802,17 @@ Chapters
             length → Number of elements in the list.
             generator (function) → A function that returns the value for each index.
 
+        Column(
+            children: List.generate(
+                5,
+                (index) => Text('Item $index'),
+            ),
+        );
+
+        📌 Tip:
+            Great for building repetitive widgets in loops.
+            Can be combined with UI widgets like ListView or GridView.
+            You can make the list growable by passing growable: true as a third
 
 
     03:55:57 Flutter Launcher Icons
