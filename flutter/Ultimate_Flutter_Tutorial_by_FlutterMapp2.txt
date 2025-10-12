@@ -148,6 +148,13 @@ Chapters
             (Route<dynamic> route) => false,
         );
 
+        🧱 Parameters:
+            context → The build context.
+            MaterialPageRoute → The route (new page) to push.
+            predicate → A condition that decides which previous routes to keep.
+            If you return false, all previous routes are removed.
+            If you return true for a specific route, that route and the ones below it are kept.
+
 
 
     02:10:59 Send Data Through pages
