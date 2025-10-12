@@ -155,7 +155,37 @@ Chapters
             If you return false, all previous routes are removed.
             If you return true for a specific route, that route and the ones below it are kept.
 
+        ✅ Example 1 – Remove all previous routes:
+            Navigator.pushAndRemoveUntil(
+                context,
+                MaterialPageRoute(builder: (context) => HomeScreen()),
+                (route) => false,
+            );
+        📌 This pushes HomeScreen and clears the entire stack. The user can’t go back.
 
+        ✅ Example 2 – Keep the first route (like a splash or root):
+            Navigator.pushAndRemoveUntil(
+                context,
+                MaterialPageRoute(builder: (context) => HomeScreen()),
+                (route) => route.isFirst,
+            );
+        📌 This keeps only the first screen in the stack and removes everything else.
+
+        ✅ Example 3 – Conditional removal:
+            Navigator.pushAndRemoveUntil(
+                context,
+                MaterialPageRoute(builder: (context) => Dashboard()),
+                (route) => route.settings.name == '/login',
+            );
+        📌 This keeps only the /login route and removes others.
+
+        🧠 When to use:
+            After successful login/signup (to prevent going back to auth screen).
+            To reset the navigation stack after logout or onboarding.
+            To redirect users to a main page and clear history.
+        📌 Tip
+            Similar to pushReplacement(), but more powerful because it can remove multiple previous routes.
+            Make sure to set up RouteSettings names if you plan to use named predicates.
 
     02:10:59 Send Data Through pages
         To send data through to pages - use a required named parameter as an input
