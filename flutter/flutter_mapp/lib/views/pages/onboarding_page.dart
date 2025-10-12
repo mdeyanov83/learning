@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_mapp/views/widget_tree.dart';
 import 'package:lottie/lottie.dart';
 
-class LoginPage extends StatelessWidget {
-  const LoginPage({
+class OnboardingPage extends StatelessWidget {
+  const OnboardingPage({
     super.key,
     required this.title,
   });
@@ -28,7 +27,7 @@ class LoginPage extends StatelessWidget {
                 ),
                 FilledButton(
                   onPressed: () {
-                    onLoginPressed();
+
                   },
                   style: FilledButton.styleFrom(
                     minimumSize: Size(double.infinity, 40.0),
