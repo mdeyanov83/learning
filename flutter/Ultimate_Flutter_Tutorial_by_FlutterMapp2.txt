@@ -764,8 +764,9 @@ Chapters
     03:01:20 UI modification (again) (2)
     03:06:49 Verify and fix your App
     03:14:33 UI modification (3)
-    03:18:30 Shared Preferences (Local Storage)
-        
+    03:18:30 Shared Preferences Plugin (Persistent storage / local storage)
+
+
 
 
     03:26:33 UI modification
