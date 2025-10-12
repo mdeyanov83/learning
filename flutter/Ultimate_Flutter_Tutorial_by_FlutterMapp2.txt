@@ -812,11 +812,11 @@ Chapters
         For use inside a children: [] property:
             - Wrap in a Column(
                 children = List.generate(),
-                )   
+                )
             - Spread operator:
                  ...List.generate(),
             - Insert elements at specific positions:
-                final widgetsList = List.generate(2, (index) => Widget)
+                final widgetList = List.generate(2, (index) => Widget)
                 children: [
                     widgetList[0],
                     widgetList[1],
