@@ -764,9 +764,10 @@ Chapters
     03:01:20 UI modification (again) (2)
     03:06:49 Verify and fix your App
     03:14:33 UI modification (3)
-    03:18:30 Shared Preferences
+    03:18:30 Shared Preferences (Local Storage)
+        
 
-    
+
     03:26:33 UI modification
     03:37:57 UI modification (again)
     03:43:43 UI modification (again & again)
