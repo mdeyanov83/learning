@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mapp/data/constants.dart';
+import 'package:flutter_mapp/views/pages/login_page.dart';
 import 'package:lottie/lottie.dart';
 
 class OnboardingPage extends StatelessWidget {
@@ -27,7 +28,13 @@ class OnboardingPage extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute,
+                      MaterialPageRoute(
+                        builder: (BuildContext context) {
+                          return LoginPage(
+                            title: 'Register',
+                          );
+                        },
+                      ),
                     );
                   },
                   style: FilledButton.styleFrom(
