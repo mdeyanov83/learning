@@ -765,7 +765,7 @@ Chapters
     03:06:49 Verify and fix your App
     03:14:33 UI modification (3)
     03:18:30 Shared Preferences Plugin (Persistent storage / local storage)
-
+        Wraps platform-specific persistent storage for simple data (NSUserDefaults on iOS and macOS, SharedPreferences on Android, etc.)
 
 
 
