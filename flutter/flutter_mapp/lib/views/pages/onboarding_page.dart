@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_mapp/data/constants.dart';
 import 'package:lottie/lottie.dart';
 
 class OnboardingPage extends StatelessWidget {
@@ -16,16 +17,23 @@ class OnboardingPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Lottie.asset('assets/lotties/home.json', height: 400.0),
-
-                SizedBox(
-                  height: 20.0,
+                SizedBox(height: 20.0),
+                Text(
+                  'Flutter Mapp is the way to learn flutter, period.',
+                  style: KTextStyle.descriptionText,
+                  textAlign: TextAlign.justify,
                 ),
                 FilledButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute,
+                    );
+                  },
                   style: FilledButton.styleFrom(
                     minimumSize: Size(double.infinity, 40.0),
                   ),
-                  child: Text('default'),
+                  child: Text('Next'),
                 ),
                 SizedBox(height: 50.0),
               ],
