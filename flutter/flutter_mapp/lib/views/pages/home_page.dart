@@ -22,7 +22,7 @@ class HomePage extends StatelessWidget {
             ),
 
             ContainerWidget(
-              title: 'Basic Layout',
+              title: Kvalue[1],
               description: 'This is a description',
             ),
           ],
