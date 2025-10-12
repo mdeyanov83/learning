@@ -809,7 +809,16 @@ Chapters
             ),
         );
 
-        Use 
+        For use inside a children: [] property:
+            - Spread operator:
+                 ...List.generate(),
+            - Insert elements at specific positions:
+                final widgetsList = List.generate(2, (index) => Widget)
+                children: [
+                    widgetList[0],
+                    widgetList[1],
+                ]
+
 
         📌 Tip:
             Great for building repetitive widgets in loops.
