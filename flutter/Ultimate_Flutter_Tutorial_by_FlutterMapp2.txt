@@ -789,8 +789,9 @@ Chapters
 
 
     03:26:33 UI modification
-    03:37:57 UI modification (again) (4)
-    03:43:43 UI modification (again & again)
+    03:37:57 UI modification (again)
+    03:43:43 UI modification (again & again) (4)
+    
     03:55:57 Flutter Launcher Icons
     04:01:44 CircleAvatar
 
