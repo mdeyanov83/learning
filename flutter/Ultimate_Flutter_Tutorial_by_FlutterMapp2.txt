@@ -769,7 +769,14 @@ Chapters
         SharedPreferences on Android, etc.) - https://pub.dev/packages/shared_preferences
 
         * Install package
-            
+            flutter pub add shared_preferences
+
+            pubspec.yaml
+            dependencies:
+                shared_preferences: ^2.5.3
+
+            import 'package:shared_preferences/shared_preferences.dart';
+        
 
 
 
