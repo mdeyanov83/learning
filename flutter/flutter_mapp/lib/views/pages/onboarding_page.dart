@@ -17,7 +17,7 @@ class OnboardingPage extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Lottie.asset('assets/lotties/home.json', height: 400.0),
+                Lottie.asset('assets/lotties/hi.json', height: 400.0),
                 SizedBox(height: 20.0),
                 Text(
                   'Flutter Mapp is the way to learn flutter, period.',
