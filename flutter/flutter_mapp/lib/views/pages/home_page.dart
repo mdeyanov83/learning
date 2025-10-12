@@ -17,6 +17,10 @@ class HomePage extends StatelessWidget {
               title: 'Basic Layout',
               description: 'This is a description',
             ),
+            ContainerWidget(
+              title: 'Basic Layout',
+              description: 'This is a description',
+            ),
           ],
         ),
       ),
