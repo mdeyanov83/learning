@@ -2,12 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
 class OnboardingPage extends StatelessWidget {
-  const OnboardingPage({
-    super.key,
-    required this.title,
-  });
-
-  final String title;
+  const OnboardingPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,13 +21,11 @@ class OnboardingPage extends StatelessWidget {
                   height: 20.0,
                 ),
                 FilledButton(
-                  onPressed: () {
-
-                  },
+                  onPressed: () {},
                   style: FilledButton.styleFrom(
                     minimumSize: Size(double.infinity, 40.0),
                   ),
-                  child: Text(title),
+                  child: Text('default'),
                 ),
                 SizedBox(height: 50.0),
               ],
