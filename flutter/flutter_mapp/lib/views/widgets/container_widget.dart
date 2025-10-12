@@ -23,11 +23,11 @@ class ContainerWidget extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Basic Layout',
+                title,
                 style: KTextStyle.titleTealText,
               ),
               Text(
-                'The description of this',
+                description,
                 style: KTextStyle.descriptionText,
               ),
             ],
