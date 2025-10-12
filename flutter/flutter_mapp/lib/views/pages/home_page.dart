@@ -13,22 +13,15 @@ class HomePage extends StatelessWidget {
         child: Column(
           children: [
             HeroWidget(title: 'Flutter Mapp'),
-            ContainerWidget(
-              title: 'Basic Layout',
-              description: 'This is a description',
+            List.generate(
+              5,
+              ContainerWidget(
+                title: 'Basic Layout',
+                description: 'This is a description',
+              ),
             ),
-            ContainerWidget(
-              title: 'Basic Layout',
-              description: 'This is a description',
-            ),
-            ContainerWidget(
-              title: 'Basic Layout',
-              description: 'This is a description',
-            ),
-            ContainerWidget(
-              title: 'Basic Layout',
-              description: 'This is a description',
-            ),
+
+            
             ContainerWidget(
               title: 'Basic Layout',
               description: 'This is a description',
