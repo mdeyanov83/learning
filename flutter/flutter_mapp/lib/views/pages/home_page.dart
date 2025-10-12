@@ -25,7 +25,7 @@ class HomePage extends StatelessWidget {
             ...List.generate(
               list.length,
               (index) => ContainerWidget(
-                title: list[index],
+                title: list.elementAt(index),
                 description: 'This is a description',
               ),
             ),
