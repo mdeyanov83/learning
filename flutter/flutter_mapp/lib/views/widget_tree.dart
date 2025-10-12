@@ -22,7 +22,7 @@ class WidgetTree extends StatelessWidget {
         actions: [
           IconButton(
             onPressed: () {
-              final SharedPreferences prefs = await
+              final SharedPreferences prefs = await SharedPreferences.getInstance();
               isDarkModeNotifier.value = !isDarkModeNotifier.value;
             },
             icon: ValueListenableBuilder(
