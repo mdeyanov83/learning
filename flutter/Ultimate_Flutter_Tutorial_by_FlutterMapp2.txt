@@ -776,6 +776,7 @@ Chapters
                 shared_preferences: ^2.5.3
 
             import 'package:shared_preferences/shared_preferences.dart';
+        * How to use example
         
 
 

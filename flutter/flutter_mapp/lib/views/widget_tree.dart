@@ -4,6 +4,7 @@ import 'package:flutter_mapp/views/pages/home_page.dart';
 import 'package:flutter_mapp/views/pages/profile_page.dart';
 import 'package:flutter_mapp/views/pages/settings_page.dart';
 import 'package:flutter_mapp/views/widgets/navbar_widget.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 List<Widget> pages = [
   HomePage(),
@@ -21,6 +22,7 @@ class WidgetTree extends StatelessWidget {
         actions: [
           IconButton(
             onPressed: () {
+              final SharedPreferences prefs = await
               isDarkModeNotifier.value = !isDarkModeNotifier.value;
             },
             icon: ValueListenableBuilder(
