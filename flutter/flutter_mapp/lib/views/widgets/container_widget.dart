@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
-
-import '../../data/constants.dart';
 import 'package:flutter_mapp/data/constants.dart';
 
 class ContainerWidget extends StatelessWidget {
-  const ContainerWidget({super.key});
+  const ContainerWidget({
+    super.key,
+    required this.title,
+    required this.description,
+  });
+
+  final String title;
+  final String description;
 
   @override
   Widget build(BuildContext context) {

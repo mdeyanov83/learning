@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_mapp/data/constants.dart';
 import 'package:flutter_mapp/views/widgets/container_widget.dart';
 import 'package:flutter_mapp/views/widgets/hero_widget.dart';
 
