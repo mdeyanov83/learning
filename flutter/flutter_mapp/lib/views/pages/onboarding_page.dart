@@ -18,12 +18,12 @@ class OnboardingPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Lottie.asset('assets/lotties/hi.json', height: 400.0),
-                SizedBox(height: 20.0),
                 Text(
                   'Flutter Mapp is the way to learn flutter, period.',
                   style: KTextStyle.descriptionText,
                   textAlign: TextAlign.justify,
                 ),
+                SizedBox(height: 20.0),
                 FilledButton(
                   onPressed: () {
                     Navigator.push(
