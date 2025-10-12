@@ -138,6 +138,18 @@ Chapters
                 (route) => false, // removes all previous routes
             );
 
+        Navigator.pushAndRemoveUntil() is used to navigate to a new screen and remove previous routes from the
+        navigation stack until a given condition is met. This is useful for things like login flows — where you
+        want to go to a home screen and prevent the user from going back to the login page.
+
+        Navigator.pushAndRemoveUntil(
+            context,
+            MaterialPageRoute(builder: (context) => NewScreen()),
+            (Route<dynamic> route) => false,
+        );
+
+
+
     02:10:59 Send Data Through pages
         To send data through to pages - use a required named parameter as an input
 
