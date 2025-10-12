@@ -764,6 +764,7 @@ Chapters
     03:01:20 UI modification (again) (2)
     03:06:49 Verify and fix your App
     03:14:33 UI modification (3)
+
     03:18:30 Shared Preferences Plugin (Persistent storage / local storage)
         Wraps platform-specific persistent storage for simple data (NSUserDefaults on iOS and macOS,
         SharedPreferences on Android, etc.) - https://pub.dev/packages/shared_preferences
@@ -787,7 +788,7 @@ Chapters
             await prefs.remove('counter');
 
 
-    03:26:33 UI modification
+    03:26:33 UI modification (4)
     03:37:57 UI modification (again)
     03:43:43 UI modification (again & again)
     03:55:57 Flutter Launcher Icons
