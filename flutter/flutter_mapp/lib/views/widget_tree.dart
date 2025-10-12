@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_mapp/data/constants.dart';
 import 'package:flutter_mapp/data/notifiers.dart';
 import 'package:flutter_mapp/views/pages/home_page.dart';
 import 'package:flutter_mapp/views/pages/profile_page.dart';
@@ -21,8 +22,10 @@ class WidgetTree extends StatelessWidget {
         title: Text('Flutter Mapp'),
         actions: [
           IconButton(
-            onPressed: () {
-              final SharedPreferences prefs = await SharedPreferences.getInstance();
+            onPressed: () async {
+              final SharedPreferences prefs =
+                  await SharedPreferences.getInstance();
+              await prefs.setBool(KConstants.themeModeKey, true);
               isDarkModeNotifier.value = !isDarkModeNotifier.value;
             },
             icon: ValueListenableBuilder(

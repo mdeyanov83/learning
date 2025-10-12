@@ -777,8 +777,14 @@ Chapters
 
             import 'package:shared_preferences/shared_preferences.dart';
         * How to use example
-        
-
+            // Obtain shared preferences.
+            final SharedPreferences prefs = await SharedPreferences.getInstance();
+            // Save an boolean value to 'repeat' key.
+            await prefs.setBool('repeat', true);
+            // Try reading data from the 'repeat' key. If it doesn't exist, returns null.
+            final bool? repeat = prefs.getBool('repeat');
+            // Remove data for the 'counter' key.
+            await prefs.remove('counter');
 
 
     03:26:33 UI modification
