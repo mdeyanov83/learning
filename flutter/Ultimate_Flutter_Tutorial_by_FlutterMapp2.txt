@@ -72,11 +72,36 @@ Chapters
         );
     Navigator.pop(context);
     🧱 Common methods:
-        push()	Opens a new route (screen) and adds it to the stack
-        pop()	Closes the current route and goes back
+        push()	            Opens a new route (screen) and adds it to the stack
+        pop()	            Closes the current route and goes back
         pushReplacement()	Replaces the current route with a new one
         pushNamed() / popNamed()	Navigate using route names (defined in MaterialApp)
-        canPop()	Checks if there’s a route to go back to
+        canPop()	        Checks if there’s a route to go back to
+    ✅ Examples:
+        1. Navigate to a new page:
+            Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => SecondScreen()),
+            );
+        2. Go back to the previous page:
+            Navigator.pop(context);
+        3. Navigate with named routes (recommended for larger apps):
+            In MaterialApp:
+            MaterialApp(
+                initialRoute: '/',
+                routes: {
+                    '/': (context) => HomeScreen(),
+                    '/second': (context) => SecondScreen(),
+                },
+            );
+        Navigate:
+            Navigator.pushNamed(context, '/second');
+            Navigator.pop(context);
+        4. Replace current screen:
+            Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (context) => LoginScreen()),
+            );
     📌 Tip:
         Use Navigator.pushNamed() for cleaner navigation when you have multiple screens.
         For modern navigation, consider go_router or Navigator 2.0 (Router API) for complex apps.
@@ -92,6 +117,60 @@ Chapters
         🧱 Parameters:
             context → The current widget’s build context.
             route → The route (page/screen) to display, usually a MaterialPageRoute.
+        ✅ Example 1 – Navigate to another screen:
+            // First screen
+            ElevatedButton(
+                onPressed: () {
+                    Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => SecondScreen()),
+                    );
+                },
+                child: Text('Go to Second Screen'),
+            );
+            // Second screen
+            class SecondScreen extends StatelessWidget {
+                @override
+                Widget build(BuildContext context) {
+                    return Scaffold(
+                        appBar: AppBar(title: Text('Second Screen')),
+                        body: Center(
+                            child: ElevatedButton(
+                                onPressed: () {
+                                    Navigator.pop(context); // Go back
+                                },
+                                child: Text('Back to First Screen'),
+                            ),
+                        ),
+                    );
+                }
+            }
+        ✅ Example 2 – Passing data to next screen:
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => DetailScreen(item: 'Flutter Rocks!'),
+                ),
+            );
+            class DetailScreen extends StatelessWidget {
+                final String item;
+                DetailScreen({required this.item});
+                @override
+                Widget build(BuildContext context) {
+                    return Scaffold(
+                        appBar: AppBar(title: Text('Detail Screen')),
+                        body: Center(child: Text(item)),
+                    );
+                }
+            }
+        ✅ Example 3 – Getting a result from the next screen:
+            final result = await Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => ChooseColorScreen()),
+            );
+            print('User selected: $result');
+            Then, in ChooseColorScreen:
+            Navigator.pop(context, 'Blue');
         📌 Tip:
             Use Navigator.pushNamed() if you’ve defined named routes in MaterialApp.
             Always use Navigator.pop(context) to return to the previous screen.
@@ -107,13 +186,59 @@ Chapters
         🧱 Parameters:
             context → The current widget’s build context.
             result (optional) → Data you can return to the previous screen.
+        ✅ Example 1 – Simple Back Navigation:
+            ElevatedButton(
+                onPressed: () {
+                    Navigator.pop(context);
+                },
+                child: Text('Go Back'),
+            );
+            ➡️ Returns to the previous screen that was pushed using Navigator.push().
+
+        ✅ Example 2 – Returning data to previous screen:
+            Second screen:
+                ElevatedButton(
+                    onPressed: () {
+                        Navigator.pop(context, 'Hello from Second Screen!');
+                    },
+                    child: Text('Return Data'),
+                );
+            First screen:
+                final result = await Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => SecondScreen()),
+                );
+                print(result); // Output: Hello from Second Screen!
+        ✅ Example 3 – Conditional pop:
+            if (Navigator.canPop(context)) {
+                Navigator.pop(context);
+            }
+            ➡️ Checks if there’s a previous screen before popping (avoids errors if at the root).
         📌 Tip:
             Navigator.pop() works only if a route was pushed before.
             You can return data by passing it as the second argument.
             Use it to close dialogs, modals, or bottom sheets too (not just pages).
+            Example:
+                showDialog(
+                    context: context,
+                    builder: (context) => AlertDialog(
+                        title: Text('Confirm'),
+                        actions: [
+                            TextButton(
+                                onPressed: () => Navigator.pop(context, false),
+                                child: Text('Cancel'),
+                            ),
+                            TextButton(
+                                onPressed: () => Navigator.pop(context, true),
+                                child: Text('OK'),
+                            ),
+                        ],
+                    ),
+                );
+                ➡️ The dialog returns true or false when popped!
 
     02:09:16 PushReplacement
-        Navigator.pushReplacement() is used to navigate to a new screen while replacing the current one.
+        *** Navigator.pushReplacement() is used to navigate to a new screen while replacing the current one.
         That means the previous screen is removed from the navigation stack — the user cannot go back using the back button.
         It’s often used for navigation flows like login → home screen or splash → main app.
 
@@ -125,6 +250,25 @@ Chapters
             context → current widget’s BuildContext
             route → the route (screen) to replace with
             result (optional) → data returned to the replaced route
+        ✅ Example 1 – Replace login with home screen:
+            ElevatedButton(
+                onPressed: () {
+                    Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(builder: (context) => HomeScreen()),
+                    );
+                },
+                child: Text('Login'),
+            );
+            ➡️ The user goes to HomeScreen and can’t go back to LoginScreen.
+        ✅ Example 2 – Replace with named route:
+            Navigator.pushReplacementNamed(context, '/home');
+        ✅ Example 3 – Replace and send back a result:
+            Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (context) => NextScreen()),
+                result: 'Replaced!',
+            );
         📌 Tip:
             Use pushReplacement() when you don’t want users to return to the previous screen.
             For example:
@@ -138,7 +282,7 @@ Chapters
                 (route) => false, // removes all previous routes
             );
 
-        Navigator.pushAndRemoveUntil() is used to navigate to a new screen and remove previous routes from the
+        *** Navigator.pushAndRemoveUntil() is used to navigate to a new screen and remove previous routes from the
         navigation stack until a given condition is met. This is useful for things like login flows — where you
         want to go to a home screen and prevent the user from going back to the login page.
 
@@ -206,13 +350,45 @@ Chapters
             borderRadius → controls the roundness of the corners
             clipBehavior → defines how clipping is applied (e.g., Clip.antiAlias, Clip.hardEdge)
             child → the widget to be clipped
+        ✅ Examples:
+            1. Rounded image:
+                ClipRRect(
+                    borderRadius: BorderRadius.circular(20),
+                    child: Image.asset(
+                        'assets/photo.jpg',
+                        width: 200,
+                        height: 200,
+                        fit: BoxFit.cover,
+                    ),
+                );
+            2. Rounded container:
+                ClipRRect(
+                    borderRadius: BorderRadius.circular(30),
+                    child: Container(
+                        color: Colors.blue,
+                        width: 150,
+                        height: 150,
+                    ),
+                );
+            3. With custom radius per corner:
+                ClipRRect(
+                    borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(20),
+                        bottomRight: Radius.circular(40),
+                    ),
+                    child: Container(
+                        color: Colors.green,
+                        width: 150,
+                        height: 150,
+                    ),
+                );
         📌 Tip:
             ClipRRect only clips the visible area — it doesn’t affect the layout.
             For rounded corners on Container backgrounds, you can also use BoxDecoration with borderRadius.
             Use ClipOval if you want to make a circle or ellipse shape instead.
 
-    02:17:40 Hero
-        Hero is a widget that provides a shared element transition between two routes (screens).
+    02:17:40 Hero()
+        Hero() is a widget that provides a shared element transition between two routes (screens).
         When you navigate to another page, the Hero widget animates the transition of a matching
         widget smoothly between the screens.
         This is great for image previews, profile pictures, or cards that expand into detail pages.
@@ -230,6 +406,43 @@ Chapters
             child → the widget to animate.
             flightShuttleBuilder → optional, allows customizing the animation look.
             transitionOnUserGestures → allows transitions during back gesture (iOS).
+        ✅ Example 1 – Simple Hero animation:
+            First screen:
+                GestureDetector(
+                    onTap: () {
+                        Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => SecondScreen()),
+                        );
+                    },
+                    child: Hero(
+                        tag: 'profile',
+                        child: Image.asset(
+                        'assets/avatar.png',
+                        width: 100,
+                        ),
+                    ),
+                );
+            Second screen:
+                Hero(
+                    tag: 'profile',
+                    child: Image.asset(
+                        'assets/avatar.png',
+                        width: 300,
+                    ),
+                );
+            🪄 When you tap the image, it smoothly grows from 100px to 300px as the new screen opens.
+        ✅ Example 2 – Custom transition using flightShuttleBuilder:
+            Hero(
+                tag: 'logo',
+                flightShuttleBuilder: (flightContext, animation, direction, fromContext, toContext) {
+                    return RotationTransition(
+                    turns: animation,
+                    child: Image.asset('assets/logo.png'),
+                    );
+                },
+                child: Image.asset('assets/logo.png'),
+            );
         📌 Tip:
             Hero animations work best with images or simple widgets.
             Always use the same tag on both widgets.
@@ -258,6 +471,36 @@ Chapters
             duration → how long it stays visible.
             behavior → e.g., SnackBarBehavior.floating to make it float above UI.
             shape → gives rounded corners or custom shapes.
+        ✅ Example 1 – Basic SnackBar:
+            ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                    content: Text('Item added to cart'),
+                ),
+            );
+        ✅ Example 2 – With action button:
+            ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                    content: Text('Message deleted'),
+                    action: SnackBarAction(
+                    label: 'UNDO',
+                    onPressed: () {
+                        // Undo action here
+                    },
+                    ),
+                ),
+            );
+        ✅ Example 3 – Floating & styled SnackBar:
+            ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                    content: Text('Saved successfully!'),
+                    backgroundColor: Colors.green,
+                    behavior: SnackBarBehavior.floating,
+                    shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                    ),
+                    duration: Duration(seconds: 3),
+                ),
+            );
         📌 Tip:
             Always use ScaffoldMessenger.of(context) instead of the old Scaffold.of(context) (deprecated).
             SnackBar disappears automatically, but you can also dismiss it programmatically.
@@ -292,6 +535,66 @@ Chapters
             barrierColor → color behind the dialog (e.g., semi-transparent black).
             useSafeArea → ensures it doesn’t overlap system UI.
             useRootNavigator → decides which navigator to use.
+        ✅ Example 1 – Simple AlertDialog:
+            showDialog(
+                context: context,
+                builder: (context) {
+                    return AlertDialog(
+                        title: Text('Hello'),
+                        content: Text('This is a simple dialog.'),
+                        actions: [
+                            TextButton(
+                            onPressed: () => Navigator.pop(context),
+                            child: Text('OK'),
+                            ),
+                        ],
+                    );
+                },
+            );
+        ✅ Example 2 – Non-dismissible dialog:
+            showDialog(
+                context: context,
+                barrierDismissible: false,
+                builder: (context) {
+                    return AlertDialog(
+                        title: Text('Wait'),
+                        content: Text('You must choose an option.'),
+                        actions: [
+                            TextButton(
+                            onPressed: () => Navigator.pop(context),
+                            child: Text('OK'),
+                            ),
+                        ],
+                    );
+                },
+            );
+        ✅ Example 3 – Custom widget inside dialog:
+            showDialog(
+                context: context,
+                builder: (context) {
+                    return Dialog(
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20),
+                        ),
+                        child: Padding(
+                            padding: const EdgeInsets.all(16),
+                            child: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                    Text('Custom Dialog', style: TextStyle(fontSize: 18)),
+                                    SizedBox(height: 10),
+                                    Text('You can put any widget here!'),
+                                    SizedBox(height: 20),
+                                    ElevatedButton(
+                                    onPressed: () => Navigator.pop(context),
+                                    child: Text('Close'),
+                                    ),
+                                ],
+                            ),
+                        ),
+                    );
+                },
+            );
         📌 Tips:
             Always use Navigator.pop(context) to close the dialog.
             Return values can be passed from the dialog to the previous screen using Navigator.pop(context, value).
@@ -305,28 +608,55 @@ Chapters
         *** AlertDialog() is a material design dialog that alerts the user to a situation and provides optional
         actions (e.g., OK / Cancel). It usually contains a title, a content message, and action buttons.
 
-        showDialog(
-            context: context,
-            builder: (context) {
-                return AlertDialog(
-                    title: Text('Alert'),
-                    content: Text('This is an alert message.'),
-                    actions: [
-                        TextButton(
-                            onPressed: () => Navigator.pop(context),
-                            child: Text('Cancel'),
+            showDialog(
+                context: context,
+                builder: (context) {
+                    return AlertDialog(
+                        title: Text('Alert'),
+                        content: Text('This is an alert message.'),
+                        actions: [
+                            TextButton(
+                                onPressed: () => Navigator.pop(context),
+                                child: Text('Cancel'),
+                            ),
+                            TextButton(
+                                onPressed: () {
+                                    // Do something
+                                    Navigator.pop(context);
+                                },
+                                child: Text('OK'),
+                            ),
+                        ],
+                    );
+                },
+            );
+        ✅ Example – Custom AlertDialog:
+            showDialog(
+                context: context,
+                builder: (context) {
+                    return AlertDialog(
+                        title: Text('Delete Item'),
+                        content: Text('Are you sure you want to delete this?'),
+                        backgroundColor: Colors.white,
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(15),
                         ),
-                        TextButton(
+                        actions: [
+                            TextButton(
+                            onPressed: () => Navigator.pop(context),
+                            child: Text('No'),
+                            ),
+                            ElevatedButton(
                             onPressed: () {
-                                // Do something
+                                // delete action
                                 Navigator.pop(context);
                             },
-                            child: Text('OK'),
-                        ),
-                    ],
-                );
-            },
-        );
+                            child: Text('Yes'),
+                            ),
+                        ],
+                    );
+                },
+            );
 
         🧱 Common properties:
             title → top of the dialog (usually Text).
@@ -355,6 +685,22 @@ Chapters
             applicationIcon → Icon widget shown at the top.
             applicationLegalese → Legal text or copyright.
             children → Extra widgets for additional info.
+        ✅ Example – Custom AboutDialog:
+            showDialog(
+                context: context,
+                builder: (context) {
+                    return AboutDialog(
+                        applicationName: 'CoolApp',
+                        applicationVersion: '2.5.1',
+                        applicationIcon: Icon(Icons.flutter_dash),
+                        applicationLegalese: '© 2025 Cool Company',
+                        children: [
+                            Text('This app is built with Flutter.'),
+                            Text('All rights reserved.'),
+                        ],
+                    );
+                },
+            );
         🧭 Common use cases:
             Adding an “About” section in your settings page.
             Displaying app version and legal info.
@@ -386,6 +732,18 @@ Chapters
             applicationIcon → widget displayed at the top (e.g., app icon).
             applicationLegalese → legal text or copyright notice.
             children → optional extra widgets to display below the legalese.
+        ✅ Example – showAboutDialog with legal info:
+            showAboutDialog(
+                context: context,
+                applicationName: 'MyApp',
+                applicationVersion: '2.0.0',
+                applicationIcon: Icon(Icons.flutter_dash),
+                applicationLegalese: '© 2025 My Company',
+                children: [
+                    Text('This app is built with Flutter.'),
+                    Text('All rights reserved.'),
+                ],
+            );
         📌 Difference between AboutDialog and showAboutDialog():
             🧱 AboutDialog → Widget (you can use it inside your own showDialog).
             ⚡ showAboutDialog() → Function (displays the dialog immediately with less boilerplate).
@@ -409,6 +767,33 @@ Chapters
             height → total vertical space the divider takes (includes padding).
             indent → empty space at the start of the line.
             endIndent → empty space at the end of the line.
+        ✅ Example 1 – Basic divider:
+            Column(
+                children: [
+                    Text('Section 1'),
+                    Divider(),
+                    Text('Section 2'),
+                ],
+            );
+        ✅ Example 2 – Custom styled divider:
+            Divider(
+                color: Colors.grey,
+                thickness: 2,
+                height: 30,
+                indent: 20,
+                endIndent: 20,
+            );
+        This creates a gray, thick divider with spacing and indents.
+        ✅ Example 3 – In a list:
+            ListView(
+                children: [
+                    ListTile(title: Text('Item 1')),
+                    Divider(),
+                    ListTile(title: Text('Item 2')),
+                    Divider(),
+                    ListTile(title: Text('Item 3')),
+                ],
+            );
         📌 Tip:
             Use VerticalDivider() if you want a vertical line (e.g., in Row).
             Divider automatically takes the full available width unless indents are applied.
@@ -430,6 +815,45 @@ Chapters
             shape → custom border shape (e.g., rounded corners).
             margin → space around the card.
             clipBehavior → how child content is clipped (useful for images).
+        ✅ Example 1 – Basic card:
+            Card(
+                elevation: 5,
+                child: Padding(
+                    padding: EdgeInsets.all(16),
+                    child: Text('Hello, this is a card!'),
+                ),
+            );
+        ✅ Example 2 – Card with rounded corners and color:
+            Card(
+                color: Colors.blue[50],
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15),
+                ),
+                elevation: 8,
+                child: Padding(
+                    padding: EdgeInsets.all(20),
+                    child: Text('Custom styled card'),
+                ),
+            );
+        ✅ Example 3 – Card with image and text:
+            Card(
+                elevation: 5,
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                ),
+                child: Column(
+                    children: [
+                        ClipRRect(
+                            borderRadius: BorderRadius.vertical(top: Radius.circular(10)),
+                            child: Image.asset('assets/photo.jpg', height: 150, fit: BoxFit.cover),
+                        ),
+                        Padding(
+                            padding: EdgeInsets.all(16),
+                            child: Text('Card with image and text'),
+                        ),
+                    ],
+                ),
+            );
         📌 Tip:
             Cards automatically follow Material Design principles with shadows and rounded corners.
             Use ClipRRect or clipBehavior to ensure images inside the card respect the border radius.
@@ -445,6 +869,38 @@ Chapters
             overflow → handling text overflow (TextOverflow.ellipsis, .fade)
             maxLines → maximum number of lines to display
             softWrap → whether text wraps at soft line breaks
+        ✅ Example 1 – Basic text:
+            Text('Welcome to Flutter!');
+        ✅ Example 2 – Styled text:
+            Text(
+                'Flutter is awesome!',
+                style: TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.blue,
+                    fontStyle: FontStyle.italic,
+                ),
+                textAlign: TextAlign.center,
+            );
+        ✅ Example 3 – Text overflow:
+            Text(
+                'This is a very long text that might not fit on one line',
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis, // shows "..."
+            );
+        ✅ Example 4 – Rich text (multiple styles in one string):
+            Text.rich(
+                TextSpan(
+                    text: 'Hello ',
+                    children: [
+                    TextSpan(
+                        text: 'Flutter',
+                        style: TextStyle(fontWeight: FontWeight.bold, color: Colors.blue),
+                    ),
+                    TextSpan(text: '!'),
+                    ],
+                ),
+            );
         📌 Tip:
             Use Text for any static or dynamic text display.
             For clickable or styled parts of text, combine Text.rich with GestureRecognizer.
@@ -477,6 +933,33 @@ Chapters
             fit → how to fit the child (BoxFit.contain, .cover, .fill, .scaleDown).
             alignment → alignment of the child inside the parent (Alignment.center, .topLeft, etc.).
             clipBehavior → clipping behavior when child exceeds bounds
+        ✅ Example 1 – Basic FittedBox with text:
+            Container(
+                width: 150,
+                height: 50,
+                color: Colors.blue[50],
+                child: FittedBox(
+                    child: Text(
+                    'This text will scale to fit the box',
+                    style: TextStyle(fontSize: 20),
+                    ),
+                ),
+            );
+            ➡️ The text automatically scales to fit inside the Container.
+        ✅ Example 2 – Image scaled to fit:
+            FittedBox(
+                fit: BoxFit.cover,
+                child: Image.asset('assets/photo.jpg'),
+            );
+            ➡️ The image fills the parent widget according to the BoxFit rule.
+        ✅ Example 3 – Aligning child inside FittedBox:
+            FittedBox(
+                alignment: Alignment.centerRight,
+                child: Text(
+                    'Aligned text',
+                    style: TextStyle(fontSize: 30),
+                ),
+            );
         📌 Tip:
             Use FittedBox to avoid overflow for long text or large images inside constrained spaces.
             For scaling only text, consider combining with BoxConstraints or Flexible.
@@ -803,6 +1286,7 @@ Chapters
             length → Number of elements in the list.
             generator (function) → A function that returns the value for each index.
 
+        ✅ Example – Generate a list of widgets (common in Flutter):
         Column(
             children: List.generate(
                 5,
@@ -835,22 +1319,76 @@ Chapters
             Creating placeholders or skeleton loaders
             Populating test data quickly
 
-    *** GestureDetector()
-        GestureDetector is a widget that detects user gestures such as taps, double taps,
-        long presses, swipes, and drags. It doesn’t have any visual appearance on its own,
-        it simply wraps another widget and makes it respond to touch events.
+    03:55:57 Flutter Launcher Icons
+        A command-line tool which simplifies the task of updating your Flutter app's launcher icon.
+        https://pub.dev/packages/flutter_launcher_icons
+        * Installation:
+            flutter pub add flutter_launcher_icons
+            or in pubspec.yaml:
+                dependencies:
+                    flutter_launcher_icons: ^0.14.4
+        * Setup the config file
+            dart run flutter_launcher_icons:generate
+        * flutter_launcher_icons.yaml
+            Delete or comment out not-needed platforms
+            Set the correct path to icon image .png file in
+            image_path: "assets/path_to_icon/icon.png"
+        * Run the package
+            flutter pub get
+            dart run flutter_launcher_icons
 
-        GestureDetector(
-            onTap: () {
-                // Action when tapped
-            },
-            child: WidgetToWrap(),
+
+    04:01:44 CircleAvatar
+        CircleAvatar is a widget used to display circular images or icons,
+        often used for profile pictures, user initials, or avatars in apps.
+        It automatically clips its child into a circle shape.
+
+        CircleAvatar(
+            radius: 30,              // size of the avatar
+            backgroundColor: Colors.blue,
+            child: Text('A'),
         )
 
+        🧱 Common properties:
+            radius → Controls the size of the circle.
+            backgroundColor → Sets the background color.
+            backgroundImage → Sets an image inside the avatar.
+            child → Widget inside the avatar (like Text or Icon).
+            foregroundImage → Displays an image on top (can be used with placeholders).
 
+        ✅ Example 2 – Avatar with network image:
+            CircleAvatar(
+                radius: 40,
+                backgroundImage: AssetImage('assets/path_to_image/image.jpg'),
+                // backgroundImage: NetworkImage('https://example.com/profile.jpg'),
+            );
+        ✅ Example 3 – Avatar with icon:
+            CircleAvatar(
+                radius: 25,
+                backgroundColor: Colors.green,
+                child: Icon(
+                    Icons.person,
+                    color: Colors.white,
+                    size: 30,
+                ),
+            );
+        ✅ Example 4 – Using foregroundImage with placeholder color:
+            CircleAvatar(
+                radius: 35,
+                backgroundColor: Colors.grey[300],
+                foregroundImage: NetworkImage('https://example.com/avatar.png'),
+                child: Icon(Icons.person, color: Colors.grey), // shows if image fails
+            );
+        📌 Tip:
+            Perfect for profile sections, chat apps, and contact lists.
+            You can wrap it with GestureDetector or InkWell to make it clickable.
+            If using network images, consider handling errors (e.g., fallback icons or colors).
+        🧠 Common use cases:
+            Profile picture display 👤
+            Contact lists / chat heads 📨
+            Showing user initials when no image is available 🅰️
+            Rounded icons for cleaner UI 🎨
 
-    03:55:57 Flutter Launcher Icons
-    04:01:44 CircleAvatar
 
 📱 10. Responsive UI
     04:07:48 FractionallySizedBox

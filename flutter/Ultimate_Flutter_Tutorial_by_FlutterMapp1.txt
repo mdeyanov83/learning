@@ -26,6 +26,30 @@ Chapters
         margin → space outside the container
         decoration → background color, border, border radius, gradients
         alignment → alignment of the child inside the container
+    ✅ Examples:
+        1. Simple container with color and size:
+            Container(
+                width: 150,
+                height: 150,
+                color: Colors.red,
+                child: Center(child: Text('Box')),
+            );
+        2. Container with padding and rounded corners:
+            Container(
+                padding: EdgeInsets.all(16),
+                decoration: BoxDecoration(
+                    color: Colors.green,
+                    borderRadius: BorderRadius.circular(12),
+                ),
+                child: Text('Styled Container'),
+            );
+        3. Container with margin and alignment:
+            Container(
+                margin: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                alignment: Alignment.center,
+                color: Colors.blue,
+                child: Text('Centered Text'),
+            );
     📌 Tip:
         Use Container when you need styling and positioning in your UI.
         For simple spacing, Padding or SizedBox can be more lightweight.
@@ -47,6 +71,33 @@ Chapters
             mainAxisAlignment → controls vertical alignment (start, center, end, spaceBetween, etc.)
             crossAxisAlignment → controls horizontal alignment (start, center, end)
             mainAxisSize → controls how much vertical space the column takes (max or min)
+        ✅ Examples:
+            1. Basic column:
+                Column(
+                    children: [
+                        Text('First line'),
+                        Text('Second line'),
+                    ],
+                );
+            2. Centered column:
+                Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                        Icon(Icons.star),
+                        SizedBox(height: 10),
+                        Text('Favorite'),
+                    ],
+                );
+            3. Space between elements:
+                Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                        Text('Top'),
+                        Text('Middle'),
+                        Text('Bottom'),
+                    ],
+                );
         📌 Tip:
             If the content might not fit the screen, wrap the Column in a SingleChildScrollView.
             Use Expanded or Flexible inside a Column to make widgets take up available space.
@@ -68,6 +119,32 @@ Chapters
             mainAxisAlignment → controls horizontal alignment (start, center, end, spaceBetween, etc.)
             crossAxisAlignment → controls vertical alignment (start, center, end)
             mainAxisSize → controls how much horizontal space the row takes (max or min)
+        ✅ Examples:
+            1. Simple row:
+                Row(
+                    children: [
+                        Icon(Icons.favorite),
+                        Text('Like'),
+                    ],
+                );
+            2. Centered row with spacing:
+                Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                        Icon(Icons.home),
+                        SizedBox(width: 10),
+                        Text('Home'),
+                    ],
+                );
+            3. Evenly spaced widgets:
+                Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                        Icon(Icons.call),
+                        Icon(Icons.message),
+                        Icon(Icons.share),
+                    ],
+                );
         📌 Tip:
             Row doesn’t scroll by default — if you need scrolling, wrap it in SingleChildScrollView with scrollDirection: Axis.horizontal.
             If children overflow the screen, use Expanded or Flexible to control their sizes.
@@ -81,6 +158,26 @@ Chapters
         );
         🧱 Common property:
             child → the widget you want to center.
+        ✅ Examples:
+            1. Centering a text:
+                Center(
+                    child: Text(
+                        'Welcome!',
+                        style: TextStyle(fontSize: 24),
+                    ),
+                );
+            2. Centering an image:
+                Center(
+                child:  Image.asset('assets/images/flutter.png'),
+                );
+            3. Using with Container:
+                Center(
+                    child: Container(
+                        width: 100,
+                        height: 100,
+                        color: Colors.blue,
+                    ),
+                );
         📌 Tip:
             Center expands to fill the available space of its parent and then centers its child.
             If the parent has limited size, the child is centered within that area.
@@ -101,6 +198,32 @@ Chapters
             alignment → how to align the image inside its box
             color / colorBlendMode → apply color filters
             repeat → repeat the image if needed
+        ✅ Examples:
+            1. Load from assets:
+                Image.asset(
+                    'assets/images/flutter.png',
+                    width: 100,
+                    height: 100,
+                    fit: BoxFit.cover,
+                );
+            2. Load from network:
+                Image.network(
+                    'https://flutter.dev/images/flutter-logo-sharing.png',
+                    width: 150,
+                    height: 150,
+                    fit: BoxFit.contain,
+                );
+            3. Load from file (e.g., gallery or storage):
+                import 'dart:io';
+                Image.file(
+                    File('/path/to/image.jpg'),
+                    width: 200,
+                );
+            4. Load from memory:
+                Image.memory(
+                    bytes, // Uint8List data
+                    fit: BoxFit.cover,
+                );
         📌 Tip:
             For asset images, make sure to declare them in pubspec.yaml.
             Use fit to control how images resize or crop.
@@ -124,7 +247,51 @@ Chapters
             alignment → how to align children (default: topStart)
             fit → how the non-positioned children are sized (loose, expand, passthrough)
             clipBehavior → controls how content is clipped outside the stack
-            👉 You can also position individual children using Positioned.
+        👉 You can also position individual children using Positioned.
+        ✅ Examples:
+            1. Basic stack with text on top of a box:
+                Stack(
+                    alignment: Alignment.center,
+                    children: [
+                        Container(width: 200, height: 200, color: Colors.blue),
+                        Text('Overlay', style: TextStyle(color: Colors.white)),
+                    ],
+                );
+            2. Using Positioned to place widgets precisely:
+                Stack(
+                    children: [
+                        Container(width: 300, height: 300, color: Colors.green),
+                        Positioned(
+                            top: 20,
+                            left: 20,
+                            child: Icon(Icons.star, color: Colors.yellow, size: 40),
+                        ),
+                        Positioned(
+                            bottom: 10,
+                            right: 10,
+                            child: Text('Bottom right'),
+                        ),
+                    ],
+                );
+            3. Creating a profile image with a badge:
+                Stack(
+                    children: [
+                        CircleAvatar(radius: 40, backgroundColor: Colors.blue),
+                        Positioned(
+                        bottom: 0,
+                        right: 0,
+                        child: Container(
+                            width: 20,
+                            height: 20,
+                            decoration: BoxDecoration(
+                                color: Colors.green,
+                                shape: BoxShape.circle,
+                                border: Border.all(color: Colors.white, width: 2),
+                            ),
+                        ),
+                        ),
+                    ],
+                );
         📌 Tip:
             Use Stack when you need overlapping layouts.
             Combine with Positioned for precise control of element placement.
@@ -141,6 +308,14 @@ Chapters
             EdgeInsets.all(value) → same padding on all sides
             EdgeInsets.symmetric(horizontal: x, vertical: y) → padding on horizontal & vertical sides
             EdgeInsets.only(left: x, top: y, right: z, bottom: w) → padding on specific sides
+        ✅ Example:
+            Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                child: Container(
+                    color: Colors.blue,
+                    child: Text('Padded Text'),
+                ),
+            );
         📌 Tip:
             Padding only affects the space around the child, not the size of the child itself.
             It’s often used inside Column, Row, or Stack for cleaner UI spacing.
@@ -158,12 +333,30 @@ Chapters
             Fix the size of a widget.
             Add spacing between widgets (when child is null).
             Expand to fill all available space with SizedBox.expand().
+        ✅ Example 1 - Fixed size for a widget:
+            SizedBox(
+                width: 200,
+                height: 100,
+                child: Container(color: Colors.blue),
+            );
+        ✅ Example 2 - Add space between widgets:
+            Column(
+                children: [
+                    Text('Top'),
+                    SizedBox(height: 20), // empty vertical space
+                    Text('Bottom'),
+                ],
+            );
+        ✅ Example 3 - Fill available space:
+            SizedBox.expand(
+                child: Container(color: Colors.red),
+            );
         📌 Tip:
             SizedBox is lightweight and preferred over Container when you just need fixed spacing or sizing.
             If no child is provided, it acts as an invisible spacer.
             Can also be used as SizedBox.expand() to fill available space.
 
-    00:37:33 Icon
+    00:37:33 Icon()
         Used to display material design icons. It’s lightweight and commonly used in
         buttons, navigation bars, and UI decorations.
         Icon(
@@ -175,12 +368,28 @@ Chapters
             icon → the icon to display (e.g., Icons.home, Icons.star)
             color → color of the icon
             size → size of the icon in logical pixels
+        ✅ Examples:
+            1. Basic icon:
+                Icon(Icons.favorite);
+            2. Colored and sized icon:
+                Icon(
+                    Icons.favorite,
+                    color: Colors.red,
+                    size: 50,
+                );
+            3. Icon inside a button:
+                IconButton(
+                    icon: Icon(Icons.add),
+                    onPressed: () {
+                        print('Button pressed');
+                    },
+                );
         📌 Tip:
             You can find built-in icons in Icons. class.
             For custom icons, use Image.asset() or Image.network() instead.
             Combine Icon with Row or Column for labels with icons.
 
-    00:38:56 ListTile
+    00:38:56 ListTile()
         Prebuilt widget for creating a single row in a list with a leading icon or image,
         a title, a subtitle, and a trailing widget (like an arrow or button).
         ListTile(
@@ -198,6 +407,30 @@ Chapters
             subtitle → Secondary text (optional)
             trailing → Widget at the end (e.g., icon, switch, button)
             onTap → A
+        ✅ Examples:
+            1. Simple list tile:
+                ListTile(
+                    leading: Icon(Icons.email),
+                    title: Text('Email'),
+                );
+            2. With subtitle and action:
+                ListTile(
+                    leading: CircleAvatar(child: Icon(Icons.person)),
+                    title: Text('Jane Doe'),
+                    subtitle: Text('Active 5 min ago'),
+                    trailing: Icon(Icons.message),
+                    onTap: () {
+                        print('Message Jane');
+                    },
+                );
+            3. Inside a list:
+                ListView(
+                    children: [
+                        ListTile(title: Text('Item 1')),
+                        ListTile(title: Text('Item 2')),
+                        ListTile(title: Text('Item 3')),
+                    ],
+                );
         📌 Tip:
             ListTile automatically handles padding and alignment.
             You can use dense: true for a more compact look.
@@ -206,7 +439,7 @@ Chapters
     00:40:59 print
         print() - prints to the console
 
-    00:41:47 Wrap
+    00:41:47 Wrap()
         Automatically moves its children to the next line (or column) when there’s not enough space.
         It’s perfect for chips, tags, buttons, or any content that should flow responsively.
         Like a Row(), but wraps to next line
@@ -224,7 +457,29 @@ Chapters
             spacing → space between children in the main axis
             runSpacing → space between lines (runs) in the cross axis
             alignment → alignment of children in the main axis
-            runAlignment → ali
+            runAlignment → alignment of each line in the cross axis
+        ✅ Examples:
+            1. Horizontal wrap with chips:
+                Wrap(
+                    spacing: 10,
+                    runSpacing: 5,
+                    children: [
+                        Chip(label: Text('One')),
+                        Chip(label: Text('Two')),
+                        Chip(label: Text('Three')),
+                        Chip(label: Text('Four')),
+                    ],
+                );
+            2. Vertical wrap:
+                Wrap(
+                    direction: Axis.vertical,
+                    spacing: 10,
+                    children: [
+                        Container(width: 80, height: 40, color: Colors.red),
+                        Container(width: 80, height: 40, color: Colors.green),
+                        Container(width: 80, height: 40, color: Colors.blue),
+                    ],
+                );
         📌 Tip:
             Use Wrap instead of Row or Column when you want auto line breaking.
             Unlike Row and Column, Wrap won’t overflow when space runs out — it wraps gracefully.
@@ -252,7 +507,21 @@ Chapters
             home → the default screen shown when the app starts
             routes → named routes for navigation
             initialRoute → route shown at launch (instead of home)
-
+            debugShowCheckedModeBanner → remove the “debug” banner in debug mode
+        ✅ Examples:
+            1. Basic app with a home screen:
+                void main() {
+                    runApp(
+                        MaterialApp(
+                        title: 'My First App',
+                        home: Scaffold(
+                            appBar: AppBar(title: Text('Home')),
+                            body: Center(child: Text('Hello, Flutter!')),
+                        ),
+                        ),
+                    );
+                }
+            2. Using routes for navigation:
                 MaterialApp(
                     initialRoute: '/',
                     routes: {
@@ -260,8 +529,6 @@ Chapters
                         '/about': (context) => AboutPage(),
                     },
                 );
-
-            debugShowCheckedModeBanner → remove the “debug” banner in debug mode
         📌 Tip:
             Always wrap your Flutter app with MaterialApp if you want Material Design widgets (like Scaffold, AppBar, FloatingActionButton, etc.).
             For more control over appearance, use theme or darkTheme.
@@ -290,6 +557,27 @@ Chapters
             drawer → side navigation panel
             bottomNavigationBar → bar at the bottom for navigation
             backgroundColor → background color of the Scaffold
+        ✅ Examples:
+            1. Basic scaffold with text:
+                Scaffold(
+                    appBar: AppBar(title: Text('Home')),
+                    body: Center(child: Text('Welcome!')),
+                );
+            2. Scaffold with FAB and bottom navigation:
+                Scaffold(
+                    appBar: AppBar(title: Text('Dashboard')),
+                    body: ListView(children: [Text('Item 1'), Text('Item 2')]),
+                    floatingActionButton: FloatingActionButton(
+                        onPressed: () {},
+                        child: Icon(Icons.add),
+                    ),
+                    bottomNavigationBar: BottomNavigationBar(
+                        items: [
+                        BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+                        BottomNavigationBarItem(icon: Icon(Icons.settings), label: 'Settings'),
+                        ],
+                    ),
+                );
         📌 Tip:
             Scaffold is the foundation for most Material apps.
             It handles layout, safe area, scrolling, and keyboard overlap automatically.
@@ -315,6 +603,27 @@ Chapters
             backgroundColor → color of the AppBar
             centerTitle → centers the title (default depends on platform)
             elevation → shadow depth of the AppBar
+        ✅ Examples:
+            1. Simple AppBar with title:
+                AppBar(
+                    title: Text('My App'),
+                );
+            2. AppBar with actions and leading:
+                AppBar(
+                    leading: Icon(Icons.menu),
+                    title: Text('Dashboard'),
+                    actions: [
+                        IconButton(icon: Icon(Icons.search), onPressed: () {}),
+                        IconButton(icon: Icon(Icons.notifications), onPressed: () {}),
+                    ],
+                );
+            3. Customized AppBar:
+                AppBar(
+                    title: Text('Profile'),
+                    backgroundColor: Colors.green,
+                    centerTitle: true,
+                    elevation: 4,
+                );
         📌 Tip:
             AppBar is usually used inside a Scaffold.
             You can place custom widgets inside title or actions for flexible UI.
@@ -347,13 +656,40 @@ Chapters
             backgroundColor → background of the bar
             indicatorColor → highlight color for the selected destination
             animationDuration → how fast the transition animates
+        ✅ Examples:
+            1. Basic navigation bar with two tabs:
+                Scaffold(
+                    body: Center(child: Text('Home')),
+                    bottomNavigationBar: NavigationBar(
+                        selectedIndex: 0,
+                        onDestinationSelected: (index) {
+                        // Handle navigation logic
+                        },
+                        destinations: const [
+                        NavigationDestination(icon: Icon(Icons.home), label: 'Home'),
+                        NavigationDestination(icon: Icon(Icons.person), label: 'Profile'),
+                        ],
+                    ),
+                );
+            2. Navigation bar with 3 destinations and custom colors:
+                NavigationBar(
+                    backgroundColor: Colors.white,
+                    indicatorColor: Colors.blue.shade100,
+                    selectedIndex: 1,
+                    onDestinationSelected: (index) {},
+                    destinations: const [
+                        NavigationDestination(icon: Icon(Icons.home), label: 'Home'),
+                        NavigationDestination(icon: Icon(Icons.search), label: 'Search'),
+                        NavigationDestination(icon: Icon(Icons.settings), label: 'Settings'),
+                    ],
+                );
         📌 Tip:
             NavigationBar works great with Scaffold as bottomNavigationBar.
             It’s part of Material 3, so make sure useMaterial3: true is set in your ThemeData.
             Use NavigationDestination to define each tab’s icon and label.
             For older Material 2 designs, use BottomNavigationBar instead.
 
-    00:53:53 FloatingActionButton
+    00:53:53 FloatingActionButton()
         FloatingActionButton (FAB) is a circular button that floats above the UI, usually in the bottom-right
         corner. It’s used for primary actions on a screen — like adding, creating, or composing something.
         FloatingActionButton(
@@ -369,20 +705,45 @@ Chapters
             foregroundColor → color of the icon/text inside the FAB
             tooltip → text shown when the user long-presses
             shape → custom shape for the button (e.g., rounded rectangle)
-        ! If multiple buttons are needed, can be wrapped with Row/column:
-        floatingActionButton: Row(
-            mainAxisSize: MainAxisSize.min,
-            FloatingActionButton(...),
-            SizedBox(width: 10),
-            FloatingActionButton(...),
-        )
+        !!! If multiple buttons are needed, can be wrapped with Row/column:
+            floatingActionButton: Row(
+                mainAxisSize: MainAxisSize.min,
+                FloatingActionButton(...),
+                SizedBox(width: 10),
+                FloatingActionButton(...),
+            )
+        ✅ Examples:
+
+            1. Basic FAB with an icon:
+                Scaffold(
+                    floatingActionButton: FloatingActionButton(
+                        onPressed: () {
+                        print('FAB tapped');
+                        },
+                        child: Icon(Icons.add),
+                    ),
+                );
+            2. FAB with custom color and tooltip:
+                FloatingActionButton(
+                    backgroundColor: Colors.green,
+                    foregroundColor: Colors.white,
+                    tooltip: 'Add Item',
+                    onPressed: () {},
+                    child: Icon(Icons.add),
+                );
+            3. Extended FAB with label:
+                FloatingActionButton.extended(
+                    onPressed: () {},
+                    icon: Icon(Icons.edit),
+                    label: Text('Edit'),
+                );
         📌 Tip:
             FAB is typically placed inside a Scaffold using floatingActionButton.
             Use FloatingActionButton.extended when you want text + icon.
             You can position it with floatingActionButtonLocation.
             It should represent the most important action on the screen.
 
-    00:56:11 Drawer
+    00:56:11 Drawer()
         Drawer is a side navigation panel that slides in from the left (or right) of the screen.
         It’s commonly used for app-wide navigation — like accessing profile, settings, or other sections.
         It’s typically paired with Scaffold and accessed via the hamburger menu in the AppBar.
@@ -411,12 +772,55 @@ Chapters
             child → the widget displayed inside the drawer (commonly a ListView)
             backgroundColor → background color of the drawer
             You can use DrawerHeader or UserAccountsDrawerHeader for profile info.
+        ✅ Examples:
+            1. Basic Drawer with menu items:
+                Scaffold(
+                    appBar: AppBar(title: Text('Drawer Example')),
+                    drawer: Drawer(
+                        child: ListView(
+                        padding: EdgeInsets.zero,
+                        children: [
+                            DrawerHeader(
+                                decoration: BoxDecoration(color: Colors.blue),
+                                child: Text('Navigation', style: TextStyle(color: Colors.white)),
+                            ),
+                            ListTile(
+                                leading: Icon(Icons.home),
+                                title: Text('Home'),
+                                onTap: () {},
+                            ),
+                            ListTile(
+                                leading: Icon(Icons.settings),
+                                title: Text('Settings'),
+                                onTap: () {},
+                            ),
+                        ],
+                        ),
+                    ),
+                    body: Center(child: Text('Content area')),
+                );
+            2. Drawer with user account header:
+                Drawer(
+                    child: ListView(
+                        children: [
+                        UserAccountsDrawerHeader(
+                            accountName: Text('John Doe'),
+                            accountEmail: Text('john@example.com'),
+                            currentAccountPicture: CircleAvatar(
+                            child: Icon(Icons.person),
+                            ),
+                        ),
+                        ListTile(leading: Icon(Icons.home), title: Text('Home')),
+                        ListTile(leading: Icon(Icons.logout), title: Text('Logout')),
+                        ],
+                    ),
+                );
         📌 Tip:
             Place Drawer in Scaffold’s drawer: property to enable the hamburger menu automatically.
             Use Navigator.pop(context) inside onTap to close the drawer after selecting an option.
             You can also use endDrawer to make the drawer slide in from the right side.
 
-    00:57:53 SafeArea
+    00:57:53 SafeArea()
         SafeArea is a widget that automatically adds padding to its child so that it doesn’t get covered
         by system UI elements like the status bar, notch, or navigation bar. It’s super useful for making
         your layout look good on all devices, especially phones with notches.
@@ -428,6 +832,27 @@ Chapters
             left, top, right, bottom → booleans to enable/disable padding on specific sides
             minimum → adds extra padding beyond the safe area
             maintainBottomViewPadding → keeps bottom padding even when keyboard is open
+        ✅ Examples:
+            1. Basic use to avoid notch overlap:
+                SafeArea(
+                    child: Scaffold(
+                        appBar: AppBar(title: Text('Safe Area Example')),
+                        body: Center(child: Text('Content fits within safe area')),
+                    ),
+                );
+            2. Disable padding on specific sides:
+                SafeArea(
+                    top: false,  // ignore top safe area
+                    child: Container(
+                        color: Colors.red,
+                        child: Text('Safe on sides but not on top'),
+                    ),
+                );
+            3. With extra padding:
+                SafeArea(
+                    minimum: EdgeInsets.all(16),
+                    child: Text('Extra space around me'),
+                );
         📌 Tip:
             Use SafeArea around your main screen content to handle different screen cutouts automatically.
             You don’t need it inside a Scaffold with AppBar, since the AppBar already respects the top safe area.
@@ -451,6 +876,25 @@ Chapters
             Only works inside the State class of a StatefulWidget.
             It triggers a rebuild of the widget to reflect the updated data.
             Should be used only when the state actually changes (to avoid unnecessary rebuilds).
+        ✅ Examples:
+            1. Simple counter:
+                int counter = 0;
+                void _incrementCounter() {
+                    setState(() {
+                        counter++;
+                    });
+                }
+            2. Usage in a widget:
+                Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                        Text('Count: $counter'),
+                        ElevatedButton(
+                        onPressed: _incrementCounter,
+                        child: Text('Increase'),
+                        ),
+                    ],
+                );
         📌 Tip:
             Keep the code inside setState minimal—only update variables, not perform heavy logic.
             If your state is complex or shared across multiple widgets, consider using state management solutions like Provider, Bloc, or Riverpod.
@@ -486,43 +930,36 @@ Chapters
         ValueNotifier: holds the data
         ValueListenableBuilder: listens to the data (don't need the setState())
 
-        1. Simple counter using ValueNotifier:
-
-        final counter = ValueNotifier<int>(0);
-
-        ValueListenableBuilder<int>(
-            valueListenable: counter,
-            builder: (context, value, child) {
-                return Text('Count: $value');
-            },
-        );
-        FloatingActionButton(
-            onPressed: () {
-                counter.value++;
-            },
-            child: Icon(Icons.add),
-        );
-
-        2. Updating a string value:
-
-        final nameNotifier = ValueNotifier<String>('Guest');
-
-        ValueListenableBuilder<String>(
-            valueListenable: nameNotifier,
-            builder: (context, value, _) {
-                return Text('Hello, $value');
-            },
-        );
-
-        // Update value
-        nameNotifier.value = 'John';
-
         🧱 Key points:
             Works well with ValueListenableBuilder to rebuild widgets automatically.
             value property holds the current state.
             When you update value, all listeners are notified.
             Doesn’t require a StatefulWidget — can be used inside StatelessWidget too.
-
+        ✅ Examples:
+            1. Simple counter using ValueNotifier:
+                final counter = ValueNotifier<int>(0);
+                ValueListenableBuilder<int>(
+                    valueListenable: counter,
+                    builder: (context, value, child) {
+                        return Text('Count: $value');
+                    },
+                );
+                FloatingActionButton(
+                    onPressed: () {
+                        counter.value++;
+                    },
+                    child: Icon(Icons.add),
+                );
+            2. Updating a string value:
+                final nameNotifier = ValueNotifier<String>('Guest');
+                ValueListenableBuilder<String>(
+                    valueListenable: nameNotifier,
+                    builder: (context, value, _) {
+                        return Text('Hello, $value');
+                    },
+                );
+                // Update value
+                nameNotifier.value = 'John';
         📌 Tip:
             ValueNotifier is great for small, localized state management.
             For complex state, use more robust solutions like Provider, Riverpod, or Bloc.
@@ -548,7 +985,7 @@ Chapters
 
 
 🖋️ 6. User Inputs
-    01:38:32 TextField
+    01:38:32 TextField()
         TextField is a widget that allows the user to enter and edit text input.
         It’s commonly used for forms, search bars, login screens, and other input fields.
 
@@ -566,6 +1003,36 @@ Chapters
             onChanged → callback triggered when text changes
             onSubmitted → callback when user presses "done" or "enter"
             maxLines → allows multiple lines of input
+        ✅ Examples:
+            1. Basic text field:
+                TextField(
+                    decoration: InputDecoration(
+                        hintText: 'Type something...',
+                    ),
+                );
+            2. Text field with controller:
+                final myController = TextEditingController();
+                    TextField(
+                    controller: myController,
+                    decoration: InputDecoration(labelText: 'Your name'),
+                );
+                // Access value:
+                print(myController.text);
+            3. Password field:
+                TextField(
+                    obscureText: true,
+                    decoration: InputDecoration(
+                        labelText: 'Password',
+                        prefixIcon: Icon(Icons.lock),
+                    ),
+                );
+            4. Multiline text field:
+                TextField(
+                    maxLines: 5,
+                    decoration: InputDecoration(
+                        labelText: 'Write a message',
+                    ),
+                );
         📌 Tip:
             Always dispose of your TextEditingController in dispose() to prevent memory leaks.
             Use TextFormField for validation when working inside a form.
@@ -575,27 +1042,40 @@ Chapters
         TextEditingController is a controller class used to manage and control the text inside a
         TextField or TextFormField. It lets you read, modify, and listen to changes in the text input.
 
-        Listen for text changes:
-            final myController = TextEditingController();
-            myController.addListener(() {
-                print(myController.text);
-            });
-
-        Basic usage with TextField:
-            final nameController = TextEditingController();
-            TextField(
-                controller: nameController,
-                decoration: InputDecoration(
-                    labelText: 'Enter your name',
-                ),
-            );
-            // Access the text value
-            print(nameController.text);
-
         🧱 Common uses:
             Retrieve the current text: myController.text
             Set new text: myController.text = 'Hello';
             Clear the field: myController.clear();
+        ✅ Examples:
+            Listen for text changes:
+                final myController = TextEditingController();
+                myController.addListener(() {
+                    print(myController.text);
+                });
+
+            1. Basic usage with TextField:
+                final nameController = TextEditingController();
+                TextField(
+                    controller: nameController,
+                    decoration: InputDecoration(
+                        labelText: 'Enter your name',
+                    ),
+                );
+                // Access the text value
+                print(nameController.text);
+            2. Updating the text programmatically:
+                nameController.text = 'John Doe';
+            3. Listening for changes:
+                nameController.addListener(() {
+                    print('Current text: ${nameController.text}');
+                });
+            4. Clearing the text:
+                IconButton(
+                    icon: Icon(Icons.clear),
+                    onPressed: () {
+                        nameController.clear();
+                    },
+                );
         📌 Tip:
             Always dispose of controllers when they’re no longer needed to free resources:
                 @override
@@ -606,7 +1086,7 @@ Chapters
             Use one controller per text field when you need to track or control input directly.
             Combine with TextField or TextFormField for reactive and interactive input fields.
 
-    01:42:33 Checkbox
+    01:42:33 Checkbox()
         Checkbox is a material design widget that lets the user select or deselect an option (true/false).
         It’s typically used for settings, preferences, or multi-select lists.
         see also CheckboxListTile(title: )
@@ -625,6 +1105,52 @@ Chapters
             activeColor → color when the box is checked
             checkColor → color of the check mark
             tristate → allows null as a third state if set to true
+        ✅ Examples:
+            1. Basic checkbox with state:
+                bool isChecked = false;
+                    Checkbox(
+                    value: isChecked,
+                    onChanged: (bool? newValue) {
+                        setState(() {
+                        isChecked = newValue!;
+                        });
+                    },
+                );
+            2. Colored checkbox:
+                Checkbox(
+                    value: isChecked,
+                    activeColor: Colors.green,
+                    checkColor: Colors.white,
+                    onChanged: (bool? value) {
+                        setState(() {
+                        isChecked = value!;
+                        });
+                    },
+                );
+            3. Checkbox with label (using Row or CheckboxListTile):
+                Row(
+                    children: [
+                        Checkbox(
+                        value: isChecked,
+                        onChanged: (value) {
+                            setState(() {
+                            isChecked = value!;
+                            });
+                        },
+                        ),
+                        Text('Accept Terms & Conditions'),
+                    ],
+                );
+            4. Or more conveniently:
+                CheckboxListTile(
+                    title: Text('Accept Terms & Conditions'),
+                    value: isChecked,
+                    onChanged: (value) {
+                        setState(() {
+                        isChecked = value!;
+                        });
+                    },
+                );
         📌 Tip:
             Always manage the state (with setState, ValueNotifier, or a state management solution).
             Use CheckboxListTile() for a built-in label and better accessibility.
@@ -640,7 +1166,7 @@ Chapters
             return expression;
         }
 
-    01:46:15 Switch
+    01:46:15 Switch()
         Switch is a material design toggle button that represents a boolean (on/off) state.
         It’s commonly used in settings screens or anywhere the user needs to enable or disable a feature.
         See also: SwitchListTile(title: )
@@ -660,6 +1186,40 @@ Chapters
             activeTrackColor → color of the track when ON
             inactiveThumbColor → color of the thumb when OFF
             inactiveTrackColor → color of the track when OFF
+        ✅ Examples:
+            1. Basic switch:
+                bool isSwitched = false;
+                Switch(
+                value: isSwitched,
+                onChanged: (bool value) {
+                    setState(() {
+                    isSwitched = value;
+                    });
+                },
+                );
+            2. Customized switch:
+                Switch(
+                    value: isSwitched,
+                    activeColor: Colors.green,
+                    activeTrackColor: Colors.lightGreenAccent,
+                    inactiveThumbColor: Colors.grey,
+                    inactiveTrackColor: Colors.black26,
+                    onChanged: (bool value) {
+                        setState(() {
+                        isSwitched = value;
+                        });
+                    },
+                );
+            3. With a label (SwitchListTile):
+                SwitchListTile(
+                    title: Text('Enable Notifications'),
+                    value: isSwitched,
+                    onChanged: (bool value) {
+                        setState(() {
+                        isSwitched = value;
+                        });
+                    },
+                );
         📌 Tip:
             Switch itself only shows the toggle; use SwitchListTile for an easy labeled version.
             You must handle the state (like setState or ValueNotifier).
@@ -671,6 +1231,18 @@ Chapters
         That means:
             On Android → shows a Material-style widget.
             On iOS → shows a Cupertino-style (iOS-style) widget.
+
+        Example with Switch.adaptive:
+            Switch.adaptive(
+                value: isSwitched,
+                onChanged: (bool value) {
+                    setState(() {
+                    isSwitched = value;
+                    });
+                },
+            );
+            🟢 On Android → it looks like a Material toggle switch
+            ⚪ On iOS → it looks like an iOS-style Cupertino switch
 
         ✅ Other widgets with .adaptive constructors:
             Switch.adaptive
@@ -706,6 +1278,46 @@ Chapters
             label → shows a label when the slider thumb is dragged
             activeColor → color of the track before the thumb
             inactiveColor → color of the track after the thumb
+        ✅ Examples:
+            1. Basic slider:
+                double volume = 0.5;
+                Slider(
+                    value: volume,
+                    min: 0,
+                    max: 1,
+                    onChanged: (double value) {
+                        setState(() {
+                        volume = value;
+                        });
+                    },
+                );
+            2. Slider with divisions and labels:
+                double rating = 3;
+                Slider(
+                    value: rating,
+                    min: 0,
+                    max: 5,
+                    divisions: 5,
+                    label: '$rating stars',
+                    onChanged: (double value) {
+                        setState(() {
+                            rating = value;
+                        });
+                    },
+                );
+            3. Customized colors:
+                Slider(
+                    value: brightness,
+                    min: 0,
+                    max: 100,
+                    activeColor: Colors.orange,
+                    inactiveColor: Colors.grey,
+                    onChanged: (double value) {
+                        setState(() {
+                            brightness = value;
+                        });
+                    },
+                );
         📌 Tip:
             Slider only supports double values — you can round it using .round() if needed.
             Use Slider.adaptive() to automatically get iOS (Cupertino) or Android (Material) style.
@@ -733,13 +1345,48 @@ Chapters
             padding → space around the scrollable content
             reverse → reverses the scroll direction
             physics → defines scroll behavior (e.g., BouncingScrollPhysics, NeverScrollableScrollPhysics)
+        ✅ Examples:
+            1. Vertical scroll (default):
+                SingleChildScrollView(
+                    child: Column(
+                        children: List.generate(
+                            20,
+                            (index) => Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Text('Item $index'),
+                            ),
+                        ),
+                    ),
+                );
+            2. Horizontal scroll:
+                SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                    child: Row(
+                        children: [
+                            Container(width: 100, height: 100, color: Colors.red),
+                            Container(width: 100, height: 100, color: Colors.green),
+                            Container(width: 100, height: 100, color: Colors.blue),
+                        ],
+                    ),
+                );
+            3. With padding and physics:
+                SingleChildScrollView(
+                    padding: EdgeInsets.all(16),
+                    physics: BouncingScrollPhysics(),
+                    child: Column(
+                        children: [
+                            Text('Scrollable Content'),
+                            // more widgets...
+                        ],
+                    ),
+                );
         📌 Tip:
             SingleChildScrollView is great for small-to-medium lists — for large, dynamic data use ListView instead.
             Always wrap the child in a layout like Column or Row — not multiple siblings directly.
             When used inside a Column, wrap it with Expanded or give it a constrained height (like using SizedBox) to avoid overflow errors.
 
     01:52:51 GestureDetector
-        GestureDetector is a widget that detects gestures (taps, swipes, long presses, etc.) on its child.
+        GestureDetector is a widget that detects gestures (taps, swipes, long presses, swipes, drags etc.) on its child.
         It doesn’t have a visible UI itself — it simply wraps another widget to make it interactive.
 
         GestureDetector(
@@ -761,10 +1408,54 @@ Chapters
             onPanUpdate → drag or swipe
             onVerticalDragUpdate / onHorizontalDragUpdate → directional drag
             onTapDown / onTapUp → when touch starts and ends
+            ✅ Examples:
+                1. Tap and print message:
+                    GestureDetector(
+                        onTap: () {
+                            print('Tapped!');
+                        },
+                        child: Icon(Icons.favorite, size: 50, color: Colors.red),
+                    );
+                2. Long press to change color:
+                    Color boxColor = Colors.blue;
+                        GestureDetector(
+                            onLongPress: () {
+                                setState(() {
+                                boxColor = Colors.green;
+                                });
+                            },
+                            child: Container(
+                                width: 100,
+                                height: 100,
+                                color: boxColor,
+                        ),
+                    );
+                3. Drag to move a widget:
+                    Offset position = Offset(100, 100);
+                        GestureDetector(
+                        onPanUpdate: (details) {
+                            setState(() {
+                            position += details.delta;
+                            });
+                        },
+                        child: Positioned(
+                            left: position.dx,
+                            top: position.dy,
+                            child: Container(width: 50, height: 50, color: Colors.red),
+                        ),
+                    );
+
         📌 Tip:
             GestureDetector is invisible; you must wrap a widget to make it interactive.
             Use it when you need custom gestures beyond standard buttons or switches.
+            You can combine multiple gesture callbacks in one detector.
             For simple taps, InkWell() or InkResponse() can also be used, providing ripple effects.
+        🧠 Common use cases:
+            Custom buttons or interactive areas.
+            Detecting swipes or drags for animations.
+            Wrapping images or icons to make them clickable.
+            Building gesture-based navigation or custom UI effects.
+
 
     01:54:01 InkWell
         InkWell is a material design widget that provides a ripple effect when tapped.
@@ -789,6 +1480,36 @@ Chapters
             borderRadius → rounds ripple corners
             splashColor → ripple color
             highlightColor → color when pressed
+        ✅ Examples:
+            1. Simple InkWell with ripple effect:
+                InkWell(
+                    onTap: () {
+                        print('Card tapped!');
+                    },
+                    child: Card(
+                        child: Padding(
+                        padding: EdgeInsets.all(16),
+                        child: Text('Tap this card'),
+                        ),
+                    ),
+                );
+            2. InkWell with rounded corners and custom splash color:
+                InkWell(
+                    onTap: () {},
+                    borderRadius: BorderRadius.circular(12),
+                    splashColor: Colors.greenAccent,
+                    child: Container(
+                        padding: EdgeInsets.all(16),
+                        child: Text('Tap me'),
+                    ),
+                );
+            3. InkWell for an image button:
+                InkWell(
+                    onTap: () {
+                        print('Image tapped');
+                    },
+                    child: Image.asset('assets/button.png', width: 100),
+                );
         📌 Tip:
             InkWell must be inside a Material widget (like Card, Container with Material, or Scaffold) for the ripple effect to show.
             Use GestureDetector if you don’t need a ripple.
@@ -807,6 +1528,36 @@ Chapters
             child → widget inside the button (usually Text or Icon)
             style → customize the button (ButtonStyle)
             onLongPress → callback when long-pressed
+        ✅ Examples:
+            1. Basic ElevatedButton:
+                ElevatedButton(
+                    onPressed: () {
+                        print('Pressed!');
+                    },
+                    child: Text('Submit'),
+                );
+            2. Disabled button:
+                ElevatedButton(
+                    onPressed: null,  // Disabled
+                    child: Text('Disabled'),
+                );
+            3. Styled button:
+                ElevatedButton(
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                        primary: Colors.green,       // Background color
+                        onPrimary: Colors.white,     // Text color
+                        padding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                    ),
+                    child: Text('Styled Button'),
+                );
+            4. ElevatedButton with icon:
+                ElevatedButton.icon(
+                    onPressed: () {},
+                    icon: Icon(Icons.send),
+                    label: Text('Send'),
+                );
         📌 Tip:
             Use ElevatedButton for important actions that need emphasis.
             Customize appearance using style or ElevatedButton.styleFrom.
@@ -824,6 +1575,7 @@ Chapters
             StyledButton()
             BackButton()
             CloseButton()
+            * DropdownButton()
 
     01:59:07 DropdownButton
         DropdownButton is a widget that lets users select one value from a list of items
@@ -853,11 +1605,62 @@ Chapters
             isExpanded → makes the button take all available horizontal space
             dropdownColor → background color of dropdown menu
             underline → widget shown below the button (can remove with SizedBox())
+        ✅ Examples:
+            1. Simple dropdown:
+                String dropdownValue = 'Apple';
+                DropdownButton<String>(
+                    value: dropdownValue,
+                    items: <String>['Apple', 'Banana', 'Cherry']
+                        .map((String value) {
+                        return DropdownMenuItem<String>(
+                        value: value,
+                        child: Text(value),
+                        );
+                    }).toList(),
+                    onChanged: (String? newValue) {
+                        setState(() {
+                        dropdownValue = newValue!;
+                        });
+                    },
+                );
+            2. Dropdown with hint and no underline:
+                String? selectedColor;
+                DropdownButton<String>(
+                    hint: Text('Select a color'),
+                    value: selectedColor,
+                    underline: SizedBox(),
+                    items: ['Red', 'Green', 'Blue'].map((color) {
+                        return DropdownMenuItem(
+                        value: color,
+                        child: Text(color),
+                        );
+                    }).toList(),
+                    onChanged: (value) {
+                        setState(() {
+                        selectedColor = value;
+                        });
+                    },
+                );
+            3. Expanded dropdown:
+                DropdownButton<String>(
+                    isExpanded: true,
+                    value: selectedValue,
+                    items: ['Small', 'Medium', 'Large'].map((size) {
+                        return DropdownMenuItem(
+                        value: size,
+                        child: Text(size),
+                        );
+                    }).toList(),
+                    onChanged: (value) {
+                        setState(() {
+                        selectedValue = value!;
+                        });
+                    },
+                );
         📌 Tip:
             Use DropdownButtonFormField inside a Form for better validation and styling.
             To remove the underline, set underline: SizedBox().
             For a custom look, wrap it in a Container or Card with decoration.
-
 
 🗺️ 7. Navigation
     02:02:34 Push

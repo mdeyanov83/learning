@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_mapp/views/pages/expanded_flexible_page.dart';
 
 class SettingsPage extends StatefulWidget {
   const SettingsPage({
@@ -179,23 +180,32 @@ class _SettingsPageState extends State<SettingsPage> {
                   color: Colors.white12,
                 ),
               ),
-              BackButton(
-                onPressed: () {},
-              ),
-              CloseButton(
-                onPressed: () {},
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (BuildContext context) {
+                        return ExpandedFlexiblePage();
+                      },
+                    ),
+                  );
+                },
+                child: Text('Show Flexible and Expanded'),
               ),
               FilledButton(
-                onPressed: () {},
-                child: Text('Click me'),
-              ),
-              TextButton(
                 onPressed: () {},
                 child: Text('Click me'),
               ),
               OutlinedButton(
                 onPressed: () {},
                 child: Text('Click me'),
+              ),
+              BackButton(
+                onPressed: () {},
+              ),
+              CloseButton(
+                onPressed: () {},
               ),
             ],
           ),

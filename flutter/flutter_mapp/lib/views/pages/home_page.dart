@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mapp/data/constants.dart';
+import 'package:flutter_mapp/views/pages/course_page.dart';
 import 'package:flutter_mapp/views/widgets/container_widget.dart';
 import 'package:flutter_mapp/views/widgets/hero_widget.dart';
 
@@ -13,6 +14,8 @@ class HomePage extends StatelessWidget {
       KValue.cleanUi,
       KValue.fixBugs,
       KValue.keyConcepts,
+      KValue.keyConcepts,
+      KValue.keyConcepts,
     ];
 
     return Padding(
@@ -20,7 +23,12 @@ class HomePage extends StatelessWidget {
       child: SingleChildScrollView(
         child: Column(
           children: [
-            HeroWidget(title: 'Flutter Mapp'),
+            SizedBox(height: 10.0),
+            HeroWidget(
+              title: 'Flutter Mapp',
+              nextPage: CoursePage(),
+            ),
+            SizedBox(height: 5.0),
             ...List.generate(
               list.length,
               (index) => ContainerWidget(

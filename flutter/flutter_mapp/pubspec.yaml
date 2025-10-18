@@ -36,6 +36,8 @@ dependencies:
   cupertino_icons: ^1.0.8
   lottie: ^3.3.2
   shared_preferences: ^2.5.3
+  flutter_launcher_icons: ^0.14.4
+  http: ^1.5.0
 
 dev_dependencies:
   flutter_test:
