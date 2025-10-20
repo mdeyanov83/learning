@@ -6,7 +6,7 @@ def testIterator():
 def main():
     t = testIterator()
     print(t)
-    
+
     for i in testIterator():
         print(i)
 
@@ -14,3 +14,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+def test():
+    a = int(10)
