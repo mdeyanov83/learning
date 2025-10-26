@@ -16,11 +16,15 @@ from typing import Optional
 class Solution:
     def getIntersectionNode(self, headA: ListNode, headB: ListNode) -> Optional[ListNode]:
 
+        walkA:ListNode = headA
 
-        while headA.next:
-            
-
-
+        while walkA:
+            walkB:ListNode = headB
+            while walkB:
+                if walkA.next == walkB.next:
+                    return walkA.next
+                walkB = walkB.next
+            walkA = walkA.next
         return
 
 # @lc code=end
