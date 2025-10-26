@@ -21,7 +21,7 @@ class Solution:
         while walkA:
             walkB = headB
             while walkB:
-                if walkA.next == walkB.next and walkA.next.val == walkB.next.val:
+                if walkA.next == walkB.next:
                     return walkA.next
                 walkB = walkB.next
             walkA = walkA.next
