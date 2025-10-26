@@ -13,19 +13,37 @@ class ListNode:
 
 from typing import Optional
 
+# class Solution:
+#     def getIntersectionNode(self, headA: ListNode, headB: ListNode) -> Optional[ListNode]:
+
+#         walkA = headA
+
+#         while walkA:
+#             walkB = headB
+#             while walkB:
+#                 if walkA == walkB:
+#                     return walkA
+#                 walkB = walkB.next
+#             walkA = walkA.next
+#         return
+
 class Solution:
     def getIntersectionNode(self, headA: ListNode, headB: ListNode) -> Optional[ListNode]:
 
         walkA = headA
-
+        list1 = []
         while walkA:
-            walkB = headB
-            while walkB:
-                if walkA == walkB:
-                    return walkA
-                walkB = walkB.next
+            list1.append(walkA)
             walkA = walkA.next
+        walkB = headB
+
+        while walkB:
+            if walkB in list1:
+                return walkB
+            walkB = walkB.next
+
         return
+
 
 # @lc code=end
 
