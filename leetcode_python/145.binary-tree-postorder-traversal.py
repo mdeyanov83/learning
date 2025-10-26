@@ -24,7 +24,7 @@ class Solution:
 
             walk(node.left)
             walk(node.right)
-            path.append(node)
+            path.append(node.val)
 
         walk(root)
 
