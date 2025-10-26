@@ -10,7 +10,7 @@ class Solution:
 
         if columnNumber == 1: return 'A'
 
-        digits = '0ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+        digits = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
         base = 26
         n_base = []
         n = columnNumber
