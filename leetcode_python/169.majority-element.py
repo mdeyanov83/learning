@@ -10,13 +10,20 @@ from typing import List
 class Solution:
     def majorityElement(self, nums: List[int]) -> int:
 
+
+        return 1
+
+
+
+
 # @lc code=end
 
 def main():
     sol = Solution()
 
-    
+    input = [3, 2, 3]
 
+    print(sol.majorityElement(input))
 
 if __name__ == "__main__":
     main()
