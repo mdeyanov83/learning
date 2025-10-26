@@ -25,3 +25,10 @@ class Solution:
 
 # @lc code=end
 
+def main():
+    sol = Solution()
+    testCase = 
+
+
+if __name__ == "__main__":
+    main()
