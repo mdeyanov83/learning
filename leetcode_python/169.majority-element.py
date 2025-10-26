@@ -19,7 +19,7 @@ class Solution:
                 occur[x] = 1
 
         for key in occur:
-            if key >= len(nums) / 2:
+            if occur[key] >= len(nums) / 2:
                 return key
 
 # @lc code=end
