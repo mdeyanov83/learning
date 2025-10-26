@@ -8,6 +8,8 @@
 class Solution:
     def convertToTitle(self, columnNumber: int) -> str:
 
+        if columnNumber == 1: return 'A'
+
         digits = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
         base = 25
         result = ""
