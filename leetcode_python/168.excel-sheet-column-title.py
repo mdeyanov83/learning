@@ -7,6 +7,19 @@
 # @lc code=start
 class Solution:
     def convertToTitle(self, columnNumber: int) -> str:
-        
+
+        digits = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+        base = 25
+        result = ""
+        n = columnNumber
+
+        while n > 0:
+            remainder = n % base
+            result = digits[remainder] + result
+            n //= base
+
+        return result
+
+
 # @lc code=end
 
