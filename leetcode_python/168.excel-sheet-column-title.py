@@ -17,7 +17,7 @@ class Solution:
 
         while n > 0:
             n, m = divmod(n, base)
-            n_base.insert(0, m-1)
+            n_base.insert(0, m)
 
         result = ''.join([digits[d] for d in n_base])
         return result
