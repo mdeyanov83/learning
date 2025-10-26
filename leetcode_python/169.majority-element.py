@@ -10,11 +10,17 @@ from typing import List
 class Solution:
     def majorityElement(self, nums: List[int]) -> int:
 
+        occur = {}
 
-        return 1
+        for x in nums:
+            if x in occur:
+                occur[x] += 1
+            else:
+                occur[x] = 1
 
-
-
+        for key in occur:
+            if key >= len(nums) / 2:
+                return key
 
 # @lc code=end
 
