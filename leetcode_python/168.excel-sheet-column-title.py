@@ -8,22 +8,17 @@
 class Solution:
     def convertToTitle(self, columnNumber: int) -> str:
 
-        if columnNumber == 1: return 'A'
-
-        digits = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+        digits = '0ABCDEFGHIJKLMNOPQRSTUVWXYZ'
         base = 26
         n_base = []
-        n = columnNumber - 1
-
-        index = 0
+        n = columnNumber
 
         while n > 0:
             n, m = divmod(n, base)
-            if index == 0:
+            if m > 0:
                 n_base.insert(0, m)
-            else:
-                n_base.insert(0, m-1)
-            index += 1
+            print(digits[m])
+
 
         result = ''.join([digits[d] for d in n_base])
         return result
