@@ -18,7 +18,7 @@ class Solution:
     def postorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
         path = []
 
-        def walk(node: Optional[TreeNode]) -> List[int]:
+        def walk(node: Optional[TreeNode]):
             if not node:
                 return
 
