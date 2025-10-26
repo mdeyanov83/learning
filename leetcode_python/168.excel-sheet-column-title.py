@@ -27,7 +27,9 @@ class Solution:
 
 def main():
     sol = Solution()
-    testCase = 
+    testCase = 28
+
+    print(sol.convertToTitle(testCase))
 
 
 if __name__ == "__main__":
