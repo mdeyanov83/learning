@@ -12,14 +12,14 @@ class Solution:
 
         digits = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
         base = 26
-        digits = []
+        n_base = []
         n = columnNumber - 1
 
         while n > 0:
             n, m = divmod(n, base)
-            digits.insert(0, m)
+            n_base.insert(0, m)
 
-        
+        result = ''.join([digits[d] for d in n_base])
         return result
 
 
