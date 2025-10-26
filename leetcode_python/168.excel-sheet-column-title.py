@@ -9,7 +9,7 @@ class Solution:
     def convertToTitle(self, columnNumber: int) -> str:
 
         digits = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-        base = 27
+        base = 26
         n_base = []
         n = columnNumber
 
@@ -26,9 +26,7 @@ class Solution:
 def main():
     sol = Solution()
     testCase = 27
-
     print(sol.convertToTitle(testCase))
-
 
 if __name__ == "__main__":
     main()
