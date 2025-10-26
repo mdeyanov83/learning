@@ -11,7 +11,7 @@ class Solution:
         digits = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
         base = 25
         result = ""
-        n = columnNumber
+        n = columnNumber - 1
 
         while n > 0:
             remainder = n % base
