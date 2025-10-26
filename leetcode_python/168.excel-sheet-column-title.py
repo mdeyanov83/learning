@@ -12,14 +12,14 @@ class Solution:
 
         digits = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
         base = 26
-        result = ""
+        digits = []
         n = columnNumber - 1
 
         while n > 0:
-            remainder = n % base
-            result = digits[remainder] + result
-            n //= base
+            n, m = divmod(n, base)
+            digits.insert(0, m)
 
+        
         return result
 
 
