@@ -27,7 +27,7 @@ class Solution:
 def main():
     sol = Solution()
 
-    input = [3, 2, 3]
+    input = [2,2,1,1,1,2,2]
 
     print(sol.majorityElement(input))
 
