@@ -16,8 +16,9 @@ from typing import Optional
 class Solution:
     def getIntersectionNode(self, headA: ListNode, headB: ListNode) -> Optional[ListNode]:
 
-        
-        while
+
+        while headA.next:
+            
 
 
         return
