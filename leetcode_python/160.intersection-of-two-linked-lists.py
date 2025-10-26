@@ -30,19 +30,14 @@ from typing import Optional
 class Solution:
     def getIntersectionNode(self, headA: ListNode, headB: ListNode) -> Optional[ListNode]:
 
-        walkA = headA
-        list1 = []
-        while walkA:
-            list1.append(walkA)
-            walkA = walkA.next
-        walkB = headB
+        a = headA
+        b = headB
 
-        while walkB:
-            if walkB in list1:
-                return walkB
-            walkB = walkB.next
+        while a != b:
+            a = a.next if a else headB
+            b = b.next if b else headA
 
-        return
+        return a
 
 
 # @lc code=end
