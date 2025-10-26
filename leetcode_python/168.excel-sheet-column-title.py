@@ -27,7 +27,7 @@ class Solution:
 
 def main():
     sol = Solution()
-    testCase = 28
+    testCase = 27
 
     print(sol.convertToTitle(testCase))
 
