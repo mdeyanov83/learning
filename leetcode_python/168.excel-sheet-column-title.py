@@ -11,7 +11,7 @@ class Solution:
         if columnNumber == 1: return 'A'
 
         digits = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-        base = 25
+        base = 26
         result = ""
         n = columnNumber - 1
 
