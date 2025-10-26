@@ -13,11 +13,11 @@ class Solution:
         digits = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
         base = 26
         n_base = []
-        n = columnNumber
+        n = columnNumber - 1
 
         while n > 0:
             n, m = divmod(n, base)
-            n_base.insert(0, m - 1)
+            n_base.insert(0, m)
 
         result = ''.join([digits[d] for d in n_base])
         return result
