@@ -15,13 +15,18 @@ class Solution:
         n_base = []
         n = columnNumber - 1
 
+        index = 0
+
         while n > 0:
             n, m = divmod(n, base)
-            n_base.insert(0, m)
+            if index == 0:
+                n_base.insert(0, m)
+            else:
+                n_base.insert(0, m-1)
+            index += 1
 
         result = ''.join([digits[d] for d in n_base])
         return result
-
 
 # @lc code=end
 
