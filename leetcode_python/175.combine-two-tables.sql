@@ -7,7 +7,7 @@
 -- @lc code=start
 # Write your MySQL query statement below
 
-SELECT * FROM "Person table" JOIN "Address table" on personID = "Address table".personID
+SELECT * FROM Person JOIN Address on Person.personID = Address.personID
 
 -- @lc code=end
 
