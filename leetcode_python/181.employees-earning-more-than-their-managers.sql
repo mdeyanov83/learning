@@ -7,5 +7,8 @@
 -- @lc code=start
 # Write your MySQL query statement below
 
+SELECT name FROM Employee WHERE 
+
+
 -- @lc code=end
 
