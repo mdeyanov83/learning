@@ -8,7 +8,7 @@
 # Write your MySQL query statement below
 
 SELECT name FROM Employee WHERE salary >
-    SELECT salary FROM Employee JOIN Emplo
+    SELECT salary FROM Employee JOIN 
 
 
 -- @lc code=end
