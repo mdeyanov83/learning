@@ -7,7 +7,8 @@
 -- @lc code=start
 # Write your MySQL query statement below
 
-SELECT name FROM Employee WHERE 
+SELECT name FROM Employee WHERE salary >
+    SELECT salary FROM E
 
 
 -- @lc code=end
