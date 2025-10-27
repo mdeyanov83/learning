@@ -7,7 +7,7 @@
 -- @lc code=start
 # Write your MySQL query statement below
 
-SELECT e.name from Employee e JOIN Employee m WHERE e.managerId = m.id AND e.salary > m.salary
+SELECT e.name AS Employee from Employee e JOIN Employee m WHERE e.managerId = m.id AND e.salary > m.salary
 
 
 -- @lc code=end
