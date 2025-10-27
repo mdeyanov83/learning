@@ -7,7 +7,7 @@
 -- @lc code=start
 # Write your MySQL query statement below
 
-SELECT * FROM Person JOIN Address on Person.personID = Address.personID SHOW firstName, lastName, city, state
+SELECT firstName, lastName FROM Person LEFT OUTER JOIN Address on Address.personID = Person.personID SHOW firstName, lastName, city, state
 
 -- @lc code=end
 
