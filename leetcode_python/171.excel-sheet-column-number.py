@@ -36,11 +36,11 @@ class Solution:
             'Z': 26
         }
 
-        for letter, index in columnTitle:
-            print(letter, index)
+        row_number = 0
+        for index, letter in enumerate(reversed(columnTitle)):
+            row_number += pow(26, index) * values[letter]
 
-
-        return 1
+        return row_number
 
 # @lc code=end
 
