@@ -8,7 +8,10 @@
 # Write your MySQL query statement below
 
 
-SELECT name AS Customers FROM Customers FULL OUTER JOIN Orders WHERE Orders.id = 'NULL'
+SELECT name AS Customers
+FROM Customers FULL OUTER JOIN Orders
+ON Customers.id = Orders.customerId
+
 
 -- @lc code=end
 
