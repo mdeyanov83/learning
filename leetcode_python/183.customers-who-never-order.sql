@@ -9,7 +9,7 @@
 
 
 SELECT name AS Customers
-FROM Customers FULL OUTER JOIN Orders
+FROM Customers FULL JOIN Orders
 ON Customers.id = Orders.customerId
 
 
