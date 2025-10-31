@@ -8,7 +8,7 @@
 # Write your MySQL query statement below
 
 
-SELECT name as Customers from 
+SELECT name AS Customers FROM Customers JOIN Orders
 
 -- @lc code=end
 
