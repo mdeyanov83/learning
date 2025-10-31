@@ -13,7 +13,7 @@ class Solution(object):
         """
 
         count = 0
-        
+        for _ in range(n.bit_len)
 
 # @lc code=end
 
