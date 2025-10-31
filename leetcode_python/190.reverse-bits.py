@@ -5,11 +5,22 @@
 #
 
 # @lc code=start
+# class Solution:
+#     def reverseBits(self, n: int) -> int:
+#         bin = f'{n:032b}'
+#         bin_reversed = bin[::-1]
+#         return int(bin_reversed, 2)
+
+
+# Using bit manipulation
 class Solution:
-    def reverseBits(self, n: int) -> int:
-        bin = f'{n:032b}'
-        bin_reversed = bin[::-1]
-        return int(bin_reversed, 2)
+    def reverseBits(self, n):
+        result = 0
+        for _ in range(32):
+            result <<= 1        # Shift result left to make space for next bit
+            result |= n & 1     # Copy the last bit of n into result
+            n >>= 1             # Shift n right and discard least significant bit
+        return result
 
 
 # @lc code=end
