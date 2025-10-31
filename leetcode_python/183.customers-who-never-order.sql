@@ -13,7 +13,7 @@ FROM Customers
 LEFT JOIN Orders
 ON Customers.id = Orders.customerId
 UNION
-SELECT name
+SELECT 
 FROM Customers
 RIGHT JOIN Orders
 ON Customers.id = ORders.customerId
