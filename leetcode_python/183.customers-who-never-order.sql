@@ -12,13 +12,7 @@ SELECT name as Customers
 FROM Customers
 LEFT JOIN Orders
     ON Customers.id = Orders.customerId
-UNION
-SELECT name
-FROM Customers
-RIGHT JOIN Orders
-ON Customers.id = Orders.customerId
 WHERE Orders.customerId is NULL;
-
 
 -- @lc code=end
 
