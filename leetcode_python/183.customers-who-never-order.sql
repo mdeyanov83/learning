@@ -13,10 +13,11 @@ FROM Customers
 LEFT JOIN Orders
 ON Customers.id = Orders.customerId
 UNION
-SELECT 
+SELECT
 FROM Customers
 RIGHT JOIN Orders
 ON Customers.id = ORders.customerId
+WHERE Orders.customerID is null;
 
 
 -- @lc code=end
