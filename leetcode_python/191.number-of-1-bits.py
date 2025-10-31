@@ -6,14 +6,15 @@
 
 # @lc code=start
 class Solution(object):
-    def hammingWeight(self, n):
+    def hammingWeight(self, n: int):
         """
         :type n: int
         :rtype: int
         """
 
         count = 0
-        for _ in range(n.bit_len)
+        for _ in range(n.bit):
+            pass
 
 # @lc code=end
 
