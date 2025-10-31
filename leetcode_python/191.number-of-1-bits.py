@@ -11,10 +11,7 @@ class Solution(object):
         :type n: int
         :rtype: int
         """
-
-        count = 0
-        for _ in range(n.bit):
-            pass
+        return n.bit_count()
 
 # @lc code=end
 
