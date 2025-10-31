@@ -8,7 +8,7 @@
 # Write your MySQL query statement below
 
 
-SELECT name AS Customers
+SELECT name AS "Customers"
 FROM Customers
 FULL JOIN Orders
 ON Customers.id = Orders.customerId;
