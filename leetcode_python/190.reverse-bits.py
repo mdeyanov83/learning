@@ -8,7 +8,6 @@
 class Solution:
     def reverseBits(self, n: int) -> int:
         bin = f'{n:032b}'
-        print(bin)
         bin_reversed = bin[::-1]
         return int(bin_reversed, 2)
 
