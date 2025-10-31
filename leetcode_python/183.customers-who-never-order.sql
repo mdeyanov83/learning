@@ -8,10 +8,15 @@
 # Write your MySQL query statement below
 
 
-SELECT name AS "Customers"
+SELECT name as Customers
 FROM Customers
-FULL JOIN Orders
-ON Customers.id = Orders.customerId;
+LEFT JOIN Orders
+ON Customers.id = Orders.customerId
+UNION
+SELECT name
+FROM Customers
+RIGHT JOIN Orders
+ON Customers.id = ORders.customerId
 
 
 -- @lc code=end
