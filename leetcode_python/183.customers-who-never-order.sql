@@ -16,8 +16,8 @@ UNION
 SELECT
 FROM Customers
 RIGHT JOIN Orders
-ON Customers.id = ORders.customerId
-WHERE Orders.customerID is null;
+ON Customers.id = Orders.customerId
+WHERE Orders.customerId is NULL;
 
 
 -- @lc code=end
