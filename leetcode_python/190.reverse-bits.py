@@ -7,6 +7,5 @@
 # @lc code=start
 class Solution:
     def reverseBits(self, n: int) -> int:
-        
-# @lc code=end
 
+# @lc code=end
