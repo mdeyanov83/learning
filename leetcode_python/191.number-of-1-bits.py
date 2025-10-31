@@ -11,6 +11,9 @@ class Solution(object):
         :type n: int
         :rtype: int
         """
+
+        count = 0
         
+
 # @lc code=end
 
