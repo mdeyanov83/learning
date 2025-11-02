@@ -21,6 +21,8 @@ while True:
         print('Please type a number.')
         continue
 
-
-
-print(r)
+    if user_guess == r:
+        print('You got it!')
+        break
+    else:
+        print('You got it wrong!')
