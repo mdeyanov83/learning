@@ -1,4 +1,3 @@
 print('Welcome to my computer quiz!')
 
-print('test')
-
+playing = input('Do you want to play? ')
