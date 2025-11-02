@@ -1,3 +1,4 @@
 import random
 
-print(random.randrange(start, stop))
+r = random.randrange(-5, 11)
+print(r)
