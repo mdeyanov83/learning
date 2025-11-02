@@ -16,13 +16,10 @@ r = random.randint(0, top_of_range)
 while True:
     user_guess = input('Make a guess: ')
     if user_guess.isdigit():
-        top_of_range = int(top_of_range)
-        if top_of_range <= 0:
-            print('Please type a number larger than 0 next time.')
-            quit()
+        user_guess = int(user_guess)
     else:
-        print('Please type a number next time.')
-        quit()
+        print('Please type a number.')
+        continue
 
 
 
