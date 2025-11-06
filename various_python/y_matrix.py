@@ -28,3 +28,13 @@ class Solution:
                         min_operations = diff_count
 
         return min_operations
+
+
+def main():
+    sol = Solution()
+    input = [[1,2,2],[1,1,0],[0,1,0]]
+
+    print(sol.minimumOperationsToWriteY(input))
+
+if __name__ == "__main__":
+    main()
