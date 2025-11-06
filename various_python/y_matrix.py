@@ -28,7 +28,7 @@ class Solution:
                     if diff_count < min_operations:
                         min_operations = diff_count
 
-        return min_operations
+        return int(min_operations)
 
 
 def main():
