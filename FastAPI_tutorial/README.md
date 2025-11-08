@@ -12,8 +12,9 @@ https://www.youtube.com/watch?v=SR5NYCdzKkc
 ### Install dependencies:
 * uv add package_name
 
-    - fastapi
-    - python-dotenv -> package to manage and load environment variables
-    - fastapi-users[sqlalchemy] -> package
-    - imagekitio
-    - uvicorn[standard] -> Web server
+    - fastapi[text](../../.vscode)
+    - python-dotenv -> manage and load environment variables
+    - fastapi-users[sqlalchemy] -> for handling authentication and authorization
+    - imagekitio -> handle images and videos
+    - uvicorn[standard] -> Web server in python, to serve the fastAPI application
+    - aiosqlite -> database interaction 
