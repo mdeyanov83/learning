@@ -22,4 +22,7 @@ https://www.youtube.com/watch?v=SR5NYCdzKkc
 ### Create environment file
 * .env
 
-Used to store sensitive credentials 
+Used to store sensitive credentials.
+
+Setup credentials for ImageKit (IMAGEKIT_PRIVATE_KEY, IMAGEKIT_PUBLIC_KEY, IMAGEKIT_URL)
+
