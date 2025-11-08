@@ -30,5 +30,5 @@ Setup credentials for ImageKit (IMAGEKIT_PRIVATE_KEY, IMAGEKIT_PUBLIC_KEY, IMAGE
 /app   -> application source code\
 /app/app.py
 
-## Fast API Default Endpoints
-/docs 
+## Application Setup
+
