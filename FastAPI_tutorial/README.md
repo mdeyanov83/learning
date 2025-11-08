@@ -17,4 +17,9 @@ https://www.youtube.com/watch?v=SR5NYCdzKkc
     - fastapi-users[sqlalchemy] -> for handling authentication and authorization
     - imagekitio -> handle images and videos
     - uvicorn[standard] -> Web server in python, to serve the fastAPI application
-    - aiosqlite -> database interaction 
+    - aiosqlite -> database interaction
+
+### Create environment file
+* .env
+
+Used to store sensitive credentials 
