@@ -27,8 +27,10 @@ Used to store sensitive credentials.
 Setup credentials for ImageKit (IMAGEKIT_PRIVATE_KEY, IMAGEKIT_PUBLIC_KEY, IMAGEKIT_URL)
 
 ### Project scaffolding
-/app   -> application source code\
-/app/app.py
+* /app   -> application source code
+* /app/app.py
 
-## Application Setup
+### FastAPI - default endpoints
+* /docs  -> a page that specifies all of the endpoints and the configurations setup for our API. You can test endpoints from here
+* /redoc  -> newer version of /docs
 
