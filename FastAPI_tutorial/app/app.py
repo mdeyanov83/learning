@@ -41,4 +41,4 @@ def create_post(post: PostCreate):
 
 @app.delete("/delete/{id}")
 def delete_post(id: int):
-    
+    return text_posts.pop(id)
