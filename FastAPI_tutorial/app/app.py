@@ -19,7 +19,7 @@ text_posts = {
 @app.get("/posts")
 def get_all_posts(limit: int = None, ):
     if limit:
-        return text_posts[:limit]
+        return list(text_posts.values())[:limit]
     return text_posts
 
 
