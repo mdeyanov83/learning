@@ -1,4 +1,5 @@
 from fastapi import FastAPI, HTTPException
+from app.schemas import PostCreate
 
 app = FastAPI()
 
@@ -32,5 +33,5 @@ def get_post(id: int):
 
 
 @app.post("/post")
-def create_post():
-    pass
+def create_post(post: PostCreate):
+    text_posts[max(text_posts.keys()) + 1] = {"title": post.title, "content": post.content}
