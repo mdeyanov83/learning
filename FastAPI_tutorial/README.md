@@ -26,3 +26,6 @@ Used to store sensitive credentials.
 
 Setup credentials for ImageKit (IMAGEKIT_PRIVATE_KEY, IMAGEKIT_PUBLIC_KEY, IMAGEKIT_URL)
 
+# Project scaffolding
+/app   -> application source code\
+/app/app.py
