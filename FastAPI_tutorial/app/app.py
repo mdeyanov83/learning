@@ -37,3 +37,8 @@ def create_post(post: PostCreate):
     new_post = {"title": post.title, "content": post.content}
     text_posts[max(text_posts.keys()) + 1] = new_post
     return new_post
+
+
+@app.delete("/delete/{id}")
+def delete_post(id: int):
+    
