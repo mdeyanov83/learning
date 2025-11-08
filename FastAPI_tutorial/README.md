@@ -9,7 +9,9 @@ https://www.youtube.com/watch?v=SR5NYCdzKkc
 - Install UV (package + project manager)\
 pip install uv
 
-- Install dependencies
+- Install dependencies\
 uv add fastapi
 uv add python-dotenv
 uv add fastapi-users[sqlalchemy]
+uv add imagekitio
+uv add uvicorn[standard]
