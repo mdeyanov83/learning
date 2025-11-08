@@ -29,3 +29,8 @@ def get_post(id: int):
         raise HTTPException(status_code=404, detail="Post not found"
                             )
     return text_posts.get(id)
+
+
+@app.post("/post")
+def create_post():
+    pass
