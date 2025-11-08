@@ -9,6 +9,6 @@ def get_all_posts():
     return text_posts
 
 
-@app.get("posts/{id}")
+@app.get("/posts/{id}")
 def get_post(id: int):
     return text_posts.get(id)
