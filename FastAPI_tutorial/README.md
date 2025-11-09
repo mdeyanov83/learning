@@ -4,8 +4,12 @@ Learn Fast API With This ONE Project
 https://www.youtube.com/watch?v=SR5NYCdzKkc
 
 
-To run with streamlit frontend:
-uf run streamlit run frontend.py
+### To run:
+Backend:
+* uv run main.py
+
+Frontend(StreamLit):
+* uv  run streamlit run frontend.py
 
 
 ## Environment Setup
