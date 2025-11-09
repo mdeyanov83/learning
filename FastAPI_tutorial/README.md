@@ -4,6 +4,10 @@ Learn Fast API With This ONE Project
 https://www.youtube.com/watch?v=SR5NYCdzKkc
 
 
+To run with streamlit frontend:
+uf run streamlit run frontend.py
+
+
 ## Environment Setup
 
 ### Install UV (package + project manager):
