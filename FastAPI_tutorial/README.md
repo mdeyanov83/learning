@@ -26,6 +26,7 @@ Frontend(StreamLit):
     - imagekitio -> handle images and videos
     - uvicorn[standard] -> Web server in python, to serve the fastAPI application
     - aiosqlite -> database interaction
+    - streamlit
 
 ### Create environment file
 * .env
