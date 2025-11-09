@@ -19,6 +19,7 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(lifespan=lifespan)
 
+
 @app.post("/upload")
 async def upload_file(
     file: UploadFile = File(...),
@@ -27,7 +28,7 @@ async def upload_file(
 ):
 
     temp_file_path = None
-
+    
     try:
         with tempfile.NamedTemporaryFile(delete=False, suffix=os.path.splitext(file.filename)[1]) as temp_file:
             temp_file_path = temp_file.name
@@ -45,10 +46,11 @@ async def upload_file(
         if upload_result.response_metadata.http_status_code == 200:
 
             post = Post(
-            caption=caption,
-            url=upload_result.url,
-            file_type="video" if file.content_type.startswith("video/") else "image",
-            file_name=upload_result.name
+                caption=caption,
+                url=upload_result.url,
+                file_type="video" if file.content_type.startswith(
+                    "video/") else "image",
+                file_name=upload_result.name
             )
 
             session.add(post)
@@ -62,8 +64,6 @@ async def upload_file(
         if temp_file_path and os.path.exists(temp_file_path):
             os.unlink(temp_file_path)
         file.file.close()
-
-
 
 
 @app.get("/feed")
@@ -101,9 +101,6 @@ async def delete_post(post_id: str, session: AsyncSession = Depends(get_async_se
         await session.delete(post)
         await session.commit()
 
-        return {"success": True, "message": "Post delete successfully"}
+        return {"success": True, "messge": "Post delete successfully"}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
-
-
-
