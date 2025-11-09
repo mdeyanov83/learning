@@ -42,7 +42,7 @@ async def upload_file(
             )
         )
 
-        if upload_result.response.http_status_code == 200:
+        if upload_result.response_metadata.http_status_code == 200:
 
             post = Post(
             caption=caption,
