@@ -10,6 +10,7 @@ import shutil
 import os
 import uuid
 import tempfile
+from app.users import auth_backend, current_active_user, fastapi_users
 
 
 @asynccontextmanager
@@ -19,6 +20,7 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(lifespan=lifespan)
 
+app.include_router(fastapi_users.get_auth_router(auth_backend), prefix='/auth/jwt', tags=["auth"])
 
 @app.post("/upload")
 async def upload_file(
@@ -28,7 +30,7 @@ async def upload_file(
 ):
 
     temp_file_path = None
-    
+
     try:
         with tempfile.NamedTemporaryFile(delete=False, suffix=os.path.splitext(file.filename)[1]) as temp_file:
             temp_file_path = temp_file.name
