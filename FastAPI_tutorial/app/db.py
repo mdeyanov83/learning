@@ -1,4 +1,4 @@
 from collections.abc import AsyncGenerator
 import uuid
 
-from sql
+from sqlalchemy import Column
