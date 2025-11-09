@@ -47,7 +47,7 @@ async def get_feed(
                 "caption": post.caption,
                 "url": post.url,
                 "file_type": post.file_type,
-                "created_at": post.created_at.isofirmat()
+                "created_at": post.created_at.isoformat()
             }
         )
 
