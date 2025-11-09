@@ -19,3 +19,13 @@ async def upload_file(
     caption: str = Form(""),
     session: AsyncSession = Depends(get_async_session)
 ):
+    post = Post(
+        caption=caption,
+        url="dummyurl",
+        file_type="photo",
+        file_name="dummy name"
+    )
+
+    session.add(post)
+    await session.commit()
+    await session.refresh(post)
