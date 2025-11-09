@@ -390,6 +390,7 @@ dependencies = [
     { name = "fastapi-users", extra = ["sqlalchemy"] },
     { name = "imagekitio" },
     { name = "python-dotenv" },
+    { name = "sqlalchemy" },
     { name = "uvicorn", extra = ["standard"] },
 ]
 
@@ -400,6 +401,7 @@ requires-dist = [
     { name = "fastapi-users", extras = ["sqlalchemy"], specifier = ">=15.0.1" },
     { name = "imagekitio", specifier = ">=4.2.0" },
     { name = "python-dotenv", specifier = ">=1.2.1" },
+    { name = "sqlalchemy", specifier = ">=2.0.44" },
     { name = "uvicorn", extras = ["standard"], specifier = ">=0.38.0" },
 ]
 
