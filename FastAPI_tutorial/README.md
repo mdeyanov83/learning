@@ -4,7 +4,9 @@ Learn Fast API With This ONE Project
 https://www.youtube.com/watch?v=SR5NYCdzKkc
 
 
-### To run:
+### To initialize and run:
+* uv sync
+
 Backend:
 * uv run main.py
 
