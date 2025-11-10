@@ -5,12 +5,8 @@
 #
 
 # @lc code=start
-class Solution(object):
-    def hammingWeight(self, n: int):
-        # """
-        # :type n: int
-        # :rtype: int
-        # """
+class Solution:
+    def hammingWeight(self, n: int) -> int:
         return n.bit_count()
 
 # @lc code=end
