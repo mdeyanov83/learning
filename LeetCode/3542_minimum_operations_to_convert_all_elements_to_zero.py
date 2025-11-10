@@ -1,3 +1,5 @@
+from typing import List
+
 class Solution:
     def minOperations(self, nums: List[int]) -> int:
         stack = []
@@ -16,7 +18,9 @@ class Solution:
 
 def main():
     sol = Solution()
-    input = []
+    input = [3,1,2,1]
+
+    print(sol.minOperations(input))
 
 
 if __name__ == "__main__":
