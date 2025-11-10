@@ -7,10 +7,10 @@
 # @lc code=start
 class Solution(object):
     def hammingWeight(self, n: int):
-        """
-        :type n: int
-        :rtype: int
-        """
+        # """
+        # :type n: int
+        # :rtype: int
+        # """
         return n.bit_count()
 
 # @lc code=end
