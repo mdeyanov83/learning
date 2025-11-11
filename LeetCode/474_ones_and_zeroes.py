@@ -49,6 +49,12 @@ class Solution:
         # Initialize DP array
         dp = [[0 for j in range(n+1)] for i in range(m+1)]
 
+        for (z, o) in counts:
+            for i in range(m, z - 1, -1):
+                for j in range(n, o - 1, -1):
+                    dp[i][j] = max(dp[i][j], 1 + dp[i - z][j - o])
+
+        return dp[m][n]
 
 
 
