@@ -49,6 +49,7 @@ class Solution:
         # Initialize DP array
         dp = [[0 for j in range(n+1)] for i in range(m+1)]
 
+        # Iterate through all strings(number of zeroes and ones) and update dp from large to small
         for (z, o) in counts:
             for i in range(m, z - 1, -1):
                 for j in range(n, o - 1, -1):
