@@ -3,7 +3,6 @@ from typing import List
 
 class Solution:
     def findMaxForm(self, strs: List[str], m: int, n: int) -> int:
-
         def is_valid(k):
             for subset in itertools.combinations(counts, k):
                 sum0, sum1 = 0, 0
