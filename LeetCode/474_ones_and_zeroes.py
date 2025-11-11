@@ -39,8 +39,10 @@ class Solution:
     def findMaxForm(self, strs: List[str], m: int, n: int) -> int:
 
         # Initialize DP array
-        dp[i][j] = 0 for all i in [0..m], j in [0..n]
-            
+        dp = [[0 for j in range(n+1)] for i in range(m+1)]
+
+        
+
 
 
 def main():
