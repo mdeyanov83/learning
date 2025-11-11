@@ -49,11 +49,11 @@ class Solution:
         # Initialize DP array
         dp = [[0 for j in range(n+1)] for i in range(m+1)]
 
-        # Iterate through all strings(number of zeroes and ones) and update dp from large to small
-        for (z, o) in counts:
-            for i in range(m, z - 1, -1):
-                for j in range(n, o - 1, -1):
-                    dp[i][j] = max(dp[i][j], 1 + dp[i - z][j - o])
+        # Iterate through all strings(countes of zeroes and ones) and update dp from large to small
+        for (zeroes, ones) in counts:
+            for i in range(m, zeroes - 1, -1):
+                for j in range(n, ones - 1, -1):
+                    dp[i][j] = max(dp[i][j], 1 + dp[i - zeroes][j - ones])
 
         return dp[m][n]
 
