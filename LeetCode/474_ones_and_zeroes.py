@@ -38,10 +38,21 @@ from typing import List
 class Solution:
     def findMaxForm(self, strs: List[str], m: int, n: int) -> int:
 
+        # Count zeroes and ones in each string
+        counts = dict()
+        length = len(strs)
+        for i in range(length):
+            ones = strs[i].count('1')
+            zeroes = len(strs[i]) - ones
+            counts[i] = {
+                0: zeroes,
+                1: ones
+            }
+
         # Initialize DP array
         dp = [[0 for j in range(n+1)] for i in range(m+1)]
 
-        
+
 
 
 
