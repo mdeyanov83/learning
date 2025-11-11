@@ -46,11 +46,9 @@ class Solution:
             zeroes = len(strs[i]) - ones
             counts.append((zeroes, ones))
 
-        print(counts)
-
         # Initialize DP array
         dp = [[0 for j in range(n+1)] for i in range(m+1)]
-        print(dp)
+
 
 
 
