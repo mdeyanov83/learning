@@ -22,7 +22,7 @@ class Solution:
                             break
 
                     print(f"{start=}, {count=}, {i=}", lst)
-                if acted: break
+          
 
             if not acted:
                 break
