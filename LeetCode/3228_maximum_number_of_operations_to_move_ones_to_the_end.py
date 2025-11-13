@@ -2,7 +2,7 @@ import time
 
 class Solution:
     def maxOperations(self, s: str) -> int:
-        
+
         if '1' not in s:
             return 0
 
