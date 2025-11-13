@@ -41,7 +41,6 @@ class Solution:
         #             end = j
         #             count += 1
         #             acted = True
-
         #     if not acted:
         #         break
 
