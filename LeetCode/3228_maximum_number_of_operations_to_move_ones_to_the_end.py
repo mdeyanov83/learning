@@ -12,12 +12,18 @@ class Solution:
         end = n-1
 
         while True:
-            acted = False
             a = None
             for i in range(lst.index('1'), end):
                 if not a and lst[i] == '1' and lst[i+1] == '0':
                     a = i
-                if a and
+                    continue
+                if a and lst[i] == '1' or i == end-1:
+                    b = i
+                lst[a], lst[b] = lst[b], lst[a]
+                end = b
+                count += 1
+            if not a:
+                break
 
 
         # while True:
