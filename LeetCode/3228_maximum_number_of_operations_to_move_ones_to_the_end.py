@@ -13,20 +13,28 @@ class Solution:
 
         while True:
             acted = False
+            a = None
             for i in range(lst.index('1'), end):
+                if not a and lst[i] == '1' and lst[i+1] == '0':
+                    a = i
+                if a and
 
-                if lst[i] == '1' and lst[i+1] == '0':
-                    try:
-                        j = lst.index('1', i+1) - 1
-                    except ValueError:
-                        j = n-1
-                    lst[i], lst[j] = lst[j], lst[i]
-                    end = j
-                    count += 1
-                    acted = True
 
-            if not acted:
-                break
+        # while True:
+        #     acted = False
+        #     for i in range(lst.index('1'), end):
+        #         if lst[i] == '1' and lst[i+1] == '0':
+        #             try:
+        #                 j = lst.index('1', i+1) - 1
+        #             except ValueError:
+        #                 j = n-1
+        #             lst[i], lst[j] = lst[j], lst[i]
+        #             end = j
+        #             count += 1
+        #             acted = True
+
+        #     if not acted:
+        #         break
 
         return count
 
