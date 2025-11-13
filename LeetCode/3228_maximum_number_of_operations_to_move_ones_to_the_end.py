@@ -1,3 +1,5 @@
+from datetime import datetime
+
 class Solution:
     def maxOperations(self, s: str) -> int:
 
@@ -5,11 +7,12 @@ class Solution:
         n = len(lst)
         count = 0
         start = 0
+        end = n-1
 
         while True:
             acted = False
             started = False
-            for i in range(start, n - 1):
+            for i in range(start, end):
                 if lst[i] == '1' and not started:
                     start = i
                     started = True
@@ -19,11 +22,12 @@ class Solution:
                     for j in range(i + 1, n):
                         if j == n-1 or lst[j+1] == '1':
                             lst[i], lst[j] = lst[j], lst[i]
+                            end = j
                             count += 1
                             acted = True
                             break
 
-                    print(f"{start=}, {count=}, {i=}", lst)
+                    # print(f"{start=}, {count=}, {i=}", lst)
 
 
             if not acted:
