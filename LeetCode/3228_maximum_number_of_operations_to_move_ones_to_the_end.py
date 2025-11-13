@@ -19,9 +19,9 @@ class Solution:
                     continue
                 if a and lst[i] == '1' or i == end-1:
                     b = i
-                lst[a], lst[b] = lst[b], lst[a]
-                end = b
-                count += 1
+                    lst[a], lst[b] = lst[b], lst[a]
+                    end = b
+                    count += 1
             if not a:
                 break
 
