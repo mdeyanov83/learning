@@ -4,6 +4,12 @@ class Solution:
     def maxOperations(self, s: str) -> int:
 
         lst = list(s)
+        
+        try:
+            lst.index('1')
+        except ValueError:
+            return 0
+
         n = len(lst)
         count = 0
         end = n-1
