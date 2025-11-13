@@ -17,12 +17,12 @@ class Solution:
                             lst[i], lst[j] = lst[j], lst[i]
                             count += 1
                             if not acted:
-                                start = j
+                                start = j + 1
                             acted = True
                             break
 
                     print(f"{start=}, {count=}, {i=}", lst)
-
+                if acted: break
 
             if not acted:
                 break
