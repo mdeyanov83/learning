@@ -13,6 +13,7 @@ class Solution:
 
         while True:
             a = None
+            acted = False
             for i in range(lst.index('1'), end):
                 if not a and lst[i] == '1' and lst[i+1] == '0':
                     a = i
@@ -22,7 +23,9 @@ class Solution:
                     lst[a], lst[b] = lst[b], lst[a]
                     end = b
                     count += 1
-            if not a:
+                    a = None
+                    acted = True
+            if not acted:
                 break
 
 
