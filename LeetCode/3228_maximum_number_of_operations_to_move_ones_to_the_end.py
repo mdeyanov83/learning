@@ -21,7 +21,7 @@ class Solution:
                 if a and (lst[i + 1] == '1' or i == end):
                     b = i
                     lst[a], lst[b] = lst[b], lst[a]
-                    end = b - 1
+                    end = b
                     count += 1
                     a = None
                     acted = True
