@@ -2,14 +2,11 @@ import time
 
 class Solution:
     def maxOperations(self, s: str) -> int:
-
         
-
-        lst = list(s)
-
-        if '1' not in lst:
+        if '1' not in s:
             return 0
 
+        lst = list(s)
         n = len(lst)
         count = 0
         end = n-1
