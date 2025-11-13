@@ -30,22 +30,16 @@ class Solution:
 
         # Simply calculates (greedy) the number of operations with a single iteration of the list
 
-        for v, p in groupby(s):
-            print(v, p)
-
-
-        # ones = 0
-        # count = 0
-        # n = len(s)
-
-        # for i in range(n):
-        #     if s[i] == '1':
-        #         ones += 1
-        #         continue
-        #     if s[i] == '0' and (i == n-1 or s[i+1] == '1'):
-        #         count += ones
-
-        # return count
+        ones = 0
+        count = 0
+        n = len(s)
+        for i in range(n):
+            if s[i] == '1':
+                ones += 1
+                continue
+            if s[i] == '0' and (i == n-1 or s[i+1] == '1'):
+                count += ones
+        return count
 
         # Other solutions
         # for num in list(map(len,s.split('0'))):
