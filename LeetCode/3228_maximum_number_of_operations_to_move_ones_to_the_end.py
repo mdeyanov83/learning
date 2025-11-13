@@ -3,18 +3,7 @@ import time
 class Solution:
     def maxOperations(self, s: str) -> int:
 
-        ones = 0
-        count = 0
-        n = len(s)
-
-        for i in range(n):
-            if s[i] == '1':
-                ones += 1
-                continue
-            if s[i] == '0' and (i == n-1 or s[i+1] == '1'):
-                count += ones
-
-        return count
+        # Perform actual operations. Works but slow and exceeds time limit
 
         # if '1' not in s:
         #     return 0
@@ -38,6 +27,20 @@ class Solution:
         #         break
         # return count
 
+        # Simply calculates (greedy) the number of operations with a single iteration of the list
+
+        ones = 0
+        count = 0
+        n = len(s)
+
+        for i in range(n):
+            if s[i] == '1':
+                ones += 1
+                continue
+            if s[i] == '0' and (i == n-1 or s[i+1] == '1'):
+                count += ones
+
+        return count
 
 
 def main():
