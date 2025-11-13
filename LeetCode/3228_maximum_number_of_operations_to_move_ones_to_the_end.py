@@ -43,11 +43,11 @@ class Solution:
         return count
 
         # Other solutions
-        # for num in list(map(len,s.split('0'))):
-        #     if num == 0: continue
-        #     cnt+= num
-        #     res+= cnt
-        # return res if num == 0 else res - cnt
+        for num in list(map(len,s.split('0'))):
+            if num == 0: continue
+            cnt+= num
+            res+= cnt
+        return res if num == 0 else res - cnt
 
         # Other 2
         # return sum(accumulate(map(len,findall('(1+)0',s))))
