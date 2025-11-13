@@ -26,14 +26,14 @@ class Solution:
                     #         acted = True
                     #         break
                     try:
-                        j = lst.index('1', i+1)
+                        j = lst.index('1', i)
                     except ValueError:
                         j = n-1
                     lst[i], lst[j] = lst[j], lst[i]
                     end = j
                     count += 1
                     acted = True
-
+                
 
             if not acted:
                 break
