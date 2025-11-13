@@ -6,16 +6,16 @@ class Solution:
         lst = list(s)
         n = len(lst)
         count = 0
-        start = 0
+        # start = 0
         end = n-1
 
         while True:
             acted = False
-            started = False
-            for i in range(start, end):
-                if lst[i] == '1' and not started:
-                    start = i
-                    started = True
+            # started = False
+            for i in range(lst.index('1'), end):
+                # if lst[i] == '1' and not started:
+                #     start = i
+                #     started = True
                 if lst[i] == '1' and lst[i+1] == '0':
 
                     # Walk the list from current "1" to last trailing 1 or end of list and swap.
@@ -26,7 +26,7 @@ class Solution:
                             count += 1
                             acted = True
                             break
-                        
+
             if not acted:
                 break
 
