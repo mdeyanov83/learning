@@ -18,7 +18,7 @@ class Solution:
                 if not a and lst[i] == '1' and lst[i+1] == '0':
                     a = i
                     continue
-                if a and (lst[i + 1] == '1' or i == end-1):
+                if a and (lst[i + 1] == '1' or i == end):
                     b = i
                     lst[a], lst[b] = lst[b], lst[a]
                     end = b
