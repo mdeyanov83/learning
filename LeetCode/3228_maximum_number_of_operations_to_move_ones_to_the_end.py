@@ -3,11 +3,11 @@ import time
 class Solution:
     def maxOperations(self, s: str) -> int:
 
-        lst = list(s)
         
-        try:
-            lst.index('1')
-        except ValueError:
+
+        lst = list(s)
+
+        if '1' not in lst:
             return 0
 
         n = len(lst)
