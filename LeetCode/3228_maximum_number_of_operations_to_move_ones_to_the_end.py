@@ -18,13 +18,22 @@ class Solution:
                 if lst[i] == '1' and lst[i+1] == '0':
 
                     # Walk the list from current "1" to last trailing 1 or end of list and swap.
-                    for j in range(i + 1, n):
-                        if j == n-1 or lst[j+1] == '1':
-                            lst[i], lst[j] = lst[j], lst[i]
-                            end = j
-                            count += 1
-                            acted = True
-                            break
+                    # for j in range(i + 1, n):
+                    #     if j == n-1 or lst[j+1] == '1':
+                    #         lst[i], lst[j] = lst[j], lst[i]
+                    #         end = j
+                    #         count += 1
+                    #         acted = True
+                    #         break
+                    try:
+                        j = lst.index('1', i+1)
+                    except ValueError:
+                        j = n-1
+                    lst[i], lst[j] = lst[j], lst[i]
+                    end = j
+                    count += 1
+                    acted = True
+
 
             if not acted:
                 break
