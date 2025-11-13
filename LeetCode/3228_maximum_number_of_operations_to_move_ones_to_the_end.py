@@ -28,7 +28,7 @@ class Solution:
                     try:
                         j = lst.index('1', i+1)
                     except ValueError:
-                        j = n-1
+                        j = n
                     lst[i], lst[j] = lst[j], lst[i]
                     end = j
                     count += 1
