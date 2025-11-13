@@ -41,14 +41,14 @@ class Solution:
                 count += ones
         return count
 
-        # Other solutions
+        # Other 1:
         # for num in list(map(len,s.split('0'))):
         #     if num == 0: continue
         #     cnt+= num
         #     res+= cnt
         # return res if num == 0 else res - cnt
 
-        # Other 2
+        # Other 2:
         # return sum(accumulate(map(len,findall('(1+)0',s))))
 
 
