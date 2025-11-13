@@ -21,7 +21,7 @@ class Solution:
                             acted = True
                             break
 
-                    # print(f"{start=}, {count=}, {i=}", lst)
+                    print(f"{start=}, {count=}, {i=}", lst)
 
 
             if not acted:
