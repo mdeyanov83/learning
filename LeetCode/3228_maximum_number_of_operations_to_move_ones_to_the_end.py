@@ -8,9 +8,11 @@ class Solution:
 
         while True:
             acted = False
+            started = False
             for i in range(start, n - 1):
-                if lst[i] == '1' and not acted:
+                if lst[i] == '1' and not started:
                     start = i
+                    started = True
                 if lst[i] == '1' and lst[i+1] == '0':
 
                     # Walk the list from current "1" to last trailing 1 or end of list and swap.
