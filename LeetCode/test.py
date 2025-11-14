@@ -37,14 +37,14 @@ class Func:
     def execute(self, id, action, timestamp):
         if action == "start":
             if self.running_stack:
-                self.funcs[self.running_stach[-1]].pause(timestamp)
+                self.funcs[self.running_stack[-1]].pause(timestamp)
             self.funcs[id].start(timestamp)
             self.running_stack.append(id)
 
         if action == "end":
             self.funcs[id].end(timestamp)
             self.running_stack.pop()
-            self.funcs[self.running_stack[-1].cont(timestamp)]
+            self.funcs[self.running_stack[-1]].cont(timestamp)]
 
 
 
