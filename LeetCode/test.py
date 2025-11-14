@@ -46,7 +46,7 @@ class Solution:
 
         for log in logs:
             id, action, timestamp = parse_log(log)
-            
+            program.execute_log
 
 
             if action == "start":
