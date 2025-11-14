@@ -29,8 +29,7 @@ class Func:
         self.funcs = []
         for i in range(n):
             self.funcs.append(Fn(i))
-        self.lasts_running = None
-        self.current_running = None
+        self.running_stack = []
 
     def times(self):
         return [f.running_time for f in self.funcs]
