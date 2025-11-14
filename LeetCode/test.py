@@ -1,3 +1,5 @@
+from typing import List
+
 class Fn:
     def __init__(self, id):
         self.id = id
@@ -30,6 +32,9 @@ class Func:
         self.lasts_running = None
         self.current_running = None
 
+    def times(self):
+        return [f.running_time for f in self.funcs]
+
 
 class Solution:
     def exclusiveTime(self, n: int, logs: List[str]) -> List[int]:
@@ -44,22 +49,35 @@ class Solution:
         program = Func(n)
 
 
-        for log in logs:
-            id, action, timestamp = parse_log(log)
-            program.execute_log
-
-
-            if action == "start":
-                stack.append([stack[-1]])
-                stack[-1][3] = timestamp
-                stack.append([id, start, timestamp, None])
-
-            else:
-                _, _, start_timestamp, paused = stack.pop()
-                times[id] += timestamp - start_timestamp + 1
-            print(stack)
+        # for log in logs:
+        #     id, action, timestamp = parse_log(log)
+        #     program.execute(id, action, timestamp)
 
 
 
-        return times
+            # if action == "start":
+            #     stack.append([stack[-1]])
+            #     stack[-1][3] = timestamp
+            #     stack.append([id, start, timestamp, None])
 
+            # else:
+            #     _, _, start_timestamp, paused = stack.pop()
+            #     times[id] += timestamp - start_timestamp + 1
+            # print(stack)
+
+
+
+        return program.times()
+
+
+def main():
+    sol = Solution()
+    n = 2
+    logs = ["0:start:0","1:start:2","1:end:5","0:end:6"]
+
+    print(sol.exclusiveTime(n, logs))
+
+
+
+if __name__ == "__main__":
+    main()
