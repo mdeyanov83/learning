@@ -23,7 +23,7 @@ class Fn:
 
     def cont(self, timestamp):
         self.state = "running"
-        self.started_time = timestamp
+        self.started_time = timestamp + 1
 
 
 class Func:
