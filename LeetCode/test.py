@@ -37,12 +37,15 @@ class Func:
 
     def execute(self, id, action, timestamp):
         if action == "start":
-            if self.last_running:
-                self.funcs[self.last_running].pause(timestamp)
+            if self.current_running:
+                self.funcs[self.current_running].pause(timestamp)
             self.funcs[id].start(timestamp)
+            self.last_running = self.current_running
             self.current_running = id
 
         if action == "end":
+
+            self.funcs[id].end(timestamp)
 
 
 
