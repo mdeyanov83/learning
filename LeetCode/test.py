@@ -44,7 +44,8 @@ class Func:
         if action == "end":
             self.funcs[id].end(timestamp)
             self.running_stack.pop()
-            self.funcs[self.running_stack[-1]].cont(timestamp)]
+            if self.running_stack:
+                self.funcs[self.running_stack[-1]].cont(timestamp)
 
 
 
@@ -64,20 +65,6 @@ class Solution:
         for log in logs:
             id, action, timestamp = parse_log(log)
             program.execute(id, action, timestamp)
-
-
-
-            # if action == "start":
-            #     stack.append([stack[-1]])
-            #     stack[-1][3] = timestamp
-            #     stack.append([id, start, timestamp, None])
-
-            # else:
-            #     _, _, start_timestamp, paused = stack.pop()
-            #     times[id] += timestamp - start_timestamp + 1
-            # print(stack)
-
-
 
         return program.times()
 
