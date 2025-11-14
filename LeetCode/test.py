@@ -46,6 +46,7 @@ class Func:
         if action == "end":
 
             self.funcs[id].end(timestamp)
+            self.current_running = self.last_running
 
 
 
