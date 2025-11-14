@@ -14,10 +14,12 @@ class Fn:
     def end(self, timestamp):
         self.state = "ended"
         self.running_time += timestamp - self.started_time + 1
+        self.started_time = None
 
     def pause(self, timestamp):
         self.state = "idle"
         self.running_time += timestamp - self.started_time + 1
+        self.started_time = None
 
     def cont(self, timestamp):
         self.state = "running"
