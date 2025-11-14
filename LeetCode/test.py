@@ -23,13 +23,12 @@ class Fn:
 
 
 class Func:
-    def __init__(self, init):
+    def __init__(self, n):
         self.funcs = []
         for i in range(n):
             self.funcs[i] = Fn(i)
-
-
-
+        self.lasts_running = None
+        self.current_running = None
 
 
 class Solution:
@@ -42,16 +41,13 @@ class Solution:
             action = parts[1]
             return id, action, timestamp
 
-        times = [0] * n
-        stack = []
+        program = Func(n)
 
-        # Handle first log (every consecutive log/operation will have a previous operation to pause)
-        # Avoid trying to pause previous function if there isn't one
-        id, action, timestamp = parse_log(logs[0])
-        stack.append([id, start, timestamp])
 
-        for log in logs[1:]:
+        for log in logs:
             id, action, timestamp = parse_log(log)
+            
+
 
             if action == "start":
                 stack.append([stack[-1]])
