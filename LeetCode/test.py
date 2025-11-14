@@ -36,7 +36,14 @@ class Func:
         return [f.running_time for f in self.funcs]
 
     def execute(self, id, action, timestamp):
-        
+        if action == "start":
+            if self.last_running:
+                self.funcs[self.last_running].pause(timestamp)
+            self.funcs[id].start(timestamp)
+            self.current_running = id
+
+        if action == "end":
+
 
 
 class Solution:
