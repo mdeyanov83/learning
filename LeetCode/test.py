@@ -18,7 +18,7 @@ class Fn:
 
     def pause(self, timestamp):
         self.state = "idle"
-        self.running_time += timestamp - self.started_time + 1
+        self.running_time += timestamp - self.started_time
         self.started_time = None
 
     def cont(self, timestamp):
