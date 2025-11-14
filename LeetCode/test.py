@@ -44,6 +44,7 @@ class Func:
         if action == "end":
             self.funcs[id].end(timestamp)
             self.running_stack.pop()
+            self.funcs[self.running_stack[-1].cont(timestamp)]
 
 
 
