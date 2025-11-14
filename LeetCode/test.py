@@ -1,29 +1,29 @@
 class Fn:
-    def __init__(id):
+    def __init__(self, id):
         self.id = id
         self.running_time = 0
         self.state = None
         self.started_time = None
 
-    def start(timestamp):
+    def start(self, timestamp):
         self.state = "running"
         self.started_time = timestamp
 
-    def end(timestamp):
+    def end(self, timestamp):
         self.state = "ended"
         self.running_time += timestamp - self.started_time + 1
 
-    def pause(timestamp):
+    def pause(self, timestamp):
         self.state = "idle"
         self.running_time += timestamp - self.started_time + 1
 
-    def cont(timestamp):
+    def cont(self, timestamp):
         self.state = "running"
         self.started_time = timestamp
 
 
 class Func:
-    def __init__(init):
+    def __init__(self, init):
         self.funcs = []
         for i in range(n):
             self.funcs[i] = Fn(i)
