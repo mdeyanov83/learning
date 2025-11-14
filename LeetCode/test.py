@@ -34,6 +34,10 @@ class Func:
     def times(self):
         return [f.running_time for f in self.funcs]
 
+    def print_all(self):
+        for fn in self.funcs:
+            print(fn.id, fn.state, fn.running_time)
+
     def execute(self, id, action, timestamp):
         if action == "start":
             if self.running_stack:
@@ -65,6 +69,8 @@ class Solution:
         for log in logs:
             id, action, timestamp = parse_log(log)
             program.execute(id, action, timestamp)
+
+        program.print_all()
 
         return program.times()
 
