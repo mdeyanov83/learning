@@ -28,12 +28,15 @@ class Func:
     def __init__(self, n):
         self.funcs = []
         for i in range(n):
-            self.funcs[i] = Fn(i)
+            self.funcs.append(Fn(i))
         self.lasts_running = None
         self.current_running = None
 
     def times(self):
         return [f.running_time for f in self.funcs]
+
+    def execute(self, id, action, timestamp):
+        
 
 
 class Solution:
@@ -49,9 +52,9 @@ class Solution:
         program = Func(n)
 
 
-        # for log in logs:
-        #     id, action, timestamp = parse_log(log)
-        #     program.execute(id, action, timestamp)
+        for log in logs:
+            id, action, timestamp = parse_log(log)
+            program.execute(id, action, timestamp)
 
 
 
