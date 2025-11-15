@@ -1,4 +1,4 @@
-nums = [2, 1, 3, 4]
+nums = [2, 1, 3, 4, 8, 6, 5, 3]
 stack = []  # decreasing stack — top is smallest
 
 for i, num in enumerate(nums):
