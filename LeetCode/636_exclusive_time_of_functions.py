@@ -75,6 +75,29 @@ class Solution:
 
         return program.times()
 
+# Classig stack solution
+# class Solution:
+#     def exclusiveTime(self, n: int, logs: List[str]) -> List[int]:
+
+#         times = [0] * n
+#         stack = []
+
+#         for log in logs:
+#             id, op, time = log.split(":")
+#             id = int(id)
+#             time = int(time)
+
+#             if op == "start":
+#                 stack.append((id, time))
+#             else:
+#                 duration = time - stack.pop()[1] + 1
+#                 times[id] += duration
+#                 if stack:
+#                     prev_id = stack[-1][0]
+#                     times[prev_id] -= duration
+
+#         return times
+
 
 def main():
     sol = Solution()
