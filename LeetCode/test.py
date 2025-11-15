@@ -67,7 +67,6 @@ class Solution:
 
         program = Func(n)
 
-
         for log in logs:
             id, action, timestamp = parse_log(log)
             program.execute(id, action, timestamp)
