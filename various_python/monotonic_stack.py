@@ -6,7 +6,3 @@ for i, num in enumerate(nums):
         idx = stack.pop()
         print(f"{nums[idx]} → next greater is {num}")
     stack.append(i)
-
-# TODO Test the TODO comment
-# FIXME asdflasdf
-# asdf TODO
