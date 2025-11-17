@@ -3,18 +3,19 @@ from typing import List
 class Solution:
     def kLengthApart(self, nums: List[int], k: int) -> bool:
 
-        current = 0
+        if k == 0:
+            return True
         prev = None
 
         for i in range(len(nums)):
             if nums[i] == 1:
-                current = i
                 if prev is not None and i - prev - 1 < k:
                     return False
                 else:
-                    prev = current
-
+                    prev = i
+                    
         return True
+
 
 def main():
     sol = Solution()
