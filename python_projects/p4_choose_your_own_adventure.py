@@ -11,9 +11,9 @@ if answer == "left":
         "You come to a river, you can walk around it or swim across? Type walk to walk around or swim to swim around?: "
         ).lower()
     if answer == "swim":
-        print()
+        print("You swam across and were eaten by an alligator.")
     elif answer == "walk":
-        print()
+        print("You walked for many miles, ran out of water and you lost the game.")
     else:
         print("Not a valid option. You lose.")
 
