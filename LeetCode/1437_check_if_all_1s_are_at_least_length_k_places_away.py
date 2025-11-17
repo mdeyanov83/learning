@@ -7,7 +7,7 @@ class Solution:
         prev = None
 
         for i in range(len(nums)):
-            if nums[i] == '1':
+            if nums[i] == 1:
                 current = i
                 if prev and i - prev - 1 < k:
                     return False
