@@ -1,7 +1,6 @@
 name = input("Type your name: ")
 print(f"Welcome {name} to this adventure!")
 
-
 answer = input(
     "You are on a dirt road, it has come to an end and you can go left or right. Which way would you like to go? "
     ).lower()
@@ -22,7 +21,7 @@ elif answer == "right":
     if answer == "back":
         print("You go back and lose.")
     elif answer == "cross":
-        answer == input("You cross the bridge and meet a stranger. Do you talk to them? (yes/no)? ")
+        answer = input("You cross the bridge and meet a stranger. Do you talk to them? (yes/no)? ")
         if answer == "yes":
             print("You talked to the stranger and they give you gold. You win!")
         elif answer == "no":
