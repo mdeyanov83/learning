@@ -8,7 +8,7 @@ answer = input(
 
 if answer == "left":
     answer = input(
-        "You come to a river, you can walk around it or swim across? Type walk to walk around or swim to swim around?  "
+        "You come to a river, you can walk around it or swim across? Type walk to walk around or swim to swim around? "
         ).lower()
     if answer == "swim":
         print("You swam across and were eaten by an alligator.")
