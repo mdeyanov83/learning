@@ -9,7 +9,7 @@ class Solution:
         for i in range(len(nums)):
             if nums[i] == 1:
                 current = i
-                if prev and i - prev - 1 < k:
+                if prev is not None and i - prev - 1 < k:
                     return False
                 else:
                     prev = current
