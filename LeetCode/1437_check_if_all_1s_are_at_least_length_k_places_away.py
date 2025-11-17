@@ -18,7 +18,7 @@ class Solution:
 
 def main():
     sol = Solution()
-    nums = [1,0,0,1,0,1]
+    nums = [1,0,1]
     k = 2
     print(sol.kLengthApart(nums, k))
 
