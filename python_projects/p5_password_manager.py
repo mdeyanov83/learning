@@ -8,7 +8,7 @@ def add():
     pwd = input("password: ")
 
     with open('password.txt', 'a') as f:
-        
+        f.write(f"{name}|{pwd}")
 
 
 while True:
