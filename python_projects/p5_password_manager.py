@@ -11,8 +11,11 @@ def load_key():
     file.close()
     return key
 
-master_pwd = input("What is the master password? ")
-key = load_key() + master_pwd.encode()
+# master_pwd = input("What is the master password? ")
+# To use a master password:
+# https://cryptography.io/en/latest/fernet/#using-passwords-with-fernet
+
+key = load_key()
 print(key)
 fer = Fernet(key)
 
