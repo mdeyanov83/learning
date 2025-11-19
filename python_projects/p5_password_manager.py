@@ -2,7 +2,8 @@ from cryptography.fernet import Fernet
 
 master_pwd = input("What is the master password? ")
 
-
+def write_key():
+    
 
 def view():
     with open("passwords.txt", "r") as f:
