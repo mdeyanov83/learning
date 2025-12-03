@@ -52,36 +52,34 @@ class Solution:
                 line_count(line_key) += 1
 
                 # midpoint key and slope for diagonals (for parallelogram counting)
-                mid_key
+                mid_key = (x1 + x2, y1 + y2)
+                mid_map[mid_key][slope] += 1
 
-                # calculate segment midpoint and add to midpoints dict
-                mid_x = x1 + x2
-                mid_y = y1 + y2
-                midpoints[(mid_x, mid_y)] += 1
+        # s = total pairs of same slope segments
+        s = 0
+        for val in slope_count.values():
+            s += val*(val-1) // 2
 
-        for bucket in buckets.values():
-             for (a, b), (c, d) in combinations(bucket, 2):
+        # l = total pairs of colinear segments (must subtract from s)
+        l = 0
+        for val in line_count.values:
+            l += val*(val-1) // 2
 
-                # Check for co-linearity using cross-product test
-                x1, y1 = points[a]
-                x2, y2 = points[b]
-                x3, y3 = points[c]
-                x4, y4 = points[d]
+        # p = number of paralellograms using midpoint groups
+        # excluding colinear diagonal pairs
+        p = 0
+        for mid_key, slope_dict in mid_map.items():
+            c = 0
+            for count in slope_dict.values():
+                c += count
+            if c >= 2:
+                total_pairs = c*(c-1) // 2
+                colinear_diagonal_pairs = 0
+                for count in slope_dict.values():
+                    if count >= 2:
+                        colinear_diagonal_pairs += count*(count-1) // 2
+                p += total_pairs - colinear_diagonal_pairs
 
-                if (x3 - x1) * (y2 - y1) - (y3 - y1) * (x2 - x1) != 0:
-                    ans += 1
-                else:
-                    # if colinear, check if midpoints are the same
-                    mid1_x = x1 + x2
-                    mid1_y = y1 + y2
-                    mid2_x = x3 + x4
-                    mid2_y = y3 + y4
-                    if mid1_x == mid2_x and mid1_y == mid2_y:
-                        colinear_midpoints += 1
-
-        for val in midpoints.values():
-            if val >= 2:
-                ans -= val * (val - 1) // 2
 
         return ans + colinear_midpoints
 
