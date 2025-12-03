@@ -25,14 +25,12 @@ class Solution:
 
     def countTrapezoids(self, points: List[List[int]]) -> int:
 
-        buckets = defaultdict(list)
-        midpoints = defaultdict(int)
-        colinear_midpoints = 0
-        ans = 0
+        slope_count = defaultdict(list) # slope -> number of segments with same slope
+        line_count = defaultdict(int) # line_key -> number of co-linear segments
+        mid_map = defaultdict(lambda: defaultdict(int)) # midpoints -> (diagonal_slope -> count)
         n = len(points)
 
         # Hash every point pair by its reduced slope, normalized with GCD and fixed sign
-
         for i in range(n-1):
             x1, y1 = points[i]
             for j in range(i+1, n):
@@ -43,7 +41,9 @@ class Solution:
                 slope = normalize_slope(dy, dx)
 
                 # count towards slope bucket
-                buckets[slope] += 1
+                slope_count[slope] += 1
+
+                # calculate line_key (slope, val), where val  
 
                 # calculate segment midpoint and add to midpoints dict
                 mid_x = x1 + x2
