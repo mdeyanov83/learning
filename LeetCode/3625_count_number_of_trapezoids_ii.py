@@ -45,11 +45,12 @@ class Solution:
 
         for bucket in buckets.values():
              for (a, b), (c, d) in combinations(bucket, 2):
+                print(a, b, c, d)
                 if len({a, b, c, d}) == 4:
                     ans += 1
 
-        print(buckets)
-        print(midpoints)
+        # print(buckets)
+        # print(midpoints)
 
         for val in midpoints.values():
             if val >= 2:
