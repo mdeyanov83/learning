@@ -51,12 +51,8 @@ class Solution:
                 x2, y2 = b
                 x3, y3 = c
 
-
-                if len({a, b, c, d}) == 4:
-
-
-                    # (xa​−xb​)(yc​−yb​)−(ya​−yb​)(xc​−xb​)=0
-
+                # len({a, b, c, d}) == 4
+                if (x3 - x1) * (y2 - y1) - (y3 - y1) * (x2 - x1) != 0:
                     ans += 1
 
         # print(buckets)
@@ -64,7 +60,7 @@ class Solution:
 
         for val in midpoints.values():
             if val >= 2:
-                ans -= 1
+                ans -= val // 2
 
         return ans
 
