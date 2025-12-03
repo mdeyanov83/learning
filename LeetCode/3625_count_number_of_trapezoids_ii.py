@@ -47,9 +47,9 @@ class Solution:
              for (a, b), (c, d) in combinations(bucket, 2):
                 # print(a, b, c, d, '->', len({a, b, c, d}))
 
-                x1, y1 = a
-                x2, y2 = b
-                x3, y3 = c
+                x1, y1 = points[a]
+                x2, y2 = points[b]
+                x3, y3 = points[c]
 
                 # len({a, b, c, d}) == 4
                 if (x3 - x1) * (y2 - y1) - (y3 - y1) * (x2 - x1) != 0:
