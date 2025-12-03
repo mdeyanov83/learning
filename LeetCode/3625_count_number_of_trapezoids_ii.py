@@ -1,9 +1,28 @@
 from collections import defaultdict
-from typing import List
+from typing import List, Tuple
 from itertools import combinations
-from math import gcd, comb
+from math import gcd
+
+def normalize_slope(dx: int, dy: int) -> Tuple[int, int]:
+    # Vertical line
+    if dx == 0:
+        return(1, 0)
+    # Horizontal line
+    elif dy == 0:
+        return(0, 1)
+    # all other cases
+    else:
+        g = gcd(abs(dy), abs(dx))
+        dy //= g
+        dx //= g
+    # normalize sign (dx to be positive)
+    if dx < 0:
+        dy, dx = -dy, -dx
+    return (dy, dx)
+
 
 class Solution:
+
     def countTrapezoids(self, points: List[List[int]]) -> int:
 
         buckets = defaultdict(list)
@@ -21,23 +40,10 @@ class Solution:
 
                 dy = y2 - y1
                 dx = x2 - x1
-                # Vertical line
-                if dx == 0:
-                    dy = 1
-                # Horizontal line
-                elif dy == 0:
-                    dx = 1
-                # all other cases
-                else:
-                    g = gcd(abs(dy), abs(dx))
-                    dy //= g
-                    dx //= g
-                # normalize sign (dx must be positive)
-                if dx < 0:
-                    dy, dx = -dy, -dx
+                slope = normalize_slope(dy, dx)
 
-                # add point pair to slope bucket
-                buckets[(dy, dx)].append((i, j))
+                # count towards slope bucket
+                buckets[slope] += 1
 
                 # calculate segment midpoint and add to midpoints dict
                 mid_x = x1 + x2
