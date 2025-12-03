@@ -51,9 +51,11 @@ class Solution:
                 x2, y2 = b
                 x3, y3 = c
 
+
                 if len({a, b, c, d}) == 4:
 
 
+                    # (xa​−xb​)(yc​−yb​)−(ya​−yb​)(xc​−xb​)=0
 
                     ans += 1
 
