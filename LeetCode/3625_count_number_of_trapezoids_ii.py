@@ -1,12 +1,10 @@
 from collections import defaultdict
 from typing import List
-from itertools import combination
+from itertools import combinations
 from math import gcd, comb
 
 class Solution:
     def countTrapezoids(self, points: List[List[int]]) -> int:
-        from itertools import combinations
-        from math import gcd
 
         buckets = defaultdict(list)
         midpoints = defaultdict(int)
