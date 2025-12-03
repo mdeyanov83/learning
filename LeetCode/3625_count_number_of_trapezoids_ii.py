@@ -54,13 +54,13 @@ class Solution:
 
         # s = total pairs of same slope segments
         s = 0
-        for val in slope_count.values():
-            s += val*(val-1) // 2
+        for value in slope_count.values():
+            s += value*(value-1) // 2
 
         # l = total pairs of colinear segments (must subtract from s)
         l = 0
-        for val in line_count.values():
-            l += val*(val-1) // 2
+        for value in line_count.values():
+            l += value*(value-1) // 2
 
         # p = number of paralellograms using midpoint groups
         # excluding colinear diagonal pairs
