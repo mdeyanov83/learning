@@ -8,7 +8,7 @@ class Solution:
 
         buckets = defaultdict(list)
         midpoints = defaultdict(int)
-        duplicate_midpoints = 0
+        colinear_midpoints = 0
         ans = 0
         n = len(points)
 
@@ -62,13 +62,13 @@ class Solution:
                     mid2_x = x3 + x4
                     mid2_y = y3 + y4
                     if mid1_x == mid2_x and mid1_y == mid2_y:
-                        duplicate_midpoints += 1
+                        colinear_midpoints += 1
 
         for val in midpoints.values():
             if val >= 2:
                 ans -= val // 2
 
-        return ans + duplicate_midpoints
+        return ans + colinear_midpoints
 
 def main():
     sol = Solution()
