@@ -43,7 +43,16 @@ class Solution:
                 # count towards slope bucket
                 slope_count[slope] += 1
 
-                # calculate line_key (slope, val), where val  
+                # calculate line_key (slope, val), where val = dy * x - dx * y (invariant)
+                # use slope and value computed with that reduced slope
+                dy_r, dx_r = slope
+                # invariant value:
+                val = dy_r * x1 - dx_r * y1
+                line_key = (dy_r, dx_r, val)
+                line_count(line_key) += 1
+
+                # midpoint key and slope for diagonals (for parallelogram counting)
+                mid_key
 
                 # calculate segment midpoint and add to midpoints dict
                 mid_x = x1 + x2
