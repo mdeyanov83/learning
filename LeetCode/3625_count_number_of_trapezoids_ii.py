@@ -1,10 +1,6 @@
-from collections import defaultdict
 from typing import List, Tuple
-from itertools import combinations
+from collections import defaultdict
 from math import gcd
-
-
-
 
 class Solution:
     def normalize_slope(self, dx: int, dy: int) -> Tuple[int, int]:
@@ -80,6 +76,7 @@ class Solution:
                     if count >= 2:
                         colinear_diagonal_pairs += count*(count-1) // 2
                 p += total_pairs - colinear_diagonal_pairs
+
         return s - l - p
 
 def main():
