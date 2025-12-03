@@ -7,7 +7,7 @@ from math import gcd
 
 
 class Solution:
-    def normalize_slope(dx: int, dy: int) -> Tuple[int, int]:
+    def normalize_slope(self, dx: int, dy: int) -> Tuple[int, int]:
         # Vertical line
         if dx == 0:
             return(1, 0)
