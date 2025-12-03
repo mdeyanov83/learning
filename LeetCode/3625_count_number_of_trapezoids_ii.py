@@ -50,8 +50,12 @@ class Solution:
                 x1, y1 = points[a]
                 x2, y2 = points[b]
                 x3, y3 = points[c]
+                x4, y4 = points[d]
+
                 if (x3 - x1) * (y2 - y1) - (y3 - y1) * (x2 - x1) != 0:
                     ans += 1
+
+                
 
         for val in midpoints.values():
             if val >= 2:
