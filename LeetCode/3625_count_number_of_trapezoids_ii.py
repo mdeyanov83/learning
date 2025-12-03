@@ -66,7 +66,7 @@ class Solution:
 
         for val in midpoints.values():
             if val >= 2:
-                ans -= val // 2
+                ans -= val * (val - 1) // 2
 
         return ans + colinear_midpoints
 
