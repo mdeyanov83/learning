@@ -76,7 +76,7 @@ class Solution:
                     if count >= 2:
                         colinear_diagonal_pairs += count*(count-1) // 2
                 p += total_pairs - colinear_diagonal_pairs
-
+        print(s, l, p)
         return s - l - p
 
 def main():
