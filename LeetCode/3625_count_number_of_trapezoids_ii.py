@@ -8,6 +8,7 @@ class Solution:
 
         buckets = defaultdict(list)
         midpoints = defaultdict(int)
+        duplicate_midpoints = 0
         ans = 0
         n = len(points)
 
@@ -54,8 +55,8 @@ class Solution:
 
                 if (x3 - x1) * (y2 - y1) - (y3 - y1) * (x2 - x1) != 0:
                     ans += 1
+                if
 
-                
 
         for val in midpoints.values():
             if val >= 2:
