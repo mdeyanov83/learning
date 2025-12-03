@@ -3,25 +3,26 @@ from typing import List, Tuple
 from itertools import combinations
 from math import gcd
 
-def normalize_slope(dx: int, dy: int) -> Tuple[int, int]:
-    # Vertical line
-    if dx == 0:
-        return(1, 0)
-    # Horizontal line
-    elif dy == 0:
-        return(0, 1)
-    # all other cases
-    else:
-        g = gcd(abs(dy), abs(dx))
-        dy //= g
-        dx //= g
-    # normalize sign (dx to be positive)
-    if dx < 0:
-        dy, dx = -dy, -dx
-    return (dy, dx)
+
 
 
 class Solution:
+    def normalize_slope(dx: int, dy: int) -> Tuple[int, int]:
+        # Vertical line
+        if dx == 0:
+            return(1, 0)
+        # Horizontal line
+        elif dy == 0:
+            return(0, 1)
+        # all other cases
+        else:
+            g = gcd(abs(dy), abs(dx))
+            dy //= g
+            dx //= g
+        # normalize sign (dx to be positive)
+        if dx < 0:
+            dy, dx = -dy, -dx
+        return (dy, dx)
 
     def countTrapezoids(self, points: List[List[int]]) -> int:
 
@@ -38,7 +39,7 @@ class Solution:
 
                 dy = y2 - y1
                 dx = x2 - x1
-                slope = normalize_slope(dy, dx)
+                slope = self.normalize_slope(dy, dx)
 
                 # count towards slope bucket
                 slope_count[slope] += 1
@@ -49,7 +50,7 @@ class Solution:
                 # invariant value:
                 val = dy_r * x1 - dx_r * y1
                 line_key = (dy_r, dx_r, val)
-                line_count(line_key) += 1
+                line_count[line_key] += 1
 
                 # midpoint key and slope for diagonals (for parallelogram counting)
                 mid_key = (x1 + x2, y1 + y2)
@@ -79,9 +80,7 @@ class Solution:
                     if count >= 2:
                         colinear_diagonal_pairs += count*(count-1) // 2
                 p += total_pairs - colinear_diagonal_pairs
-
-
-        return ans + colinear_midpoints
+        return s - l - p
 
 def main():
     sol = Solution()
