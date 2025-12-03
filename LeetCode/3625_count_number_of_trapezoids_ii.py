@@ -16,8 +16,8 @@ class Solution:
         # Hash every point pair by its reduced slope, normalized with GCD and fixed sign
 
         for i in range(n-1):
+            x1, y1 = points[i]
             for j in range(i+1, n):
-                x1, y1 = points[i]
                 x2, y2 = points[j]
 
                 dy = y2 - y1
