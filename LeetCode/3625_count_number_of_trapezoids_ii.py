@@ -3,7 +3,7 @@ from collections import defaultdict
 from math import gcd
 
 class Solution:
-    def normalize_slope(self, dx: int, dy: int) -> Tuple[int, int]:
+    def normalize_slope(self, dy: int, dx: int) -> Tuple[int, int]:
         # Vertical line
         if dx == 0:
             return(1, 0)
@@ -76,8 +76,9 @@ class Solution:
                     if count >= 2:
                         colinear_diagonal_pairs += count*(count-1) // 2
                 p += total_pairs - colinear_diagonal_pairs
-        print(s, l, p)
+       
         return s - l - p
+
 
 def main():
     sol = Solution()
