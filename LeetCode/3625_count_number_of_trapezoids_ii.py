@@ -45,9 +45,15 @@ class Solution:
 
         for bucket in buckets.values():
              for (a, b), (c, d) in combinations(bucket, 2):
-                print(a, b, c, d, '->', len({a, b, c, d}))
+                # print(a, b, c, d, '->', len({a, b, c, d}))
+
+                x1, y1 = a
+                x2, y2 = b
+                x3, y3 = c
 
                 if len({a, b, c, d}) == 4:
+
+
 
                     ans += 1
 
