@@ -26,7 +26,7 @@ class Solution:
 
     def countTrapezoids(self, points: List[List[int]]) -> int:
 
-        slope_count = defaultdict(list) # slope -> number of segments with same slope
+        slope_count = defaultdict(int) # slope -> number of segments with same slope
         line_count = defaultdict(int) # line_key -> number of co-linear segments
         mid_map = defaultdict(lambda: defaultdict(int)) # midpoints -> (diagonal_slope -> count)
         n = len(points)
@@ -63,7 +63,7 @@ class Solution:
 
         # l = total pairs of colinear segments (must subtract from s)
         l = 0
-        for val in line_count.values:
+        for val in line_count.values():
             l += val*(val-1) // 2
 
         # p = number of paralellograms using midpoint groups
