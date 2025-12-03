@@ -55,14 +55,20 @@ class Solution:
 
                 if (x3 - x1) * (y2 - y1) - (y3 - y1) * (x2 - x1) != 0:
                     ans += 1
-                if
-
+                else:
+                    # if colinear, check if midpoints are the same
+                    mid1_x = x1 + x2
+                    mid1_y = y1 + y2
+                    mid2_x = x3 + x4
+                    mid2_y = y3 + y4
+                    if mid1_x == mid2_x and mid1_y == mid2_y:
+                        duplicate_midpoints += 1
 
         for val in midpoints.values():
             if val >= 2:
                 ans -= val // 2
 
-        return ans
+        return ans + duplicate_midpoints
 
 def main():
     sol = Solution()
