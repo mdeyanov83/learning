@@ -31,4 +31,4 @@ def import_(module_name, module_file, module_path):
     # execute the compiled source code
     exec(code, mod.__dict__)
 
-    return sys.moduled[module_name]
+    return sys.modules[module_name]
