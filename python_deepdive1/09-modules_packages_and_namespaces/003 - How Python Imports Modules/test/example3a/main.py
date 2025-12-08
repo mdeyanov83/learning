@@ -31,3 +31,8 @@ exec(code, mod.__dict__)
 # DONE!
 
 mod.hello()
+
+# will still run, because module1 is added to the sys modules.
+# Even though the interpreter does not now about it before running the program
+import module1
+module1.hello()
