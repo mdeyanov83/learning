@@ -1,6 +1,6 @@
-# test1.py
+# test.py
 
-print('running test1.py...')
+print('running test.py...')
 
 def print_values():
 	print('k1', '10')
