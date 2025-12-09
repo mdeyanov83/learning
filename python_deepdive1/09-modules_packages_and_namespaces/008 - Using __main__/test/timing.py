@@ -31,5 +31,8 @@ if __name__ == '__main__':
                         type=int, default=10,
                         help='Number of times to repeat the test.')
     args = parser.parse_args()
-    print(args.code)
-    print(args.repeats)
+
+    print(f'tming: {args.code}...')
+
+    print(timeit(code=str(args.code), repeats=args.repeats))
+
