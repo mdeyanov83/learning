@@ -23,3 +23,7 @@ def timeit(code, repeats=10):
     average = elapsed / repeats
     return Timing(repeats, elapsed, average)
 
+
+
+if __name__ == '__main__':
+    print('running this command line code')
