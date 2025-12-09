@@ -9,6 +9,7 @@ over multiple iterations
 
 from time import perf_counter
 from collections import namedtuple
+import argparse
 
 Timing = namedtuple('Timing', 'repeats elapsed average')
 
