@@ -1,4 +1,4 @@
-print('executing moduele1...')
+print('executing module1...')
 
 value = 'module1 value1'
 
