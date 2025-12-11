@@ -1,4 +1,4 @@
-import common.validators
+import shared.validators
 
 
 common.validators.is_boolean('True')
