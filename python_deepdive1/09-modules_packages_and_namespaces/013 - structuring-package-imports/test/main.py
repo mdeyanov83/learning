@@ -3,6 +3,11 @@ import common.validators
 
 common.validators.is_boolean('True')
 common.validators.json.is_json('{}')
+common.validators.is_numeric(10)
+common.validators.is_date('2008-01-01')
+
+common.validators.boolean.is_boolean(True)
+
 
 print('\n\n****** self ******')
 for k in dict(globals()).keys():
