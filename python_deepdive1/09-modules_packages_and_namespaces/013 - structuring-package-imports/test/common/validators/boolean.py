@@ -3,10 +3,10 @@
 def is_boolean(arg):
     ...
 
-def boolean_helper_1():
+def _boolean_helper_1():
     ...
 
-def boolean_helper_2():
+def _boolean_helper_2():
     ...
 
 
