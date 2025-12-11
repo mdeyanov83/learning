@@ -1,10 +1,10 @@
-import common.validators as validators
-import common # imported so we can see the common.__dict__ property
+import common.validators # as validators
+# import common # imported so we can see the common.__dict__ property
 
-validators.is_boolean('True')
-validators.is_json('{}')
-validators.is_numeric(10)
-validators.is_date('2008-01-01')
+# validators.is_boolean('True')
+# validators.is_json('{}')
+# validators.is_numeric(10)
+# validators.is_date('2008-01-01')
 
 # from common.validators import *
 
