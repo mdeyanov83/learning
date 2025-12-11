@@ -10,7 +10,6 @@ validators.boolean.is_boolean(True)
 
 
 
-
 print('\n\n****** self ******')
 for k in dict(globals()).keys():
     print(k)
