@@ -1,15 +1,7 @@
-import common.validators.boolean
-import common.validators.date
-import common.validators.json
-# import common.validators.numeric
-from common.validators.numeric import is_integer, is_numeric
+import common.validators
 
 
-common.validators.json.is_json('{}')
-common.validators.date.is_date('2018-01-01')
-is_numeric(10)
-is_integer(100)
-
+common.validators.boolean.is_boolean('True')
 
 print('\n\n****** self ******')
 for k in dict(globals()).keys():
