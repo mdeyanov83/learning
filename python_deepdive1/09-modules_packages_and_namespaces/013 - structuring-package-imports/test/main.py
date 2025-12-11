@@ -9,5 +9,5 @@ common.validators.date.is_date('2018-01-01')
 
 
 print('\n\n****** self ******')
-for k in globals().keys():
+for k in dict(globals()).keys():
     print(k)
