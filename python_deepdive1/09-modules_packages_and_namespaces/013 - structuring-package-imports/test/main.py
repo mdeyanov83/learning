@@ -1,7 +1,7 @@
 import common # imported so we can see the common.__dict__ property
 import common.validators as validators
-import common.models.posts
-import common.models.users
+# import common.models
+from common.models import *
 
 
 validators.is_boolean('True')
@@ -12,9 +12,12 @@ validators.is_date('2008-01-01')
 # from common.validators import *
 
 
-john_post = common.models.posts.Post()
-john_posts = common.models.posts.Posts()
-john = common.models.users.User()
+# john_post = common.models.posts.Post()
+# john_posts = common.models.Posts()
+# john = common.models.User()
+john_post = Post()
+john_posts = Posts()
+john = User()
 
 
 print('\n\n****** self ******')
@@ -36,8 +39,9 @@ for k in common.__dict__.keys():
 # for k in validators.numeric.__dict__.keys():
 #     print(k)
 
-print('\n\n****** posts (package) ******')
-for k in common.models.posts.__dict__.keys():
-    print(k)
+
+# print('\n\n****** posts (package) ******')
+# for k in common.models.posts.__dict__.keys():
+#     print(k)
 
 
