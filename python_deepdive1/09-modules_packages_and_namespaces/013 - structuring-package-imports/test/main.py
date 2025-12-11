@@ -1,4 +1,4 @@
-import common.validators # as validators
+import common.validators as validators
 # import common # imported so we can see the common.__dict__ property
 
 # validators.is_boolean('True')
