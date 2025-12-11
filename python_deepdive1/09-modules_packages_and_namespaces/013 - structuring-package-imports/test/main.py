@@ -6,9 +6,7 @@ validators.is_json('{}')
 validators.is_numeric(10)
 validators.is_date('2008-01-01')
 
-from common.validators import *
-
-
+# from common.validators import *
 
 
 print('\n\n****** self ******')
