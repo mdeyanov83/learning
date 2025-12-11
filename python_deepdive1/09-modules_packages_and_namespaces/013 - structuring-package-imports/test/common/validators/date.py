@@ -1,5 +1,7 @@
 # date.py
 
+__all__ = ['is_date']
+
 def is_date(arg):
     ...
 
