@@ -1,12 +1,14 @@
 # boolean.py
 
+__all__ = ['is_boolean']
+
 def is_boolean(arg):
     ...
 
-def _boolean_helper_1():
+def boolean_helper_1():
     ...
 
-def _boolean_helper_2():
+def boolean_helper_2():
     ...
 
 
