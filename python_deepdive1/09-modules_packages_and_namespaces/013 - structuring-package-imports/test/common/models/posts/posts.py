@@ -1,5 +1,7 @@
 # posts.py
 
+__all__ = ['Posts']
+
 class Posts:
     ...
 
