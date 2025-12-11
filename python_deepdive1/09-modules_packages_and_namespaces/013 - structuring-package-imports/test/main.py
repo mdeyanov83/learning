@@ -1,5 +1,5 @@
-import shared.validators as validators
-
+import common.validators as validators
+import common
 
 validators.is_boolean('True')
 validators.json.is_json('{}')
@@ -14,8 +14,8 @@ for k in dict(globals()).keys():
     print(k)
 
 
-print('\n\n****** shared ******')
-for k in shared.__dict__.keys():
+print('\n\n****** common ******')
+for k in common.__dict__.keys():
     print(k)
 
 
