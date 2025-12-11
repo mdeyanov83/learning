@@ -1,6 +1,9 @@
 import common # imported so we can see the common.__dict__ property
 import common.validators as validators
 import common.models as models
+import common.models.posts.post
+import common.models.posts.posts
+import common.models.users.user
 
 
 validators.is_boolean('True')
@@ -12,6 +15,8 @@ validators.is_date('2008-01-01')
 
 
 john_post = common.models.posts.post.Post()
+john_posts = common.models.posts.posts.Posts()
+john = common.models.users.user.User()
 
 
 print('\n\n****** self ******')

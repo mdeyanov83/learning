@@ -1,6 +1,6 @@
 # user.py
 
-class user:
+class User:
     ...
 
 def user_helper_1():
