@@ -1,5 +1,7 @@
 # user.py
 
+__all__ = ['User']
+
 class User:
     ...
 
