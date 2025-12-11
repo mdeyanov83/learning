@@ -1,12 +1,12 @@
-import shared.validators
+import shared.validators as validators
 
 
-shared.validators.is_boolean('True')
-shared.validators.json.is_json('{}')
-shared.validators.is_numeric(10)
-shared.validators.is_date('2008-01-01')
+validators.is_boolean('True')
+validators.json.is_json('{}')
+validators.is_numeric(10)
+validators.is_date('2008-01-01')
 
-shared.validators.boolean.is_boolean(True)
+validators.boolean.is_boolean(True)
 
 
 print('\n\n****** self ******')
@@ -18,12 +18,12 @@ print('\n\n****** shared ******')
 for k in shared.__dict__.keys():
     print(k)
 
- 
+
 print('\n\n****** validators ******')
-for k in shared.validators.__dict__.keys():
+for k in validators.__dict__.keys():
     print(k)
 
 
 print('\n\n****** numeric ******')
-for k in shared.validators.numeric.__dict__.keys():
+for k in validators.numeric.__dict__.keys():
     print(k)
