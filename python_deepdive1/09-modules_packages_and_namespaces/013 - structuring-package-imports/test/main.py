@@ -1,7 +1,7 @@
 import common.validators
 
 
-common.validators.boolean.is_boolean('True')
+common.validators.is_boolean('True')
 common.validators.json.is_json('{}')
 
 print('\n\n****** self ******')
