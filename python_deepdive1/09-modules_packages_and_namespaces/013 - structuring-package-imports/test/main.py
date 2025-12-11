@@ -2,11 +2,12 @@ import common.validators as validators
 import common
 
 validators.is_boolean('True')
-validators.json.is_json('{}')
+validators.is_json('{}')
 validators.is_numeric(10)
 validators.is_date('2008-01-01')
 
-validators.boolean.is_boolean(True)
+from common.validators  import *
+
 
 
 
