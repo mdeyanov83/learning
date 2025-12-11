@@ -1,8 +1,11 @@
 import common # imported so we can see the common.__dict__ property
 import common.validators as validators
-import common.models
-# from common.models import *
-# from common.validators import *
+import common.models as models
+
+# Generally do not import using *
+# from common.validators import *  # if we want to reference the validator functions direclty
+# from common.models import *  # if we want to reference models classes direclty
+
 
 
 validators.is_boolean('True')
@@ -10,15 +13,9 @@ validators.is_json('{}')
 validators.is_numeric(10)
 validators.is_date('2008-01-01')
 
-
-
-
-# john_post = common.models.posts.Post()
-# john_posts = common.models.Posts()
-# john = common.models.User()
-john_post = Post()
-john_posts = Posts()
-john = User()
+john_post = models.Post()
+john_posts = models.Posts()
+john = models.User()
 
 
 print('\n\n****** self ******')
