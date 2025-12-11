@@ -6,7 +6,7 @@ import common.models as models
 # from common.validators import *  # if we want to reference the validator functions direclty
 # from common.models import *  # if we want to reference models classes direclty
 
-import common.helpers
+import common.helpers as helpers
 
 validators.is_boolean('True')
 validators.is_json('{}')
@@ -49,3 +49,5 @@ for k in common.models.__dict__.keys():
 
 
 calc = helpers.Calc()
+print(helpers.say_hello('Python'))
+print(helpers.factorial(5))
