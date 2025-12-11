@@ -51,3 +51,6 @@ for k in common.models.__dict__.keys():
 calc = helpers.Calc()
 print(helpers.say_hello('Python'))
 print(helpers.factorial(5))
+
+
+import asyncio
