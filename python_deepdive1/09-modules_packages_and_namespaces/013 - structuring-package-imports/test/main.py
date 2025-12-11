@@ -43,3 +43,6 @@ for k in common.__dict__.keys():
 #     print(k)
 
 
+print('\n\n****** models ******')
+for k in common.models.__dict__.keys():
+    print(k)
