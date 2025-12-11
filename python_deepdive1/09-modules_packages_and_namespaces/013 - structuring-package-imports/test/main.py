@@ -1,7 +1,8 @@
 import common # imported so we can see the common.__dict__ property
 import common.validators as validators
-# import common.models
-from common.models import *
+import common.models
+# from common.models import *
+# from common.validators import *
 
 
 validators.is_boolean('True')
@@ -9,7 +10,7 @@ validators.is_json('{}')
 validators.is_numeric(10)
 validators.is_date('2008-01-01')
 
-# from common.validators import *
+
 
 
 # john_post = common.models.posts.Post()
