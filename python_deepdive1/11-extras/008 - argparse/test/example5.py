@@ -1,8 +1,14 @@
 import sys
 
-# --last-name Cleese --first-name John
+keys = sys.argv[1::2]
+values = sys.argv[2::2]
 
-print(sys.argv[1:])
+print(keys)
+print(values)
 
-for i in range(1, len(sys.argv), 2):
-    print(sys.argv[i], sys.argv[i+1])
+print(list(zip(keys, values)))
+
+
+args = {k: v for k, v in zip(keys, values)}
+
+
