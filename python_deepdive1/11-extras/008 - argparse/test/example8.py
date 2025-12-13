@@ -1,9 +1,12 @@
 import argparse
 
-parser = argparse.ArgumentParser(description='Prints the squares of a list of numbers, and the cubes of another list of numbers')
+parser = argparse.ArgumentParser(
+    description='Prints the squares of a list of numbers, and the cubes of another list of numbers')
 
-parser.add_argument('--sq', help='list of numbers to square', nargs='*', type=float)
-parser.add_argument('--cu', help='list of numbers to cube', nargs='+', type=float, required=True, dest='cubes')
+parser.add_argument('--sq', help='list of numbers to square',
+                    nargs='*', type=float)
+parser.add_argument('--cu', help='list of numbers to cube',
+                    nargs='+', type=float, required=True, dest='cubes')
 
 args = parser.parse_args()
 
