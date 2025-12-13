@@ -1,13 +1,13 @@
 # simple use of argparse module
 
-# to parse command line parameters, we need to set up a parser object
-# and we tell it a few things:
-# 1. a description of what the program does that will be displayed
-#       when the argument is -h or --help. The arg parser will
-#       automatically add help information for the different
-#       arguments that are supported
-# 2. the arguments we want to support, which can be a mix of positional
-#       or named arguments, some help text about each one, and even the expected data type
+to parse command line parameters, we need to set up a parser object
+and we tell it a few things:
+1. a description of what the program does that will be displayed
+      when the argument is -h or --help. The arg parser will
+      automatically add help information for the different
+      arguments that are supported
+2. the arguments we want to support, which can be a mix of positional
+      or named arguments, some help text about each one, and even the expected data type
 
 import argparse
 
