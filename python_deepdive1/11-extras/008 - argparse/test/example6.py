@@ -8,6 +8,8 @@ parser.add_argument('b', help='second integer', type=int)
 
 args = parser.parse_args(sys.argv[1:])
 
+a = args.a
+b = args.b
 
-print(args.a)
-print(args.b)
+print(f'{a} // {b} = {a//b}, {a} % {b} = {a%b}')
+
