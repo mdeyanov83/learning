@@ -6,7 +6,7 @@ parser = argparse.ArgumentParser(
 parser.add_argument('--sq', help='list of numbers to square',
                     nargs='*', type=float)
 parser.add_argument('--cu', help='list of numbers to cube',
-                    nargs='+', type=int, required=True, dest='cubes')
+                    nargs='+', type=float, required=True, dest='cubes')
 
 args = parser.parse_args()
 
