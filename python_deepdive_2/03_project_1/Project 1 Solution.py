@@ -35,7 +35,12 @@ class Polygon:
 
 class Poly_Sequence:
     def __init__(self, n, r):
-        self._n
+        self._n = n
+        self._r = r
+
+    def __len__(self, n):
+        ...
+    
 
 
 def main():
