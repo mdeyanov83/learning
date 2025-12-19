@@ -33,14 +33,32 @@ class Polygon:
     def perimeter(self):
         return self._n * self.edge_len
 
-class Poly_Sequence:
-    def __init__(self, n, r):
-        self._n = n
-        self._r = r
-
-    def __len__(self, n):
+    def __repr__(self):
         ...
-    
+
+    def __eq__(self, other):
+        ...
+
+    def __gt__(self, other):
+        ...
+
+
+
+# class Poly_Sequence:
+    # def __init__(self, n, r):
+    #     self._n = n
+    #     self._r = r
+
+    # @property
+    # def max_efficiency_poly(self):
+    #     ...
+
+    # def __getitem__(self, x):
+    #     ...
+
+    # def __len__(self, n):
+    #     ...
+
 
 
 def main():
