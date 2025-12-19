@@ -1,39 +1,51 @@
 class Polygon:
     def __init__(self, n, r):
-        self.n = n
-        self.r = r
+        self._n = n
+        self._r = r
 
+    @property
     def edges(self):
-        return self.n
+        return self._n
 
+    @property
     def vertices(self):
-        return self.n
+        return self._n
 
+    @property
     def in_angle(self):
         from math import pi
-        return (self.n - 2) * 180 / pi
+        return (self._n - 2) * 180 / pi
 
+    @property
     def edge_len(self):
         from math import sin, pi
-        return 2 * self.r * sin(pi / self.n)
+        return 2 * self._r * sin(pi / self._n)
 
+    @property
     def apothem(self):
         from math import cos, pi
-        return self.r * cos(pi / self.n)
+        return self._r * cos(pi / self._n)
 
+    @property
     def area(self):
-        return 1/2 * self.n * self.edge_len() * self.apothem()
+        return 1/2 * self._n * self.edge_len * self.apothem
 
+    @property
     def perimeter(self):
-        return self.n * self.edge_len()
+        return self._n * self.edge_len
 
 
 def main():
-    p = Polygon(3)
+    p = Polygon(3, 5)
 
-    print(p.edges())
-    print(p.vertices())
-    print(p.
+    print(p.edges)
+    print(p.vertices)
+    print(p.in_angle)
+    print(p.edge_len)
+    print(p.apothem)
+    print(p.area)
+    print(p.perimeter)
+
 
 
 if __name__ == "__main__":
