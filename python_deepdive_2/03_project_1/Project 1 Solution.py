@@ -33,6 +33,10 @@ class Polygon:
     def perimeter(self):
         return self._n * self.edge_len
 
+class Poly_Sequence:
+    def __init__(self, n, r):
+        self._n
+
 
 def main():
     p = Polygon(3, 5)
