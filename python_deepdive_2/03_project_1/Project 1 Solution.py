@@ -1,3 +1,5 @@
+from math import sin, cos, pi
+
 class Polygon:
     def __init__(self, n, r):
         self._n = n
@@ -17,12 +19,10 @@ class Polygon:
 
     @property
     def edge_len(self):
-        from math import sin, pi
         return 2 * self._r * sin(pi / self._n)
 
     @property
     def apothem(self):
-        from math import cos, pi
         return self._r * cos(pi / self._n)
 
     @property
