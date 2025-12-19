@@ -13,8 +13,7 @@ class Polygon:
 
     @property
     def in_angle(self):
-        from math import pi
-        return (self._n - 2) * 180 / pi
+        return (self._n - 2) * 180 / self._n
 
     @property
     def edge_len(self):
