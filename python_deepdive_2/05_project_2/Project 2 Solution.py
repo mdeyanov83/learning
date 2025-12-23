@@ -1,6 +1,5 @@
 import math
 
-
 class Polygon:
     def __init__(self, n, R):
         if n < 3:
@@ -153,6 +152,8 @@ def test_polygon():
     assert p1 != p4
     assert p4 == p5
 
+    print('All tests passed...')
+
 
 class Polygons:
     def __init__(self, m, R):
@@ -168,7 +169,7 @@ class Polygons:
         return f'Polygons(m={self._m}, R={self._R})'
 
     def __iter__(self):
-        return self.PolygonIterator(self)
+        return self.PolygonIterator(self._m, self._R)
 
     class PolygonIterator:
         def __init__(self, m, R):
@@ -192,15 +193,28 @@ class Polygons:
 
     @property
     def max_efficiency_polygon(self):
-        sorted_polygons = sorted(self._polygons,
+        sorted_polygons = sorted(self.PolygonIterator(self._m, self._R),
                                  key=lambda p: p.area/p.perimeter,
                                 reverse=True)
         return sorted_polygons[0]
 
 
 def main():
+    print('Running test_polygon()')
     test_polygon()
 
+    print('Creating Polygons(5, 3)...')
+    polygons = Polygons(5, 3)
+
+    print('loop over once')
+    for p in polygons:
+        print(p)
+
+    print('loop over again')
+    for p in polygons:
+        print(p)
+
+    print('Max efficiency polygon:', polygons.max_efficiency_polygon)
 
 if __name__ == "__main__":
     main()
