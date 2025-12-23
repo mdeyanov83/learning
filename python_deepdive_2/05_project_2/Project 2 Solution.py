@@ -1,5 +1,6 @@
 import math
 
+
 class Polygon:
     def __init__(self, n, R):
         if n < 3:
@@ -11,7 +12,6 @@ class Polygon:
         self._apothem = None
         self._area = None
         self._perimeter = None
-
 
     def __repr__(self):
         return f'Polygon(n={self._n}, R={self._R})'
@@ -36,7 +36,7 @@ class Polygon:
 
     @property
     def side_length(self):
-        if self._side_lenght is None:
+        if self._side_length is None:
             self._side_length = 2 * self._R * math.sin(math.pi / self._n)
         return self._side_length
 
@@ -48,11 +48,15 @@ class Polygon:
 
     @property
     def area(self):
-        return self._n / 2 * self.side_length * self.apothem
+        if self._area is None:
+            self._area = self._n / 2 * self.side_length * self.apothem
+        return self._area
 
     @property
     def perimeter(self):
-        return self._n * self.side_length
+        if self._perimeter is None:
+            self._perimeter = self._n * self.side_length
+        return self._perimeter
 
     def __eq__(self, other):
         if isinstance(other, self.__class__):
@@ -100,19 +104,19 @@ def test_polygon():
                                            ' expected: 2.0')
 
     assert math.isclose(p.side_length, math.sqrt(2),
-                       rel_tol=rel_tol,
-                       abs_tol=abs_tol), (f'actual: {p.side_length},'
-                                          f' expected: {math.sqrt(2)}')
+                        rel_tol=rel_tol,
+                        abs_tol=abs_tol), (f'actual: {p.side_length},'
+                                           f' expected: {math.sqrt(2)}')
 
     assert math.isclose(p.perimeter, 4 * math.sqrt(2),
-                       rel_tol=rel_tol,
-                       abs_tol=abs_tol), (f'actual: {p.perimeter},'
-                                          f' expected: {4 * math.sqrt(2)}')
+                        rel_tol=rel_tol,
+                        abs_tol=abs_tol), (f'actual: {p.perimeter},'
+                                           f' expected: {4 * math.sqrt(2)}')
 
     assert math.isclose(p.apothem, 0.707,
-                       rel_tol=rel_tol,
-                       abs_tol=abs_tol), (f'actual: {p.perimeter},'
-                                          ' expected: 0.707')
+                        rel_tol=rel_tol,
+                        abs_tol=abs_tol), (f'actual: {p.perimeter},'
+                                           ' expected: 0.707')
     p = Polygon(6, 2)
     assert math.isclose(p.side_length, 2,
                         rel_tol=rel_tol, abs_tol=abs_tol)
