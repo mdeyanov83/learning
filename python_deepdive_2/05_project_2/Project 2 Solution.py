@@ -171,15 +171,23 @@ class Polygons:
         return self.PolygonIterator(self)
 
     class PolygonIterator:
-        def __init__(self, poly_obj):
-            self._poly_obj = poly_obj
-            self._index = 0
+        def __init__(self, m, R):
+            if m < 3:
+                raise ValueError('m must be greater than 3')
+            self._m = m
+            self._R = R
+            self._i = 3
 
         def __iter__(self):
             return self
 
         def __next__(self):
-            ...
+            if self._i > self._m:
+                raise StopIteration
+            else:
+                result = Polygon(self._i, self._R)
+                self._i += 1
+                return result
 
 
     @property
