@@ -171,6 +171,9 @@ class Polygons:
     # def __getitem__(self, s):
     #     return self._polygons[s]
 
+    def __iter__(self):
+        return PolygonIterator(self)
+
     class PolygonIterator:
         def __init__(self):
             ...
