@@ -172,13 +172,19 @@ class Polygons:
     #     return self._polygons[s]
 
     def __iter__(self):
-        return PolygonIterator(self)
+        return self.PolygonIterator(self)
 
     class PolygonIterator:
-        def __init__(self):
-            ...
+        def __init__(self, poly_obj):
+            self._poly_obj = poly_obj
+            self._index = 0
 
-        def __
+        def __iter__(self):
+            return self
+
+        def __next__(self):
+
+            
 
     @property
     def max_efficiency_polygon(self):
