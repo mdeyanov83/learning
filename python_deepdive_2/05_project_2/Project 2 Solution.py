@@ -162,14 +162,20 @@ class Polygons:
         self._R = R
         self._polygons = [Polygon(i, R) for i in range(3, m+1)]
 
-    def __len__(self):
-        return self._m - 2
+    # def __len__(self):
+    #     return self._m - 2
 
     def __repr__(self):
         return f'Polygons(m={self._m}, R={self._R})'
 
-    def __getitem__(self, s):
-        return self._polygons[s]
+    # def __getitem__(self, s):
+    #     return self._polygons[s]
+
+    class PolygonIterator:
+        def __init__(self):
+            ...
+
+        def __
 
     @property
     def max_efficiency_polygon(self):
