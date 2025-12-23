@@ -6,6 +6,12 @@ class Polygon:
             raise ValueError('Polygon must have at least 3 vertices.')
         self._n = n
         self._R = R
+        self._interior_angle = None
+        self._side_length = None
+        self._apothem = None
+        self._area = None
+        self._perimeter = None
+
 
     def __repr__(self):
         return f'Polygon(n={self._n}, R={self._R})'
@@ -24,15 +30,21 @@ class Polygon:
 
     @property
     def interior_angle(self):
-        return (self._n - 2) * 180 / self._n
+        if self._interior_angle is None:
+            self._interior_angle = (self._n - 2) * 180 / self._n
+        return self._interior_angle
 
     @property
     def side_length(self):
-        return 2 * self._R * math.sin(math.pi / self._n)
+        if self._side_lenght is None:
+            self._side_length = 2 * self._R * math.sin(math.pi / self._n)
+        return self._side_length
 
     @property
     def apothem(self):
-        return self._R * math.cos(math.pi / self._n)
+        if self._apothem is None:
+            self._apothem = self._R * math.cos(math.pi / self._n)
+        return self._apothem
 
     @property
     def area(self):
@@ -136,3 +148,11 @@ def test_polygon():
     assert p3 != p4
     assert p1 != p4
     assert p4 == p5
+
+
+def main():
+    test_polygon()
+
+
+if __name__ == "__main__":
+    main()
