@@ -32,10 +32,11 @@ def get_data(FILE):
 
 
 def main():
-    print(get_data(FILE_NAME))
+    data = get_data(FILE_NAME)
 
     for _ in range(10):
-        print(get_data(FILE_NAME))
+        print(next(data))
+
 
 if __name__ == "__main__":
     main()
