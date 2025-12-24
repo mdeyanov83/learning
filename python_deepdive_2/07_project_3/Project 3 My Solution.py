@@ -20,7 +20,7 @@ def cast_row(headers, data_row):
 
 def get_data(file):
     with open(file) as f:
-        headers = next(f).strip('\n').replace(' ', '_').split(',')
+        headers = next(f).strip('\n').replace(' ', '_').lower().split(',')
         Violation = namedtuple('Violation', headers)
 
         for data_row in f:
