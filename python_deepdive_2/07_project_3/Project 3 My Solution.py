@@ -13,7 +13,8 @@ def cast(field_name, value):
     else:
         return str(value)
 
-# def cast_row(data_types, data_row)
+def cast_row(field_names, data_row):
+    return [cast(field_)]
 
 def parse_data():
     with open(FILE_NAME) as f:
