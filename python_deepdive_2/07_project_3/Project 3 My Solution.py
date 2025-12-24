@@ -18,7 +18,7 @@ def cast_row(headers, data_row):
             for field_name, value in zip(headers, data_row)]
 
 
-def get_data(file):
+def read_data(file):
     with open(file) as f:
         headers = next(f).strip('\n').replace(' ', '_').lower().split(',')
         Violation = namedtuple('Violation', headers)
@@ -31,7 +31,7 @@ def get_data(file):
 
 
 def main():
-    data = get_data(file_name)
+    data = read_data(file_name)
 
     for _ in range(10):
         print(next(data))
