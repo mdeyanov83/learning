@@ -4,15 +4,16 @@ from datetime import datetime
 
 FILE_NAME = 'nyc_parking_tickets_extract.csv'
 
-# def cast_row(data_types, data_row)
 
 def cast(field_name, value):
     if 'date' in field_name.lower():
-        ...
+        return datetime.strptime(value, "%m/%d/%Y").date()
     elif 'number' in field_name.lower() or 'code' in field_name.lower():
         return int(value)
     else:
         return str(value)
+
+# def cast_row(data_types, data_row)
 
 def parse_data():
     with open(FILE_NAME) as f:
