@@ -1,4 +1,4 @@
-from collections import namedtuple
+from collections import namedtuple, defaultdict
 from datetime import datetime
 from functools import partial
 
@@ -91,7 +91,7 @@ def main():
         print(next(data))
 
     # Test invalid data
-    
+
     # invalid = invalid_data()
 
     # for row in invalid:
