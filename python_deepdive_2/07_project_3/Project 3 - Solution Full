@@ -10,10 +10,12 @@ column_names = [header.replace(' ', '_').lower() for header in headers]
 
 Ticket = namedtuple('Ticket', column_names)
 
+
 def read_data():
     with open(file_name) as f:
         next(f)
         yield from f
+
 
 def parse_int(value, *, default=None):
     try:
@@ -21,12 +23,14 @@ def parse_int(value, *, default=None):
     except ValueError:
         return default
 
+
 def parse_date(value, *, default=None):
-    date_format='%m/%d/%Y'
+    date_format = '%m/%d/%Y'
     try:
         return datetime.strptime(value, date_format).date()
     except ValueError:
         return default
+
 
 def parse_string(value, *, default=None):
     try:
@@ -39,6 +43,7 @@ def parse_string(value, *, default=None):
     except:
         return default
 
+
 column_parsers = (parse_int,  # summons_number, default is None
                   parse_string,  # plate_id, default is None
                   partial(parse_string, default=''),  # state
@@ -48,7 +53,8 @@ column_parsers = (parse_int,  # summons_number, default is None
                   partial(parse_string, default=''),  # body type
                   parse_string,  # make, default is None
                   lambda x: parse_string(x, default='')  # description
-                 )
+                  )
+
 
 def parse_row(row, *, default=None):
     fields = row.strip('\n').split(',')
@@ -75,7 +81,7 @@ def invalid_data():
     for row in read_data():
         parsed = parse_row(row)
         if not parsed:
-            yield row
+            yield list(zip(column_names, row))
 
 
 def main():
@@ -86,7 +92,7 @@ def main():
     #     print(next(data))
 
     # Test invalid data
-    for row in invalid_data:
+    for row in invalid:
         print(row)
 
 
