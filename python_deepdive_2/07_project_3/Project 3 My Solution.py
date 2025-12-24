@@ -23,11 +23,12 @@ def parse_data():
         headers = next(f).strip('\n').replace(' ', '_').split(',')
         Violation = namedtuple('Violation', headers)
 
+        
 
         data_row = next(f).strip('\n').split(',')
         cast_data_row = cast_row(headers, data_row)
         violation = Violation(*cast_data_row)
-        
+
 
 
 def main():
