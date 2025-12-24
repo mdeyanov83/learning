@@ -21,15 +21,15 @@ def parse_data():
     with open(FILE_NAME) as f:
 
         headers = next(f).strip('\n').replace(' ', '_').split(',')
-        print('Headers:',headers)
+        print('Headers:', headers)
         Violation = namedtuple('Violation', headers)
-        print('Violation Tuple:',Violation)
+        print('Violation class:', Violation)
 
         data_row = next(f).strip('\n').split(',')
-        print(data_row)
+        print('Data row:', data_row)
         cast_data_row = cast_row(headers, data_row)
         violation = Violation(*cast_data_row)
-        print(violation)
+        print('Violation tuple:', violation)
 
         # print(Violation)
         # print(field_names)
