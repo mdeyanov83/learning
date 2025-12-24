@@ -25,15 +25,17 @@ def get_data(FILE):
         Violation = namedtuple('Violation', headers)
 
         for data_row in f:
-            data_row.strip('\n').split(',')
+            data_row = data_row.strip('\n').split(',')
             cast_data_row = cast_row(headers, data_row)
             violation = Violation(*cast_data_row)
-            print(violation)
+            yield violation
 
 
 def main():
-    get_data(FILE_NAME)
+    print(get_data(FILE_NAME))
 
+    for _ in range(10):
+        print(get_data(FILE_NAME))
 
 if __name__ == "__main__":
     main()
