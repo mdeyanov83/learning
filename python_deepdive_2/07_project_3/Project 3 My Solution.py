@@ -19,8 +19,8 @@ def cast_row(headers, data_row):
             for field_name, value in zip(headers, data_row)]
 
 
-def get_data(FILE_NAME):
-    with open(FILE_NAME) as f:
+def get_data(FILE):
+    with open(FILE) as f:
         headers = next(f).strip('\n').replace(' ', '_').split(',')
         Violation = namedtuple('Violation', headers)
 
@@ -28,11 +28,11 @@ def get_data(FILE_NAME):
             data_row.strip('\n').split(',')
             cast_data_row = cast_row(headers, data_row)
             violation = Violation(*cast_data_row)
-            yield violation
+            print(violation)
 
 
 def main():
-    print(next(get_data(FILE_NAME)))
+    get_data(FILE_NAME)
 
 
 if __name__ == "__main__":
