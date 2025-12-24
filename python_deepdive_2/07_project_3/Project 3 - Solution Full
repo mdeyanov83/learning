@@ -56,7 +56,7 @@ def parse_row(row, *, default=None):
     # since we'll need to iterate through the entire parsed fields
     # twice - one time to check if nothing is None
     # and another time to create the named tuple
-    parsed_data = [func(fields)
+    parsed_data = [func(field)
                    for func, field in zip(column_parsers, fields)]
     if all(item is not None for item in parsed_data):
         return Ticket(*parsed_data)
