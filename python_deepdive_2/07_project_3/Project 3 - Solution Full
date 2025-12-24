@@ -1,5 +1,6 @@
 from collections import namedtuple
 from datetime import datetime
+from functools import partial
 
 file_name = 'nyc_parking_tickets_extract.csv'
 
