@@ -9,9 +9,11 @@ FILE_NAME = 'nyc_parking_tickets_extract.csv'
 def parse_data():
     with open(FILE_NAME) as f:
 
-        field_names = next(f).strip().split(',')
+        field_names = next(f).strip('\n').replace(' ', '_').split(',')
         Violation = namedtuple('Violation', field_names)
 
+        
+        print(Violation)
         print(field_names)
 
         print(next(f).strip('\n'))
