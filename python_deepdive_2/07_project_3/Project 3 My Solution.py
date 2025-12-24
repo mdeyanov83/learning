@@ -1,4 +1,5 @@
 from collections import namedtuple
+from datetime import datetime
 
 
 FILE_NAME = 'nyc_parking_tickets_extract.csv'
