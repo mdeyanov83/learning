@@ -13,26 +13,26 @@ def cast(field_name, value):
     else:
         return str(value)
 
+
 def cast_row(headers, data_row):
     return [cast(field_name, value)
             for field_name, value in zip(headers, data_row)]
 
-def parse_data():
-    with open(FILE_NAME) as f:
 
+def get_data(FILE_NAME):
+    with open(FILE_NAME) as f:
         headers = next(f).strip('\n').replace(' ', '_').split(',')
         Violation = namedtuple('Violation', headers)
 
-        
-
-        data_row = next(f).strip('\n').split(',')
-        cast_data_row = cast_row(headers, data_row)
-        violation = Violation(*cast_data_row)
-
+        for data_row in f:
+            data_row.strip('\n').split(',')
+            cast_data_row = cast_row(headers, data_row)
+            violation = Violation(*cast_data_row)
+            yield violation
 
 
 def main():
-    parse_data()
+    print(next(get_data(FILE_NAME)))
 
 
 if __name__ == "__main__":
