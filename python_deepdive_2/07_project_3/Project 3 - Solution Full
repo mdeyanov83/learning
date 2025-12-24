@@ -62,28 +62,18 @@ def parse_row(row, *, default=None):
         return Ticket(*parsed_data)
     else:
         return default
-    
 
 
-def cast_row(headers, data_row):
-    return [cast(field_name, value)
-            for field_name, value in zip(headers, data_row)]
+def parsed_data():
+    for row in read_data():
+        parsed = parse_row(row)
+        if parsed:
+            yield parsed
 
-
-def read_data(file):
-    with open(file) as f:
-
-        Violation = namedtuple('Violation', headers)
-
-        for data_row in f:
-            data_row = data_row.strip('\n').split(',')
-            cast_data_row = cast_row(headers, data_row)
-            violation = Violation(*cast_data_row)
-            yield violation
 
 
 def main():
-    data = read_data(file_name)
+    data = parsed_data()
 
     for _ in range(10):
         print(next(data))
