@@ -11,8 +11,10 @@ def parse_data():
 
 
         field_names = next(f).strip('\n').split(',')
-        print(field_names)
         
+
+        print(field_names)
+
 
         print(next(f).strip('\n'))
         print(next(f).strip('\n'))
