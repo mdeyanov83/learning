@@ -70,6 +70,7 @@ def parsed_data():
         if parsed:
             yield parsed
 
+
 def invalid_data():
     for row in read_data():
         parsed = parse_row(row)
@@ -79,7 +80,7 @@ def invalid_data():
 
 def main():
     data = parsed_data()
-    invalid_data = invalid_data()
+    invalid = invalid_data()
 
     # for _ in range(10):
     #     print(next(data))
