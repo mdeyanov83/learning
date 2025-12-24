@@ -22,6 +22,7 @@ def parse_data():
         Violation = namedtuple('Violation', field_names)
 
 
+
         print(Violation)
         print(field_names)
 
