@@ -1,7 +1,7 @@
 from collections import namedtuple
 from datetime import datetime
 
-FILE_NAME = 'nyc_parking_tickets_extract.csv'
+file_name = 'nyc_parking_tickets_extract.csv'
 
 
 def cast(field_name, value):
@@ -18,8 +18,8 @@ def cast_row(headers, data_row):
             for field_name, value in zip(headers, data_row)]
 
 
-def get_data(FILE):
-    with open(FILE) as f:
+def get_data(file):
+    with open(file) as f:
         headers = next(f).strip('\n').replace(' ', '_').split(',')
         Violation = namedtuple('Violation', headers)
 
@@ -31,7 +31,7 @@ def get_data(FILE):
 
 
 def main():
-    data = get_data(FILE_NAME)
+    data = get_data(file_name)
 
     for _ in range(10):
         print(next(data))
