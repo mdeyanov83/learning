@@ -81,19 +81,21 @@ def invalid_data():
     for row in read_data():
         parsed = parse_row(row)
         if not parsed:
-            yield list(zip(column_names, row))
+            yield list(zip(column_names, row.strip('\n').split(',')))
 
 
 def main():
     data = parsed_data()
-    invalid = invalid_data()
 
-    # for _ in range(10):
-    #     print(next(data))
+    for _ in range(10):
+        print(next(data))
 
     # Test invalid data
-    for row in invalid:
-        print(row)
+    
+    # invalid = invalid_data()
+
+    # for row in invalid:
+    #     print(row, end='\n\n')
 
 
 if __name__ == "__main__":
