@@ -21,9 +21,9 @@ def parse_data():
     with open(FILE_NAME) as f:
 
         headers = next(f).strip('\n').replace(' ', '_').split(',')
-        print(headers)
+        print('Headers:',headers)
         Violation = namedtuple('Violation', headers)
-        print(Violation)
+        print('Violation Tuple:',Violation)
 
         data_row = next(f).strip('\n').split(',')
         print(data_row)
