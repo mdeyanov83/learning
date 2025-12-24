@@ -18,8 +18,8 @@ def cast(field_name, value):
 def parse_data():
     with open(FILE_NAME) as f:
 
-        field_names = next(f).strip('\n').replace(' ', '_').split(',')
-        Violation = namedtuple('Violation', field_names)
+        headers = next(f).strip('\n').replace(' ', '_').split(',')
+        Violation = namedtuple('Violation', headers)
 
 
 
