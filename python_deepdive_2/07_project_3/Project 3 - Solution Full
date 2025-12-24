@@ -4,14 +4,65 @@ from functools import partial
 
 file_name = 'nyc_parking_tickets_extract.csv'
 
+with open(file_name) as f:
+    headers = next(f).strip('\n').split(',')
+column_names = [header.replace(' ', '_').lower() for header in headers]
 
-def cast(field_name, value):
-    if 'date' in field_name.lower():
-        return datetime.strptime(value, "%m/%d/%Y").date()
-    elif 'number' in field_name.lower() or 'code' in field_name.lower():
+Ticket = namedtuple('Ticket', column_names)
+
+def read_data():
+    with open(file_name) as f:
+        next(f)
+        yield from f
+
+def parse_int(value, *, default=None):
+    try:
         return int(value)
+    except ValueError:
+        return default
+
+def parse_date(value, *, default=None):
+    date_format='%m/%d/%Y'
+    try:
+        return datetime.strptime(value, date_format).date()
+    except ValueError:
+        return default
+
+def parse_string(value, *, default=None):
+    try:
+        cleaned = str(value).strip()
+        if not cleaned:
+            # empty string
+            return default
+        else:
+            return cleaned
+    except:
+        return default
+
+column_parsers = (parse_int,  # summons_number, default is None
+                  parse_string,  # plate_id, default is None
+                  partial(parse_string, default=''),  # state
+                  partial(parse_string, default=''),  # plate_type
+                  parse_date,  # issue_date, default is None
+                  parse_int,  # violation_code
+                  partial(parse_string, default=''),  # body type
+                  parse_string,  # make, default is None
+                  lambda x: parse_string(x, default='')  # description
+                 )
+
+def parse_row(row, *, default=None):
+    fields = row.strip('\n').split(',')
+    # note that I'm using a list comprehension here,
+    # since we'll need to iterate through the entire parsed fields
+    # twice - one time to check if nothing is None
+    # and another time to create the named tuple
+    parsed_data = [func(fields)
+                   for func, field in zip(column_parsers, fields)]
+    if all(item is not None for item in parsed_data):
+        return Ticket(*parsed_data)
     else:
-        return str(value)
+        return default
+    
 
 
 def cast_row(headers, data_row):
@@ -21,7 +72,7 @@ def cast_row(headers, data_row):
 
 def read_data(file):
     with open(file) as f:
-        headers = next(f).strip('\n').replace(' ', '_').lower().split(',')
+
         Violation = namedtuple('Violation', headers)
 
         for data_row in f:
