@@ -5,6 +5,8 @@ FILE_NAME = 'nyc_parking_tickets_extract.csv'
 
 # def cast_row(data_types, data_row)
 
+def cast(field_name, value):
+    if 
 
 def parse_data():
     with open(FILE_NAME) as f:
@@ -12,7 +14,7 @@ def parse_data():
         field_names = next(f).strip('\n').replace(' ', '_').split(',')
         Violation = namedtuple('Violation', field_names)
 
-        
+
         print(Violation)
         print(field_names)
 
