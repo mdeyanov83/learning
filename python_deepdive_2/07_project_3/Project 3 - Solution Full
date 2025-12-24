@@ -70,13 +70,23 @@ def parsed_data():
         if parsed:
             yield parsed
 
+def invalid_data():
+    for row in read_data():
+        parsed = parse_row(row)
+        if not parsed:
+            yield row
 
 
 def main():
     data = parsed_data()
+    invalid_data = invalid_data()
 
-    for _ in range(10):
-        print(next(data))
+    # for _ in range(10):
+    #     print(next(data))
+
+    # Test invalid data
+    for row in invalid_data:
+        print(row)
 
 
 if __name__ == "__main__":
