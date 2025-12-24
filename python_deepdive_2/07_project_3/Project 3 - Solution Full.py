@@ -84,18 +84,32 @@ def invalid_data():
             yield list(zip(column_names, row.strip('\n').split(',')))
 
 
+def violation_count_by_make():
+    makes_counts = defaultdict(int)
+
+    for data in parsed_data():
+        makes_counts[data.vehicle_make] += 1
+
+    return {make: cnt
+            for make, cnt in sorted(makes_counts.items(),
+                                    key=lambda t: t[1],
+                                    reverse=True)}
+
+
 def main():
     data = parsed_data()
 
-    for _ in range(10):
+    for _ in range(5):
         print(next(data))
 
     # Test invalid data
-
     # invalid = invalid_data()
-
     # for row in invalid:
     #     print(row, end='\n\n')
+
+    violation_count = violation_count_by_make()
+    for make, cnt in violation_count.items():
+        print(make, cnt)
 
 
 if __name__ == "__main__":
