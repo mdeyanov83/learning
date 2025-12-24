@@ -11,9 +11,9 @@ def parse_data():
 
 
         field_names = next(f).strip('\n').split(',')
-        Violation = namedtuple('Violation', field_names)
+        # Violation = namedtuple('Violation', field_names)
 
-        
+
 
         print(field_names)
 
