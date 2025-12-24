@@ -1,7 +1,6 @@
 from collections import namedtuple
 from datetime import datetime
 
-
 FILE_NAME = 'nyc_parking_tickets_extract.csv'
 
 
@@ -40,7 +39,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-# Summons Number,Plate ID,Registration State,Plate Type,Issue Date,Violation Code,Vehicle Body Type,Vehicle Make,Violation Description
-# 4006478550,VAD7274,VA,PAS,10/5/2016,5,4D,BMW,BUS LANE VIOLATION
-# 4006462396,22834JK,NY,COM,9/30/2016,5,VAN,CHEVR,BUS LANE VIOLATION
