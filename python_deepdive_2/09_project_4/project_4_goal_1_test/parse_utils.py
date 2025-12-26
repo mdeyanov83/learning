@@ -50,3 +50,15 @@ def iter_combined_plain_tuple(fnames, class_names, parsers, compress_fields):
     for row in merged_iter:
         compressed_row = itertools.compress(row, compress_fields)
         yield tuple(compressed_row)
+
+
+def iter_combined(fnames, class_names, parsers, compress_fields):
+    combo_nt = create_combo_named_tuple_class(fnames, compress_fields)
+    compress_fields = tuple(itertools.chain.from_iterable(compress_fields))
+    zipped_tuples = zip(*(iter_file(fname, class_name, parser)
+                          for fname, class_name, parser in zip(fnames, class_names, parsers)))
+
+    merged_iter = (itertools.chain.from_iterable(zipped_tuple) for zipped_tuple in zipped_tuples)
+    for row in merged_iter:
+        compressed_row = itertools.compress(row, compress_fields)
+        yield combo_nt(compressed_row)

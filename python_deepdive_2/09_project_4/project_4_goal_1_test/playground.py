@@ -15,12 +15,11 @@ import parse_utils
 #                                             constants.class_names,
 #                                             constants.parsers,
 #                                             constants.compress_fields)
+# print(list(next(gen)))
+# print(list(next(gen)))
 
-# print(list(next(gen)))
-# print(list(next(gen)))
 
 nt = parse_utils.create_combo_named_tuple_class(
     constants.fnames, constants.compress_fields)
-# print(nt._fields)
-for x in nt:
-    print(x)
+print(nt._fields)
+
