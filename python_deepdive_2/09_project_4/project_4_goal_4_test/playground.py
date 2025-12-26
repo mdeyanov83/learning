@@ -46,7 +46,7 @@ from datetime import datetime
 #     print(row)
 
 
-# Goal 4
+# Goal 4 (Non optimized)
 
 cutoff_date = datetime(2017, 3, 11)
 
@@ -84,6 +84,47 @@ sorted_data = sorted(data, key=group_key)
 # for row in data_m:
 #     print(row)
 # *****************
+
+# Working solution
+groups_1 = itertools.groupby(sorted_data, key=group_key)
+groups_2 = itertools.groupby(sorted_data, key=group_key)
+
+group_f = (item for item in groups_1 if item[0][0] == 'Female')
+data_f = ((item[0][1], len(list(item[1]))) for item in group_f)
+print('Group F')
+for row in data_f:
+    print(row)
+
+# fails, becuse the iterators for each car make are exhausted in the prvious block
+group_m = (item for item in groups_2 if item[0][0] == 'Male')
+data_m = ((item[0][1], len(list(item[1]))) for item in group_m)
+print('Group M')
+for row in data_m:
+    print(row)
+
+
+
+# Goal 4 (Optimized)
+
+cutoff_date = datetime(2017, 3, 11)
+
+def group_key(item):
+    return item.gender, item.vehicle_make
+
+data = parse_utils.filtered_iter_combined(constants.fnames,
+                                          constants.class_names,
+                                          constants.parsers,
+                                          constants.compress_fields,
+                                          key=lambda row: row.last_updated >= cutoff_date)
+
+data_m = (row for row in data if row.gender == 'Male')
+data_f = (row for row in data if row.gender == 'Female')
+
+
+
+
+
+
 
 # Working solution
 groups_1 = itertools.groupby(sorted_data, key=group_key)
