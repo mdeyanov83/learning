@@ -1,6 +1,7 @@
 import constants
 import parse_utils
 import itertools
+from datetime import datetime
 
 
 # for fname, class_name, parser in zip(constants.fnames, constants.class_names, constants.parsers):
@@ -34,11 +35,12 @@ for row in itertools.islice(data_iter, 5):
 
 print('----------')
 
+cutoff_date = datetime(2018, 3, 11)
 filtered = parse_utils.filtered_iter_combined(constants.fnames,
                                               constants.class_names,
                                               constants.parsers,
                                               constants.compress_fields,
-                                              key=lambda row: row.language=='Icelandic')
+                                              key=lambda row: row.last_updated >= cutoff_date)
 
 for row in filtered:
     print(row)
