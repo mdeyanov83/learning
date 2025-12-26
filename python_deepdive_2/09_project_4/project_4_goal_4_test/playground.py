@@ -140,13 +140,25 @@ from datetime import datetime
 
 cutoff_date = datetime(2017, 3, 11)
 
+def filter_key(row, cutoff_date, gender):
+    return row.last_updated >= cutoff_date and row.gender == gender
+
 results_f = parse_utils.group_data(constants.fnames,
                                    constants.class_names,
                                    constants.parsers,
                                    constants.compress_fields,
+                                   filter_key=lambda row: row.last_updated >= cutoff_date and row.gender == 'Female',
+                                   group_key=lambda row: row.vehicle_make)
+
+
+results_m = parse_utils.group_data(constants.fnames,
+                                   constants.class_names,
+                                   constants.parsers,
+                                   constants.compress_fields,
                                    filter_key=lambda row: row.last_updated >= cutoff_date,
-                                   group_key=lambda row: row.vehicle_make,
-                                   gender='Female')
+                                   group_key=lambda row: row.vehicle_make)
+
+
 print('Resuts F')
 for row in results_f:
     print(row)
@@ -154,12 +166,5 @@ for row in results_f:
 print()
 
 print('Results M')
-results_m = parse_utils.group_data(constants.fnames,
-                                   constants.class_names,
-                                   constants.parsers,
-                                   constants.compress_fields,
-                                   filter_key=lambda row: row.last_updated >= cutoff_date,
-                                   group_key=lambda row: row.vehicle_make,
-                                   gender='Male')
 for row in results_m:
     print(row)

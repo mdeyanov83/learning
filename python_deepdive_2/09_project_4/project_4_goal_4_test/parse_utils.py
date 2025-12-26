@@ -69,10 +69,9 @@ def filtered_iter_combined(fnames, class_names, parsers, compress_fields, *, key
     yield from filter(key, iter_combo)
 
 
-def group_data(fnames, class_names, parsers, compress_fields, filter_key, group_key, gender):
+def group_data(fnames, class_names, parsers, compress_fields, filter_key, group_key):
     data = filtered_iter_combined(fnames, class_names, parsers, compress_fields, key=filter_key)
-    data_filtered = (row for row in data if row.gender == gender)
-    sorted_data = sorted(data_filtered, key=group_key)
+    sorted_data = sorted(data, key=group_key)
     groups = itertools.groupby(sorted_data, key=group_key)
     groups_counts = ((g[0], len(list(g[1]))) for g in groups)
     return sorted(groups_counts, key=lambda row: row[1], reverse=True)
