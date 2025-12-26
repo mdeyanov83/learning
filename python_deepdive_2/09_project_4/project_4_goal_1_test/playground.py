@@ -1,33 +1,59 @@
 import constants
 import parse_utils
-import itertools
 
 
-# for fname, class_name, parser in zip(constants.fnames, constants.class_names, constants.parsers):
-#     file_iter = parse_utils.iter_file(fname, class_name, parser)
-
+# See a sample of what is in each file
+# print()
+# for fname in constants.fnames:
 #     print(fname)
-#     for _ in range(3):
-#         print(next(file_iter))
+#     with open(fname) as f:
+#         print(next(f), end='')
+#         print(next(f), end='')
+#         print(next(f), end='')
 #     print()
 
 
-# gen = parse_utils.iter_combined_plain_tuple(constants.fnames,
-#                                             constants.class_names,
-#                                             constants.parsers,
-#                                             constants.compress_fields)
-# print(list(next(gen)))
-# print(list(next(gen)))
+# test the csv.reader
+# print()
+# for fname in constants.fnames:
+#     print(fname)
+#     with open(fname) as f:
+#         reader = csv.reader(f, delimiter=',', quotechar='"')
+#         print(next(reader))
+#         print(next(reader))
+#     print()
 
 
-# nt = parse_utils.create_combo_named_tuple_class(
-#     constants.fnames, constants.compress_fields)
-# print(nt._fields)
+# # header row (field names)
+# for fname in constants.fnames:
+#     print(fname)
+#     reader = parse_utils.csv_parser(fname, include_header=True)
+#     print(next(reader))
+
+# print()
+# print()
+# # just the data
+# for fname in constants.fnames:
+#     print(fname)
+#     reader = parse_utils.csv_parser(fname)
+#     print(next(reader))
+#     print(next(reader))
 
 
-data_iter = parse_utils.iter_combined(constants.fnames,
-                                      constants.class_names,
-                                      constants.parsers,
-                                      constants.compress_fields)
-for row in itertools.islice(data_iter, 5):
-    print(row)
+# # test date parser
+# reader = parse_utils.csv_parser(constants.fname_update_status)
+# for _ in range(3):
+#     record = next(reader)
+#     # print(record[0], record[1], type(parse_utils.parse_date(record[1])), parse_utils.parse_date(record[1]))
+#     record = [str(record[0]), parse_utils.parse_date(
+#         record[1]), parse_utils.parse_date(record[2])]
+#     print(record)
+
+
+for fname, class_name, parser in zip(constants.fnames, constants.class_names, constants.parsers):
+    file_iter = parse_utils.iter_file(fname, class_name, parser)
+
+    print(fname)
+    for _ in range(3):
+        print(next(file_iter))
+    print()
