@@ -70,6 +70,7 @@ for row in data_f:
     print(row)
 
 group_m = (item for item in group_2 if item[0][0] == 'Male')
-# print('Group M')
-# for row in group_m:
-#     print(row)
+data_m = ((item[0][1], len(list(item[1]))) for item in group_m)
+print('Group M')
+for row in data_m:
+    print(row)
