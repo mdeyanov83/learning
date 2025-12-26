@@ -103,7 +103,6 @@ from datetime import datetime
 #     print(row)
 
 
-
 # # Goal 4 (Optimized)
 
 # cutoff_date = datetime(2017, 3, 11)
@@ -141,10 +140,26 @@ from datetime import datetime
 
 cutoff_date = datetime(2017, 3, 11)
 
-result_f = parse_utils.group_data(constants.fnames,
-                                  constants.class_names,
-                                  constants.parsers,
-                                  constants.compress_fields,
-                                  key=)
+results_f = parse_utils.group_data(constants.fnames,
+                                   constants.class_names,
+                                   constants.parsers,
+                                   constants.compress_fields,
+                                   filter_key=lambda row: row.last_updated >= cutoff_date,
+                                   group_key=lambda row: row.vehicle_make,
+                                   gender='Female')
+print('Resuts F')
+for row in results_f:
+    print(row)
 
+print()
 
+print('Results M')
+results_m = parse_utils.group_data(constants.fnames,
+                                   constants.class_names,
+                                   constants.parsers,
+                                   constants.compress_fields,
+                                   filter_key=lambda row: row.last_updated >= cutoff_date,
+                                   group_key=lambda row: row.vehicle_make,
+                                   gender='Male')
+for row in results_m:
+    print(row)

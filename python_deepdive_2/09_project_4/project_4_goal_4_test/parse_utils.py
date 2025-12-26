@@ -75,5 +75,4 @@ def group_data(fnames, class_names, parsers, compress_fields, filter_key, group_
     sorted_data = sorted(data_filtered, key=group_key)
     groups = itertools.groupby(sorted_data, key=group_key)
     groups_counts = ((g[0], len(list(g[1]))) for g in groups)
-
-    return groups_counts
+    return sorted(groups_counts, key=lambda row: row[1], reverse=True)
