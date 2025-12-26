@@ -2,6 +2,7 @@ import constants
 import parse_utils
 import itertools
 from datetime import datetime
+from functools import partial
 
 
 # for fname, class_name, parser in zip(constants.fnames, constants.class_names, constants.parsers):
@@ -140,14 +141,14 @@ from datetime import datetime
 
 cutoff_date = datetime(2017, 3, 11)
 
-def filter_key(row, cutoff_date, gender):
+def filter_key(cutoff_date, gender, row):
     return row.last_updated >= cutoff_date and row.gender == gender
 
 results_f = parse_utils.group_data(constants.fnames,
                                    constants.class_names,
                                    constants.parsers,
                                    constants.compress_fields,
-                                   filter_key=lambda row: row.last_updated >= cutoff_date and row.gender == 'Female',
+                                   filter_key=partial(filter_key, cutoff_date, 'Female'),
                                    group_key=lambda row: row.vehicle_make)
 
 
@@ -155,7 +156,7 @@ results_m = parse_utils.group_data(constants.fnames,
                                    constants.class_names,
                                    constants.parsers,
                                    constants.compress_fields,
-                                   filter_key=lambda row: row.last_updated >= cutoff_date,
+                                   filter_key=partial(filter_key, cutoff_date, 'Male'),
                                    group_key=lambda row: row.vehicle_make)
 
 
