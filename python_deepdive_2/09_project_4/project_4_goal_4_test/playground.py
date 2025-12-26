@@ -104,59 +104,47 @@ from datetime import datetime
 
 
 
-# Goal 4 (Optimized)
+# # Goal 4 (Optimized)
+
+# cutoff_date = datetime(2017, 3, 11)
+
+# def group_key(item):
+#     return item.vehicle_make
+
+# data = parse_utils.filtered_iter_combined(constants.fnames,
+#                                           constants.class_names,
+#                                           constants.parsers,
+#                                           constants.compress_fields,
+#                                           key=lambda row: row.last_updated >= cutoff_date)
+# data_1, data_2 = itertools.tee(data, 2)
+
+# data_m = (row for row in data_1 if row.gender == 'Male')
+# sorted_data_m = sorted(data_m, key=group_key)
+# groups_m = itertools.groupby(sorted_data_m, key=group_key)
+# groups_m_counts = ((g[0], len(list(g[1]))) for g in groups_m)
+# print('Groups M')
+# for row in groups_m_counts:
+#     print(row)
+
+# print()
+
+# data_f = (row for row in data_2 if row.gender == 'Female')
+# sorted_data_f = sorted(data_f, key=group_key)
+# groups_f = itertools.groupby(sorted_data_f, key=group_key)
+# groups_f_counts = ((g[0], len(list(g[1]))) for g in groups_f)
+# print('Groups F')
+# for row in groups_f_counts:
+#     print(row)
+
+
+# Goal 4 (Refactored)
 
 cutoff_date = datetime(2017, 3, 11)
 
-def group_key(item):
-    return item.vehicle_make
-
-data = parse_utils.filtered_iter_combined(constants.fnames,
-                                          constants.class_names,
-                                          constants.parsers,
-                                          constants.compress_fields,
-                                          key=lambda row: row.last_updated >= cutoff_date)
-data_1, data_2 = itertools.tee(data, 2)
-
-data_m = (row for row in data_1 if row.gender == 'Male')
-sorted_data_m = sorted(data_m, key=group_key)
-groups_m = itertools.groupby(sorted_data_m, key=group_key)
-groups_m_counts = ((g[0], len(list(g[1]))) for g in groups_m)
-print('Groups M')
-for row in groups_m_counts:
-    print(row)
-
-print()
-
-data_f = (row for row in data_2 if row.gender == 'Female')
-sorted_data_f = sorted(data_f, key=group_key)
-groups_f = itertools.groupby(sorted_data_f, key=group_key)
-groups_f_counts = ((g[0], len(list(g[1]))) for g in groups_f)
-print('Groups F')
-for row in groups_f_counts:
-    print(row)
+result_f = parse_utils.group_data(constants.fnames,
+                                  constants.class_names,
+                                  constants.parsers,
+                                  constants.compress_fields,
+                                  key=)
 
 
-
-
-
-
-
-
-
-# # Working solution
-# groups_1 = itertools.groupby(sorted_data, key=group_key)
-# groups_2 = itertools.groupby(sorted_data, key=group_key)
-
-# group_f = (item for item in groups_1 if item[0][0] == 'Female')
-# data_f = ((item[0][1], len(list(item[1]))) for item in group_f)
-# print('Group F')
-# for row in data_f:
-#     print(row)
-
-# # fails, becuse the iterators for each car make are exhausted in the prvious block
-# group_m = (item for item in groups_2 if item[0][0] == 'Male')
-# data_m = ((item[0][1], len(list(item[1]))) for item in group_m)
-# print('Group M')
-# for row in data_m:
-#     print(row)

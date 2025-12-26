@@ -70,15 +70,10 @@ def filtered_iter_combined(fnames, class_names, parsers, compress_fields, *, key
 
 
 def group_data(fnames, class_names, parsers, compress_fields, filter_key, group_key, gender):
+    data = filtered_iter_combined(fnames, class_names, parsers, compress_fields, key=filter_key)
+    data_filtered = (row for row in data if row.gender == gender)
+    sorted_data = sorted(data_filtered, key=group_key)
+    groups = itertools.groupby(sorted_data, key=group_key)
+    groups_counts = ((g[0], len(list(g[1]))) for g in groups)
 
-    data = filtered_iter_combined(fnames, class_names, parsers, compress_fields,
-                                            key=filter_key)
-    data_1, data_2 = itertools.tee(data, 2)
-
-    data_m = (row for row in data_1 if row.gender == 'Male')
-    sorted_data_m = sorted(data_m, key=group_key)
-    groups_m = itertools.groupby(sorted_data_m, key=group_key)
-    groups_m_counts = ((g[0], len(list(g[1]))) for g in groups_m)
-    print('Groups M')
-    for row in groups_m_counts:
-        print(row)
+    return groups_counts
