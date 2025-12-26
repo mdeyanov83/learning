@@ -26,7 +26,6 @@ from datetime import datetime
 # print(nt._fields)
 
 
-
 # # Goal 2
 # data_iter = parse_utils.iter_combined(constants.fnames,
 #                                       constants.class_names,
@@ -36,13 +35,10 @@ from datetime import datetime
 #     print(row)
 
 
-
 # Goal 3
-cutoff_date = datetime(2018, 3, 11)
-filtered = parse_utils.filtered_iter_combined(constants.fnames,
-                                              constants.class_names,
-                                              constants.parsers,
-                                              constants.compress_fields,
-                                              key=lambda row: row.last_updated >= cutoff_date)
-for row in filtered:
-    print(row)
+cutoff_date = datetime(2017, 3, 11)
+data = parse_utils.filtered_iter_combined(constants.fnames,
+                                          constants.class_names,
+                                          constants.parsers,
+                                          constants.compress_fields,
+                                          key=lambda row: row.last_updated >= cutoff_date)
