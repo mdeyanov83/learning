@@ -63,19 +63,21 @@ sorted_data = sorted(data, key=group_key)
 groups = itertools.groupby(sorted_data, key=group_key)
 group_1, group_2 = itertools.tee(groups, 2)
 
-rg1 = next(group_1)
-rg2 = next(group_2)
-print(rg1[0], id(rg1[1]))
-print(rg2[0], id(rg2[1]))
+# # Test
+# rg1 = next(group_1)
+# rg2 = next(group_2)
+# print(rg1[0], id(rg1[1]))
+# print(rg2[0], id(rg2[1]))
 
-# group_f = (item for item in group_1 if item[0][0] == 'Female')
-# data_f = ((item[0][1], len(list(item[1]))) for item in group_f)
-# print('Group F')
-# for row in data_f:
-#     print(row)
+group_f = (item for item in group_1 if item[0][0] == 'Female')
+data_f = ((item[0][1], len(list(item[1]))) for item in group_f)
+print('Group F')
+for row in data_f:
+    print(row)
 
-# group_m = (item for item in group_2 if item[0][0] == 'Male')
-# data_m = ((item[0][1], len(list(item[1]))) for item in group_m)
-# print('Group M')
-# for row in data_m:
-#     print(row)
+# fails, becuse the iterators for each car make are exhausted in the prvious block
+group_m = (item for item in group_2 if item[0][0] == 'Male')
+data_m = ((item[0][1], len(list(item[1]))) for item in group_m)
+print('Group M')
+for row in data_m:
+    print(row)
