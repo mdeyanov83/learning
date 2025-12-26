@@ -64,6 +64,14 @@ data = parse_utils.filtered_iter_combined(constants.fnames,
 sorted_data = sorted(data, key=group_key)
 groups = itertools.groupby(sorted_data, key=group_key)
 
-group_f = (item for item in groups if item[0][0] == 'Female')
+group_1, group_2 = itertools.tee(groups, 2)
+
+group_f = (item for item in group_1 if item[0][0] == 'Female')
+print('Group F')
 for row in group_f:
+    print(row)
+
+group_m = (item for item in group_2 if item[0][0] == 'Male')
+print('Group M')
+for row in group_m:
     print(row)
