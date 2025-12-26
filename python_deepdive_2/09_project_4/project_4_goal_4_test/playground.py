@@ -85,7 +85,7 @@ sorted_data = sorted(data, key=group_key)
 #     print(row)
 # *****************
 
-
+# Working solution
 groups_1 = itertools.groupby(sorted_data, key=group_key)
 groups_2 = itertools.groupby(sorted_data, key=group_key)
 
