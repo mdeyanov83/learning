@@ -9,11 +9,12 @@ fname_personal = 'data/personal_info.csv'
 
 def read_data(file):
     with open(file) as f:
-        # reader = csv.reader(f, delimiter=',', quotechar='"')
-        headers = next(f).strip('\n').replace(' ', '_').lower().split(',')
+        reader = csv.reader(f, delimiter=',', quotechar='"')
+        headers = next(reader)
+        
         print(headers)
 
-        yield from f
+        yield from reader
 
 
 
