@@ -35,8 +35,11 @@ def iter_file(fname, class_name, parser):
 
 
 def iter_combined_plain_tuple(fnames, class_names, parsers, compress_fields):
+    compress_fields = itertools.chain.from_iterable(compress_fields)
     zipped_tuples = zip(*(iter_file(fname, class_name, parser)
                     for fname, class_name, parser in zip(fnames, class_names, parsers)))
 
     merged_iter = (itertools.chain.from_iterable(zipped_tuple) for zipped_tuple in zipped_tuples)
-    yield from merged_iter
+    for row in merged_iter:
+        compressed_row = itertools(row, compress_fields)
+        yield tuple(compressed_row)
