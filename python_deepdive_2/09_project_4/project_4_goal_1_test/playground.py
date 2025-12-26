@@ -1,5 +1,6 @@
 import constants
 import parse_utils
+import itertools
 
 
 # for fname, class_name, parser in zip(constants.fnames, constants.class_names, constants.parsers):
@@ -19,7 +20,14 @@ import parse_utils
 # print(list(next(gen)))
 
 
-nt = parse_utils.create_combo_named_tuple_class(
-    constants.fnames, constants.compress_fields)
-print(nt._fields)
+# nt = parse_utils.create_combo_named_tuple_class(
+#     constants.fnames, constants.compress_fields)
+# print(nt._fields)
 
+
+data_iter = parse_utils.iter_combined(constants.fnames,
+                                      constants.class_names,
+                                      constants.parsers,
+                                      constants.compress_fields)
+for row in itertools.islice(data_iter, 5):
+    print(row)
