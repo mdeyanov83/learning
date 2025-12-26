@@ -151,12 +151,12 @@ results_f = parse_utils.group_data(constants.fnames,
                                    filter_key=partial(filter_key, cutoff_date, 'Female'),
                                    group_key=lambda row: row.vehicle_make)
 
-
+# example, instead of using partial, using a lambda expression for the filter_key
 results_m = parse_utils.group_data(constants.fnames,
                                    constants.class_names,
                                    constants.parsers,
                                    constants.compress_fields,
-                                   filter_key=partial(filter_key, cutoff_date, 'Male'),
+                                   filter_key=lambda row: filter_key(cutoff_date, 'Male', row),
                                    group_key=lambda row: row.vehicle_make)
 
 
