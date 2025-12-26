@@ -62,3 +62,8 @@ def iter_combined(fnames, class_names, parsers, compress_fields):
     for row in merged_iter:
         compressed_row = itertools.compress(row, compress_fields)
         yield combo_nt(*compressed_row)
+
+
+def filtered_iter_combined(fnames, class_names, parsers, compress_fields, *, key=None):
+    iter_combo = iter_combined(fnames, class_names, parsers, compress_fields)
+    yield from filter(key, iter_combo)

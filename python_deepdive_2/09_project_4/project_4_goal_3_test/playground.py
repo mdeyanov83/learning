@@ -31,3 +31,14 @@ data_iter = parse_utils.iter_combined(constants.fnames,
                                       constants.compress_fields)
 for row in itertools.islice(data_iter, 5):
     print(row)
+
+print('----------')
+
+filtered = parse_utils.filtered_iter_combined(constants.fnames,
+                                              constants.class_names,
+                                              constants.parsers,
+                                              constants.compress_fields,
+                                              key=lambda row: row.ssn=='100-53-9824')
+
+for row in filtered:
+    print(row)
