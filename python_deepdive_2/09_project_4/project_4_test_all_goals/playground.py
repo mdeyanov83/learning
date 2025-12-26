@@ -24,11 +24,11 @@ import parse_utils
 #     print()
 
 
-# header row (field names)
-for fname in constants.fnames:
-    print(fname)
-    reader = parse_utils.csv_parser(fname, include_header=True)
-    print(next(reader))
+# # header row (field names)
+# for fname in constants.fnames:
+#     print(fname)
+#     reader = parse_utils.csv_parser(fname, include_header=True)
+#     print(next(reader))
 
 # print()
 # print()
@@ -48,3 +48,12 @@ for fname in constants.fnames:
 #     record = [str(record[0]), parse_utils.parse_date(
 #         record[1]), parse_utils.parse_date(record[2])]
 #     print(record)
+
+
+for fname, class_name, parser in zip(constants.fnames, constants.class_names, constants.parsers):
+    file_iter = parse_utils.iter_file(fname, class_name, parser)
+
+    print(fname)
+    for _ in range(3):
+        print(next(file_iter))
+    print()

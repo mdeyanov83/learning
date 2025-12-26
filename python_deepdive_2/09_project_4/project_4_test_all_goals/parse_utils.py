@@ -26,4 +26,8 @@ def create_named_tuple_class(fname, class_name):
 
 
 def iter_file(fname, class_name, parser):
-    
+    nt_class = create_named_tuple_class(fname, class_name)
+    reader = csv_parser(fname)
+    for row in reader:
+        parsed_data = (parse_fn(value) for value, parse_fn in zip(row, parser))
+        yield nt_class(*parsed_data)
