@@ -11,11 +11,14 @@ import parse_utils
 #     print()
 
 
-gen = parse_utils.iter_combined_plain_tuple(constants.fnames,
-                                            constants.class_names,
-                                            constants.parsers,
-                                            constants.compress_fields)
+# gen = parse_utils.iter_combined_plain_tuple(constants.fnames,
+#                                             constants.class_names,
+#                                             constants.parsers,
+#                                             constants.compress_fields)
 
-print(list(next(gen)))
-print(list(next(gen)))
-print(list(next(gen)))
+# print(list(next(gen)))
+# print(list(next(gen)))
+
+nt = parse_utils.create_combo_named_tuple_class(
+    constants.fnames, constants.compress_fields)
+print(nt._fields)

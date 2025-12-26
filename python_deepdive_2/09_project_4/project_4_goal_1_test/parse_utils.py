@@ -26,6 +26,13 @@ def create_named_tuple_class(fname, class_name):
     return namedtuple(class_name, fields)
 
 
+def create_combo_named_tuple_class(fnames, compress_fields):
+    compress_fields = itertools.chain.from_iterable(compress_fields)
+    field_names = itertools.chain.from_iterable(extract_field_names(fname) for fname in fnames)
+    compressed_field_names = itertools.compress(field_names, compress_fields)
+    return namedtuple('Data', compressed_field_names)
+
+
 def iter_file(fname, class_name, parser):
     nt_class = create_named_tuple_class(fname, class_name)
     reader = csv_parser(fname)
