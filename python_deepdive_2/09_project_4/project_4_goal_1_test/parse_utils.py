@@ -31,3 +31,7 @@ def iter_file(fname, class_name, parser):
     for row in reader:
         parsed_data = (parse_fn(value) for value, parse_fn in zip(row, parser))
         yield nt_class(*parsed_data)
+
+
+def iter_combined_plain_tuple(fnames, class_names, parsers, compress_fields):
+    
