@@ -50,10 +50,8 @@ from datetime import datetime
 
 cutoff_date = datetime(2017, 3, 11)
 
-
 def group_key(item):
     return item.gender, item.vehicle_make
-
 
 data = parse_utils.filtered_iter_combined(constants.fnames,
                                           constants.class_names,
@@ -63,15 +61,15 @@ data = parse_utils.filtered_iter_combined(constants.fnames,
 
 sorted_data = sorted(data, key=group_key)
 groups = itertools.groupby(sorted_data, key=group_key)
-
 group_1, group_2 = itertools.tee(groups, 2)
 
 group_f = (item for item in group_1 if item[0][0] == 'Female')
+data_f = ((item[0][1], len(list(item[1]))) for item in group_f)
 print('Group F')
-for row in group_f:
+for row in data_f:
     print(row)
 
 group_m = (item for item in group_2 if item[0][0] == 'Male')
-print('Group M')
-for row in group_m:
-    print(row)
+# print('Group M')
+# for row in group_m:
+#     print(row)
