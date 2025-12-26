@@ -11,11 +11,11 @@ def read_data(file):
     with open(file) as f:
         reader = csv.reader(f, delimiter=',', quotechar='"')
         headers = next(reader)
-        
-        print(headers)
+        PersonalInfo = namedtuple('PersonalInfo', headers)
 
-        yield from reader
-
+        for row in reader:
+            personal_info = PersonalInfo(*row)
+            yield personal_info
 
 
 def main():
