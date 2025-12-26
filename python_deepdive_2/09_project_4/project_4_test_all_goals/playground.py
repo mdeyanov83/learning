@@ -44,7 +44,6 @@ import parse_utils
 reader = parse_utils.csv_parser(constants.fname_update_status)
 for _ in range(3):
     record = next(reader)
-
     # print(record[0], record[1], type(parse_utils.parse_date(record[1])), parse_utils.parse_date(record[1]))
     record = [str(record[0]), parse_utils.parse_date(
         record[1]), parse_utils.parse_date(record[2])]
