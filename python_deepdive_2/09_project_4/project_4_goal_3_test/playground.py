@@ -38,7 +38,7 @@ filtered = parse_utils.filtered_iter_combined(constants.fnames,
                                               constants.class_names,
                                               constants.parsers,
                                               constants.compress_fields,
-                                              key=lambda row: row.ssn=='100-53-9824')
+                                              key=lambda row: row.language=='Icelandic')
 
 for row in filtered:
     print(row)
