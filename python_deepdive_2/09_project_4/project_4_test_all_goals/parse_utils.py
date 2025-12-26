@@ -1,5 +1,7 @@
 import csv
 from datetime import datetime
+from collections import namedtuple
+
 
 def csv_parser(fname, *, delimiter=',', quotechar='"', include_header=False):
     with open(fname) as f:
@@ -8,6 +10,7 @@ def csv_parser(fname, *, delimiter=',', quotechar='"', include_header=False):
             next(f)
         yield from reader
 
+
 def parse_date(value, *, fmt='%Y-%m-%dT%H:%M:%SZ'):
     return datetime.strptime(value, fmt)
 
@@ -15,3 +18,12 @@ def parse_date(value, *, fmt='%Y-%m-%dT%H:%M:%SZ'):
 def extract_field_names(fname):
     reader = csv_parser(fname, include_header=True)
     return next(reader)
+
+
+def create_named_tuple_class(fname, class_name):
+    fields = extract_field_names(fname)
+    return namedtuple(class_name, fields)
+
+
+def iter_file(fname, class_name, parser):
+    
