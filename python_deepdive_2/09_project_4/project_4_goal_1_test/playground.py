@@ -18,3 +18,6 @@ gen = parse_utils.iter_combined_plain_tuple(constants.fnames,
 
 print(list(next(gen)))
 print(list(next(gen)))
+print(list(next(gen)))
+print(list(next(gen)))
+print(list(next(gen)))

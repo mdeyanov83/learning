@@ -43,3 +43,4 @@ def iter_combined_plain_tuple(fnames, class_names, parsers, compress_fields):
     for row in merged_iter:
         compressed_row = itertools.compress(row, compress_fields)
         yield tuple(compressed_row)
+ 
