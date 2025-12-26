@@ -34,7 +34,7 @@ def iter_file(fname, class_name, parser):
 
 
 def iter_combined_plain_tuple(fnames, class_names, parsers, compress_fields):
-    results = [iter_file(fname, class_name, parser)
-               for fname, class_name, parser in zip(fnames, class_names, parsers)]
+    zipped_tuples = zip(*(iter_file(fname, class_name, parser)
+                    for fname, class_name, parser in zip(fnames, class_names, parsers)))
 
-    
+    print(next(zipped_tuples))
