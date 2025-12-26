@@ -9,3 +9,9 @@ for fname, class_name, parser in zip(constants.fnames, constants.class_names, co
     for _ in range(3):
         print(next(file_iter))
     print()
+
+
+parse_utils.iter_combined_plain_tuple(constants.fnames,
+                                      constants.class_names,
+                                      constants.parsers,
+                                      constants.compress_fields)
