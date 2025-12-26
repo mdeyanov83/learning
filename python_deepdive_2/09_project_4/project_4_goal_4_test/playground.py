@@ -46,61 +46,61 @@ from datetime import datetime
 #     print(row)
 
 
-# Goal 4 (Non optimized)
+# # Goal 4 (Non optimized)
 
-cutoff_date = datetime(2017, 3, 11)
+# cutoff_date = datetime(2017, 3, 11)
 
-def group_key(item):
-    return item.gender, item.vehicle_make
+# def group_key(item):
+#     return item.gender, item.vehicle_make
 
-data = parse_utils.filtered_iter_combined(constants.fnames,
-                                          constants.class_names,
-                                          constants.parsers,
-                                          constants.compress_fields,
-                                          key=lambda row: row.last_updated >= cutoff_date)
-sorted_data = sorted(data, key=group_key)
+# data = parse_utils.filtered_iter_combined(constants.fnames,
+#                                           constants.class_names,
+#                                           constants.parsers,
+#                                           constants.compress_fields,
+#                                           key=lambda row: row.last_updated >= cutoff_date)
+# sorted_data = sorted(data, key=group_key)
 
-# **************
-## does not work, as tee creates a 'shallow copy'
-# groups = itertools.groupby(sorted_data, key=group_key)
-# group_1, group_2 = itertools.tee(groups, 2)
+# # **************
+# ## does not work, as tee creates a 'shallow copy'
+# # groups = itertools.groupby(sorted_data, key=group_key)
+# # group_1, group_2 = itertools.tee(groups, 2)
 
-# # Test
-# rg1 = next(group_1)
-# rg2 = next(group_2)
-# print(rg1[0], id(rg1[1]))
-# print(rg2[0], id(rg2[1]))
+# # # Test
+# # rg1 = next(group_1)
+# # rg2 = next(group_2)
+# # print(rg1[0], id(rg1[1]))
+# # print(rg2[0], id(rg2[1]))
 
-# group_f = (item for item in group_1 if item[0][0] == 'Female')
+# # group_f = (item for item in group_1 if item[0][0] == 'Female')
+# # data_f = ((item[0][1], len(list(item[1]))) for item in group_f)
+# # print('Group F')
+# # for row in data_f:
+# #     print(row)
+
+# # # fails, becuse the iterators for each car make are exhausted in the prvious block
+# # group_m = (item for item in group_2 if item[0][0] == 'Male')
+# # data_m = ((item[0][1], len(list(item[1]))) for item in group_m)
+# # print('Group M')
+# # for row in data_m:
+# #     print(row)
+# # *****************
+
+# # Working solution
+# groups_1 = itertools.groupby(sorted_data, key=group_key)
+# groups_2 = itertools.groupby(sorted_data, key=group_key)
+
+# group_f = (item for item in groups_1 if item[0][0] == 'Female')
 # data_f = ((item[0][1], len(list(item[1]))) for item in group_f)
 # print('Group F')
 # for row in data_f:
 #     print(row)
 
 # # fails, becuse the iterators for each car make are exhausted in the prvious block
-# group_m = (item for item in group_2 if item[0][0] == 'Male')
+# group_m = (item for item in groups_2 if item[0][0] == 'Male')
 # data_m = ((item[0][1], len(list(item[1]))) for item in group_m)
 # print('Group M')
 # for row in data_m:
 #     print(row)
-# *****************
-
-# Working solution
-groups_1 = itertools.groupby(sorted_data, key=group_key)
-groups_2 = itertools.groupby(sorted_data, key=group_key)
-
-group_f = (item for item in groups_1 if item[0][0] == 'Female')
-data_f = ((item[0][1], len(list(item[1]))) for item in group_f)
-print('Group F')
-for row in data_f:
-    print(row)
-
-# fails, becuse the iterators for each car make are exhausted in the prvious block
-group_m = (item for item in groups_2 if item[0][0] == 'Male')
-data_m = ((item[0][1], len(list(item[1]))) for item in group_m)
-print('Group M')
-for row in data_m:
-    print(row)
 
 
 
@@ -109,36 +109,52 @@ for row in data_m:
 cutoff_date = datetime(2017, 3, 11)
 
 def group_key(item):
-    return item.gender, item.vehicle_make
+    return item.vehicle_make
 
 data = parse_utils.filtered_iter_combined(constants.fnames,
                                           constants.class_names,
                                           constants.parsers,
                                           constants.compress_fields,
                                           key=lambda row: row.last_updated >= cutoff_date)
+data_1, data_2 = itertools.tee(data, 2)
 
-data_m = (row for row in data if row.gender == 'Male')
-data_f = (row for row in data if row.gender == 'Female')
-
-
-
-
-
-
-
-# Working solution
-groups_1 = itertools.groupby(sorted_data, key=group_key)
-groups_2 = itertools.groupby(sorted_data, key=group_key)
-
-group_f = (item for item in groups_1 if item[0][0] == 'Female')
-data_f = ((item[0][1], len(list(item[1]))) for item in group_f)
-print('Group F')
-for row in data_f:
+data_m = (row for row in data_1 if row.gender == 'Male')
+sorted_data_m = sorted(data_m, key=group_key)
+groups_m = itertools.groupby(sorted_data_m, key=group_key)
+print('Groups M')
+for row in groups_m:
     print(row)
 
-# fails, becuse the iterators for each car make are exhausted in the prvious block
-group_m = (item for item in groups_2 if item[0][0] == 'Male')
-data_m = ((item[0][1], len(list(item[1]))) for item in group_m)
-print('Group M')
-for row in data_m:
+print()
+
+data_f = (row for row in data_2 if row.gender == 'Female')
+sorted_data_f = sorted(data_f, key=group_key)
+groups_f = itertools.groupby(sorted_data_f, key=group_key)
+print('Groups F')
+for row in groups_f:
     print(row)
+
+
+
+
+
+
+
+
+
+# # Working solution
+# groups_1 = itertools.groupby(sorted_data, key=group_key)
+# groups_2 = itertools.groupby(sorted_data, key=group_key)
+
+# group_f = (item for item in groups_1 if item[0][0] == 'Female')
+# data_f = ((item[0][1], len(list(item[1]))) for item in group_f)
+# print('Group F')
+# for row in data_f:
+#     print(row)
+
+# # fails, becuse the iterators for each car make are exhausted in the prvious block
+# group_m = (item for item in groups_2 if item[0][0] == 'Male')
+# data_m = ((item[0][1], len(list(item[1]))) for item in group_m)
+# print('Group M')
+# for row in data_m:
+#     print(row)
