@@ -61,4 +61,4 @@ def iter_combined(fnames, class_names, parsers, compress_fields):
     merged_iter = (itertools.chain.from_iterable(zipped_tuple) for zipped_tuple in zipped_tuples)
     for row in merged_iter:
         compressed_row = itertools.compress(row, compress_fields)
-        yield combo_nt(compressed_row)
+        yield combo_nt(*compressed_row)
