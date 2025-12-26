@@ -21,4 +21,6 @@ import parse_utils
 
 nt = parse_utils.create_combo_named_tuple_class(
     constants.fnames, constants.compress_fields)
-print(nt._fields)
+# print(nt._fields)
+for x in nt:
+    print(x)
