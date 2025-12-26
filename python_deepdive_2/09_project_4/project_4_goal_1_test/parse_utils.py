@@ -41,5 +41,5 @@ def iter_combined_plain_tuple(fnames, class_names, parsers, compress_fields):
 
     merged_iter = (itertools.chain.from_iterable(zipped_tuple) for zipped_tuple in zipped_tuples)
     for row in merged_iter:
-        compressed_row = itertools(row, compress_fields)
+        compressed_row = itertools.compress(row, compress_fields)
         yield tuple(compressed_row)
