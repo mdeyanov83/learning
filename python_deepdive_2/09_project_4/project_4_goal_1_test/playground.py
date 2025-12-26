@@ -12,12 +12,10 @@ import parse_utils
 
 
 gen = parse_utils.iter_combined_plain_tuple(constants.fnames,
-                                      constants.class_names,
-                                      constants.parsers,
-                                      constants.compress_fields)
+                                            constants.class_names,
+                                            constants.parsers,
+                                            constants.compress_fields)
 
-print(list(next(gen)))
-print(list(next(gen)))
 print(list(next(gen)))
 print(list(next(gen)))
 print(list(next(gen)))
