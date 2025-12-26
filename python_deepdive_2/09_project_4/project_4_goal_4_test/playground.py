@@ -121,8 +121,9 @@ data_1, data_2 = itertools.tee(data, 2)
 data_m = (row for row in data_1 if row.gender == 'Male')
 sorted_data_m = sorted(data_m, key=group_key)
 groups_m = itertools.groupby(sorted_data_m, key=group_key)
+groups_m_counts = ((g[0], len(list(g[1]))) for g in groups_m)
 print('Groups M')
-for row in groups_m:
+for row in groups_m_counts:
     print(row)
 
 print()
@@ -130,8 +131,9 @@ print()
 data_f = (row for row in data_2 if row.gender == 'Female')
 sorted_data_f = sorted(data_f, key=group_key)
 groups_f = itertools.groupby(sorted_data_f, key=group_key)
+groups_f_counts = ((g[0], len(list(g[1]))) for g in groups_f)
 print('Groups F')
-for row in groups_f:
+for row in groups_f_counts:
     print(row)
 
 
