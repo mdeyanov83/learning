@@ -1,6 +1,7 @@
 import csv
 from datetime import datetime
 from collections import namedtuple
+import itertools
 
 
 def csv_parser(fname, *, delimiter=',', quotechar='"', include_header=False):
@@ -37,4 +38,5 @@ def iter_combined_plain_tuple(fnames, class_names, parsers, compress_fields):
     zipped_tuples = zip(*(iter_file(fname, class_name, parser)
                     for fname, class_name, parser in zip(fnames, class_names, parsers)))
 
-    print(next(zipped_tuples))
+    merged_iter = (itertools.chain.from_iterable(zipped_tuple) for zipped_tuple in zipped_tuples)
+
