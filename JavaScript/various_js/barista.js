@@ -12,8 +12,10 @@ var barista = {
   str2: reverse("rcne"),
   str3: "ypt",
   request: function (preference) {
-    return preference + "Secret word:" + this.str2 + this.str3 + this.str1;
+    return preference + " Secret word:" + this.str2 + this.str3 + this.str1;
   },
 };
+
+your_drink = "Coffee"
 
 console.log(barista.request(your_drink));
