@@ -50,3 +50,45 @@ def  test_create_invalid_total_value():
 def test_create_invalid_allocated_value(total, allocated):
     with pytest.raises(ValueError):
         inventory.Resource('name', 'manu', total, allocated)
+
+
+def test_total(resource):
+    assert resource.total == resource._total
+
+
+def test_allocated(resource):
+    assert resource.allocated == resource._allocated
+
+
+def test_available(resource, resource_values):
+    assert resource.available == resource.total - resource.allocated
+
+
+def test_category(resource):
+    assert resource.category == 'resource'
+
+
+def test_str_repr(resource):
+    assert str(resource) == resource.name
+
+
+def test_repr_repr(resource):
+    assert repr(resource) == '{} ({} - {}) : total={}, allocated={}'.format(
+        resource.name, resource.category, resource.manufacturer,
+        resource.total, resource.allocated
+    )
+
+
+def test_claim(resource):
+    n = 2
+    original_total = resource.total
+    original_allocated = resource.allocated
+    resource.claim(n)
+    assert resource.total == original_total
+    assert resource.allocated == original_allocated + n
+
+
+@pytest.mark.parametrize('value', [-1, 0, 1_000])
+def test_claim_invalid(resource, value):
+    with pytest.raises(ValueError):
+        resource.claim(value)
