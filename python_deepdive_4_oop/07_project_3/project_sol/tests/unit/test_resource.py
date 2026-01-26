@@ -92,3 +92,48 @@ def test_claim(resource):
 def test_claim_invalid(resource, value):
     with pytest.raises(ValueError):
         resource.claim(value)
+
+
+def test_freeup(resource):
+    n = 2
+    original_total = resource.total
+    original_allocated = resource.allocated
+    resource.freeup(n)
+    assert resource.allocated == original_allocated - n
+    assert resource.total == original_total
+
+
+@pytest.mark.parametrize('value', [-1, 0, 1_000])
+def test_freeup_invalid(resource, value):
+    with pytest.raises(ValueError):
+        resource.freeup(value)
+
+
+def test_died(resource):
+    n = 2
+    original_total = resource.total
+    original_allocated = resource.allocated
+    resource.died(n)
+    assert resource.total == original_total - n
+    assert resource.allocated == original_allocated - n
+
+
+@pytest.mark.parametrize('value', [-1, 0, 1_000])
+def test_died_invalid(resource, value):
+    with pytest.raises(ValueError):
+        resource.died(value)
+
+
+def test_purchased(resource):
+    n = 2
+    original_total = resource.total
+    original_allocated = resource.allocated
+    resource.purchased(n)
+    assert resource.total == original_total + n
+    assert resource.allocated == original_allocated
+
+
+@pytest.mark.parametrize('value', [-1, 0])
+def test_purchased_invalid(resource, value):
+    with pytest.raises(ValueError):
+        resource.purchased(value)
