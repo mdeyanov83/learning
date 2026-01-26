@@ -1,7 +1,13 @@
 # --- Python & Virtual Environments ---
 # Ignore local project-specific environments
+.venv/
+venv/
+env/
+bin/
+lib/
 
-
+# Byte-compiled / optimized / DLL files
+__pycache__/
 
 
 # Node.js dependency directories
