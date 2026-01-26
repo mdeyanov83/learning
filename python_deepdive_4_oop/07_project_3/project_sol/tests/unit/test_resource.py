@@ -13,4 +13,4 @@ def test_create_resource():
     assert resource.name == 'Parrot'
     assert resource.manufacturer == 'Pirates A-Hoy'
     assert resource.total == 100
-    assert resource.
+    assert resource.allocated == 50
