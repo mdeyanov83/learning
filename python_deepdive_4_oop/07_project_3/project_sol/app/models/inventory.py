@@ -98,5 +98,52 @@ class Resource:
             """
             validate_integer(
                 'num', num, 1, self.available,
-                custom_max_message
+                custom_max_message='Cannot claim more than available'
             )
+            self._allocated += num
+
+        def freeup(self, num):
+            """
+            Return an inventory item to the available pool
+
+            Args:
+                num (int): Number of items to return (cannot exceed number in use)
+
+            Returns:
+
+            """
+            validate_integer(
+                'num', num, 1, self.allocated,
+                custom_max_message='Cannot return more than allocated'
+            )
+            self._allocated -= num
+
+        def died(self, num):
+            """
+            Number of items to deallocate and remove from the inventory pool altogether
+
+            Args:
+                num (nit): Number of items that have died
+
+            Returns:
+
+            """
+            validate_integer(
+                'num', num, 1, self.allocated,
+                custom_max_message='Cannot retire more than allocated'
+            )
+            self._total -= num
+            self._allocated -= num
+
+        def purchased(self, num):
+            """
+            Add new inventory to the pool.
+
+            Args:
+                num (int): Number of itesm to add to the pool
+
+            Returns:
+
+            """
+            validate_integer('num', num, 1)
+            self._total += num
