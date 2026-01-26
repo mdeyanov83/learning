@@ -88,8 +88,14 @@ class Resource:
                     f'total={self.total}, allocated={self.allocated}')
 
         def claim(self, num):
-            """_summary_
+            """
+            Claim num inventory items (if available)
 
             Args:
-                num (_type_): _description_
+                num (int): Number of inventory items to claim
+
+            Returns:
             """
+            validate_integer(
+                'num', num, 1, self.available
+            )
