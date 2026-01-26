@@ -87,4 +87,9 @@ class Resource:
             return (f'{self.name} ({self.category} - {self.manufacturer}) : '
                     f'total={self.total}, allocated={self.allocated}')
 
-        
+        def claim(self, num):
+            """_summary_
+
+            Args:
+                num (_type_): _description_
+            """
