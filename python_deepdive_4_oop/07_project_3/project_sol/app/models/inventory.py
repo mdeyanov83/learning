@@ -62,14 +62,29 @@ class Resource:
             Returns:
                 int: number of resources in use
             """
-            return self.__allocated
+            return self._allocated
 
         @property
         def category(self):
             """
-                Returns:
-                    str: the resource category
+            Returns:
+                str: the resource category
             """
-            return  type(self).__name__.lower()
+            return type(self).__name__.lower()
 
+        @property
+        def available(self):
+            """
+            Returns:
+                int: number of resources available for use
+            """
+            return self.total - self.allocated
 
+        def __str__(self):
+            return self.name
+
+        def __repr__(self):
+            return (f'{self.name} ({self.category} - {self.manufacturer}) : '
+                    f'total={self.total}, allocated={self.allocated}')
+
+        
