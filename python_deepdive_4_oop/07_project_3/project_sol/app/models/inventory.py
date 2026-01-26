@@ -26,5 +26,7 @@ class Resource:
         validate_integer('total', total, min_value=0)
         self._total = total
 
-        validate_integer('allocated', allocated, 0, total,
-                         custom_max_message='Allocated inventory cannot exceed total inventory')
+        validate_integer(
+            'allocated', allocated, 0, total,
+            custom_max_message='Allocated inventory cannot exceed total inventory'
+        )
