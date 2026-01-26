@@ -44,3 +44,9 @@ def test_create_invalid_allocated_type():
 def  test_create_invalid_total_value():
     with pytest.raises(ValueError):
         inventory.Resource('name', 'manu', -10, 0)
+
+
+@pytest.mark.parametrize('total, allocated', [(10, -5), (10, 20)])
+def test_create_invalid_allocated_value(total, allocated):
+    with pytest.raises(ValueError):
+        inventory.Resource('name', 'manu', total, allocated)
