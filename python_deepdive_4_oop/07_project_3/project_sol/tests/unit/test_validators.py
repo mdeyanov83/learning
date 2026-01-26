@@ -1,6 +1,6 @@
 """
 Tests the validaor functions
-Command line: python -m pytest tests/test_validators.py
+Command line: python -m pytest tests/unit/test_validators.py
 """
 
 import pytest
