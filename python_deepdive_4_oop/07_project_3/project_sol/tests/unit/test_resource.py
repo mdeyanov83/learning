@@ -17,7 +17,12 @@ def resource_values():
         'allocated': 50
     }
 
-def test_create_resource():
+@pytest.fixture
+def resource(resource_values):
+    return inventory.Resource(**resource_values)
+
+
+def test_create_resource(resource_values, resource):
     resource = inventory.Resource('Parrot', 'Pirates A-Hoy', 100, 50)
     assert resource.name == 'Parrot'
     assert resource.manufacturer == 'Pirates A-Hoy'
