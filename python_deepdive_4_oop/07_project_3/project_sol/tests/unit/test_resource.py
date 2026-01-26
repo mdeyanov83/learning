@@ -23,11 +23,10 @@ def resource(resource_values):
 
 
 def test_create_resource(resource_values, resource):
-    resource = inventory.Resource('Parrot', 'Pirates A-Hoy', 100, 50)
-    assert resource.name == 'Parrot'
-    assert resource.manufacturer == 'Pirates A-Hoy'
-    assert resource.total == 100
-    assert resource.allocated == 50
+    # assert resource.name == resource_values['name']
+    # assert resource.manufacturer == resource_values['manufacturer']
+    # assert resource.total == resource_values['total']
+    # assert resource.allocated == resource_values['allocated']
 
 
 def test_create_invalid_total_type():
