@@ -37,3 +37,4 @@ def validate_integer(
             raise ValueError(custom_max_message)
         else:
             raise ValueError(f'{arg_name} cannot be greater than {max_value}')
+
