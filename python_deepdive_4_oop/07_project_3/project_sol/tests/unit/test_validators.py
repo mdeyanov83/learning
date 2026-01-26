@@ -1,5 +1,5 @@
 """
-Tests the validaor functions
+Tests the validator functions
 Command line: python -m pytest tests/unit/test_validators.py
 """
 
