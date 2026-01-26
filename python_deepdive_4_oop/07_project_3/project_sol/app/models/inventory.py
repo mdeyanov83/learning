@@ -97,5 +97,6 @@ class Resource:
             Returns:
             """
             validate_integer(
-                'num', num, 1, self.available
+                'num', num, 1, self.available,
+                custom_max_message
             )
