@@ -24,7 +24,7 @@ def validate_integer(
     """
 
     if not isinstance(arg_value, int):
-        raise TypeError(f'{arg_name} must be an integer.')
+        raise ValueError(f'{arg_name} must be an integer.')
 
     if min_value is not None and arg_value < min_value:
         if custom_min_message is not None:
