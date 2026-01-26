@@ -39,3 +39,8 @@ def test_create_invalid_total_type():
 def test_create_invalid_allocated_type():
     with pytest.raises(TypeError):
         inventory.Resource('name', 'manu', 10, 2.5)
+
+
+def  test_create_invalid_total_value():
+    with pytest.raises(ValueError):
+        inventory.Resource('name', 'manu', -10, 0)
