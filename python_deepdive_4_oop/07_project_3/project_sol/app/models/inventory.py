@@ -47,3 +47,29 @@ class Resource:
                 str: the resource manufacturer
             """
             return self._manufacturer
+
+        @property
+        def total(self):
+            """
+            Returns:
+                int: the total inventory count
+            """
+            return self._total
+
+        @property
+        def allocated(self):
+            """
+            Returns:
+                int: number of resources in use
+            """
+            return self.__allocated
+
+        @property
+        def category(self):
+            """
+                Returns:
+                    str: the resource category
+            """
+            return  type(self).__name__.lower()
+
+
