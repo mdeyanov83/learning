@@ -6,9 +6,35 @@ env/
 bin/
 lib/
 
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 
 
-# Node.js dependency directories
+# --- Node.js / TypeScript ---
+# Ignore dependencies for your TS/Node projects
 node_modules/
+
+
+# --- C / C++ & Build Tools ---
+# Ignore build artifacts from cmake and build-essential
+
+
+
+# --- Jupyter Notebooks ---
+# Ignore checkpoints and temporary files
+.ipynb_checkpoints
+.virtual_documents/
+
+
+# --- Environment Variables & Secrets ---
+# Crucial for security when using python-dotenv
+.env
+.venv
+env.bak
+.secrets
+
+
+# --- OS Metadata ---
+.DS_Store
+Thumbs.db
