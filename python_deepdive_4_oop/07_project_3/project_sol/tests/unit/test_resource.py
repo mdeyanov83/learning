@@ -27,8 +27,15 @@ def test_create_resource(resource_values, resource):
     # assert resource.manufacturer == resource_values['manufacturer']
     # assert resource.total == resource_values['total']
     # assert resource.allocated == resource_values['allocated']
+    for attr_name in resource_values:
+        assert getattr(resource, attr_name) == resource_values.get(attr_name)
 
 
 def test_create_invalid_total_type():
     with pytest.raises(TypeError):
         inventory.Resource('Parrot', 'Pirates A-Hoy', 10.5, 5)
+
+
+def test_create_invalid_allocated_type():
+    with pytest.raises(TypeError):
+        inventory.Resource('name', 'manu', 10, 2.5)
