@@ -30,3 +30,20 @@ class Resource:
             'allocated', allocated, 0, total,
             custom_max_message='Allocated inventory cannot exceed total inventory'
         )
+        self._allocated = allocated
+
+        @property
+        def name(self):
+            """
+            Retruns:
+                str: the resources name
+            """
+            return self._name
+
+        @property
+        def manufacturer(self):
+            """
+            Returns:
+                str: the resource manufacturer
+            """
+            return self._manufacturer
