@@ -15,6 +15,7 @@ class Point3D:
 
 
 
+
 class SlottedStruct(type):
     def __new__(mcls, name, bases, class_dict):
         cls_object = super().__new__(mcls, name, bases, class_dict)
