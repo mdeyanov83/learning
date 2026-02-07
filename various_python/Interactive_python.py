@@ -28,4 +28,6 @@ class SlottedStruct(type):
             slot = f'_{field}'
             setattr(cls_object, field, property(fget=lambda self, attrib=slot: getattr(self, attrib)))
 
+        print('testsetste')
         return cls_object
+    print('sdfsdfsdfs')
