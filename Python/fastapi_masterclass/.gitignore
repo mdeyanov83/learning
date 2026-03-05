@@ -1,0 +1,36 @@
+# --- Python & Virtual Environments ---
+# Ignore local project-specific environments
+.venv/
+venv/
+env/
+bin/
+lib/
+
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+.pytest_cache/
+
+
+# --- Jupyter Notebooks ---
+# Ignore checkpoints and temporary files
+.ipynb_checkpoints
+.virtual_documents/
+
+
+# --- Node.js / TypeScript ---
+# Ignore dependencies for your TS/Node projects
+node_modules/
+
+
+# --- Environment Variables & Secrets ---
+# Crucial for security when using python-dotenv
+.env
+.venv
+env.bak
+.secrets
+
+
+# --- OS Metadata ---
+.DS_Store
+Thumbs.db

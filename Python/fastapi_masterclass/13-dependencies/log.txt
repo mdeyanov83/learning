@@ -1,0 +1,9 @@
+MyAPI: Template read for product with id 34
+MyAPI: Template read for product with id 34
+MyApp: 
+	http://localhost:8000/dependencies?test_query_param=test_query_value&separator=--&tag=MyApp
+MyAPI: Template read for product with id 12
+MyApp: no message
+	http://localhost:8000/dependencies?test_query_param=asdfadfa&separator=--&tag=MyApp&message=no%20message
+MyApp: no message
+	http://localhost:8000/dependencies?test_query_param=asdfadfa&separator=--

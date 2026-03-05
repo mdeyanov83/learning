@@ -1,0 +1,2 @@
+MyAPI: Template read for product with id 34
+MyAPI: Template read for product with id 34

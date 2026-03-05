@@ -1,0 +1,19 @@
+{
+    // "python.defaultInterpreterPath": ".venv/bin/python",  // sometimes gave an error at startup "Default interpreter path: '.venv/bin/python' could not be resolved"
+    "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
+    "python.terminal.activateEnvironment": true,
+    "python.terminal.executeInFileDir": true,
+    // Ensures Pylance looks for your local code correctly
+    "python.analysis.extraPaths": [
+        "."
+    ],
+    "python.analysis.typeCheckingMode": "basic",
+    "python-envs.pythonProjects": [
+        {
+            "path": ".",
+            "envManager": "ms-python.python:venv",
+            "packageManager": "ms-python.python:pip"
+        }
+    ],
+
+}
