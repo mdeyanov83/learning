@@ -1,0 +1,63 @@
+services:
+  api:
+    build: .
+    depends_on:
+      postgres:
+        condition: service_healthy
+    expose:
+      - 8000
+
+    # DEVELOPMENT
+    volumes:
+      # bind mount for convenient source update
+      # do not bind as ':ro' - read-only -> breaks --reload
+      - ./:/usr/src/app
+    command: uvicorn app.main:app
+      --host 0.0.0.0
+      --port 8000
+      --reload
+    environment:
+      - DATABASE_HOSTNAME=postgres  # points to 'postgres' service
+      - DATABASE_PORT=5432
+      - DATABASE_NAME=fastapi
+      - DATABASE_USERNAME=postgres
+      - DATABASE_PASSWORD=password123
+      - SECRET_KEY=764ff97f18d1ac5978d543adc212b3d209dbc33172b7b8baea15749fb25bb525
+      - ALGORITHM=HS256
+      - ACCESS_TOKEN_EXPIRE_MINUTES=30
+
+    # PRODUCTION (no bind-mount to app source / no --reload / multiple workers)
+    # command: gunicorn app.main:app
+    #   --worker-class uvicorn.workers.UvicornWorker
+    #   --workers 4
+    #   --bind 0.0.0.0:8000
+    # env_file:  # use either env_file or set env variables explicitly in OS
+    #   - ./.env
+
+  postgres:
+    image: postgres:18
+    environment:
+      - POSTGRES_PASSWORD=password123
+      - POSTGRES_DB=fastapi
+    ports:
+      - 5432:5432  # exposes postgres to host
+    volumes:
+      # named volume
+      - postgres-db:/var/lib/postgresql  # the container path the volume mounts to
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 3s
+      timeout: 3s
+      retries: 5
+
+  nginx:
+    image: nginx:alpine
+    depends_on:
+      - api
+    ports:
+      - 80:80
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+
+volumes:
+  postgres-db:

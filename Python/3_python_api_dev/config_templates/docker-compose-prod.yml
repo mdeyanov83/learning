@@ -1,0 +1,32 @@
+# version: "3"  # deprecated, for informational purposes only
+services:
+  api:
+    image: dockerhub_username/image_name:tag
+    depends_on:
+      - postgres
+    ports:
+      - 80:8000
+    # command: uvicorn app.main:app --host 0.0.0.0 --port 8000
+    # env_file:  # use either env_file or set env variables explicitly
+    #   - ./.env
+    environment:
+      - DATABASE_HOSTNAME=${DATABASE_HOSTNAME}
+      - DATABASE_PORT=${DATABASE_PORT}
+      - DATABASE_PASSWORD=${DATABASE_PASSWORD}
+      - DATABASE_NAME=${DATABASE_NAME}
+      - DATABASE_USERNAME=${DATABASE_USERNAME}
+      - SECRET_KEY=${SECRET_KEY}
+      - ALGORITHM=${ALGORITHM}
+      - ACCESS_TOKEN_EXPIRE_MINUTES=${ACCESS_TOKEN_EXPIRE_MINUTES}
+
+  postgres:
+    image: postgres:18
+    environment:
+      - POSTGRES_PASSWORD=${DATABASE_PASSWORD}
+      - POSTGRES_DB=${DATABASE_NAME}
+    volumes:
+      # named volume
+      - postgres-db:/var/lib/postgresql  # the container path the volume mounts to
+
+volumes:
+  postgres-db:

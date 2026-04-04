@@ -1,0 +1,12 @@
+[tool.pytest.ini_options]
+
+# ignore everything inside "1.backups_and_course_source/"
+# norecursedirs = ["1.backups_and_course_source"]
+
+# ignore warnings about deprecated packages in Python 3.12
+filterwarnings = [
+    "ignore::DeprecationWarning"
+]
+
+addopts = "-v -s --disable-warnings"
+testpaths = ["tests"]

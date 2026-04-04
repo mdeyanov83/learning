@@ -1,0 +1,35 @@
+# version: "3"  # deprecated, for informational purposes only
+services:
+  api:
+    build: .
+    depends_on:
+      - postgres
+    ports:
+      - 8000:8000
+    volumes:
+      # bind mount syntax <hostPath>:<containerPath>:<mode>
+      - ./:/usr/src/app:ro
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+    # env_file:  # use either env_file or set env variables explicitly
+    #   - ./.env
+    environment:
+      - DATABASE_HOSTNAME=postgres  # points to 'postgres' service
+      - DATABASE_PORT=5432
+      - DATABASE_NAME=fastapi
+      - DATABASE_USERNAME=postgres
+      - DATABASE_PASSWORD=password123
+      - SECRET_KEY=764ff97f18d1ac5978d543adc212b3d209dbc33172b7b8baea15749fb25bb525
+      - ALGORITHM=HS256
+      - ACCESS_TOKEN_EXPIRE_MINUTES=30
+
+  postgres:
+    image: postgres:18
+    environment:
+      - POSTGRES_PASSWORD=password123
+      - POSTGRES_DB=fastapi
+    volumes:
+      # named volume
+      - postgres-db:/var/lib/postgresql  # the container path the volume mounts to
+
+volumes:
+  postgres-db:

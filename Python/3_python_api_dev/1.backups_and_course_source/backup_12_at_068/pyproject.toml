@@ -1,0 +1,3 @@
+[tool.pytest.ini_options]
+# ignore everything inside "1.backups_and_course_source/"
+norecursedirs = ["1.backups_and_course_source"]

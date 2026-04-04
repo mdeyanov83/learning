@@ -1,0 +1,13 @@
+__pycache__/
+.pytest_cache/
+venv/
+tests/
+.env
+Dockerfile
+docker-compose.yml
+.dockerignore
+Procfile
+nginx
+gunicorn.service
+README.md
+
