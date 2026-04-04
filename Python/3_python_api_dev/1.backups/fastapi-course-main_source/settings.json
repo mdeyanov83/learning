@@ -84,7 +84,7 @@
 	"dart.autoImportCompletions": true,
 
 	// Determines when to insert comment slashes when pressing `<enter>` in the editor (requires restart).
-	// 
+	//
 	// When using `tripleSlash`, double-slashes will still be included when breaking existing double-slash comments across additional lines.
 	//  - none: Never insert slashes automatically
 	//  - tripleSlash: Insert `///` when pressing `<enter>` at the end of a triple-slash comment
@@ -508,7 +508,7 @@
 	// Controls whether the diff editor shows the diff side by side or inline.
 	"diffEditor.renderSideBySide": true,
 
-	// 
+	//
 	//  - off: Lines will never wrap.
 	//  - on: Lines will wrap at the viewport width.
 	//  - inherit: Lines will wrap according to the `editor.wordWrap` setting.
@@ -797,7 +797,7 @@
 	"editor.gotoLocation.alternativeTypeDefinitionCommand": "editor.action.goToReferences",
 
 	// This setting is deprecated, please use separate settings like 'editor.editor.gotoLocation.multipleDefinitions' or 'editor.editor.gotoLocation.multipleImplementations' instead.
-	// 
+	//
 	"editor.gotoLocation.multiple": null,
 
 	// Controls the behavior the 'Go to Declaration'-command when multiple target locations exist.
@@ -906,7 +906,7 @@
 	// Enables the code action lightbulb in the editor.
 	"editor.lightbulb.enabled": true,
 
-	// Controls the line height. 
+	// Controls the line height.
 	//  - Use 0 to automatically compute the line height from the font size.
 	//  - Values between 0 and 8 will be used as a multiplier with the font size.
 	//  - Values greater than or equal to 8 will be used as effective values.
@@ -1117,7 +1117,7 @@
 	"editor.stickyTabStops": false,
 
 	// This setting is deprecated, please use separate settings like 'editor.suggest.showKeywords' or 'editor.suggest.showSnippets' instead.
-	// 
+	//
 	"editor.suggest.filteredTypes": {},
 
 	// Controls whether filtering and sorting suggestions accounts for small typos.
@@ -1132,7 +1132,7 @@
 	"editor.suggest.localityBonus": false,
 
 	// This setting is deprecated. The suggest widget can now be resized.
-	// 
+	//
 	"editor.suggest.maxVisibleSuggestions": 0,
 
 	// Controls whether to preview the suggestion outcome in the editor.
@@ -2470,9 +2470,9 @@
 	"html.completion.attributeDefaultValue": "doublequotes",
 
 	// A list of relative file paths pointing to JSON files following the [custom data format](https://github.com/microsoft/vscode-html-languageservice/blob/master/docs/customData.md).
-	// 
+	//
 	// VS Code loads custom data on startup to enhance its HTML support for the custom HTML tags, attributes and attribute values you specify in the JSON files.
-	// 
+	//
 	// The file paths are relative to workspace and only workspace folder settings are considered.
 	"html.customData": [],
 
@@ -2718,32 +2718,32 @@
 
 	// Enable/disable inlay hints for member values in enum declarations:
 	// ```typescript
-	// 
+	//
 	// enum MyValue {
 	// 	A /* = 0 */;
 	// 	B /* = 1 */;
 	// }
-	//  
+	//
 	// ```
 	// Requires using TypeScript 4.4+ in the workspace.
 	"javascript.inlayHints.enumMemberValues.enabled": false,
 
 	// Enable/disable inlay hints for implicit return types on function signatures:
 	// ```typescript
-	// 
+	//
 	// function foo() /* :number */ {
 	// 	return Date.now();
-	// } 
-	//  
+	// }
+	//
 	// ```
 	// Requires using TypeScript 4.4+ in the workspace.
 	"javascript.inlayHints.functionLikeReturnTypes.enabled": false,
 
 	// Enable/disable inlay hints for parameter names:
 	// ```typescript
-	// 
+	//
 	// parseInt(/* str: */ '123', /* radix: */ 8)
-	//  
+	//
 	// ```
 	// Requires using TypeScript 4.4+ in the workspace.
 	//  - none: Disable parameter name hints.
@@ -2756,29 +2756,29 @@
 
 	// Enable/disable inlay hints for implicit parameter types:
 	// ```typescript
-	// 
+	//
 	// el.addEventListener('click', e /* :MouseEvent */ => ...)
-	//  
+	//
 	// ```
 	// Requires using TypeScript 4.4+ in the workspace.
 	"javascript.inlayHints.parameterTypes.enabled": false,
 
 	// Enable/disable inlay hints for implicit types on property declarations:
 	// ```typescript
-	// 
+	//
 	// class Foo {
 	// 	prop /* :number */ = Date.now();
 	// }
-	//  
+	//
 	// ```
 	// Requires using TypeScript 4.4+ in the workspace.
 	"javascript.inlayHints.propertyDeclarationTypes.enabled": false,
 
 	// Enable/disable inlay hints for implicit variable types:
 	// ```typescript
-	// 
+	//
 	// const foo /* :number */ = Date.now();
-	//  
+	//
 	// ```
 	// Requires using TypeScript 4.4+ in the workspace.
 	"javascript.inlayHints.variableTypes.enabled": false,
@@ -2959,32 +2959,32 @@
 
 	// Enable/disable inlay hints for member values in enum declarations:
 	// ```typescript
-	// 
+	//
 	// enum MyValue {
 	// 	A /* = 0 */;
 	// 	B /* = 1 */;
 	// }
-	//  
+	//
 	// ```
 	// Requires using TypeScript 4.4+ in the workspace.
 	"typescript.inlayHints.enumMemberValues.enabled": false,
 
 	// Enable/disable inlay hints for implicit return types on function signatures:
 	// ```typescript
-	// 
+	//
 	// function foo() /* :number */ {
 	// 	return Date.now();
-	// } 
-	//  
+	// }
+	//
 	// ```
 	// Requires using TypeScript 4.4+ in the workspace.
 	"typescript.inlayHints.functionLikeReturnTypes.enabled": false,
 
 	// Enable/disable inlay hints for parameter names:
 	// ```typescript
-	// 
+	//
 	// parseInt(/* str: */ '123', /* radix: */ 8)
-	//  
+	//
 	// ```
 	// Requires using TypeScript 4.4+ in the workspace.
 	//  - none: Disable parameter name hints.
@@ -2997,29 +2997,29 @@
 
 	// Enable/disable inlay hints for implicit parameter types:
 	// ```typescript
-	// 
+	//
 	// el.addEventListener('click', e /* :MouseEvent */ => ...)
-	//  
+	//
 	// ```
 	// Requires using TypeScript 4.4+ in the workspace.
 	"typescript.inlayHints.parameterTypes.enabled": false,
 
 	// Enable/disable inlay hints for implicit types on property declarations:
 	// ```typescript
-	// 
+	//
 	// class Foo {
 	// 	prop /* :number */ = Date.now();
 	// }
-	//  
+	//
 	// ```
 	// Requires using TypeScript 4.4+ in the workspace.
 	"typescript.inlayHints.propertyDeclarationTypes.enabled": false,
 
 	// Enable/disable inlay hints for implicit variable types:
 	// ```typescript
-	// 
+	//
 	// const foo /* :number */ = Date.now();
-	//  
+	//
 	// ```
 	// Requires using TypeScript 4.4+ in the workspace.
 	"typescript.inlayHints.variableTypes.enabled": false,
@@ -3128,10 +3128,10 @@
 	"typescript.tsc.autoDetect": "on",
 
 	// Specifies the folder path to the tsserver and `lib*.d.ts` files under a TypeScript install to use for IntelliSense, for example: `./node_modules/typescript/lib`.
-	// 
+	//
 	// - When specified as a user setting, the TypeScript version from `typescript.tsdk` automatically replaces the built-in TypeScript version.
 	// - When specified as a workspace setting, `typescript.tsdk` allows you to switch to use that workspace version of TypeScript for IntelliSense with the `TypeScript: Select TypeScript version` command.
-	// 
+	//
 	// See the [TypeScript documentation](https://code.visualstudio.com/docs/typescript/typescript-compiling#_using-newer-typescript-versions) for more detail about managing TypeScript versions.
 	"typescript.tsdk": "",
 
@@ -3225,9 +3225,9 @@
 	"css.completion.triggerPropertyValueCompletion": true,
 
 	// A list of relative file paths pointing to JSON files following the [custom data format](https://github.com/microsoft/vscode-css-languageservice/blob/master/docs/customData.md).
-	// 
+	//
 	// VS Code loads custom data on startup to enhance its CSS support for the custom CSS properties, at directives, pseudo classes and pseudo elements you specify in the JSON files.
-	// 
+	//
 	// The file paths are relative to workspace and only workspace folder settings are considered.
 	"css.customData": [],
 
@@ -3538,7 +3538,7 @@
 	"extensions.ignoreRecommendations": false,
 
 	// This setting is deprecated. Use extensions.ignoreRecommendations setting to control recommendation notifications. Use Extensions view's visibility actions to hide Recommended view by default.
-	// 
+	//
 	"extensions.showRecommendationsOnlyOnDemand": false,
 
 	// Override the untrusted workspace support of an extension. Extensions using `true` will always be enabled. Extensions using `limited` will always be enabled, and the extension will hide functionality that requires trust. Extensions using `false` will only be enabled only when the workspace is trusted.
@@ -3710,9 +3710,9 @@
 	"terminal.integrated.automationShell.windows": null,
 
 	// A set of messages that when encountered in the terminal will be automatically responded to. Provided the message is specific enough, this can help automate away common responses.
-	// 
+	//
 	// Remarks:
-	// 
+	//
 	// - Use `"Terminate batch job (Y/N)": "Y\r"` to automatically respond to the terminate batch job prompt on Windows.
 	// - The message includes escape sequences so the reply might not happen with styled text.
 	// - Each reply can only happen once every second.
@@ -3725,19 +3725,19 @@
 	"terminal.integrated.bellDuration": 1000,
 
 	// A set of command IDs whose keybindings will not be sent to the shell but instead always be handled by VS Code. This allows keybindings that would normally be consumed by the shell to act instead the same as when the terminal is not focused, for example `Ctrl+P` to launch Quick Open.
-	// 
+	//
 	// &nbsp;
-	// 
+	//
 	// Many commands are skipped by default. To override a default and pass that command's keybinding to the shell instead, add the command prefixed with the `-` character. For example add `-workbench.action.quickOpen` to allow `Ctrl+P` to reach the shell.
-	// 
+	//
 	// &nbsp;
-	// 
+	//
 	// The following list of default skipped commands is truncated when viewed in Settings Editor. To see the full list, [open the default settings JSON](command:workbench.action.openRawDefaultSettings 'Open Default Settings (JSON)') and search for the first command from the list below.
-	// 
+	//
 	// &nbsp;
-	// 
+	//
 	// Default Skipped Commands:
-	// 
+	//
 	// - editor.action.toggleTabFocusMode
 	// - notifications.hideList
 	// - notifications.hideToasts
@@ -3945,7 +3945,7 @@
 	"terminal.integrated.enableFileLinks": true,
 
 	// Show a warning dialog when pasting multiple lines into the terminal. The dialog does not show when:
-	// 
+	//
 	// - Bracketed paste mode is enabled (the shell supports multi-line paste natively)
 	// - The paste is handled by the shell's readline (in the case of pwsh)
 	"terminal.integrated.enableMultiLinePasteWarning": true,
@@ -4037,7 +4037,7 @@
 	"terminal.integrated.macOptionIsMeta": false,
 
 	// When set, the foreground color of each cell will change to try meet the contrast ratio specified. Note that this will not apply to `powerline` characters per #146406. Example values:
-	// 
+	//
 	// - 1: Do nothing and use the standard theme colors.
 	// - 4.5: [WCAG AA compliance (minimum)](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html) (default).
 	// - 7: [WCAG AAA compliance (enhanced)](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast7.html).
@@ -4048,9 +4048,9 @@
 	"terminal.integrated.mouseWheelScrollSensitivity": 1,
 
 	// When the terminal process must be shutdown (eg. on window or application close), this determines when the previous terminal session contents should be restored and processes be recreated when the workspace is next opened.
-	// 
+	//
 	// Caveats:
-	// 
+	//
 	// - Restoring of the process current working directory depends on whether it is supported by the shell.
 	// - Time to persist the session during shutdown is limited, so it may be aborted when using high-latency remote connections.
 	//  - onExit: Revive the processes after the last window is closed on Windows/Linux or when the `workbench.action.quit` command is triggered (command palette, keybinding, menu).
@@ -4062,7 +4062,7 @@
 	"terminal.integrated.persistentSessionScrollback": 100,
 
 	// The Linux profiles to present when creating a new terminal via the terminal dropdown. Set the `path` property manually with an optional `args`.
-	// 
+	//
 	// Set an existing profile to `null` to hide the profile from the list, for example: `"bash": null`.
 	"terminal.integrated.profiles.linux": {
 		"bash": {
@@ -4086,7 +4086,7 @@
 	},
 
 	// The macOS profiles to present when creating a new terminal via the terminal dropdown. Set the `path` property manually with an optional `args`.
-	// 
+	//
 	// Set an existing profile to `null` to hide the profile from the list, for example: `"bash": null`.
 	"terminal.integrated.profiles.osx": {
 		"bash": {
@@ -4119,7 +4119,7 @@
 	},
 
 	// The Windows profiles to present when creating a new terminal via the terminal dropdown. Use the `source` property to automatically detect the shell's location. Or set the `path` property manually with an optional `args`.
-	// 
+	//
 	// Set an existing profile to `null` to hide the profile from the list, for example: `"Ubuntu-20.04 (WSL)": null`.
 	"terminal.integrated.profiles.windows": {
 		"PowerShell": {
@@ -4191,17 +4191,17 @@
 	// When shell integration is enabled, adds a decoration for each command.
 	"terminal.integrated.shellIntegration.decorationsEnabled": true,
 
-	// Enable features like enhanced command tracking and current working directory detection. 
-	// 
+	// Enable features like enhanced command tracking and current working directory detection.
+	//
 	// Shell integration works by injecting the shell with a startup script. The script gives VS Code insight into what is happening within the terminal.
-	// 
+	//
 	// Supported shells:
-	// 
+	//
 	// - Linux/macOS: bash, pwsh, zsh
 	//  - Windows: pwsh
-	// 
+	//
 	// This setting applies only when terminals are created, so you will need to restart your terminals for it to take effect.
-	// 
+	//
 	//  Note that the script injection may not work if you have custom arguments defined in the terminal profile, a [complex bash `PROMPT_COMMAND`](https://code.visualstudio.com/docs/editor/integrated-terminal#_complex-bash-promptcommand), or other unsupported setup.
 	"terminal.integrated.shellIntegration.enabled": false,
 
@@ -4442,7 +4442,7 @@
 	"breadcrumbs.symbolSortOrder": "position",
 
 	// If this setting is false, no telemetry will be sent regardless of the new setting's value. Deprecated due to being combined into the `telemetry.telemetryLevel` setting.
-	// Enable crash reports to be collected. This helps us improve stability. 
+	// Enable crash reports to be collected. This helps us improve stability.
 	// This option requires restart to take effect.
 	"telemetry.enableCrashReporter": true,
 
@@ -4450,25 +4450,25 @@
 	// Enable diagnostic data to be collected. This helps us to better understand how Visual Studio Code is performing and where improvements need to be made. [Read more](https://go.microsoft.com/fwlink/?LinkId=786907) about what we collect and our privacy statement.
 	"telemetry.enableTelemetry": true,
 
-	// 
+	//
 	// Controls Visual Studio Code telemetry, first-party extension telemetry and participating third-party extension telemetry. Some third party extensions might not respect this setting. Consult the specific extension's documentation to be sure. Telemetry helps us better understand how Visual Studio Code is performing, where improvements need to be made, and how features are being used. Read more about the [data we collect](https://aka.ms/vscode-telemetry) and our [privacy statement](https://go.microsoft.com/fwlink/?LinkId=786907). A full restart of the application is necessary for crash reporting changes to take effect.
-	// 
+	//
 	// &nbsp;
-	// 
+	//
 	// The following table outlines the data sent with each setting:
-	// 
+	//
 	// |       | Crash Reports | Error Telemetry | Usage Data |
 	// |:------|:---------------------:|:---------------:|:--------------:|
 	// | all   |            ✓          |        ✓        |        ✓       |
 	// | error |            ✓          |        ✓        |        -       |
 	// | crash |            ✓          |        -        |        -       |
 	// | off   |            -          |        -        |        -       |
-	// 
-	// 
+	//
+	//
 	// &nbsp;
-	// 
+	//
 	// ****Note:*** If this setting is 'off', no telemetry will be sent regardless of other telemetry settings. If this setting is set to anything except 'off' and telemetry is disabled with deprecated settings, no telemetry will be sent.*
-	// 
+	//
 	//  - all: Sends usage data, errors, and crash reports.
 	//  - error: Sends general error telemetry and crash reports.
 	//  - crash: Sends OS level crash reports.
@@ -4719,7 +4719,7 @@
 	},
 
 	// Deprecated. Use the specific setting for each audio cue instead (`audioCues.*`).
-	// 
+	//
 	"audioCues.enabled": null,
 
 	// Plays a sound when the active line has a breakpoint.
@@ -4789,7 +4789,7 @@
 	"remote.localPortHost": "localhost",
 
 	// Set default properties that are applied to all ports that don't get properties from the setting `remote.portsAttributes`. For example:
-	// 
+	//
 	// ```
 	// {
 	//   "onAutoForward": "ignore"
@@ -4798,7 +4798,7 @@
 	"remote.otherPortsAttributes": {},
 
 	// Set properties that are applied when a specific port number is forwarded. For example:
-	// 
+	//
 	// ```
 	// "3000": {
 	//   "label": "Application"
@@ -4998,7 +4998,7 @@
 	"git.followTagsWhenSync": false,
 
 	// This setting is now deprecated, please use `github.gitAuthentication` instead.
-	// 
+	//
 	"git.githubAuthentication": null,
 
 	// List of git repositories to ignore.
@@ -5227,7 +5227,7 @@
 	"debug.javascript.pickAndAttachOptions": {},
 
 	// Request options to use when loading resources, such as source maps, in the debugger. You may need to configure this if your sourcemaps require authentication or use a self-signed certificate, for instance. Options are used to create a request using the [`got`](https://github.com/sindresorhus/got) library.
-	// 
+	//
 	// A common case to disable certificate verification can be done by passing `{ "https": { "rejectUnauthorized": false } }`.
 	"debug.javascript.resourceRequestOptions": {},
 
@@ -5519,7 +5519,7 @@
 	"prettier.quoteProps": "as-needed",
 
 	// Require a prettier configuration file to format. See [documentation for valid configuration files](https://prettier.io/docs/en/configuration.html).
-	// 
+	//
 	// > _Note, untitled files will still be formatted using the VS Code prettier settings even when this setting is set._
 	"prettier.requireConfig": false,
 
@@ -6594,15 +6594,15 @@
 	// def foo(x:int) ' -> int ':
 	// 	return x
 	// ```
-	// 
+	//
 	"python.analysis.inlayHints.functionReturnTypes": false,
 
 	// Enable/disable inlay hints for variable types:
 	// ```python
 	// foo ' :list[str] ' = ["a"]
-	//  
+	//
 	// ```
-	// 
+	//
 	"python.analysis.inlayHints.variableTypes": false,
 
 	// Specifies the level of logging for the Output panel
@@ -6613,19 +6613,19 @@
 	// {"name": "package name (str)",
 	//  "depth": "depth to scan (int)",
 	//  "includeAllSymbols": "whether to include all symbols (bool)"}
-	// 
+	//
 	// ```
-	// If `include all symbols` is set to `false`, only symbols in each package's `__all__` are included. When it's set to `true`, Pylance will index every module/top level symbol declarations in the file.  
-	//   
-	// Usage example: 
+	// If `include all symbols` is set to `false`, only symbols in each package's `__all__` are included. When it's set to `true`, Pylance will index every module/top level symbol declarations in the file.
+	//
+	// Usage example:
 	// ```JSON
 	// [
 	// 	{"name": "sklearn", "depth": 2, "includeAllSymbols": true},
 	// 	{"name": "matplotlib", "depth": 3, "includeAllSymbols": false}
 	// ]
-	// 
+	//
 	// ```
-	// 
+	//
 	"python.analysis.packageIndexDepths": [
 		{
 			"name": "sklearn",
@@ -7021,16 +7021,16 @@
 	"sqltools.autoOpenSessionFiles": true,
 
 	// Languages that SQLTools will add CodeLenses to.
-	// 
+	//
 	// You can use any language identifier, including those listed at https://code.visualstudio.com/docs/languages/identifiers.
-	// 
+	//
 	// More info about codelens, see https://vscode-sqltools.mteixeira.dev/features/codelens
 	"sqltools.codelensLanguages": [
 		"sql"
 	],
 
 	// Languages with SQL completion enabled.
-	// 
+	//
 	// You can use any language identifier, including those listed at https://code.visualstudio.com/docs/languages/identifiers.
 	"sqltools.completionLanguages": [
 		"sql"
@@ -7069,11 +7069,11 @@
 	// Flatten groups that have only one child.
 	"sqltools.flattenGroupsIfOne": false,
 
-	// 
+	//
 	"sqltools.format": {},
 
 	// Languages with SQL formatting enabled.
-	// 
+	//
 	// You can use any language identifier, including those listed at https://code.visualstudio.com/docs/languages/identifiers.
 	"sqltools.formatLanguages": [
 		"sql"
@@ -7236,7 +7236,7 @@
 	// Please enter Http Methods separated by comma e.g: `search,subscribe`. Close and Re-open Review View to see changes.
 	"thunder-client.customMethods": "",
 
-	// Thunder Client editor font size 
+	// Thunder Client editor font size
 	//  - Use 0 to use default font size.
 	//  - Use any other value to set custom font size.
 	"thunder-client.editorFontSize": 0,
@@ -7287,20 +7287,20 @@
 	"thunder-client.workspaceRelativePath": "",
 
 	// Note: If it is not Null, It will override CustomBrowser and ChromeDebuggingAttachment settings.
-	// 
-	//  Examples : 
-	// chrome --incognito --headless --remote-debugging-port=9222 
+	//
+	//  Examples :
+	// chrome --incognito --headless --remote-debugging-port=9222
 	//  C:\\Program Files\\Firefox Developer Edition\\firefox.exe --private-window
 	"liveServer.settings.AdvanceCustomBrowserCmdLine": null,
 
 	// Enable Chrome Debugging Attachment to Live Server at Debuging Port 9222.
-	//  NOTE: You have to install 'Debugger for Chrome' 
-	// If the value is true, Select 'Attach to Chrome' from Debug Window to start debugging. 
-	// 
+	//  NOTE: You have to install 'Debugger for Chrome'
+	// If the value is true, Select 'Attach to Chrome' from Debug Window to start debugging.
+	//
 	//  CAUTION: If it is true, 'Launch Chrome against localhost' may not work.
 	"liveServer.settings.ChromeDebuggingAttachment": false,
 
-	// Specify custom browser settings for Live Server. 
+	// Specify custom browser settings for Live Server.
 	// By Default it will open your default favorite browser.
 	"liveServer.settings.CustomBrowser": null,
 
@@ -7354,8 +7354,8 @@
 		"proxyUri": "http://127.0.0.1:80"
 	},
 
-	// Set Custom root of Live Server. 
-	// To change root the the server to sub folder of workspace, use '/' and relative path from workspace. 
+	// Set Custom root of Live Server.
+	// To change root the the server to sub folder of workspace, use '/' and relative path from workspace.
 	// Example: /subfolder1/subfolder2
 	"liveServer.settings.root": "/",
 
@@ -7425,7 +7425,7 @@
 	// Logging level for console
 	"intellicodeApiExamples.loggingLevel": "INFO",
 
-	// 
+	//
 	"vsintellicode.features.python.deepLearning": "default",
 
 	// Enable Visual Studio IntelliCode completions for Java
